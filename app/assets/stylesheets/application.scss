@@ -12,6 +12,7 @@
 @import "milestones";
 @import "pages";
 @import "dashboard";
+@import "filter_selector";
 @import "legislation";
 @import "legislation_process";
 @import "legislation_process_form";
@@ -32,6 +33,7 @@
 @import "sticky_overrides";
 @import "tags";
 @import "admin/**/*";
+@import "budgets/*";
 @import "sdg/**/*";
 @import "sdg_management/*";
 @import "sdg_management/**/*";
