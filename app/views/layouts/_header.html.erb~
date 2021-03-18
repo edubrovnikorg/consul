@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="top-bar">
-
+	<span>test naslov</span>
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu") %>
