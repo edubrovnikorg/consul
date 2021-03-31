@@ -3,4 +3,16 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+//tipografija
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&display=swap');
+
+$glavni-font:Raleway;
+
+$body-font-family:$glavni-font,sans-serif;
+$header-font-family:$glavni-font,sans-serif;
+$body-font-weight:normal;
+$body-font-style:normal;
+
+
 $brand:#0E3A55;
