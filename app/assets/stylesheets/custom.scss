@@ -24,5 +24,6 @@
 .footer a:hover{color:#678A9F;}
 .subfooter{background:#0E3A55;}
 .subfooter *{color:#fff;}
-.footer footer{background:asset-data-url("footer.png"),#0E3A55 no-repeat left;}
+.footer footer{background-image:asset-data-url("footer.png") no-repeat left;}
+.footer footer{background-color:#0E3A55;}
 .footer > footer:nth-child(1) > div:nth-child(1){padding-bottom:24px;background:#0E3A55;}
