@@ -21,6 +21,8 @@
 /config/secrets.yml
 /config/deploy-secrets.yml
 /config/maintenance.yml
+# Certificates
+/config/certificates/*
 
 /coverage
 
