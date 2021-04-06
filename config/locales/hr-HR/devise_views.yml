@@ -36,6 +36,9 @@ hr:
         login: Prijavi se
         logout: Odjavi se
         signup: Registriraj me
+        saml: Prijava putem NIAS-a
+        mupapi: Mup API
+        faraday: PersistentHTTP
     organizations:
       registrations:
         new:
