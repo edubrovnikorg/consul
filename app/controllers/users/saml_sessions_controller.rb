@@ -1,5 +1,18 @@
 class Users::SamlSessionsController < Devise::SamlSessionsController
 
+  def new
+    request = OneLogin::RubySaml::Authrequest.new
+    params = { RelayState: SecureRandom.alphanumeric } 
+    action = request.create(saml_config, params)
+    redirect_to action
+  end
+
+  def auth
+    byebug
+
+    response = OneLogin::RubySaml::Response.new(params[:SAMLResponse], :settings => saml_config)
+  end
+
   def after_sign_in(resource)
     if authorize_mup resource
       sign_in_and_redirect current_user, event: :authentication
