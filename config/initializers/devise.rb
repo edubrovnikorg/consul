@@ -316,23 +316,21 @@ Devise.setup do |config|
   # This is a time in seconds.
   # config.allowed_clock_drift_in_seconds = 0
 
-  # Certificate loading
-  idp = OpenSSL::PKCS12.new(
-    File.binread("#{Rails.root}#{Rails.application.secrets.nias_idp_cert}"), 
-    Rails.application.secrets.nias_idp_pass
-  ) 
   # Configure with your SAML settings (see ruby-saml's README for more information: https://github.com/onelogin/ruby-saml).
   config.saml_configure do |settings|
     # assertion_consumer_service_url is required starting with ruby-saml 1.4.3: https://github.com/onelogin/ruby-saml#updating-from-142-to-143
     settings.idp_sso_service_url                = "https://niastst.fina.hr/sso-http"
     settings.protocol_binding                   = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-    settings.assertion_consumer_service_url     = "https://#{request.host}/users/saml/auth"
+    settings.assertion_consumer_service_url     = "https://localhost:3000/users/nias/auth"
     settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
     settings.issuer                             = "#{Rails.application.secrets.issuer}"
     settings.name_identifier_format             = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
     settings.authn_context                      = ""
     settings.idp_sso_target_url                 = "https://niastst.fina.hr/sso-http"
-    settings.idp_cert                           = idp.certificate
+    settings.idp_cert                           = "#{Rails.application.secrets.nias_idp_cert}"
+    settings.security[:authn_requests_signed]   = true
+    settings.security[:embed_sign]              = false
+    settings.security[:signature_method]        = XMLSecurity::Document::RSA_SHA256
   end
 
   #   # Configure with your SAML settings (see ruby-saml's README for more information: https://github.com/onelogin/ruby-saml).
