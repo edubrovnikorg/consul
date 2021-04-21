@@ -21,6 +21,7 @@ hr:
       timeout: "Vaša sjednica je istekla. Molimo vas da se ponovno prijavite."
       unauthenticated: "Morate se prijaviti ili registirati kako biste nastavili."
       unconfirmed: "Kako biste nastavili molimo kliknite na potvrdni link koji Vam šaljemo putem e-maila"
+      not_approved: "Vaš korisnički račun trenutno nije aktivan i čeka odobrenje administratora."
     mailer:
       confirmation_instructions:
         subject: "Upute za potvrdu"
@@ -29,7 +30,7 @@ hr:
       unlock_instructions:
         subject: "Otključavanje uputa"
     omniauth_callbacks:
-      failure: "Nije Vas moguće autorizirati kao %{kind} zbog \"%{reason}\"."
+      failure: 'Nije Vas moguće autorizirati kao %{kind} zbog "%{reason}".'
       success: "Uspješno prepoznat kao %{kind}."
     passwords:
       no_token: "Ne možete pristupiti ovoj stranici osim putem linka za obnovu lozinke. Ukoliko ste probali pristupiti preko linka za obnovu lozinke, molimo vas provjerite cjelovitost URL-a."
@@ -45,6 +46,8 @@ hr:
       signed_up_but_unconfirmed: "Poslana Vam je poruka s verifikacijskom poveznicom. Molim Vas da pronađete poveznicu kako biste aktivirali Vaš račun."
       update_needs_confirmation: "Vaš račun je uspješno ažuriran; sada još moramo potvrditi Vašu novu e-mail adresu. Molimo Vas da provjerite e-mail i krenete na poveznicu kako biste potvrdili novu e-mail adresu."
       updated: "Vaš račun je uspješno ažuriran."
+      user:
+        signed_up_but_not_approved: "Registracija je izvršena. Molimo pričekajte dok administrator odobri vaš račun."
     sessions:
       signed_in: "Uspješno ste se prijavili."
       signed_out: "Uspješno ste odjevljeni."

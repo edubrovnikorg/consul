@@ -90,7 +90,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :organization, update_only: true
 
-  attr_accessor :skip_password_validation, :use_redeemable_code, :login
+  attr_accessor :skip_password_validation, :use_redeemable_code, :login, :approved
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -107,6 +107,7 @@ class User < ApplicationRecord
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
+  scope :not_approved,   -> { where(approved: false) }
   scope :public_for_api, -> { all }
   scope :by_authors,     ->(author_ids) { where(id: author_ids) }
   scope :by_comments,    ->(commentables) do
@@ -126,6 +127,24 @@ class User < ApplicationRecord
 
   before_validation :clean_document_number
 
+  def active_for_authentication? 
+    super && approved? 
+  end 
+  
+  def inactive_message 
+    approved? ? super : :not_approved
+  end
+
+  def self.send_reset_password_instructions(attributes={})
+    recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
+    if !recoverable.approved?
+      recoverable.errors[:base] << I18n.t("devise.failure.not_approved")
+    elsif recoverable.persisted?
+      recoverable.send_reset_password_instructions
+    end
+    recoverable
+  end
+
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
@@ -141,6 +160,7 @@ class User < ApplicationRecord
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
+
 
   def name
     organization? ? organization.name : username

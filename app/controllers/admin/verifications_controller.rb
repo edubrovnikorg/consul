@@ -8,5 +8,6 @@ class Admin::VerificationsController < Admin::BaseController
                                          .page(params[:page])
                                          .for_render
     render :index
-  end
+  
+    
 end

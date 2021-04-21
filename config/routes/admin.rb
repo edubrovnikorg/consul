@@ -122,7 +122,10 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    post :approve, on: :collection       
+  end
+
 
   scope module: :poll do
     resources :polls do
