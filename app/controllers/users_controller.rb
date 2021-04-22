@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
       when "follows" then load_follows
+      when "approved" then load_inactive
       else load_available_activity
       end
     end
@@ -100,5 +101,9 @@ class UsersController < ApplicationController
       else
         all_user_comments
       end
+    end
+
+    def load_inactive
+      @users = User.where(approved: false)
     end
 end

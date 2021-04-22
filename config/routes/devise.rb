@@ -10,7 +10,7 @@ devise_scope :user do
     get :new, path: "nias/new", as: :new_user_sso_request
     get :sso, path: "nias/login", as: :new_user_sso_session
     post :auth, path: "nias/auth", as: :user_sso_session
-    get :destroy, path: "sign_out", as: :destroy_user_sso_session
+    get :destroy, path: "nias/logout", as: :destroy_user_sso_session
     get :metadata, path: "nias/metadata", as: :metadata_user_sso_session
     match :idp_sign_out, path: "nias/idp_sign_out", via: [:get, :post]
   end

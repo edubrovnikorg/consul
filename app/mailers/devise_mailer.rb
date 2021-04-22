@@ -10,4 +10,5 @@ class DeviseMailer < Devise::Mailer
         super(record, action, opts)
       end
     end
+    
 end

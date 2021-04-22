@@ -367,8 +367,8 @@ hr:
           create: Stvori resurs ili djelovanje
           edit: Uredi
           delete: Izbriši
-          active: 'Da'
-          inactive: 'Ne'
+          active: "Da"
+          inactive: "Ne"
           title: Resursi i djelovanja
           action_title: Naziv
           action_type: Tip
@@ -598,7 +598,7 @@ hr:
           notice: Pitanje uspješno obrisano
         edit:
           back: Nazad
-          title: "Uredi \"%{question_title}\""
+          title: 'Uredi "%{question_title}"'
           submit_button: Spremi promjene
         form:
           add_option: Dodaj opciju
@@ -695,7 +695,7 @@ hr:
       title_site_customization: Sadržaj stranice
       title_booths: Glasačke kabine
       legislation: Javno savjetovanje
-      users: Krosnici
+      users: Korisnici
       dashboard: Glavni izbornik prijedloga
       administrator_tasks: Zatraženi resursi
       dashboard_actions: Resursi i djelovanja
@@ -1295,6 +1295,8 @@ hr:
         placeholder: Pretraži korisnika po imenu ili emailu
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
+      search:
+        search: "Pretraga"
       actions: Djelovanja
       title: Naziv
       description: Opis
@@ -1310,7 +1312,8 @@ hr:
       color_help: Heksadecimalni format
       show_results_and_stats: "Prikaži rezultate i statistike"
       results_and_stats_reminder: "Označi ove kućice rezultata i/ili status koji može biti javno dostupan i svaki korisnik će ih vidjeti."
-    geozones:
+    
+      geozones:
       index:
         title: Geozona
         create: Stvori geozonu
