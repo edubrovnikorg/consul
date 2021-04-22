@@ -75,6 +75,7 @@ Rails.application.configure do
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings
     config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
+    config.action_mailer.perform_deliveries = true;
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
   end
 
@@ -100,5 +101,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
 
 end
