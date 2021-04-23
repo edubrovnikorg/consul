@@ -1,0 +1,6 @@
+hr:
+  date:
+    order:
+      - :godina
+      - :mjesec
+      - :dan
