@@ -1,6 +1,6 @@
 hr:
   date:
     order:
-      - :godina
-      - :mjesec
-      - :dan
+      - :year
+      - :month
+      - :day
