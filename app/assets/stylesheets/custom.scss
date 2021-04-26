@@ -21,6 +21,9 @@ h1.top-bar-title{padding:25px 15px;}
 
 //submenu
 @media print, screen and (min-width: 40em){ .subnavigation {background: #0E3A55; padding-bottom: 0;}}
+@media print, screen and (min-width: 40em){.subnavigation a {color:#fff;} .subnavigation a:hover{color:#fff; text-decoration:none;}  }
+
+
 
 //footer
 
