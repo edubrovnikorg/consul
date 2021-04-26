@@ -9,11 +9,14 @@
 
 //header
 
-.top-links{background:none;}
+.top-links{display:none; background:none;}
 .wrapper > header:nth-child(1){background:linear-gradient(180deg,#C1161C,#810F13);}
 .top-bar{background:transparent;}
-.grad-dbk-header{background: #EDEDED;}
+.grad-dbk-header{background: #EDEDED; padding: 10px 15px;}
 .grad-dbk-header img{width: auto; height: 65px; max-width: 70%;}
+h1.top-bar-title{padding:25px 15px;}
+.top-bar-title a{color:#fff;}
+.top-bar-title a:hover{color:#fff; text-decoration:none;}
 
 //footer
 
