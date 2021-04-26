@@ -18,10 +18,17 @@ h1.top-bar-title{padding:25px 15px;}
 .top-bar-title a{color:#fff;}
 .top-bar-title a:hover{color:#fff; text-decoration:none;}
 
+//navigacija glavna
+.dropdown.menu>li a:hover {text-decoration: none;}
+.dropdown.menu>li a.is-active{color: #fff; border-bottom: 2px solid #fff;}
 
 //submenu
 @media print, screen and (min-width: 40em){ .subnavigation {background: #0E3A55; padding-bottom: 0;}}
-@media print, screen and (min-width: 40em){.subnavigation a {color:#fff;} .subnavigation a:hover{color:#fff; text-decoration:none;}  }
+@media print, screen and (min-width: 40em){
+.subnavigation a {color:#fff;} 
+.subnavigation a:hover{color:#fff; text-decoration:none;}
+.subnavigation a.is-active {color: #fff; border-bottom: 2px solid #fff;}
+}
 
 
 
