@@ -40,6 +40,6 @@ h1.top-bar-title{padding:25px 15px;}
 .footer a:hover{opacity:0.7; text-decoration:none;}
 .subfooter{background:#0E3A55;}
 .subfooter *{color:#fff;}
-.footer footer{background-image:asset-data-url("footer.png") no-repeat left;}
+.footer footer{background-image:asset-url("footer.png", image) no-repeat left;}
 .footer footer{background-color:#0E3A55;}
 .footer > footer:nth-child(1) > div:nth-child(1){padding-bottom:24px;background:#0E3A55;}
