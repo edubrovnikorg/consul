@@ -18,6 +18,10 @@ h1.top-bar-title{padding:25px 15px;}
 .top-bar-title a{color:#fff;}
 .top-bar-title a:hover{color:#fff; text-decoration:none;}
 
+
+//submenu
+@media print, screen and (min-width: 40em){ .subnavigation {background: #0E3A55; padding-bottom: 0;}}
+
 //footer
 
 .footer{background:#0E3A55; color:#fff;}
