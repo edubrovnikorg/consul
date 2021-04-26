@@ -9,6 +9,14 @@
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>
 
+<%# zaglavlje grad dbk %>
+
+<div class="grad-dbk-header">
+<a href="/">
+        <%= image_tag(image_path_for("grb-header.svg"), alt: setting["org_name"]) %>
+        </a>
+</div>
+
   <div class="top-links">
     <div class="row">
       <%= render "shared/locale_switcher" %>
