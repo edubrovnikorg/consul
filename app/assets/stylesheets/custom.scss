@@ -20,7 +20,7 @@ h1.top-bar-title{padding:25px 15px;}
 
 //navigacija glavna
 .dropdown.menu>li a:hover {text-decoration: none; opacity:0.7;}
-.dropdown.menu>li a.is-active{color: #fff; border-bottom: 2px solid #fff;}
+.dropdown.menu>li a.is-active{color: #fff; border-bottom: 2px solid #fff; text-decoration: none;}
 
 //submenu
 @media print, screen and (min-width: 40em){ .subnavigation {background: #0E3A55; padding-bottom: 0;}}
@@ -37,7 +37,7 @@ h1.top-bar-title{padding:25px 15px;}
 .footer{background:#0E3A55; color:#fff;}
 .footer-logo img{width:100px;}
 .footer *{color:#fff;}
-.footer a:hover{color:#678A9F;}
+.footer a:hover{opacity:0.7; text-decoration:none;}
 .subfooter{background:#0E3A55;}
 .subfooter *{color:#fff;}
 .footer footer{background-image:asset-data-url("footer.png") no-repeat left;}
