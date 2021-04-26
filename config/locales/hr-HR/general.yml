@@ -110,7 +110,7 @@ hr:
         recommendations: preporuke
       recommendations:
         without_results: Ne postoje rasprave povezane s vašim interesima
-        without_interests: Slijedite prijedloge kako bismo vam dali preporuke
+        without_interests: Slijedite sadržaje iz rubrike Prijedlozi kako biste vidjeli preporučene rasprave
         disable: "Preporuke rasprave će zaustaviti prikazivanje istih ako ih odbacite. Vi ih možete ponovno omogućiti na dijelu stranice 'Moj račun'"
         actions:
           success: "Preporuke za rapsrave su sada uklonjene za ovaj račun"
@@ -360,7 +360,7 @@ hr:
     index:
       featured_proposals: Istaknuto
       orders:
-        confidence_score: najviše ocijenjen
+        confidence_score: najviše ocijenjivane
         created_at: najnoviji
         hot_score: najaktivniji
         most_commented: najviše komentiran
