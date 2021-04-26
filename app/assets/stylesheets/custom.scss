@@ -34,14 +34,14 @@ h1.top-bar-title{padding:25px 15px;}
 
 //footer
 
-.footer{background:#0E3A55; color:#fff;}
+.footer{background:#0E3A55; color:#fff; padding-top:0px;}
 .footer-logo img{width:100px;}
 .footer *{color:#fff;}
 .footer a{text-decoration:none;}
 .footer a:hover{opacity:0.7; text-decoration:none;}
 .subfooter{background:#0E3A55;}
 .subfooter *{color:#fff;}
-.footer footer{background-image:image-url('footer.png') no-repeat left;}
+.footer footer{background-image:image-url('footer.png'); background-position:left; background-repeat:no-repeat; padding-top:30px;}
 .footer footer{background-color:#0E3A55;}
 .footer > footer:nth-child(1) > div:nth-child(1){padding-bottom:24px;background:#0E3A55;}
 .tekst-footer{font-size:14px;}
