@@ -138,9 +138,9 @@ hr:
     new:
       form:
         submit_button: Započni raspravu
-      info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
+      info:  
       info_link: izradi novi prijedlog
-      more_info: Više informacija
+      more_info: 
       recommendation_four: Uživajte na ovom mjestu vaš glas će se također popuniti.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
       recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
@@ -712,9 +712,9 @@ hr:
       date_4: "Zadnja godina"
       date_5: "Prilagođeno"
       from: "Od"
-      general: "S tekstom"
+      general: "Tekst za pretragu"
       general_placeholder: "Napiši tekst"
-      search: "Filter"
+      search: "Traži"
       title: "Napredna pretraga"
       to: "Do"
     author_info:
