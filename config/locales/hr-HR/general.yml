@@ -174,7 +174,7 @@ hr:
     direct_message: privatna poruka
     error: pogreška
     errors: pogreške
-    not_saved: "ovaj %{resource} nije spremljen. <br>Molimo, provjerite označena polja kako biste ih znali ispraviti:"
+    not_saved: " <br>Ispravite pogreške u označenim poljima: "
     policy: Politika Privatnosti
     banner: banner
     proposal: Prijedlog
