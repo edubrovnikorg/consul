@@ -267,7 +267,7 @@ hr:
         terms_of_service: "Uvjeti usluge"
         title: "Naziv"
       debate/translation:
-        title: "Naziv rasprave"
+        title: "Naslov rasprave"
         description: "Početni tekst rasprave"
       proposal:
         author: "Autor"
