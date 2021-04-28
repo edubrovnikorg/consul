@@ -96,7 +96,7 @@ hr:
         submit_button: Spremi promjene
       show_link: Pogledaj raspravu
     form:
-      debate_title: Naslov rasprave
+      debate_title: Upišite naslov
       tags_instructions: Označi ovu raspravu.
       tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
     index:
