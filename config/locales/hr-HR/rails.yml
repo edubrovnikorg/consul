@@ -109,7 +109,7 @@ hr:
   errors:
     format: "%{attribute}%{message}"
     messages:
-      accepted: mora biti prihvačeno
+      accepted: Morate prihvatiti kako bi nastavili
       blank: ne može biti prazno
       present: mora ostati prazno
       confirmation: ne podudara se %{attribute}
