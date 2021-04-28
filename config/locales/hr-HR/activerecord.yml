@@ -263,12 +263,12 @@ hr:
       debate:
         author: "Autor"
         description: "Mišljenje"
-        tag_list: "Teme"
+        tag_list: "Kategorije"
         terms_of_service: "Uvjeti usluge"
         title: "Naziv"
       debate/translation:
         title: "Naslov rasprave"
-        description: "Početni tekst rasprave"
+        description: "Sadržaj rasprave"
       proposal:
         author: "Autor"
         title: "Naziv"
