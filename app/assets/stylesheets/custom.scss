@@ -14,7 +14,7 @@
 .top-bar{background:transparent;}
 .grad-dbk-header{background: #EDEDED; padding: 10px 15px;}
 .grad-dbk-header img{width: auto; height: 65px; max-width: 70%;}
-h1.top-bar-title{padding:25px 15px;}
+h1.top-bar-title{padding:25px 15px;  font-weight:400;}
 .top-bar-title a{color:#fff;}
 .top-bar-title a:hover{color:#fff; text-decoration:none;}
 
@@ -25,7 +25,7 @@ h1.top-bar-title{padding:25px 15px;}
 //submenu
 @media print, screen and (min-width: 40em){ .subnavigation {background: #0E3A55; padding-bottom: 0;}}
 @media print, screen and (min-width: 40em){
-.subnavigation a {color:#fff;} 
+.subnavigation a {color:#fff; font-weight:400;} 
 .subnavigation a:hover{color:#fff; text-decoration:none; opacity:0.7;}
 .subnavigation a.is-active {color: #fff; border-bottom: 2px solid #fff; text-decoration:none;}
 }
