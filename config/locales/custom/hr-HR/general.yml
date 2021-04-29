@@ -4,4 +4,4 @@ hr:
       copyright: eDubrovnik - građani upravljaju gradom, %{year}
   proposals:
     proposal:
-      reason_for_support_necesarry:
+      reason_for_support_necesarry: t
