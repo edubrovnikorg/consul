@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/meta_tags" %>
+    <%= raw setting["html.per_page_code_head"] %>
+  </head>
+
+  <body class="auth-page">
+  <%# zaglavlje grad dbk %>
+
+<div class="grad-dbk-header">
+<a href="/">
+        <%= image_tag(image_path_for("grb-header.svg"), alt: setting["org_name"]) %>
+        </a>
+</div>
+    <%= raw setting["html.per_page_code_body"] %>
+    <div class="wrapper">
+      <div class="auth-image small-12 medium-3 column">
+        <h1 class="logo margin">
+          <%= link_to root_path do %>
+            VOXPOPULI
+			<%#= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
+          <% end %>
+        </h1>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin">
+              <%= render "layouts/flash" %>
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>
