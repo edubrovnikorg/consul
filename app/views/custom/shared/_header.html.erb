@@ -1,14 +1,15 @@
 <% if header.present? %>
   <div class="jumbo highlight">
     <div class="row naslovna-highlight">
-      <div class="small-12 medium-12 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
-        <span><%= header.label %></span>
+      <div class="small-12 medium-12 large-12">
         <h1><%= header.title %></h1>
-        <p class="lead"><%= header.description %></p>
+        
         <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present? %>">
           <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
         </div>
       </div>
+
+
 
       <% if header.image.present? %>
         <div class="small-12 medium-6 column">
@@ -19,5 +20,8 @@
       <% end %>
     </div>
   </div>
-  <div class="background-header"></div>
+
+<div class="row">
+<p class="lead"><%= header.description %></p>
+</div>
 <% end %>
