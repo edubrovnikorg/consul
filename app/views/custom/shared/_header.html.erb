@@ -1,7 +1,7 @@
 <% if header.present? %>
   <div class="jumbo highlight">
     <div class="row naslovna-highlight">
-      <div class="small-12 medium-12 large-12" style="<%= image_path('header.image_url(:large)') %>">
+      <div class="small-12 medium-12 large-12" style="<%= image_path(header.image_url) %>">
         <h1><%= header.title %></h1>
         
         <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present? %>">
@@ -9,15 +9,6 @@
         </div>
       </div>
 
-
-
-      <% if header.image.present? %>
-        <div class="small-12 medium-6 column">
-          <%= image_tag(header.image_url(:large),
-                        class: "margin",
-                        alt: header.image.title) %>
-        </div>
-      <% end %>
     </div>
   </div>
 
