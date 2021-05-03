@@ -286,8 +286,8 @@ hr:
       mark_as_unread: Označi kao nepročitano
       notifiable_hidden: Ovaj resurs više nije dostupan.
   map:
-    title: "Distrikti"
-    proposal_for_district: "Započni prijedlog za svoj distrikt"
+    title: "Gradska područja"
+    proposal_for_district: "Započni prijedlog za svoj područje"
     start_proposal: Stvori prijedlog
   omniauth:
     facebook:
@@ -634,7 +634,7 @@ hr:
       participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Anketa završena"
       no_geozone_restricted: "Svi gradovi"
-      geozone_restricted: "Distrikti"
+      geozone_restricted: "Gradska područja"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
       not_logged_in: "Morate biti prijavljeni ili registrirani da bi sudjelovali"
@@ -769,8 +769,9 @@ hr:
         see_all: "Pogledaj sve"
     tags_cloud:
       tags: Popularno
-      districts: "Distrikti"
-      districts_list: "Lista distrikata"
+      districts: "Gradska područja"
+      districts: "Gradska područja"
+      districts_list: "Lista gradskih područja"
       categories: "Kategorije"
     target_blank: " (poveznica se otvara u novom prozoru)"
     you_are_in: "Vi ste u"
