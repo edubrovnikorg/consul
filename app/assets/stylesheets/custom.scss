@@ -34,7 +34,10 @@ h1.top-bar-title{padding:25px 15px;  font-weight:400;}
 
 //highlight
 div.jumbo.highlight{background-image:image-url('header-highlight.jpg'); background-size: cover;}
-.naslovstranice{color:#fff; margin-top:2em; background:linear-gradient(180deg,#C1161C,#810F13); display: inline; padding:10px;}
+.naslovstranice{color:#fff; background:linear-gradient(180deg,#C1161C,#810F13); display: inline; padding:10px;}
+@media print, screen and (min-width: 40em){.naslovstranice{margin-top:5em;}}
+@media print, screen and (min-width: 64em){.naslovstranice{margin-top:10em;}}
+
 
 //footer
 
