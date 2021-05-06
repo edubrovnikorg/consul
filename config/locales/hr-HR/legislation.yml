@@ -37,7 +37,7 @@ hr:
       show:
         loading_comments: Učitavam komentare
         seeing_version: Gledate skicu
-        select_draft_version: Odaberi skicu
+        select_draft_version: Odaberi nacrt
         select_version_submit: pogledaj
         updated_at: ažurirano na %{date}
         see_changes: pogledaj promjene u sažetku
@@ -62,7 +62,7 @@ hr:
         filter: Filter
         filters:
           open: Otvoreni procesi
-          past: Prošle
+          past: Prošli procesi
         no_open_processes: Nema otvorenih procesa
         no_past_processes: Nema prošlih procesa
         section_header:
@@ -83,7 +83,7 @@ hr:
         key_dates: Faze sudjelovanja
         homepage: Glavna stranica
         debate_dates: Rasprave
-        draft_publication_date: Objavljivanje drafta
+        draft_publication_date: Objavljivanje nacrta
         allegations_dates: Komentari
         result_publication_date: Konačni rezultati objave
         milestones_date: Sljedeći
@@ -116,7 +116,7 @@ hr:
         debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
     shared:
       share: Dijeli
-      share_comment: Komentiraj %{version_name} iz drafta procesa %{process_name}
+      share_comment: Komentiraj %{version_name} iz nacrta procesa %{process_name}
     proposals:
       form:
         tags_label: "Kategorije"
