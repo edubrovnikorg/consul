@@ -83,7 +83,7 @@ hr:
         new_unlock: Jeste li primili upute za otključavanje?
         signin_with_provider: Prijavi se s %{provider}
         signup: Nemate račun? %{signup_link}
-        signup_link: Prijavite se
+        signup_link: Registrirajte se
     unlocks:
       new:
         email_label: Email
