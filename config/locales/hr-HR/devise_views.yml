@@ -116,7 +116,7 @@ hr:
           password_label: Zaporka
           redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
           submit: Registriraj se
-          terms: Registracijom prihvačate %{terms}
+          terms: Registracijom prihvaćate %{terms}
           terms_link: uvjeti korištenja
           terms_title: Registracijom prihvaćate uvjete korištenja
           title: Registriraj se
