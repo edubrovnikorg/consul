@@ -102,7 +102,7 @@ hr:
     index:
       featured_debates: Istaknuto
       orders:
-        confidence_score: najviše ocijenjeno
+        confidence_score: najocjenjenije
         created_at: najnovije
         hot_score: najaktivnije
         most_commented: najkomentiranije
@@ -652,7 +652,7 @@ hr:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
       back: Nazad na glasovanje
-      cant_answer_not_logged_in: "Morate se %{signin} ili %{signup} da biste sudjelovali."
+      cant_answer_not_logged_in: "Morate %{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
       verify_link: "potvrdi svoj račun"
@@ -828,8 +828,8 @@ hr:
   users:
     login_to_comment: "Morate %{signin} ili %{signup} da biste ostavili komentar."
     login_to_continue: "Morate %{signin} ili %{signup} da biste nastavili."
-    signin: "prijavite se"
-    signup: "upišite se"
+    signin: "se prijaviti"
+    signup: "registrirati"
     verify_account: "potvrdite svoj račun"
     direct_messages:
       new:
@@ -886,7 +886,7 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
-    comment_unauthenticated: Vi morate %{signin} ili %{signup} kako bi glasali.
+    comment_unauthenticated: Morate %{signin} ili %{signup} kako bi glasali.
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasovanje
     supports: Potpore
