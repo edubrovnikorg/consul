@@ -871,7 +871,7 @@ hr:
           one: 1 Pratitelj
           few: "%{count} Pratitelja"
           other: "%{count} Pratitelja"
-      no_activity: Korisnik nema javnih aktivnosti
+      no_activity: Nemate javnih aktivnosti
       no_private_messages: "Ovaj korisnik ne prihvača privatne poruke."
       private_activity: Ovaj korisnik je odlučio da će listu aktivnosti zadržati privatnom.
       send_private_message: "Pošalji privatnu poruku"
