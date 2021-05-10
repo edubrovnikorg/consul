@@ -70,7 +70,7 @@ hr:
         title: Zaboravnjena zaporka?
     sessions:
       new:
-        login_label: Email ili korisničko ime
+        login_label: Email
         password_label: Zaporka
         remember_me: Zapamti me
         submit: Unesi
