@@ -127,6 +127,6 @@ hr:
         success:
           back_to_index: Nazad na glavnu stranicu
           instructions_1: Molimo vas, <b>provjerite vašu e-poštu</b> - poslali smo vam <b>poveznicu za potvrdu vašega računa</b>.
-          instructions_2: Nakon potvrde, možete sudjelovati.
+          instructions_2: <br> </br>
           thank_you: Hvala vam na registraciji na platformu.
           title: Potvrdite vašu email adresu
