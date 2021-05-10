@@ -15,9 +15,9 @@ hr:
     mailer:
       confirmation_instructions:
         confirm_link: Potvrdi moj račun
-        text: "Račun e-pošte možete potvrditi na sljedećoj poveznici:"
+        text: "Zaprimili smo Vašu registraciju za korištenje digitalnih usluga Grada Dubrovnika. Molimo Vas da se javite u Vaš najbliži Gradski kotar/Mjesni odbor ili u prostorije Grada Dubrovnika, Gundulićeva poljana 10, kako biste popunili Zahtjev za registraciju na portal eDubrovnik.<br><br> <b>NAPOMENA:</b> Prilikom podnošenja Zahtjeva potrebno je službeniku predati na uvid osobnu iskaznicu radi utvrđivanja identiteta.<br><br>Račun e-pošte možete potvrditi na sljedećoj poveznici:"
         title: Dobrodošli
-        welcome: Dobrodošli
+        welcome: Poštovani
       reset_password_instructions:
         change_link: Promijeni moju lozinku
         hello: Pozdrav
