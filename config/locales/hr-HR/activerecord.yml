@@ -285,7 +285,7 @@ hr:
         summary: "Sažetak prijedloga"
         retired_explanation: "Obrazloženje"
       user:
-        login: "Email ili korisničko ime"
+        login: "Email"
         email: "Email"
         username: "Korisničko ime"
         password_confirmation: "Potvrđena zaporka"
