@@ -67,7 +67,7 @@ hr:
       new:
         email_label: E-mail
         send_submit: Pošalji upute
-        title: Zaboravnjena zaporka?
+        title: Zaboravili ste zaporku?
     sessions:
       new:
         login_label: Email
