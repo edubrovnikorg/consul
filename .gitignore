@@ -22,8 +22,9 @@
 /config/deploy-secrets.yml
 /config/maintenance.yml
 # Ignore certificates
-/config/certificates/*  
-
+/config/certificates/*
+/config/deploy-secrets.yml  
+/installer/*
 
 /coverage
 
