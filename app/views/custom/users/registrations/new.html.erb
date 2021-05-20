@@ -1,7 +1,9 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
 <h2><%= t("devise_views.users.registrations.new.title") %></h2>
 
-<%= link_to t("devise_views.menu.login_items.saml"), new_user_sso_session_path, rel: "nofollow", class: "button" %>
+<%= link_to t("devise_views.menu.login_items.saml"), new_user_sso_session_path, 
+data: { turbolinks: false }, rel: "nofollow", class: "button" %>
+
 
 <%= render "devise/omniauth_form", action: "sign_up" %>
 

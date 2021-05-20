@@ -323,11 +323,13 @@ Devise.setup do |config|
     settings.protocol_binding                   = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
     settings.assertion_consumer_service_url     = "https://localhost:3000/users/nias/auth"
     settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-    settings.issuer                             = "#{Rails.application.secrets.issuer}"
+    settings.issuer                             = "#{Rails.application.credentials[:nias_issuer]}"
     settings.name_identifier_format             = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
     settings.authn_context                      = ""
     settings.idp_sso_target_url                 = "https://niastst.fina.hr/sso-http"
-    settings.idp_cert                           = "#{Rails.application.secrets.nias_idp_cert}"
+    settings.idp_cert                           = "#{Rails.application.credentials.nias_demo[:cert]}"
+    settings.private_key                        = "#{Rails.application.credentials.nias_demo[:key]}"
+    settings.compress_request                   = true
     settings.security[:authn_requests_signed]   = true
     settings.security[:embed_sign]              = false
     settings.security[:signature_method]        = XMLSecurity::Document::RSA_SHA256

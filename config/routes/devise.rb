@@ -7,7 +7,6 @@ devise_for :users, controllers: {
                    
 devise_scope :user do
   scope "users", controller: 'users/saml_sessions' do
-    get :new, path: "nias/new", as: :new_user_sso_request
     get :sso, path: "nias/login", as: :new_user_sso_session
     post :auth, path: "nias/auth", as: :user_sso_session
     get :destroy, path: "nias/logout", as: :destroy_user_sso_session

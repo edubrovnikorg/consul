@@ -1,4 +1,9 @@
 require 'onelogin/ruby-saml/authrequest'
+require "rexml/document"
+require "onelogin/ruby-saml/logging"
+require "onelogin/ruby-saml/saml_message"
+require "onelogin/ruby-saml/utils"
+require "onelogin/ruby-saml/setting_error"
 
 # Overwrite of OneLogin::RubySaml::Authrequest.create_xml_document method to support SAML request specification by
 # National Identification and Authentication System (NIAS) https://nias.gov.hr

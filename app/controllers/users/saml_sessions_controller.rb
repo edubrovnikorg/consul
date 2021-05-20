@@ -1,16 +1,19 @@
-class Users::SamlSessionsController < Devise::SamlSessionsController
-  
+class Users::SamlSessionsController < Devise::SessionsController
+  prepend_before_action :require_no_authentication, only: :sso
+
   def sso
     request = OneLogin::RubySaml::Authrequest.new
     params = { RelayState: SecureRandom.alphanumeric } 
     private_key
-    action = request.create(saml_config, params)
-    redirect_to action
+    action = request.create(saml_settings, params)
+    redirect_to action, turbolinks: false
   end
 
   def auth
-    response = OneLogin::RubySaml::Response.new(params[:SAMLResponse], :settings => saml_config)
-    
+    response = OneLogin::RubySaml::Response.new(params[:SAMLResponse], :settings => saml_settings)
+    logger.debug "============================== SAML RESPONSE ===================================="
+    logger.debug "RESPONSE >> #{response}"
+    logger.debug "============================== SAML RESPONSE ===================================="
   end
 
   # def after_sign_in(resource)
@@ -25,10 +28,14 @@ class Users::SamlSessionsController < Devise::SamlSessionsController
   private
 
     def private_key
-      path = "#{Rails.root}#{Rails.application.secrets.nias_private_key}"
-      pass_phrase = "#{Rails.application.secrets.nias_pass_phrase}"
-      private_key = OpenSSL::PKey::RSA.new(File.binread(path), pass_phrase)
-      saml_config.private_key = private_key.to_s
+      key = "#{Rails.application.credentials.nias_demo[:private_key]}"
+      pass_phrase = "#{Rails.application.credentials[:nias_passphrase]}"
+      private_key = OpenSSL::PKey::RSA.new(key, pass_phrase)
+      saml_settings.private_key = private_key.to_s
+    end
+
+    def saml_settings
+      Devise.saml_config
     end
     # def nias_sign_in
     #   @user = User.first_or_initialize_for_nias(sign_up_params)
