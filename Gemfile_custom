@@ -4,7 +4,6 @@
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
 gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.1'
-gem 'devise_saml_authenticatable'
 gem 'ruby-saml', '~> 1.12'
 gem 'faraday'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
