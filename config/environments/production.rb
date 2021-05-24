@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Master key for encrypted credentials
+  config.require_master_key = true
+
   # Secret key manual insert.
   config.secret_key_base = '<%= ENV["secret_key_base"] %>'
 
