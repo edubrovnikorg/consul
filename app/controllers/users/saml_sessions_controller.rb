@@ -5,7 +5,6 @@ class Users::SamlSessionsController < Devise::SessionsController
   def sso
     request = OneLogin::RubySaml::Authrequest.new
     params = { RelayState: SecureRandom.alphanumeric } 
-    byebug
     action = request.create(saml_settings, params)
     redirect_to action, turbolinks: false
   end
@@ -28,10 +27,6 @@ class Users::SamlSessionsController < Devise::SessionsController
   
   private
     def saml_settings
-      logger.debug "============================== CREDENTIALS ===================================="
-      logger.debug "CREDENTIALS >> #{Rails.application.credentials}"
-      logger.debug "CREDENTIALS >> #{Rails.application.credentials.nias_demo}"
-      logger.debug "============================== CREDENTIALS ===================================="
       key = "#{Rails.application.credentials.nias_demo[:private_key]}"
       pass_phrase = "#{Rails.application.credentials[:nias_passphrase]}"
       private_key = OpenSSL::PKey::RSA.new(key, pass_phrase)
