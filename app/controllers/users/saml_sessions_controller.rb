@@ -28,6 +28,9 @@ class Users::SamlSessionsController < Devise::SessionsController
   
   private
     def saml_settings
+      logger.debug "============================== CREDENTIALS ===================================="
+      logger.debug "RESPONSE >> #{Rails.application.credentials}"
+      logger.debug "============================== CREDENTIALS ===================================="
       key = "#{Rails.application.credentials.nias_demo[:private_key]}"
       pass_phrase = "#{Rails.application.credentials[:nias_passphrase]}"
       private_key = OpenSSL::PKey::RSA.new(key, pass_phrase)
