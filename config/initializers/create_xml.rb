@@ -16,7 +16,7 @@ OneLogin::RubySaml::Authrequest.class_eval do
         time = time.strftime("%Y-%m-%dT%H:%M:%SZ")
         exp_time = exp_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-        request_doc = XMLSecurity::Document.new('<?xml version="1.0" encoding="utf-8"?>')
+        request_doc = XMLSecurity::Document.new()
 
         root = request_doc.add_element "AuthnRequest", { 
             "xmlns" => "urn:oasis:names:tc:SAML:2.0:protocol",

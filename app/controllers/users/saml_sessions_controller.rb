@@ -34,7 +34,7 @@ class Users::SamlSessionsController < Devise::SessionsController
       settings = OneLogin::RubySaml::Settings.new
       settings.idp_sso_service_url                = "https://niastst.fina.hr/sso-http"
       settings.protocol_binding                   = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-      settings.assertion_consumer_service_url     = "https://localhost:3000/users/nias/auth"
+      settings.assertion_consumer_service_url     = "#{request.protocol}#{request.host_with_port}/users/nias/auth"
       settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
       settings.issuer                             = "#{Rails.application.credentials[:nias_issuer]}"
       settings.name_identifier_format             = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
@@ -46,6 +46,7 @@ class Users::SamlSessionsController < Devise::SessionsController
       settings.security[:authn_requests_signed]   = true
       settings.security[:embed_sign]              = false
       settings.security[:signature_method]        = XMLSecurity::Document::RSA_SHA256
+      settings.double_quote_xml_attribute_values  = true
       settings.private_key = private_key.to_s
       
       return settings
