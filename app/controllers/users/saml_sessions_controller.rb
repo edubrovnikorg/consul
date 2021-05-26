@@ -41,10 +41,11 @@ class Users::SamlSessionsController < Devise::SessionsController
       settings.authn_context                      = ""
       settings.idp_sso_target_url                 = "https://niastst.fina.hr/sso-http"
       settings.idp_cert                           = "#{Rails.application.credentials.nias_demo[:cert]}"
+      settings.certificate                        = "#{Rails.application.credentials.nias_demo[:cert]}"
       settings.private_key                        = "#{Rails.application.credentials.nias_demo[:key]}"
       settings.compress_request                   = true
       settings.security[:authn_requests_signed]   = true
-      settings.security[:embed_sign]              = false
+      settings.security[:embed_sign]              = true
       settings.security[:signature_method]        = XMLSecurity::Document::RSA_SHA256
       settings.double_quote_xml_attribute_values  = true
       settings.private_key = private_key.to_s

@@ -15,14 +15,14 @@ OneLogin::RubySaml::Authrequest.class_eval do
         request_doc = create_authentication_xml_doc(settings)
         request_doc.context[:attribute_quote] = :quote if settings.double_quote_xml_attribute_values
         xml = Nokogiri::XML(request_doc.to_s, nil, 'utf-8')
-        signed_doc = settings.get_sp_key.sign(sign_algorithm.new, xml.to_s)
-        
+        xml.search("//*[name() = 'ds:Signature']").remove
+
         Rails.logger.debug "============================== SAML REQUEST ===================================="
         Rails.logger.debug "SAMLRequest/XML doc >> "
         Rails.logger.debug "#{xml.to_s}"
         Rails.logger.debug "============================== SAML REQUEST ===================================="
 
-        request = deflate(signed_doc) if settings.compress_request
+        request = deflate(xml) if settings.compress_request
         base64_request = encode(request)
         request_params = {"SAMLRequest" => base64_request}
 
@@ -31,7 +31,7 @@ OneLogin::RubySaml::Authrequest.class_eval do
         # conflicts so this line will solve them.
         request_params["RelayState"] = params[:RelayState] || params['RelayState']
     
-        if settings.security[:authn_requests_signed] && !settings.security[:embed_sign] && settings.private_key
+        if settings.security[:authn_requests_signed] && settings.security[:embed_sign] && settings.private_key
             request_params['SigAlg'] = settings.security[:signature_method]
             url_string = OneLogin::RubySaml::Utils.build_query(
                 :type => 'SAMLRequest',
