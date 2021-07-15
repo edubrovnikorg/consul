@@ -12,11 +12,11 @@ OneLogin::RubySaml::Authrequest.class_eval do
       def create_xml_document(settings)
         time = Time.now.utc
         exp_time = time + 84600
-
         time = time.strftime("%Y-%m-%dT%H:%M:%SZ")
         exp_time = exp_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
         request_doc = XMLSecurity::Document.new()
+        request_doc << REXML::XMLDecl.new("1.0", "utf-8")
 
         root = request_doc.add_element "AuthnRequest", { 
             "xmlns" => "urn:oasis:names:tc:SAML:2.0:protocol",
@@ -31,7 +31,10 @@ OneLogin::RubySaml::Authrequest.class_eval do
         root.attributes["AssertionConsumerServiceURL"] = settings.assertion_consumer_service_url
 
         # Issuer
-        issuer = root.add_element "Issuer", { "Format" => "urn:oasis:names:tc:SAML:1.1:nameid-format:entity" }
+        issuer = root.add_element "Issuer", { 
+          "Format" => "urn:oasis:names:tc:SAML:1.1:nameid-format:entity", 
+          "xmlns" => "urn:oasis:names:tc:SAML:2.0:assertion"
+        }
         issuer.text = settings.issuer
 
         # Name ID Policy
@@ -44,11 +47,11 @@ OneLogin::RubySaml::Authrequest.class_eval do
           "xmlns"         => "urn:oasis:names:tc:SAML:2.0:assertion"
         }
         conditions.add_element "OneTimeUse"
-        conditions.add_element "Condition", {
-            "xmlns:q1"                          => "http://nias.eid.com.hr/2012/07/saml20Extension",
-            "xsi:type"                          => "q1:NiasConditionType",
-            "MinAuthenticationSecurityLevel"    => "1"
-        }
+        # conditions.add_element "Condition", {
+        #     "xmlns:q1"                          => "http://nias.eid.com.hr/2012/07/saml20Extension",
+        #     "xsi:type"                          => "q1:NiasConditionType",
+        #     "MinAuthenticationSecurityLevel"    => "1"
+        # }
 
         # Return request
         request_doc
