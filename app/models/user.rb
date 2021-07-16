@@ -146,6 +146,30 @@ class User < ApplicationRecord
   end
 
   # Get the existing user by email if the provider gives us a verified email.
+  def self.first_or_initialize_for_nias(auth)
+    nias_oib           = auth[:oib]
+    nias_user         = User.find_by(oib: nias_oib) if nias_oib
+    username = ('a'..'z').to_a.shuffle[0,8].join
+
+    nias_user || User.new(
+      username:  username,
+      email: username +"@example.com",
+      oauth_email: nil,
+      password: Devise.friendly_token[0, 20],
+      terms_of_service: "1",
+      confirmed_at: DateTime.current,
+      approved: true,
+      ime: auth[:ime],
+      prezime: auth[:prezime],
+      oib: auth[:oib],
+      tid: auth[:tid],
+      subject_id_format: auth[:subjectIdFormat],
+      session_index: auth[:sessionIndex],
+      subject_id: auth[:subjectId]
+    )
+  end
+
+  # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
     oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)

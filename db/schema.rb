@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_161250) do
+ActiveRecord::Schema.define(version: 2021_07_16_091113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1561,11 +1561,19 @@ ActiveRecord::Schema.define(version: 2021_04_20_161250) do
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.boolean "approved", default: false, null: false
+    t.string "ime", default: "f"
+    t.string "prezime", default: "f"
+    t.bigint "oib", default: 0
+    t.bigint "tid", default: 0
+    t.string "subject_id_format", default: "f"
+    t.string "session_index", default: "f"
+    t.string "subject_id", default: "f"
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["geozone_id"], name: "index_users_on_geozone_id"
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
+    t.index ["oib"], name: "index_users_on_oib"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username"
