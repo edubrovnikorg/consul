@@ -158,7 +158,6 @@ class User < ApplicationRecord
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
       confirmed_at: DateTime.current,
-      approved: true,
       ime: auth[:ime],
       prezime: auth[:prezime],
       oib: auth[:oib],
