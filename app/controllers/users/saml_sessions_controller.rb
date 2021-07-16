@@ -15,7 +15,7 @@ class Users::SamlSessionsController < Devise::OmniauthCallbacksController
   
   private
     def nias_login
-      "#{request.protocol}#{request.host_with_port}:8080/NiasIntegrationTest/loginNiasRequest";
+      "http://#{request.host_with_port}:8080/NiasIntegrationTest/loginNiasRequest";
     end
     
     def nias_sign_in(params)
