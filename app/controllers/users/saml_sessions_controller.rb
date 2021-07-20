@@ -8,9 +8,9 @@ class Users::SamlSessionsController < Devise::OmniauthCallbacksController
 
   def auth
     logger.debug "============================== SAML RESPONSE ===================================="
-    logger.debug "RESPONSE >> #{params[:saml_session]}"
+    logger.debug "RESPONSE >> #{params}"
     logger.debug "============================== SAML RESPONSE ===================================="
-    nias_sign_in params[:saml_session]
+    nias_sign_in params
   end
   
   private
