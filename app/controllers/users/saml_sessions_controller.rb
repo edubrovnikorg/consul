@@ -1,6 +1,7 @@
-class Users::SamlSessionsController < Devise::OmniauthCallbacksController
-  skip_before_action :verify_authenticity_token 
-  prepend_before_action :require_no_authentication
+class Users::SamlSessionsController < Devise::SessionsController
+  skip_before_action :verify_authenticity_token
+  prepend_before_action :require_no_authentication, only: [:sson, :auth]
+  prepend_before_action :allow_params_authentication!, only: :auth
 
   def sson
     redirect_to url_nias(:login), turbolinks:false
@@ -40,8 +41,8 @@ class Users::SamlSessionsController < Devise::OmniauthCallbacksController
       logger.debug "PERSISTED >> #{@user.persisted?}"
 
       if @user.persisted?
-        sign_in :user, @user
-        redirect_to welcome_path, notice: "Uspješno ste prijavljeni putem sustava NIAS!"
+        sign_in(resource_name, @user)
+        respond_with @user, location: after_sign_in_path_for(resource)
       else
         redirect_to welcome_path, notice: "Pogreška prilikom prijave!"
       end
@@ -58,4 +59,11 @@ class Users::SamlSessionsController < Devise::OmniauthCallbacksController
         redirect_to welcome_path, notice: "Odjava je zaustavljena."
       end
     end
+      # def nias_params
+      #   params.permit(:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat)
+      #   username = ('a'..'z').to_a.shuffle[0,8].join
+      #   password = Devise.friendly_token[0, 20]
+      #   params.merge(:locale => "hr", :username => username, email => username+"@example.com", 
+      #     :password => password, :password_confirmation => password, terms_of_service => 1))
+      # end
 end

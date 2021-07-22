@@ -1,7 +1,7 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
 <h2><%= t("devise_views.users.registrations.new.title") %></h2>
 
-<%= link_to t("devise_views.menu.login_items.saml"), new_user_sso_session_path, 
+<%= link_to t("devise_views.menu.login_items.saml"), nias_login_path, 
 data: { turbolinks: false }, rel: "nofollow", class: "button" %>
 
 
