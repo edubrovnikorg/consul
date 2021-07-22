@@ -147,25 +147,37 @@ class User < ApplicationRecord
 
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_nias(auth)
-    nias_oib           = auth[:oib]
+    logger.debug "INITIALIZE FOR NIAS"
+    nias_oib           = auth[:oib] unless auth[:oib].empty?
     nias_user         = User.find_by(oib: nias_oib) if nias_oib
-    username = ('a'..'z').to_a.shuffle[0,8].join
+    
+    logger.debug "#{nias_oib}"
+    logger.debug "#{nias_user}"
 
-    nias_user || User.new(
-      username:  username,
-      email: username +"@example.com",
-      oauth_email: nil,
-      password: Devise.friendly_token[0, 20],
-      terms_of_service: "1",
-      confirmed_at: DateTime.current,
-      ime: auth[:ime],
-      prezime: auth[:prezime],
-      oib: auth[:oib],
-      tid: auth[:tid],
-      subject_id_format: auth[:subjectIdFormat],
-      session_index: auth[:sessionIndex],
-      subject_id: auth[:subjectId]
-    )
+    if nias_user.blank?
+      username = ('a'..'z').to_a.shuffle[0,8].join
+
+      nias_user = User.new(
+        username:  username,
+        email: username +"@example.com",
+        oauth_email: nil,
+        password: Devise.friendly_token[0, 20],
+        terms_of_service: "1",
+        confirmed_at: DateTime.current,
+        ime: auth[:ime],
+        prezime: auth[:prezime],
+        oib: auth[:oib],
+        tid: auth[:tid],
+        subject_id_format: auth[:subjectIdFormat],
+        session_index: auth[:sessionIndex],
+        subject_id: auth[:subjectId]
+      )
+
+      nias_user[:approved] = true;
+      nias_user.save!
+    end
+
+    nias_user
   end
 
   # Get the existing user by email if the provider gives us a verified email.
