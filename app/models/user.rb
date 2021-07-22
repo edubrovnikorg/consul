@@ -150,9 +150,6 @@ class User < ApplicationRecord
     logger.debug "INITIALIZE FOR NIAS"
     nias_oib           = auth[:oib] unless auth[:oib].empty?
     nias_user         = User.find_by(oib: nias_oib) if nias_oib
-    
-    logger.debug "#{nias_oib}"
-    logger.debug "#{nias_user}"
 
     if nias_user.blank?
       username = ('a'..'z').to_a.shuffle[0,8].join
@@ -173,6 +170,7 @@ class User < ApplicationRecord
         subject_id: auth[:subjectId]
       )
 
+      nias_user[:residence_verified_at] = DateTime.current
       nias_user[:approved] = true;
       nias_user.save!
     end

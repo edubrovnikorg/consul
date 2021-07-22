@@ -1,4 +1,4 @@
-class Users::SamlSessionsController < Devise::SessionsController
+class Users::SamlSessionsController < Devise::RegistrationsController
   skip_before_action :verify_authenticity_token
   prepend_before_action :require_no_authentication, only: [:sson, :auth]
   prepend_before_action :allow_params_authentication!, only: :auth
@@ -8,7 +8,7 @@ class Users::SamlSessionsController < Devise::SessionsController
   end
 
   def auth
-    nias_sign_in params
+    nias_sign_in nias_params
   end
   
   def ssout
@@ -35,35 +35,33 @@ class Users::SamlSessionsController < Devise::SessionsController
     end
 
     def nias_sign_in(params)
-      @user = User.first_or_initialize_for_nias(params)
-      
-      logger.debug "USER >> #{@user}"
-      logger.debug "PERSISTED >> #{@user.persisted?}"
+      @user =  User.first_or_initialize_for_nias(params)
 
       if @user.persisted?
-        sign_in(resource_name, @user)
-        respond_with @user, location: after_sign_in_path_for(resource)
+        warden.set_user(@user, scope: resource_name)
+        redirect_to root_path, notice: "Uspješna prijava!"
       else
-        redirect_to welcome_path, notice: "Pogreška prilikom prijave!"
+        redirect_to root_path, notice: "Pogreška prilikom prijave!"
       end
     end
 
     def nias_sign_out(status)
       logger.debug "CURRENT USER >> #{current_user}"
-      logger.debug "params >> #{params}"
+      logger.debug "STATUS >> #{status}"
 
       if status
         sign_out current_user
-        redirect_to welcome_path, notice: "Uspješno ste odjavljeni!"
+        redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
-        redirect_to welcome_path, notice: "Odjava je zaustavljena."
+        redirect_to root_path, notice: "Odjava je zaustavljena."
       end
     end
-      # def nias_params
-      #   params.permit(:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat)
-      #   username = ('a'..'z').to_a.shuffle[0,8].join
-      #   password = Devise.friendly_token[0, 20]
-      #   params.merge(:locale => "hr", :username => username, email => username+"@example.com", 
-      #     :password => password, :password_confirmation => password, terms_of_service => 1))
-      # end
+
+    def nias_params
+      params.permit(:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat)
+      username = ('a'..'z').to_a.shuffle[0,8].join
+      password = Devise.friendly_token[0, 20]
+      params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
+        :password => password, :password_confirmation => password, :terms_of_service => 1)
+    end
 end

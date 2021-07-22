@@ -11,7 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    byebug
     build_resource(sign_up_params)
     if resource.valid?
       super

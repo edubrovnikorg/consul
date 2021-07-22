@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+  skip_before_action :verify_authenticity_token
+
   def destroy
     @stored_location = stored_location_for(:user)
     super
