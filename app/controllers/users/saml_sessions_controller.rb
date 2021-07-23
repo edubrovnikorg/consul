@@ -39,7 +39,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
       if @user.persisted?
         warden.set_user(@user, scope: resource_name)
-        redirect_to root_path, notice: "Uspješna prijava!"
+        sign_in_and_redirect current_user, event: :authentication
       else
         redirect_to root_path, notice: "Pogreška prilikom prijave!"
       end
