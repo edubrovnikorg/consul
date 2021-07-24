@@ -1,6 +1,6 @@
 class Users::SamlSessionsController < Devise::RegistrationsController
   skip_before_action :verify_authenticity_token
-  prepend_before_action :require_no_authentication, only: [:sson, :auth]
+  prepend_before_action :authenticate_user!, only: [:ssout, :destroy]
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def sson
@@ -13,6 +13,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   
   def ssout
     redirect_to url_nias(:logout), turbolinks:false
+  end
+
+  def post_sign_up
+    clean_up_passwords(resource)
+    redirect_to root_path
   end
 
   def destroy
@@ -35,11 +40,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def nias_sign_in(params)
-      @user =  User.first_or_initialize_for_nias(params)
+      self.resource = warden.authenticate!(auth_options)
+      sign_in(resource)
+      self.resource =  User.first_or_initialize_for_nias(params)
 
-      if @user.persisted?
-        warden.set_user(@user, scope: resource_name)
-        sign_in_and_redirect current_user, event: :authentication
+      if resource.persisted?
+        redirect_to :action => 'post_sign_up'
       else
         redirect_to root_path, notice: "Pogreška prilikom prijave!"
       end
@@ -63,5 +69,16 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       password = Devise.friendly_token[0, 20]
       params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
         :password => password, :password_confirmation => password, :terms_of_service => 1)
+    end
+
+    def auth_options
+      { scope: resource_name, recall: "#{controller_path}#new" }
+    end
+
+    def serialize_options(resource)
+      methods = resource_class.authentication_keys.dup
+      methods = methods.keys if methods.is_a?(Hash)
+      methods << :password if resource.respond_to?(:password)
+      { methods: methods, only: [:password] }
     end
 end

@@ -14,6 +14,8 @@ class WelcomeController < ApplicationController
     @remote_translations = detect_remote_translations(@feeds,
                                                       @recommended_debates,
                                                       @recommended_proposals)
+
+                                                      logger.debug "CURRENT USER>> #{current_user}"
   end
 
   def welcome
