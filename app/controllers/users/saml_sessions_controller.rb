@@ -4,7 +4,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def index
-    byebug
     @user = resource
     render :index
   end
