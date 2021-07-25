@@ -3,6 +3,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :authenticate_user!, only: [:ssout, :destroy]
   prepend_before_action :allow_params_authentication!, only: :auth
 
+  def index
+    byebug
+    @user = resource
+    render :index
+  end
+
   def sson
     redirect_to url_nias(:login), turbolinks:false
   end
@@ -10,8 +16,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     # warden.authenticate!(:nias_login)
     # @user = User.where(oib: 23457554).first    
-    @user = User.first_or_initialize_for_nias(nias_params)
-    # redirect_to :action => 'finish_sign_up', id: resource
+    self.resource = User.first_or_initialize_for_nias(nias_params)
+    index
   end
   
   def ssout
