@@ -10,21 +10,28 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     logger.debug current_user
     self.resource = User.first_or_initialize_for_nias(nias_params)
-    sign_in_and_redirect resource, event: :authentication
-    set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
+    redirect_to :action => 'finish_sign_up', resource: resource
   end
   
   def ssout
     redirect_to url_nias(:logout), turbolinks:false
   end
 
-  # def finish_sign_up
+  def finish_sign_up
+    logger.debug "RESOURCE>> #{resource}"
+    logger.debug "CURRENT USER>> #{current_user}"
+    resource = User.find_by(id: params[:resource])
+    logger.debug "RESOURCE USER>> #{resource}"
+    logger.debug "PARAMS>> #{params}"
+
+    sign_in_and_redirect resource, event: :authentication
+    set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
   #   if sign_up(resource_name, resource)
   #     redirect_to root_path, notice: "Uspješno ste prijavljeni!"
   #   else
   #     redirect_to root_path, notice: "Greška prilikom prijave!"
   #   end
-  # end
+  end
 
   def destroy
     nias_sign_out params
