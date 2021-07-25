@@ -8,10 +8,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def auth
-    warden.authenticate!(:nias_login)
-    logger.debug current_user
-    # self.resource = User.first_or_initialize_for_nias(nias_params)
-    redirect_to :action => 'finish_sign_up', id: resource
+    # warden.authenticate!(:nias_login)
+    # @user = User.where(oib: 23457554).first    
+    @user = User.first_or_initialize_for_nias(nias_params)
+    # redirect_to :action => 'finish_sign_up', id: resource
   end
   
   def ssout
@@ -19,11 +19,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def finish_sign_up
-    logger.debug "RESOURCE>> #{resource}"
-    logger.debug "CURRENT USER>> #{current_user}"
-    logger.debug "RESOURCE USER>> #{resource}"
-    logger.debug "PARAMS>> #{params}"
-
+    log_in_with_nias
     redirect_to root_path
     # redirect_to after_sign_in_path_for(resource)
     # sign_in_and_redirect resource, event: :authentication
@@ -54,6 +50,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url
     end
 
+    def log_in_with_nias
+      # warden.authenticate!(:nias_login)
+      user = User.find_by(id: params[:resource])
+      sign_in(user)
+    end
     # def nias_sign_in(params)
     #   self.resource = warden.authenticate!(auth_options)
     #   sign_in(resource)

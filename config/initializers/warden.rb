@@ -14,9 +14,9 @@ module Devise
             puts "SESSION>> #{session}"
             puts "PARAMS>> #{params}"
 
+            user = User.where(id: params[:resource]).first
+            puts "USER>> #{user}"
 
-            user = User.first_or_initialize_for_nias(params)
-        
             if user
                 remember_me(user)
                 user.after_database_authentication

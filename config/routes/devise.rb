@@ -11,7 +11,7 @@ devise_scope :user do
     post :auth, path: "nias/auth", as: :user_sso_session
     post :destroy, path: "nias/logout", as: :destroy_user_sso_session
     get :ssout, path: "nias/sign_out", as: :nias_logout
-    get :finish_sign_up, path: "nias/authorize", as: :nias_authorize
+    post :finish_sign_up, path: "nias/authorize", as: :nias_authorize
   end
 end
 

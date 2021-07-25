@@ -1,0 +1,6 @@
+hr:
+  devise_views:
+    menu:
+      login_items:
+        saml: Prijava putem NIAS-a
+        saml_logout: Odjava (NIAS)

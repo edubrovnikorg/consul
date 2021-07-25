@@ -1,4 +1,6 @@
 hr:
+  auth:
+    confirm: "Potvrdi prijavu"
   layouts:
     footer:
       copyright: eDubrovnik - građani upravljaju gradom, %{year}
