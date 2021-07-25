@@ -8,17 +8,23 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def auth
-    nias_sign_in nias_params
+    logger.debug current_user
+    self.resource = User.first_or_initialize_for_nias(nias_params)
+    sign_in_and_redirect resource, event: :authentication
+    set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
   end
   
   def ssout
     redirect_to url_nias(:logout), turbolinks:false
   end
 
-  def post_sign_up
-    clean_up_passwords(resource)
-    redirect_to root_path
-  end
+  # def finish_sign_up
+  #   if sign_up(resource_name, resource)
+  #     redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+  #   else
+  #     redirect_to root_path, notice: "Greška prilikom prijave!"
+  #   end
+  # end
 
   def destroy
     nias_sign_out params
@@ -27,7 +33,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   private
 
     def url_nias(action)
-      url = "http://#{request.host_with_port}:8080/NiasIntegrationTest"
+      url = "http://#{request.host_with_port}:8080/NiasIntegrationTestV2"
 
       case action
       when :login
@@ -39,17 +45,17 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url
     end
 
-    def nias_sign_in(params)
-      self.resource = warden.authenticate!(auth_options)
-      sign_in(resource)
-      self.resource =  User.first_or_initialize_for_nias(params)
+    # def nias_sign_in(params)
+    #   self.resource = warden.authenticate!(auth_options)
+    #   sign_in(resource)
+    #   self.resource =  User.first_or_initialize_for_nias(params)
 
-      if resource.persisted?
-        redirect_to :action => 'post_sign_up'
-      else
-        redirect_to root_path, notice: "Pogreška prilikom prijave!"
-      end
-    end
+    #   if resource.persisted?
+    #     redirect_to :action => 'post_sign_up'
+    #   else
+    #     redirect_to root_path, notice: "Pogreška prilikom prijave!"
+    #   end
+    # end
 
     def nias_sign_out(status)
       logger.debug "CURRENT USER >> #{current_user}"
@@ -64,21 +70,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def nias_params
-      params.permit(:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat)
+      params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat])
       username = ('a'..'z').to_a.shuffle[0,8].join
       password = Devise.friendly_token[0, 20]
       params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
         :password => password, :password_confirmation => password, :terms_of_service => 1)
-    end
-
-    def auth_options
-      { scope: resource_name, recall: "#{controller_path}#new" }
-    end
-
-    def serialize_options(resource)
-      methods = resource_class.authentication_keys.dup
-      methods = methods.keys if methods.is_a?(Hash)
-      methods << :password if resource.respond_to?(:password)
-      { methods: methods, only: [:password] }
     end
 end

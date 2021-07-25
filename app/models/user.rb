@@ -148,10 +148,10 @@ class User < ApplicationRecord
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_nias(auth)
     logger.debug "INITIALIZE FOR NIAS"
-    nias_oib           = auth[:oib] unless auth[:oib].empty?
-    nias_user         = User.find_by(oib: nias_oib) if nias_oib
 
-    if nias_user.blank?
+    nias_user = User.find_by(oib: :oib)
+
+    if nias_user.nil?
       username = ('a'..'z').to_a.shuffle[0,8].join
 
       nias_user = User.new(
@@ -174,7 +174,7 @@ class User < ApplicationRecord
       nias_user[:approved] = true;
       nias_user.save!
     end
-
+    logger.debug nias_user
     nias_user
   end
 
