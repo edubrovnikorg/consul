@@ -10,7 +10,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     logger.debug current_user
     self.resource = User.first_or_initialize_for_nias(nias_params)
-    redirect_to :action => 'finish_sign_up', resource: resource
+    redirect_to :action => 'finish_sign_up', id: resource
   end
   
   def ssout
@@ -20,12 +20,14 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def finish_sign_up
     logger.debug "RESOURCE>> #{resource}"
     logger.debug "CURRENT USER>> #{current_user}"
-    resource = User.find_by(id: params[:resource])
+    resource = User.find_by(id: params[:id])
     logger.debug "RESOURCE USER>> #{resource}"
     logger.debug "PARAMS>> #{params}"
 
-    sign_in_and_redirect resource, event: :authentication
-    set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
+    sign_in(resource_name, resource)
+    redirect_to after_sign_in_path_for(resource)
+    # sign_in_and_redirect resource, event: :authentication
+    # set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
   #   if sign_up(resource_name, resource)
   #     redirect_to root_path, notice: "Uspješno ste prijavljeni!"
   #   else
