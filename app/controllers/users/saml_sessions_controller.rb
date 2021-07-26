@@ -4,9 +4,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def index
-    # @user = User.where(id: params[:id])
-    # render :index
-    log_in_with_nias
+    @user = get_nias_user
+    render :index
+    # log_in_with_nias
   end
 
   def sson
@@ -16,11 +16,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     # warden.authenticate!(:nias_login)
     # @user = User.where(oib: 23457554).first    
-    password = Devise.friendly_token[0, 20]
     user = User.first_or_initialize_for_nias(nias_params, password)
     # redirect_to :action => 'index', id: user
     head :no_content 
-    redirect_to nias_index_path(id: user) 
+    # redirect_to nias_index_path(id: user) 
   end
   
   def ssout
@@ -47,7 +46,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   private
 
     def url_nias(action)
-      url = "http://#{request.host_with_port}:8080/NiasIntegrationTestV2"
+      url = "http://#{request.host_with_port}:8080/NiasIntegrationTest"
 
       case action
       when :login
@@ -64,7 +63,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       user = User.find_by(id: params[:id])
       user.registering_with_oauth = false
       user.remember_me = true
-      sign_in_and_redirect user, event: :authentication
+      # sign_in_and_redirect user, event: :authentication
     end
     # def nias_sign_in(params)
     #   self.resource = warden.authenticate!(auth_options)
@@ -77,6 +76,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     #     redirect_to root_path, notice: "Pogreška prilikom prijave!"
     #   end
     # end
+
+    def get_nias_user
+      User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+    end
 
     def nias_sign_out(status)
       logger.debug "CURRENT USER >> #{current_user}"

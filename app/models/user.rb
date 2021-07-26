@@ -146,7 +146,7 @@ class User < ApplicationRecord
   end
 
   # Get the existing user by email if the provider gives us a verified email.
-  def self.first_or_initialize_for_nias(auth, pwd)
+  def self.first_or_initialize_for_nias(auth)
     logger.debug "INITIALIZE FOR NIAS"
 
     nias_user = User.exists?(oib: auth[:oib])
@@ -158,7 +158,7 @@ class User < ApplicationRecord
         username:  username,
         email: username +"@example.com",
         oauth_email: nil,
-        password: pwd,
+        password: Devise.friendly_token[0, 20],
         terms_of_service: "1",
         confirmed_at: DateTime.current,
         ime: auth[:ime],
