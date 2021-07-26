@@ -61,9 +61,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     def log_in_with_nias
       # warden.authenticate!(:nias_login)
       user = User.find_by(id: params[:id])
-      user.registering_with_oauth = false
       user.remember_me = true
-      # sign_in_and_redirect user, event: :authentication
+      sign_in_and_redirect user, event: :authentication
     end
     # def nias_sign_in(params)
     #   self.resource = warden.authenticate!(auth_options)
