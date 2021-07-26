@@ -173,6 +173,11 @@ class User < ApplicationRecord
       nias_user[:residence_verified_at] = DateTime.current
       nias_user[:approved] = true;
       nias_user.save!
+    else
+      nias_user = User.find_by(oib: auth[:oib])
+      nias_user.session_index = auth[:sessionIndex]
+      nias_user.subject_id = auth[:subjectId]
+      nias_user.save!
     end
     nias_user = User.find_by(oib: auth[:oib])
   end
