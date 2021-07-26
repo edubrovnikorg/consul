@@ -19,7 +19,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     password = Devise.friendly_token[0, 20]
     user = User.first_or_initialize_for_nias(nias_params, password)
     # redirect_to :action => 'index', id: user
-    redirect_to nias_index_path(id: user) and return
+    head :no_content 
+    redirect_to nias_index_path(id: user) 
   end
   
   def ssout

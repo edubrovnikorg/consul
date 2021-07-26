@@ -16,6 +16,8 @@ class WelcomeController < ApplicationController
                                                       @recommended_proposals)
 
                                                       logger.debug "CURRENT USER>> #{current_user}"
+                                                      logger.debug "SESSION>> #{session}"
+
   end
 
   def welcome
