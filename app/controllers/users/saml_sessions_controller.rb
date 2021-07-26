@@ -4,8 +4,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def index
-    @user = resource
-    render :index
+    # @user = User.where(id: params[:id])
+    # render :index
+    log_in_with_nias
   end
 
   def sson
@@ -15,8 +16,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     # warden.authenticate!(:nias_login)
     # @user = User.where(oib: 23457554).first    
-    self.resource = User.first_or_initialize_for_nias(nias_params)
-    index
+    password = Devise.friendly_token[0, 20]
+    user = User.first_or_initialize_for_nias(nias_params, password)
+    # redirect_to :action => 'index', id: user
+    redirect_to nias_index_path(id: user) and return
   end
   
   def ssout
@@ -25,7 +28,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def finish_sign_up
     log_in_with_nias
-    redirect_to root_path
+    # redirect_to root_path
     # redirect_to after_sign_in_path_for(resource)
     # sign_in_and_redirect resource, event: :authentication
     # set_flash_message(:notice, :success, kind: :nias.to_s.capitalize) if is_navigational_format?
@@ -57,8 +60,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def log_in_with_nias
       # warden.authenticate!(:nias_login)
-      user = User.find_by(id: params[:resource])
-      sign_in(user)
+      user = User.find_by(id: params[:id])
+      user.registering_with_oauth = false
+      user.remember_me = true
+      sign_in_and_redirect user, event: :authentication
     end
     # def nias_sign_in(params)
     #   self.resource = warden.authenticate!(auth_options)
