@@ -16,7 +16,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     # warden.authenticate!(:nias_login)
     # @user = User.where(oib: 23457554).first    
-    user = User.first_or_initialize_for_nias(nias_params, password)
+    user = User.first_or_initialize_for_nias(nias_params)
     # redirect_to :action => 'index', id: user
     head :no_content 
     # redirect_to nias_index_path(id: user) 
