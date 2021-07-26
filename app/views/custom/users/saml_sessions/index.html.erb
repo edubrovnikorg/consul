@@ -1,6 +1,6 @@
 <h1>Dobrodošli, <%= @user.ime %> <%= @user.prezime %></h1>
 
-<%= link_to t("general.auth.confirm"), nias_user_session_path(resource: @user), 
+<%= link_to t("general.auth.confirm"), nias_user_session_path(id: @user), 
 data: { turbolinks: false }, :method => :post, rel: "nofollow", class: "button" %>
 
 <p>Kako biste se prijavili, molimo potvrdite vaše podatke.</p>

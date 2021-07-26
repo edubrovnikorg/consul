@@ -3,7 +3,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :authenticate_user!, only: [:ssout, :destroy]
   prepend_before_action :allow_params_authentication!, only: :auth
 
-  def index
+  def show
     @user = get_nias_user
     render :index
     # log_in_with_nias
@@ -60,8 +60,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def log_in_with_nias
       # warden.authenticate!(:nias_login)
-      user = User.find_by(id: params[:id])
-      sign_in_and_redirect user, event: :authentication
+      user = User.where(id: params[:id]).first
+      if sign_in(:user, user)
+        redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+      else
+        redirect_to root_path, notice: "Greška prilikom prijave!"
+      end
     end
     # def nias_sign_in(params)
     #   self.resource = warden.authenticate!(auth_options)
