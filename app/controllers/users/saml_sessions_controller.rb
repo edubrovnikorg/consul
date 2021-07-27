@@ -44,7 +44,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       when :login
         url << "/loginNiasRequest";
       when :logout
-        url << "/logoutNiasRequest?subjectId=#{current_user.subject_id}&subjectIdFormat=#{current_user.subject_id_format}&sessionIndex=#{current_user.session_index}" 
+        subject_id = CGI.escape(current_user.subject_id)
+        subject_id_format = CGI.escape(current_user.subject_id_format)
+        session_index = CGI.escape(current_user.session_index)
+        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}" 
       end
 
       url
