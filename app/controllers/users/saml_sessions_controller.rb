@@ -4,7 +4,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    @user = get_nias_user
+    @user = get_nias_user(:session)
     render :index
   end
 
@@ -13,12 +13,18 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def auth    
-    user = User.first_or_initialize_for_nias(nias_params)
+    user = get_nias_user(:login)
     head :no_content 
   end
   
   def ssout
     redirect_to url_nias(:logout), turbolinks:false
+  end
+
+  def after_initiate_logout
+    prepare_user_for_logout
+
+    head :no_content 
   end
 
   def finish_sign_up
@@ -44,8 +50,24 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url
     end
 
-    def get_nias_user
-      User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+    def get_nias_user(action, param = nil)
+      user = nil 
+      case action
+      when :login
+        user = User.first_or_initialize_for_nias(nias_params)
+      when :session
+        user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+      when :logout
+        user = User.where(logout_request_id: param)
+      end
+      raise("No user found!") unless user
+      user
+    end
+
+    def prepare_user_for_logout
+      user = get_nias_user(:session)
+      user.logout_request_id = params[:requestId]
+      user.save!
     end
 
     def log_in_with_nias
@@ -61,12 +83,17 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.debug "CURRENT USER >> #{current_user}"
       logger.debug "STATUS >> #{params}"
 
-      if status
-        sign_out current_user
-        redirect_to root_path, notice: "Uspješno ste odjavljeni!"
-      else
-        redirect_to root_path, notice: "Odjava je zaustavljena."
-      end
+      data = Base64.decode(params[:response])
+      data = JSON.parse(data)
+
+      # user = get_nias_user(:logout, data['requestId'])
+
+      # if status
+      #   sign_out current_user
+      #   redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+      # else
+      #   redirect_to root_path, notice: "Odjava je zaustavljena."
+      # end
     end
 
     def nias_params
