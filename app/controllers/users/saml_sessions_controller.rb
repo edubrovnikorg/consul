@@ -18,26 +18,16 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
   
   def ssout
-    if current_user
-      uri = URI(url_nias(:logout))
-      res = Net::HTTP.post_form(uri, 
-        'subjectIdFormat' => current_user.subject_id_format,
-        'subjectId' => current_user.subject_id,
-        'sessionIndex' => 1)
-      logger.debug 'HTTP LOGOUT POST'
-      puts res.body  if res.is_a?(Net::HTTPSuccess)
-    else
-      redirect_to root_path, notice: "Greška prilikom prijave!"
-    end
+    redirect_to url_nias(:logout), turbolinks:false
   end
 
   def finish_sign_up
     log_in_with_nias
   end
 
-  def destroy
-    nias_sign_out params
-  end 
+  def finish_sign_out
+    log_out_with_nias
+  end
 
   private
 
@@ -48,14 +38,17 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       when :login
         url << "/loginNiasRequest";
       when :logout
-        url << "/logoutNiasRequest" 
+        url << "/logoutNiasRequest?subjectId=#{current_user.subject_id}&subjectIdFormat=#{current_user.subject_id_format}&sessionIndex=#{current_user.session_index}" 
       end
 
       url
     end
 
+    def get_nias_user
+      User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+    end
+
     def log_in_with_nias
-      # warden.authenticate!(:nias_login)
       user = User.where(id: params[:id]).first
       if sign_in(:user, user)
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
@@ -63,25 +56,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         redirect_to root_path, notice: "Greška prilikom prijave!"
       end
     end
-    # def nias_sign_in(params)
-    #   self.resource = warden.authenticate!(auth_options)
-    #   sign_in(resource)
-    #   self.resource =  User.first_or_initialize_for_nias(params)
 
-    #   if resource.persisted?
-    #     redirect_to :action => 'post_sign_up'
-    #   else
-    #     redirect_to root_path, notice: "Pogreška prilikom prijave!"
-    #   end
-    # end
-
-    def get_nias_user
-      User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
-    end
-
-    def nias_sign_out(status)
+    def log_out_with_nias
       logger.debug "CURRENT USER >> #{current_user}"
-      logger.debug "STATUS >> #{status}"
+      logger.debug "STATUS >> #{params}"
 
       if status
         sign_out current_user
