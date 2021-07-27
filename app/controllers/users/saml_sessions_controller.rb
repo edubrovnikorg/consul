@@ -75,6 +75,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def log_in_with_nias
       user = User.where(id: params[:id]).first
+      # raise("No user found for log in.") unless user
       if sign_in(:user, user)
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
       else

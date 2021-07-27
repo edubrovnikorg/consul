@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_16_091113) do
+ActiveRecord::Schema.define(version: 2021_07_27_190811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1568,14 +1568,18 @@ ActiveRecord::Schema.define(version: 2021_07_16_091113) do
     t.string "subject_id_format", default: "f"
     t.string "session_index", default: "f"
     t.string "subject_id", default: "f"
+    t.string "logout_request_id", default: "f"
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["geozone_id"], name: "index_users_on_geozone_id"
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
+    t.index ["logout_request_id"], name: "index_users_on_logout_request_id"
     t.index ["oib"], name: "index_users_on_oib"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["session_index"], name: "index_users_on_session_index"
+    t.index ["subject_id_format"], name: "index_users_on_subject_id_format"
     t.index ["username"], name: "index_users_on_username"
   end
 
