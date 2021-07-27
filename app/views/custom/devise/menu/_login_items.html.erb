@@ -15,25 +15,19 @@
                               title: t("shared.go_to_page") +
                                      t("layouts.header.my_account_link") %>
   </li>
-  <%
-=begin%>
+
  <% if current_user.administrator? %> 
-<%
-=end%>
     <li>
       <%= link_to t("devise_views.menu.login_items.logout"),
                   destroy_user_session_path, rel: "nofollow", method: :delete %>
     </li>
-  <%
-=begin%>
  <% else %>
     <li>
       <%= link_to t("devise_views.menu.login_items.nias_logout"),
                   nias_logout_path, rel: "nofollow", method: :get %>
     </li>
-  <% end %> 
-<%
-=end%>
+<% end %> 
+
 <% else %>
   <li>
     <%= link_to t("devise_views.menu.login_items.login"),
