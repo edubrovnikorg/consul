@@ -35,11 +35,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     log_out_with_nias
   end
 
-  def logout
-    head :no_content 
-  end
-
-
   private
 
     def url_nias(action)
