@@ -69,7 +69,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def prepare_user_for_logout
       raise("Parameters are not supported.") unless params[:SAMLResponse]
-      data = Base64.decode(params[:SAMLResponse])
+      data = Base64.decode64(params[:SAMLResponse])
       data = JSON.parse(data, object_class: OpenStruct)
       logger.debug "LOGOUT PARSED JSON>> #{data}"
       user = get_nias_user(:session, data)
