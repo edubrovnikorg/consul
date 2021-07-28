@@ -59,7 +59,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       when :login
         user = User.first_or_initialize_for_nias(nias_params)
       when :session
-        params = {:sessionIndex => "data", :subjectId: "dadddada"}
         user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
       when :logout
         user = User.where(logout_request_id: param).first
