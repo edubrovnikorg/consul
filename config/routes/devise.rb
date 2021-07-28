@@ -10,10 +10,10 @@ devise_scope :user do
     get :show, path: "nias/authorize", as: :nias_index
     get :sson, path: "nias/login", as: :nias_login
     post :auth, path: "nias/auth", as: :user_sso_session
-    get :ssout, path: "nias/logout_request", as: :nias_logout
     post :finish_sign_up, path: "nias/finish", as: :nias_user_session
+    get :ssout, path: "nias/logout_request", as: :nias_logout
+    post :after_initiate_logout, path: "nias/logoutResponse"
     get :finish_sign_out, path: "nias/sign_out", as: :nias_destroy_user_session
-    post :after_initiate_logout, path: "nias/logout"
   end
 end
 

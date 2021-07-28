@@ -68,12 +68,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def prepare_user_for_logout
-      raise("Parameters are not supported.") unless params[:SAMLResponse]
-      data = Base64.decode64(params[:SAMLResponse])
-      data = JSON.parse(data, object_class: OpenStruct)
-      logger.debug "LOGOUT PARSED JSON>> #{data}"
+      raise("Nias sign out failure.") unless params[:requestId]
       user = get_nias_user(:session, data)
-      user.logout_request_id = params[:SAMLResponse]
+      user.logout_request_id = params[:requestId]
       user.save!
     end
 
@@ -91,17 +88,17 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.debug "CURRENT USER >> #{current_user}"
       logger.debug "STATUS >> #{params}"
 
-      data = Base64.decode(params[:response], object_class: OpenStruct)
-      data = JSON.parse(data)
+      data = Base64.decode(params[:response])
+      data = JSON.parse(data, object_class: OpenStruct)
 
-      # user = get_nias_user(:logout, data['requestId'])
+      user = get_nias_user(:logout, data[:requestId])
 
-      # if status
-      #   sign_out current_user
-      #   redirect_to root_path, notice: "Uspješno ste odjavljeni!"
-      # else
-      #   redirect_to root_path, notice: "Odjava je zaustavljena."
-      # end
+      if user
+        sign_out current_user
+        redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+      else
+        redirect_to root_path, notice: "Odjava je zaustavljena."
+      end
     end
 
     def nias_params
