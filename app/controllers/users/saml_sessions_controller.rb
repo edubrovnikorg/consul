@@ -59,6 +59,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       when :login
         user = User.first_or_initialize_for_nias(nias_params)
       when :session
+        params = {:sessionIndex => "data", :subjectId: "dadddada"}
         user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
       when :logout
         user = User.where(logout_request_id: param).first
@@ -69,7 +70,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def prepare_user_for_logout
       raise("Parameters are not supported.") unless params[:SAMLResponse]
-      user = get_nias_user(:session)
+      data = Base64.decode(params[:SAMLResponse])
+      data = JSON.parse(data, object_class: OpenStruct)
+      logger.debug "LOGOUT PARSED JSON>> #{data}"
+      user = get_nias_user(:session, data)
       user.logout_request_id = params[:SAMLResponse]
       user.save!
     end
@@ -88,7 +92,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.debug "CURRENT USER >> #{current_user}"
       logger.debug "STATUS >> #{params}"
 
-      data = Base64.decode(params[:response])
+      data = Base64.decode(params[:response], object_class: OpenStruct)
       data = JSON.parse(data)
 
       # user = get_nias_user(:logout, data['requestId'])
