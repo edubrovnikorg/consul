@@ -69,7 +69,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def prepare_user_for_logout
       raise("Nias sign out failure.") unless params[:requestId]
-      user = get_nias_user(:session, data)
+      user = get_nias_user(:session)
       user.logout_request_id = params[:requestId]
       user.save!
     end
@@ -94,7 +94,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       user = get_nias_user(:logout, data[:requestId])
 
       if user
-        sign_out current_user
+        sign_out user
         redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
         redirect_to root_path, notice: "Odjava je zaustavljena."
