@@ -61,15 +61,16 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       when :session
         user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
       when :logout
-        user = User.where(logout_request_id: param)
+        user = User.where(logout_request_id: param).first
       end
       raise("No user found!") unless user
       user
     end
 
     def prepare_user_for_logout
+      raise("Parameters are not supported.") unless params[:SAMLResponse]
       user = get_nias_user(:session)
-      user.logout_request_id = params[:requestId]
+      user.logout_request_id = params[:SAMLResponse]
       user.save!
     end
 
