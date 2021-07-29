@@ -38,7 +38,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   private
 
     def url_nias(action)
-      url = "http://#{request.host_with_port}:8080/NiasIntegrationTest"
+      url = "http://#{request.host_with_port}:8443/NiasIntegrationTest"
 
       case action
       when :login
