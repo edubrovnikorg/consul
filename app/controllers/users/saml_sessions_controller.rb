@@ -104,9 +104,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def logout_status_ok(data)
       data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
-      return false unless 
-        data[:statusCode] == "PartialLogout" ||
-        data[:statusCode] == "Success"
+      if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
+        return true
+      else
+        return false;
+      end
     end
 
     def nias_params
