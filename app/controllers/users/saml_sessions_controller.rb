@@ -93,13 +93,18 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
       logger.debug "PARSED DATA>> #{data}"
       user = get_nias_user(:logout, data[:requestId])
-
-      if user
+      
+      if logout_status_ok
         sign_out user
         redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
         redirect_to root_path, notice: "Odjava je zaustavljena."
       end
+    end
+
+    def logout_status_ok
+      data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
+      return false unless data[:statusCode] == "PartialLogout"
     end
 
     def nias_params
