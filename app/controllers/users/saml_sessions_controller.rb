@@ -88,9 +88,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.debug "CURRENT USER >> #{current_user}"
       logger.debug "STATUS >> #{params}"
 
-      data = Base64.decode(params[:response])
+      data = Base64.decode64(params[:response])
       data = JSON.parse(data, object_class: OpenStruct)
 
+      logger.debug "PARSED DATA>> #{data}"
       user = get_nias_user(:logout, data[:requestId])
 
       if user
