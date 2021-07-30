@@ -94,7 +94,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.debug "PARSED DATA>> #{data}"
       user = get_nias_user(:logout, data[:requestId])
       
-      if logout_status_ok
+      if logout_status_ok data
         sign_out user
         redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
@@ -102,7 +102,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       end
     end
 
-    def logout_status_ok
+    def logout_status_ok(data)
       data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
       return false unless data[:statusCode] == "PartialLogout"
     end
