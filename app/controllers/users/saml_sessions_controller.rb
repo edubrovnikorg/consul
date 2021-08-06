@@ -35,6 +35,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     log_out_with_nias
   end
 
+  def flush_user
+    log_out_with_nias
+  end
+
   private
 
     def url_nias(action)
@@ -81,6 +85,18 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
       else
         redirect_to root_path, notice: "Greška prilikom prijave!"
+      end
+    end
+
+    def flush_user_data
+      user = get_nias_user(:session)
+      sign_out user
+
+      if user_signed_in?
+        raise("Error while signing out. User not flushed!")
+        head :bad_request
+      else
+        head :ok
       end
     end
 

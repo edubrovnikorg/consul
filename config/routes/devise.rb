@@ -14,6 +14,7 @@ devise_scope :user do
     get :ssout, path: "nias/logout_request", as: :nias_logout
     post :after_initiate_logout, path: "nias/logoutResponse"
     get :finish_sign_out, path: "nias/sign_out", as: :nias_destroy_user_session
+    post :flush_user, path: "nias/status" 
   end
 end
 
