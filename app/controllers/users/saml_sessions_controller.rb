@@ -36,7 +36,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def flush_user
-    log_out_with_nias
+    flush_user_data
   end
 
   private
