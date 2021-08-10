@@ -91,8 +91,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     def flush_user_data
       user = get_nias_user(:session)
       sign_out user
-
-      if user_signed_in?
+      if !user.invalidate_all_sessions!
         raise("Error while signing out. User not flushed!")
         head :bad_request
       else
@@ -112,6 +111,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       
       if logout_status_ok data
         sign_out user
+        user.invalidate_all_sessions!
         redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
         redirect_to root_path, notice: "Odjava je zaustavljena."

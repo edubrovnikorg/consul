@@ -145,6 +145,14 @@ class User < ApplicationRecord
     recoverable
   end
 
+  def authenticatable_salt
+    "#{super}#{nias_token}"
+  end
+
+  def invalidate_all_sessions!
+    update_attribute(:nias_token, SecureRandom.hex)
+  end
+
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_nias(auth)
     logger.debug "INITIALIZE FOR NIAS"
