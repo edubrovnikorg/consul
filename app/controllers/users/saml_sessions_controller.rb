@@ -12,8 +12,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     redirect_to url_nias(:login), turbolinks:false
   end
 
-  def auth    
-    user = get_nias_user(:login)
+  def auth
+    logger.debug "PARAMS >> #{params}"
+    if User.is_local? params[:mjesto]
+      user = get_nias_user(:login)
+    else
+      flash[:error] = "Prijava je dozvoljena samo stanovnicima Grada Dubrovnika i okolnih mjesta."
+    end
     head :no_content 
   end
   
@@ -128,7 +133,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def nias_params
-      params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat])
+      params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat, :drzava, :opcina, :mjesto, :adresa])
       username = ('a'..'z').to_a.shuffle[0,8].join
       password = Devise.friendly_token[0, 20]
       params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 

@@ -190,6 +190,42 @@ class User < ApplicationRecord
     nias_user = User.find_by(oib: auth[:oib])
   end
 
+  def self.is_local?(city)
+    [
+      "Bosanka", 
+      "Brsečine",
+      "Dubravica",
+      "Dubrovnik",
+      "Donje Obuljeno",
+      "Čajkovica",
+      "Čajkovići", 
+      "Gornje Obuljeno",
+      "Gromača",
+      "Kliševo",
+      "Knežica",
+      "Komolac",
+      "Koločep",
+      "Ljubac",
+      "Lopud",
+      "Mokošica",
+      "Mravinjac",
+      "Mrčevo",
+      "Nova Mokošica",
+      "Orašac",
+      "Osojnik",
+      "Petrovo Selo",
+      "Prijevor",
+      "Pobrežje",
+      "Rožat",
+      "Sudurad",
+      "Sustjepan", 
+      "Šipanska Luka",
+      "Šumet", 
+      "Trsteno", 
+      "Zaton"
+    ].include? city
+  end
+
   # Get the existing user by email if the provider gives us a verified email.
   def self.first_or_initialize_for_oauth(auth)
     oauth_email           = auth.info.email
