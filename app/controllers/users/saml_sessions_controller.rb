@@ -81,20 +81,20 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         case action
         when :login
           user = User.first_or_initialize_for_nias(nias_params)
-          raise StandardError, "Authentication error! User not created!" unless user
+          raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik" unless user
         when :session
           user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
-          raise StandardError, "Authentication error! User not found!" unless user
+          raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik." unless user
         when :logout
           user = User.where(logout_request_id: param).first
-          raise StandardError, "Authentication error! User not logged out!" unless user
+          raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless user
         end
       user
     end
 
     def prepare_user_for_logout
       begin
-        raise StandardError, "Nias sign out failure." unless params[:requestId]
+        raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless params[:requestId]
         user = get_nias_user(:session)
       rescue StandardError => e
         flash[:error] = e.message
@@ -112,7 +112,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       if sign_in(:user, user)
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
       else
-        redirect_to root_path, notice: "Greška prilikom prijave!"
+        redirect_to root_path, error: "Greška prilikom prijave!"
       end
     end
 
@@ -120,13 +120,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       begin
         user = get_nias_user(:session)
       rescue StandardError => e
-        flash[:error] = e.message
-        redirect_to root_path 
-        return
+        logger.debug "Flushing users failed!"
+        return 500;
       end
       sign_out user
       if !user.invalidate_all_sessions!
-        raise("Error while signing out. User not flushed!")
+        logger.debug "Flushing users failed!"
         head :bad_request
       else
         head :ok
@@ -134,13 +133,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def log_out_with_nias
-      logger.debug "CURRENT USER >> #{current_user}"
-      logger.debug "STATUS >> #{params}"
-
       data = Base64.decode64(params[:response])
       data = JSON.parse(data, object_class: OpenStruct)
 
-      logger.debug "PARSED DATA>> #{data}"
       begin
         user = get_nias_user(:logout, data[:requestId])
       rescue StandardError => e
@@ -154,7 +149,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         user.invalidate_all_sessions!
         redirect_to root_path, notice: "Uspješno ste odjavljeni!"
       else
-        redirect_to root_path, notice: "Odjava je zaustavljena."
+        redirect_to root_path, error: "Odjava je zaustavljena."
       end
     end
 
