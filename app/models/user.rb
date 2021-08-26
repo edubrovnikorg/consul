@@ -187,7 +187,8 @@ class User < ApplicationRecord
       nias_user.subject_id = auth[:subjectId]
       nias_user.save!
     end
-    nias_user = User.find_by(oib: auth[:oib])
+    nias_user = User.find_by(oib: auth[:oib]) unless nias_user
+    return nias_user
   end
 
   def self.is_local?(city)

@@ -7,7 +7,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       @user = get_nias_user(:session)
     rescue StandardError => e
-        flash.now[:error] = e.message
+        flash[:error] = e.message
         redirect_to root_path 
         return
     end
@@ -21,11 +21,19 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def auth
     logger.debug "PARAMS >> #{params}"
     if User.is_local? params[:mjesto]
-      user = get_nias_user(:login)
+      begin
+        user = get_nias_user(:login)
+        head :no_content 
+      rescue StandardError => e
+        head 422
+      end
     else
-      flash[:error] = "Prijava je dozvoljena samo stanovnicima Grada Dubrovnika i okolnih mjesta."
+      begin
+        raise StandardError, "User validation error."
+      rescue StandardError => e
+        head 403
+      end
     end
-    head :no_content 
   end
   
   def ssout
@@ -89,7 +97,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         raise StandardError, "Nias sign out failure." unless params[:requestId]
         user = get_nias_user(:session)
       rescue StandardError => e
-        flash.now[:error] = e.message
+        flash[:error] = e.message
         redirect_to root_path 
         return
       end
@@ -112,7 +120,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       begin
         user = get_nias_user(:session)
       rescue StandardError => e
-        flash.now[:error] = e.message
+        flash[:error] = e.message
         redirect_to root_path 
         return
       end
@@ -136,7 +144,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       begin
         user = get_nias_user(:logout, data[:requestId])
       rescue StandardError => e
-        flash.now[:error] = e.message
+        flash[:error] = e.message
         redirect_to root_path 
         return
       end
