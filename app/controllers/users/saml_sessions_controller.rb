@@ -20,7 +20,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def auth
     logger.debug "PARAMS >> #{params}"
-    byebug
     if User.is_local? params[:mjesto]
       user = get_nias_user(:login)
     else
