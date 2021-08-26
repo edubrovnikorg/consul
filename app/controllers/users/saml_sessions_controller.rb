@@ -32,6 +32,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       begin
         raise StandardError, "User validation error."
       rescue StandardError => e
+        logger.debug e.message
         head 403
       end
     end

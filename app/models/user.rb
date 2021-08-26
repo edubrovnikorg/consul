@@ -204,6 +204,7 @@ class User < ApplicationRecord
       "ćajkovići", 
       "gornje obuljeno",
       "gromača",
+      "kaštel lukšić",
       "kliševo",
       "knežica",
       "komolac",
