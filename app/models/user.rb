@@ -150,8 +150,8 @@ class User < ApplicationRecord
   end
 
   def invalidate_all_sessions!
-    update_attribute(:sessionIndex, nil)
-    update_attribute(:subjectId, nil)
+    update_attribute(:session_index, nil)
+    update_attribute(:subject_id, nil)
     update_attribute(:nias_token, SecureRandom.hex)
   end
 
