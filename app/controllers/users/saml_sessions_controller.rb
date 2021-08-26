@@ -7,7 +7,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       @user = get_nias_user(:session)
     rescue StandardError => e
-        flash[:error] = e.message
+        logger.debug "[ERROR] => #{e}"
+        flash[:error] = "Pogreška prilikom prijave! Morate biti iz Dubrovnika ili okolnih gradova kako biste se prijavili."
         redirect_to root_path 
         return
     end
