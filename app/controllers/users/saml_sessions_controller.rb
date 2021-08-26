@@ -4,7 +4,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    @user = get_nias_user(:session)
+    begin
+      @user = get_nias_user(:session)
+    rescue StandardError => e
+        flash.now[:error] = e.message
+        redirect_to root_path 
+        return
+    end
     render :index
   end
 
@@ -14,6 +20,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def auth
     logger.debug "PARAMS >> #{params}"
+    byebug
     if User.is_local? params[:mjesto]
       user = get_nias_user(:login)
     else
@@ -63,27 +70,36 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def get_nias_user(action, param = nil)
-      user = nil 
-      case action
-      when :login
-        user = User.first_or_initialize_for_nias(nias_params)
-      when :session
-        user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
-      when :logout
-        user = User.where(logout_request_id: param).first
-      end
-      raise("No user found!") unless user
+        user = nil 
+        case action
+        when :login
+          user = User.first_or_initialize_for_nias(nias_params)
+          raise StandardError, "Authentication error! User not created!" unless user
+        when :session
+          user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+          raise StandardError, "Authentication error! User not found!" unless user
+        when :logout
+          user = User.where(logout_request_id: param).first
+          raise StandardError, "Authentication error! User not logged out!" unless user
+        end
       user
     end
 
     def prepare_user_for_logout
-      raise("Nias sign out failure.") unless params[:requestId]
-      user = get_nias_user(:session)
+      begin
+        raise StandardError, "Nias sign out failure." unless params[:requestId]
+        user = get_nias_user(:session)
+      rescue StandardError => e
+        flash.now[:error] = e.message
+        redirect_to root_path 
+        return
+      end
       user.logout_request_id = params[:requestId]
       user.save!
     end
 
     def log_in_with_nias
+      logger.debug "CHECK IF USER EXISTS >> #{@user}"
       user = User.where(id: params[:id]).first
       # raise("No user found for log in.") unless user
       if sign_in(:user, user)
@@ -94,7 +110,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     end
 
     def flush_user_data
-      user = get_nias_user(:session)
+      begin
+        user = get_nias_user(:session)
+      rescue StandardError => e
+        flash.now[:error] = e.message
+        redirect_to root_path 
+        return
+      end
       sign_out user
       if !user.invalidate_all_sessions!
         raise("Error while signing out. User not flushed!")
@@ -112,7 +134,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       data = JSON.parse(data, object_class: OpenStruct)
 
       logger.debug "PARSED DATA>> #{data}"
-      user = get_nias_user(:logout, data[:requestId])
+      begin
+        user = get_nias_user(:logout, data[:requestId])
+      rescue StandardError => e
+        flash.now[:error] = e.message
+        redirect_to root_path 
+        return
+      end
       
       if logout_status_ok data
         sign_out user
