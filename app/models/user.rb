@@ -152,6 +152,8 @@ class User < ApplicationRecord
   def invalidate_all_sessions!
     update_attribute(:session_index, nil)
     update_attribute(:subject_id, nil)
+    update_attribute(:subject_id_format, nil)
+    update_attribute(:logout_request_id, nil)
     update_attribute(:nias_token, SecureRandom.hex)
   end
 
@@ -187,6 +189,7 @@ class User < ApplicationRecord
       nias_user = User.find_by(oib: auth[:oib])
       nias_user.session_index = auth[:sessionIndex]
       nias_user.subject_id = auth[:subjectId]
+      nias_user.subject_id_format = auth[:subjectIdFormat]
       nias_user.save!
     end
     nias_user = User.find_by(oib: auth[:oib]) unless nias_user

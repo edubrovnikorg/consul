@@ -54,7 +54,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def failed_sign_up
-      log_out_nias
+    redirect_to url_nias(:logout_nias), turbolinks:false
   end
 
   def flush_user
@@ -63,132 +63,133 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   private
 
-    def url_nias(action)
-      url = "http://#{request.host_with_port}:8443/NiasIntegrationTest"
+  #### UTIL
 
+  def url_nias(action)
+    url = "http://#{request.host_with_port}:8443/NiasIntegrationTest"
+
+    case action
+    when :login
+      url << "/loginNiasRequest";
+    when :logout
+      subject_id = CGI.escape(current_user.subject_id)
+      subject_id_format = CGI.escape(current_user.subject_id_format)
+      session_index = CGI.escape(current_user.session_index)
+      url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
+    when :logout_nias
+      subject_id = CGI.escape(params[:subjectId])
+      subject_id_format = CGI.escape(params[:subjectIdFormat])
+      session_index = CGI.escape(params[:sessionIndex])
+      url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
+    end
+    url
+  end
+
+  def get_nias_user(action, param = nil)
+      user = nil 
       case action
       when :login
-        url << "/loginNiasRequest";
+        user = User.first_or_initialize_for_nias(nias_params)
+        raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik" unless user
+      when :session
+        user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
+        raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik." unless user
       when :logout
-        subject_id = CGI.escape(current_user.subject_id)
-        subject_id_format = CGI.escape(current_user.subject_id_format)
-        session_index = CGI.escape(current_user.session_index)
-        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
-      when :logout_nias
-        subject_id = CGI.escape(params[:subjectId])
-        subject_id_format = CGI.escape(params[:subjectIdFormat])
-        session_index = CGI.escape(params[:sessionIndex])
-        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
+        user = User.where(logout_request_id: param).first
+        raise StandardError, "Korisnik je odjavljen." unless user
       end
-      url
+    user
+  end
+
+  def logout_status_ok(data)
+    data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
+    if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
+      return true
+    else
+      return false;
     end
+  end
 
-    def get_nias_user(action, param = nil)
-        user = nil 
-        case action
-        when :login
-          user = User.first_or_initialize_for_nias(nias_params)
-          raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik" unless user
-        when :session
-          user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
-          raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik." unless user
-        when :logout
-          user = User.where(logout_request_id: param).first
-          raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless user
-        end
-      user
+  #### LOGIN 
+
+  def log_in_with_nias
+    logger.debug "CHECK IF USER EXISTS >> #{@user}"
+    user = User.where(id: finish_sign_up_params).first
+    # raise("No user found for log in.") unless user
+    if sign_in(:user, user)
+      redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+    else
+      redirect_to root_path, error: "Greška prilikom prijave!"
     end
+  end
 
-    def prepare_user_for_logout
-      begin
-        raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless params[:requestId]
-        user = get_nias_user(:session)
-      rescue StandardError => e
-        flash[:error] = e.message
-        redirect_to root_path 
-        return
-      end
-      user.logout_request_id = params[:requestId]
-      user.save!
+  def prepare_user_for_logout
+    begin
+      raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless params[:requestId]
+      user = get_nias_user(:session)
+    rescue StandardError => e
+      flash[:error] = e.message
+      redirect_to root_path 
+      return
     end
+    user.logout_request_id = params[:requestId]
+    user.save!
+  end
 
-    def log_in_with_nias
-      logger.debug "CHECK IF USER EXISTS >> #{@user}"
-      user = User.where(id: finish_sign_up_params).first
-      # raise("No user found for log in.") unless user
-      if sign_in(:user, user)
-        redirect_to root_path, notice: "Uspješno ste prijavljeni!"
-      else
-        redirect_to root_path, error: "Greška prilikom prijave!"
-      end
+  #### LOGOUT 
+
+  def flush_user_data
+    begin
+      user = get_nias_user(:session)
+    rescue StandardError => e
+      logger.debug "Flushing users failed!"
+      return 500;
     end
-
-    def flush_user_data
-      begin
-        user = get_nias_user(:session)
-      rescue StandardError => e
-        logger.debug "Flushing users failed!"
-        return 500;
-      end
-      sign_out user
-      if !user.invalidate_all_sessions!
-        logger.debug "Flushing users failed!"
-        head :bad_request
-      else
-        head :ok
-      end
+    sign_out user
+    if !user.invalidate_all_sessions!
+      logger.debug "Flushing users failed!"
+      head :bad_request
+    else
+      head :ok
     end
-  
-    def logout_status_ok(data)
-      data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
-      if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
-        return true
-      else
-        return false;
-      end
-    end
+  end
 
-    def log_out_with_nias
-      data = Base64.decode64(params[:response])
-      data = JSON.parse(data, object_class: OpenStruct)
+  def log_out_with_nias
+    data = Base64.decode64(params[:response])
+    data = JSON.parse(data, object_class: OpenStruct)
 
-      begin
-        user = get_nias_user(:logout, data[:requestId])
-      rescue StandardError => e
-        flash[:error] = e.message
-        redirect_to root_path 
-        return
-      end
-      
-      if logout_status_ok data
-        sign_out user
-        user.invalidate_all_sessions!
-        redirect_to root_path, notice: "Uspješno ste odjavljeni!"
-      else
-        redirect_to root_path, error: "Odjava je zaustavljena."
-      end
-    end
-
-    def log_out_nias
-      redirect_to url_nias(:logout_nias), turbolinks:false
-    end
-
-    ## PARAMETERS
-
-    def nias_params
-      params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat, :drzava, :opcina, :mjesto, :adresa])
-      username = ('a'..'z').to_a.shuffle[0,8].join
-      password = Devise.friendly_token[0, 20]
-      params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
-        :password => password, :password_confirmation => password, :terms_of_service => 1)
-    end
-
-    def finish_sign_up_params
-      params.require([:id])
+    begin
+      user = get_nias_user(:logout, data[:requestId])
+    rescue StandardError => e
+      redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+      return
     end
     
-    def failed_sign_up_params
-      params.require([:sessionIndex, :subjectId, :subjectIdFormat])
-      params.permit([:sessionIndex, :subjectId, :subjectIdFormat])
+    if logout_status_ok data
+      sign_out user
+      user.invalidate_all_sessions!
+      redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+    else
+      redirect_to root_path, error: "Odjava je zaustavljena."
     end
+  end
+
+  #### PARAMETERS
+
+  def nias_params
+    params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat, :drzava, :opcina, :mjesto, :adresa])
+    username = ('a'..'z').to_a.shuffle[0,8].join
+    password = Devise.friendly_token[0, 20]
+    params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
+      :password => password, :password_confirmation => password, :terms_of_service => 1)
+  end
+
+  def finish_sign_up_params
+    params.require([:id])
+  end
+  
+  def failed_sign_up_params
+    params.require([:sessionIndex, :subjectId, :subjectIdFormat])
+    params.permit([:sessionIndex, :subjectId, :subjectIdFormat])
+  end
 end
