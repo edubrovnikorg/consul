@@ -3,4 +3,4 @@ hr:
     menu:
       login_items:
         saml: Prijava putem NIAS-a
-        saml_logout: Odjava (NIAS)
+        nias_logout: Nias Logout

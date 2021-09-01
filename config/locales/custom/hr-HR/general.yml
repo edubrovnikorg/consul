@@ -1,6 +1,7 @@
 hr:
   auth:
-    confirm: "Potvrdi prijavu"
+    confirm_btn: "Potvrdi prijavu"
+    fail_btn: "Odjavi me s e-Građana"
   layouts:
     footer:
       copyright: eDubrovnik - građani upravljaju gradom, %{year}
