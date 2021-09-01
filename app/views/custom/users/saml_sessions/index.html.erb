@@ -1,6 +1,12 @@
-<h1>Dobrodošli, <%= @user.ime %> <%= @user.prezime %></h1>
-
-<%= link_to t("general.auth.confirm"), nias_user_session_path(id: @user), 
-data: { turbolinks: false }, :method => :post, rel: "nofollow", class: "button" %>
-
-<p>Kako biste se prijavili, molimo potvrdite vaše podatke.</p>
+<% if @user %>
+    <h1>Dobrodošli, <%= @user.ime %> <%= @user.prezime %></h1>
+    <p>Kako biste se prijavili, molimo potvrdite vaše podatke.</p>
+    <%= link_to t("general.auth.confirm"), nias_user_session_path(id: @user), 
+    data: { turbolinks: false }, :method => :post, rel: "nofollow", class: "button" %>
+<% else %>
+    <h1>Pogreška tokom prijave!</h1>
+    <p>Kako biste se prijavili, morate biti iz jednog Dubrovnika ili okolice:.</p>
+    <p>Bosanka, Brsečine, Dubravica, Dubrovnik, Donje Obuljeno, Čajkovica, Ćajkovići, Gornje Obuljeno, Gromača, Kliševo, Knežica, Komolac, Koločep, Ljubac, Lopud, Mokošica, Mravinjac, Mrčevo, Nova Mokošica, Orašac, Osojnik, Petrovo Selo, Prijevor, Pobrežje,Rožat, Sudurad, Sustjepan, Šipanska Luka, Šumet, Trsteno, Zaton </p>
+    <%= link_to t("general.auth.confirm"), nias_user_session_fail_path(@params), 
+    data: { turbolinks: false }, :method => :post, rel: "nofollow", class: "button" %>
+<% end %>

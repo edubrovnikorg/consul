@@ -7,10 +7,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       @user = get_nias_user(:session)
     rescue StandardError => e
-        logger.debug "[ERROR] => #{e}"
-        flash[:error] = "Pogreška prilikom prijave! Morate biti iz Dubrovnika ili okolnih gradova kako biste se prijavili."
-        redirect_to root_path 
-        return
+        @user = nil
+        @params = failed_sign_up_params
     end
     render :index
   end
@@ -44,7 +42,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def after_initiate_logout
     prepare_user_for_logout
-
     head :no_content 
   end
 
@@ -54,6 +51,10 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def finish_sign_out
     log_out_with_nias
+  end
+
+  def failed_sign_up
+      log_out_nias
   end
 
   def flush_user
@@ -72,9 +73,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         subject_id = CGI.escape(current_user.subject_id)
         subject_id_format = CGI.escape(current_user.subject_id_format)
         session_index = CGI.escape(current_user.session_index)
-        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}" 
+        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
+      when :logout_nias
+        subject_id = CGI.escape(params[:subjectId])
+        subject_id_format = CGI.escape(params[:subjectIdFormat])
+        session_index = CGI.escape(params[:sessionIndex])
+        url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
       end
-
       url
     end
 
@@ -109,7 +114,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     def log_in_with_nias
       logger.debug "CHECK IF USER EXISTS >> #{@user}"
-      user = User.where(id: params[:id]).first
+      user = User.where(id: finish_sign_up_params).first
       # raise("No user found for log in.") unless user
       if sign_in(:user, user)
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
@@ -131,6 +136,15 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         head :bad_request
       else
         head :ok
+      end
+    end
+  
+    def logout_status_ok(data)
+      data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
+      if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
+        return true
+      else
+        return false;
       end
     end
 
@@ -155,14 +169,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       end
     end
 
-    def logout_status_ok(data)
-      data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
-      if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
-        return true
-      else
-        return false;
-      end
+    def log_out_nias
+      redirect_to url_nias(:logout_nias), turbolinks:false
     end
+
+    ## PARAMETERS
 
     def nias_params
       params.require([:ime, :prezime, :oib, :tid, :sessionIndex, :subjectId, :subjectIdFormat, :drzava, :opcina, :mjesto, :adresa])
@@ -170,5 +181,14 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       password = Devise.friendly_token[0, 20]
       params.merge(:locale => "hr", :username => username, :email => username+"@example.com", 
         :password => password, :password_confirmation => password, :terms_of_service => 1)
+    end
+
+    def finish_sign_up_params
+      params.require([:id])
+    end
+    
+    def failed_sign_up_params
+      params.require([:sessionIndex, :subjectId, :subjectIdFormat])
+      params.permit([:sessionIndex, :subjectId, :subjectIdFormat])
     end
 end
