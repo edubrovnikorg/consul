@@ -1003,14 +1003,14 @@ hr:
         table_location: "Lokacija"
     active_polls:
       edit:
-        title: "Opis glasanja"
+        title: "Opis glasovanja"
       form:
         description:
           help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasovanja. Može se koristiti za dodavanje konteksta kako bi otvorili glasovanje."
     polls:
       index:
-        title: "Popis glasanja"
-        no_polls: "Ne postoje glasanja."
+        title: "Popis glasovanja"
+        no_polls: "Ne postoje glasovanja."
         create: "Stvori glasovanje"
         name: "Ime"
         dates: "Datumi"
@@ -1283,7 +1283,7 @@ hr:
         placeholder: Pretraži činovnike za glasovanje
       poll_questions_search:
         button: Pretraga
-        placeholder: Pretraga pitanja glasanja
+        placeholder: Pretraga pitanja glasovanja
       proposal_search:
         button: Pretraga
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
@@ -1301,6 +1301,7 @@ hr:
           booths: "Pretraži aktivna glasačka mjesta"
           organizations: "Pretraži organizacije"
           users: "Pretraži korisnike"
+          proposals: "Pretraži prijedloge"
       actions: Djelovanja
       title: Naziv
       description: Opis
@@ -1416,7 +1417,7 @@ hr:
         supporting_phase: Faza potpore
         balloting_phase: Finalno glasovanje
       budget_balloting:
-        title: "Statistika finalnog glasanja"
+        title: "Statistika finalnog glasovanja"
         vote_count: Glasovi
         participant_count: Sudionici
         votes_per_heading: Glasova po naslovu
@@ -1441,7 +1442,7 @@ hr:
         all: Glasovanje
         web_participants: Web sudionici
         total_participants: Ukupno Sudionika
-        poll_questions: "Pitanja iz glasanja: %{poll}"
+        poll_questions: "Pitanja iz glasovanja: %{poll}"
         table:
           poll_name: Glasovanje
           question_name: Pitanje
