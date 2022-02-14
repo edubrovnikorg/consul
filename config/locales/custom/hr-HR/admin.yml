@@ -12,14 +12,14 @@ hr:
       mark_featured: Istaknuto
       unmark_featured: Odznači istaknuto
       edit: Uredi
-      configure: Podesi
+      configure: Postavke
       delete: Obriši
     officing_booth:
       title: "Nadzirete glasačko mjesto koje se nalazi u/na %{booth}. Ako ovo nije točno, molimo vas da ne nastavljate dalje i nazovete telefonski broj za pomoć. Hvala vam."
     banners:
       index:
         title: Transparenti
-        create: Stvori zastave
+        create: Stvori transparent
         edit: Uredi transparent
         delete: Obriši transparent
         filters:
@@ -67,11 +67,13 @@ hr:
         new_link: Stvori novi proračun
         filter: Filter
         filters:
+          all: Svi
           open: Otvoreno
           finished: Dovršeno
         budget_investments: Upravljaj projektima
-        table_name: Ime
+        table_name: Naziv
         table_phase: Faza
+        table_duration: Trajanje
         table_investments: Investicije
         table_edit_groups: Tematska grupa
         table_edit_budget: Uredi
@@ -81,6 +83,8 @@ hr:
         admin_ballots: Glasovi admina
         no_budgets: "Ne postoje budžeti."
       create:
+        notice: Novi participativni budžet je stvoren uspješno!
+      publish:
         notice: Novi participativni budžet je stvoren uspješno!
       update:
         notice: Participativni budžet je ažuriran uspješno
@@ -136,7 +140,7 @@ hr:
       form:
         create: "Stvori novu grupu"
         edit: "Uredi grupu"
-        max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasovanja o projektima korisnici će moći glasovati samo za jedan naslov po skupini."
+        max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasovati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
       index:
         back: "Idi nazad na budžet"
@@ -154,10 +158,10 @@ hr:
         success_notice: "Naslov je uspješno obrisan"
         unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
       form:
-        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasovanje o projektima". Samo za proračune koji koriste potvrdno glasovanje.'
+        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovim naslovom tijekom faze "Glasanje o projektima". Samo za proračune koji koriste potvrdno glasanje.'
         population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
-        coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
-        content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
+        coordinates_info: "Ako je visina i širina dostupna, stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
+        content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj koji je povezan s ovim naslovom sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
         create: "Stvori novi naslov"
         edit: "Uredi naslov"
         submit: "Spremi naslov"
@@ -165,9 +169,9 @@ hr:
         back: "Idi nazad na grupu"
     budget_phases:
       edit:
-        summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogući tokom faze koja nije aktivirana odaberite kućicu dolje
-        description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
-        enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
+        summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogućili tokom faze koja nije aktivirana odaberite kućicu ispod
+        description_help_text: Ovaj tekst će se pojavljivati u naslovu kada je ova faza aktivna
+        enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a također i aktivna za ostale svrhe
         save_changes: Spremi promjene
     budget_investments:
       index:
@@ -179,7 +183,7 @@ hr:
         placeholder: Pretraži projetke
         filters:
           all: Svi
-          without_admin: Bez dodjeljenog admina
+          without_admin: Bez dodijeljenog admina
           without_valuator: Bez dodijeljenog procjenitelja
           under_valuation: U toku procjene
           valuation_finished: Evaluacija dovršena
@@ -203,7 +207,7 @@ hr:
         no_valuators_assigned: Nema dodijeljenih procjenitelja
         feasibility:
           feasible: "Izvodljivo"
-          unfeasible: "Neizvodljivo"
+          unfeasible: "Neizvodivo"
           undecided: "Nije odlučeno"
         selected: "Odabrano"
         select: "Odaberi"
@@ -215,7 +219,7 @@ hr:
           valuator: Procjenitelj
           valuation_group: Grupa procjenitelja
           geozone: Opseg djelovanja
-          feasibility: Izvodljivost
+          feasibility: Izvodivost
           valuation_finished: Eval. Fin.
           selected: Odabrano
           visible_to_valuators: Prikaži procjenitelje
@@ -223,9 +227,9 @@ hr:
           incompatible: Nekompatabilnosti
           price: Cijena
           author: Autor
-        cannot_calculate_winners: Budžet mora ostati na fazi "Izglasavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
+        cannot_calculate_winners: Budžet mora ostati u fazi "Izglašavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
         see_results: "Pogledaj rezultate"
-        milestone_tags_filter_all: "Sve oznake ključnih točaka"
+        milestone_tags_filter_all: "Sve oznake miljokaza"
       show:
         assigned_admin: Dodijeljen administrator
         assigned_valuators: Pripisani procjenitelji
@@ -261,58 +265,58 @@ hr:
         select_heading: Označi naslov
         submit_button: Ažuriranje
         user_tags: Korisnik je dopisao oznake
-        tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
+        tags_placeholder: "Dopiši oznake koje želiš odjeljene zarezom (,)"
         undefined: Nedefinirano
       search_unfeasible: Pretraga neizvediva
     milestones:
       index:
-        table_id: "Identifikacijski broj"
+        table_id: "ID"
         table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
         table_status: Stanje
         table_actions: "Akcije"
-        delete: "Obriši ključne točke"
-        no_milestones: "Nemate definirane ključne točke"
+        delete: "Obriši miljokaze"
+        no_milestones: "Nemate definirane miljokaze"
         image: "Slika"
         show_image: "Pogledaj sliku"
         documents: "Dokumenti"
-        milestone: Ključne točke
-        new_milestone: Stvori novi ključne točke
-        milestone_tags: Oznake ključnih točaka
+        milestone: Miljokaz
+        new_milestone: Stvori novi miljokaze
+        milestone_tags: Oznake miljokaza
       form:
         admin_statuses: Upravljaj statusima
         no_statuses_defined: Još ne postoji definirani status
       new:
-        creating: Stvori ključne točke
+        creating: Stvori miljokaze
       edit:
-        title: Uredi ključne točke
+        title: Uredi miljokaze
       create:
-        notice: Nova ključna točka stvorena uspješno!
+        notice: Novi miljokaz stvoren uspješno!
       update:
-        notice: Ključna točka uspješna ažurirana
+        notice: Miljokaz uspješna ažuriran
       delete:
-        notice: Ključna točka uspješno obrisana
+        notice: Miljokaz uspješno obrisan
     statuses:
       index:
-        title: Status ključnih ciljeva
-        empty_statuses: Nisu stvoreni statusi ključnih ciljeva
-        new_status: Stvori novi status ključnog cilja
+        title: Status miljokaza
+        empty_statuses: Nisu stvoreni statusi miljokaza
+        new_status: Stvori novi status miljokaza
         table_name: Ime
         table_description: Opis
         table_actions: Akcije
         delete: Izbriši
         edit: Uredi
       edit:
-        title: Uredi statuse ključnih ciljeva
+        title: Uredi statuse miljokaza
       update:
-        notice: Ključni ciljevi uspješno ažurirani
+        notice: Miljokaz uspješno ažuriran
       new:
-        title: Stvori status ključnih ciljeva
+        title: Stvori status miljokaza
       create:
-        notice: Ključni ciljevi uspješno stvoreni
+        notice: Miljokaz uspješno stvoren
       delete:
-        notice: Ključni ciljevi uspješno obrisani
+        notice: Miljokaz uspješno obrisan
     progress_bars:
       manage: "Upravljaj trakom napretka"
       index:
@@ -331,18 +335,18 @@ hr:
           primary: "Uredi primarnu traku napretka"
           secondary: "Uredi traku napretka %{title}"
       create:
-        notice: "Traka napretka je stvorena uspješno!"
+        notice: "Traka napretka je uspješno stvorena!"
       update:
         notice: "Traka napretka je uspješno ažurirana"
       delete:
         notice: "Traka napretka je uspješno obrisana"
     comments:
       index:
-        id: "Identifikacijski broj"
+        id: "ID"
         content: "Sadržaj"
         author: "Autor"
         commentable_type: "Vrsta"
-        title: Sakriveni komentari
+        title: Komentari
         no_comments: Nema komentara.
         table_link: "Poveznica"
     hidden_comments:
@@ -352,18 +356,18 @@ hr:
           all: Svi
           with_confirmed_hide: Potvrđeno
           without_confirmed_hide: U tijeku
-        hidden_debate: Sakrivene debate
-        hidden_proposal: Sakriveni prijedlozi
-        title: Sakriveni komentari
-        no_hidden_comments: Ne postoje sakriveni komentari.
+        hidden_debate: Skrivene debate
+        hidden_proposal: Skriveni prijedlozi
+        title: Skriveni komentari
+        no_hidden_comments: Ne postoje skriveni komentari.
     dashboard:
       index:
         back: Idi nazad na %{org}
         title: Administracija
-        description: Dobrodošli na %{org} ploču admina.
+        description: Dobrodošli u %{org} administratorsko sučelje.
       actions:
         index:
-          description: "Kada korisnik stvori prijedlog može mu pristupiti kroz glavni izbornik svojih prijedloga, tamo može predložiti resurse i preporuke kako bi dobili potporu za svoju ideju."
+          description: "Kada korisnik stvori prijedlog može mu pristupiti kroz glavni izbornik svojih prijedloga, a tamo može predložiti resurse i preporuke kako bi dobio potporu za svoju ideju."
           create: Stvori resurs ili djelovanje
           edit: Uredi
           delete: Izbriši
@@ -379,13 +383,13 @@ hr:
           published_proposal: Objavljeni prijedlozi
           default:
             email: Email
-            polls: Glasovanje
+            polls: Glasanje
             poster: Poster
         new:
           creating: Nova akcija za glavni izbornik prijedloga
           back: Nazad na listu
         create:
-          notice: Djleovanje je uspješno stvoreno
+          notice: Djelovanje je uspješno stvoreno
         edit:
           editing: Uredi akciju za glavni izbornik prijedloga
           back: Nazad na listu
@@ -397,9 +401,9 @@ hr:
           published_proposal_help_text: Označi ovu kućicu kako bi stvorili akciju samo za objavljene prijedloge
       administrator_tasks:
         index:
-          description: "Objavljeni resursi na pokretnoj traci prijedloga mogu uključivati gumb za koji su potrebni administratori.\nZahtjevi korisnika su prikazani dolje."
+          description: "Objavljeni resursi na pokretnoj traci prijedloga mogu uključivati gumb za koji su potrebni administratori.\nZahtjevi korisnika su prikazani ispod."
           title: Zatraženi resursi
-          solve: Riješiti
+          solve: Riješi
           no_records: Ne postoje zatraženi resursi
           source: Izvor
           resource: Zatraženi resursi
@@ -418,7 +422,7 @@ hr:
           success: Zadatak je označen kao riješen.
     debates:
       index:
-        id: Identifikacijski broj
+        id: ID
         author: Autor
         title: Rasprave
         no_debates: Nema rasprava.
@@ -444,7 +448,7 @@ hr:
         url: "URL"
       create:
         success_notice: "Dokument je učitan uspješno"
-        unable_notice: "Nevažeč dokument"
+        unable_notice: "Nevažeći dokument"
       destroy:
         success_notice: "Dokument je uspješno obrisan"
     hidden_users:
@@ -454,12 +458,12 @@ hr:
           all: Svi
           with_confirmed_hide: Potvrđeno
           without_confirmed_hide: U tijeku
-        title: Sakriveni korisnici
+        title: Skriveni korisnici
         user: Korisnik
-        no_hidden_users: Ne postoje sakriveni korisnici.
+        no_hidden_users: Ne postoje skriveni korisnici.
       show:
         email: "Email:"
-        hidden_at: "Sakriveno u:"
+        hidden_at: "Skriveno u:"
         registered_at: "Registrirano u:"
         title: Aktivnost korisnika (%{user})
     hidden_budget_investments:
@@ -469,55 +473,55 @@ hr:
           all: Svi
           with_confirmed_hide: Potvrđeno
           without_confirmed_hide: U tijeku
-        title: Sakriveni investicijski budžeti
-        no_hidden_budget_investments: Ne postoje sakriveni investicijski budžeti
+        title: Skriveni investicijski budžeti
+        no_hidden_budget_investments: Ne postoje skriveni investicijski budžeti
     legislation:
       processes:
         create:
-          notice: 'Proces je uspješno stvoren. <a href="%{link}">Pritisni kako bi posjetio</a>'
-          error: Proces ne može biti stvoren
+          notice: 'Poziv za javno savjetovanje je uspješno stvoren. <a href="%{link}">Kliknite ovdje da pogledate poziv</a>'
+          error: Poziv za javno savjetovanje ne može biti stvoren
         update:
-          notice: 'Proces je učitan uspješno. <a href="%{link}">Klikni kako bi posjetio</a>'
-          error: Proces ne može biti ažuriran
+          notice: 'Poziv za javno savjetovanje je učitan uspješno. <a href="%{link}">Kliknite ovdje da pogledate poziv</a>'
+          error: Poziv za javno savjetovanje ne može biti ažuriran
         destroy:
-          notice: Proces uspješno obrisan
+          notice: Poziv za javno savjetovanje je uspješno obrisan
         edit:
           back: Nazad
           submit_button: Spremi promjene
         form:
           enabled: Omogućeno
-          process: Proces
+          process: Poziv za javno savjetovanje
           debate_phase: Faza rasprave
           draft_phase: Faza nacrta
-          draft_phase_description: Ukoliko je ova faza aktivna, proces neće biti naveden na indeksu procesa. Dopustite pregled procesa i stvorite sadržaj prije početka.
+          draft_phase_description: Ukoliko je ova faza aktivna, poziv za javno savjetovanje neće biti vidljiv. Označi za pretpregled javnog poziva i stvaranja sadržaja prije objave.
           allegations_phase: Faza komentara
           proposals_phase: Faza prijedloga
-          use_markdown: Koristi Smanjenje kako bi formatirali tekst
-          title_placeholder: Naziv procesa
+          use_markdown: Koristi Markdown kako bi formatirali tekst
+          title_placeholder: Naziv poziva za javno savjetovanje
           summary_placeholder: Kratki sažetak opisa
-          description_placeholder: Dodaj opis procesa
+          description_placeholder: Dodaj opis poziva za javno savjetovanje
           additional_info_placeholder: Dodaj dodatne informacije koje smatraš korisnima
-          homepage_description: Ovdje možeš objasniti sadržaj procesa
+          homepage_description: Ovdje možeš objasniti sadržaj poziva za javno savjetovanje
           banner_title: Boje naslova
         index:
-          create: Novi proces
+          create: Novi poziv za javno savjetovanje
           delete: Izbriši
-          title: Javno savjetovanje
+          title: Poziv za javno savjetovanje
           filters:
             active: Aktivni
             all: Svi
         new:
           back: Nazad
           title: Izradi novi poziv za javno savjetovanje
-          submit_button: Stvori proces
+          submit_button: Novi poziv za javno savjetovanje
         proposals:
           select_order: Sortiraj po
           orders:
             id: Id
             title: Naziv
-            supports: Ukupne potpore
+            supports: Ukupno potpora
         process:
-          title: Proces
+          title: Naziv
           comments: Komentari
           status: Status
           start_date: Datum početka
@@ -526,15 +530,15 @@ hr:
           status_closed: Zatvoren
           status_planned: Planirano
         subnav:
-          info: Informacija
+          info: Informacije
           homepage: Glavna stranica
           draft_versions: Skiciranje
           questions: Rasprava
           proposals: Prijedlozi
-          milestones: Ključne točke
+          milestones: Miljokaz
       homepage:
         edit:
-          title: Uredi glavnu stranicu svojih procesa
+          title: Uredi glavnu stranicu svojih poziva za javno savjetovanje
       proposals:
         index:
           title: Naziv
@@ -547,33 +551,33 @@ hr:
           custom_categories_placeholder: Unesi oznake koje bi htio koristiti, odvojene zarezima (,) i unutar navodnih znakova ("")
       draft_versions:
         create:
-          notice: 'Nacrt je uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite</a>'
-          error: Nacrt nije uspješno stvoren
+          notice: 'Nacrt je uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite stranicu nacrta prijedloga</a>'
+          error: Nacrt prijedloga nije stvoren
         update:
-          notice: 'Nacrt je uspješno ažuriran. <a href="%{link}">Kliknite ovdje kako bi posjetili</a>'
-          error: Nacrt se ne može ažurirati
+          notice: 'Nacrt je uspješno ažuriran. <a href="%{link}">Kliknite ovdje da posjetite stranicu nacrta prijedloga</a>'
+          error: Nacrt prijedloga se ne može ažurirati
         destroy:
-          notice: Nacrt je uspješno obrisan
+          notice: Nacrt prijedloga je uspješno obrisan
         edit:
           back: Nazad
           submit_button: Spremi promjene
-          warning: Možete urediti tekst, nemojte zaboraviti klinuti Spremi kako bi trajno spremili promjene.
+          warning: Možete urediti tekst, ali nemojte zaboraviti klinuti na Spremi kako bi trajno spremili promjene.
           markdown_changes_message: "Uređivali ste tekst koji niste pohranili. Potvrđujete li napuštanje ove stranice?"
         form:
           title: 'Uređivanje <span class="strong">%{draft_version_title}</span> od postupka <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
-          use_markdown: Koristi Smanjenje kako bi formatirali tekst
+          use_markdown: Koristi Markdown kako bi formatirali tekst
           hints:
-            final_version: Ova verzija će se objaviti kao Konačni rezultat ovog procesa. Komentari neće biti dopušteni u ovoj verziji.
+            final_version: Ova verzija će se objaviti kao Konačni rezultat ovog poziva za javno savjetovanje. Komentari neće biti dopušteni u ovoj verziji.
             status:
               draft: Ovo možete pregledati kao admin, nitko drugi nema uvid
               published: Vidljivo svima
-          title_placeholder: Napiši naziv verzije nacrta
-          changelog_placeholder: Dodaj glavne promejene od prošle verzije
-          body_placeholder: Napiši tekst nacrta
+          title_placeholder: Napiši naziv verzije nacrta poziva
+          changelog_placeholder: Dodaj glavne izmjene u odnosu na prošlu verziju
+          body_placeholder: Napiši tekst nacrta pozvia
         index:
-          title: Verzije nacrta
+          title: Verzije nacrta poziva
           create: Stvori verziju
           delete: Izbriši
           preview: Pregled
@@ -589,10 +593,10 @@ hr:
           status: Status
       questions:
         create:
-          notice: 'Pitanja uspješno stvorena. <a href="%{link}">Kliknite ovdje da posjetite</a>'
+          notice: 'Pitanja uspješno stvorena. <a href="%{link}">Kliknite ovdje da posjetite stranicu pitanja</a>'
           error: Ne možete stvoriti pitanje
         update:
-          notice: 'Pitanje uspješno ažurirano. <a href="%{link}">Kliknite ovdje da posjetite</a>'
+          notice: 'Pitanje uspješno ažurirano. <a href="%{link}">Kliknite ovdje da posjetite stranicu pitanja</a>'
           error: Pitanje se ne može ažurirati
         destroy:
           notice: Pitanje uspješno obrisano
@@ -603,11 +607,11 @@ hr:
         form:
           add_option: Dodaj opciju
           title_placeholder: Dodaj pitanje
-          value_placeholder: Dodaj zatvreni odgovor
+          value_placeholder: Dodaj zatvoreni odgovor
           question_options: "Mogući odgovori (opcije, zadani otvoreni odgovori)"
         index:
           back: Nazad
-          title: Pitanja povezana s ovim procesom
+          title: Pitanja povezana s ovim pozivom za javno savjetovanje
           create: Stvori pitanje
           delete: Izbriši
         new:
@@ -623,7 +627,7 @@ hr:
           remove_option: Ukloni opciju
       milestones:
         index:
-          title: Pratiti
+          title: Praćenje
     managers:
       index:
         title: Menadžeri
@@ -638,7 +642,7 @@ hr:
     menu:
       activity: Aktivnosti moderatora
       admin: Meni admina
-      banner: Upravljaj zastavama
+      banner: Upravljaj transparentima
       proposals: Prijedlozi
       proposals_topics: Teme prijedloga
       budgets: Participativni budžeti
@@ -659,7 +663,7 @@ hr:
       emails_download: Preuzmi emailove
       valuators: Procjenitelji
       poll_officers: Službenici za bilježenje glasova
-      polls: Glasovanje
+      polls: Glasanje
       poll_booths: Položaj glasačkih mjesta
       poll_booth_assignments: Zadaci Glasačkih Mjesta
       poll_shifts: Upravljaj smjenama
@@ -680,7 +684,7 @@ hr:
           debates: "Rasprave"
           community: "Zajednica"
           proposals: "Prijedlozi"
-          polls: "Glasovanje"
+          polls: "Glasanje"
           layouts: "Slojevi"
           mailers: "Email-ovi"
           management: "Menadžment"
@@ -733,16 +737,16 @@ hr:
     segment_recipient:
       all_users: Svi korisnici
       administrators: Administratori
-      all_proposal_authors: Autori prijedloga (uključivo arhivirane i one koji su povućeni)
+      all_proposal_authors: Autori prijedloga (uključivo arhivirani te oni koji su povučeni)
       proposal_authors: Prijedlozi autora
-      investment_authors: Investicije autora u trenutni budžet
+      investment_authors: Investicije autora u trenutnom budžetu
       feasible_and_undecided_investment_authors: "Autori nekih investicija u trenutnom budžetu se ne slažu: [evaluacija dovršena te neizvediva]"
       selected_investment_authors: Autori su odabrali investicije u trenutnom budžetu
       winner_investment_authors: Autori pobjedničkih investicija u trenutnom budžetu
       not_supported_on_current_budget: Korisnici koji nisu poduprli investicije u trenutnom budžetu
-      invalid_recipients_segment: "Korsnički segment primatelja nije valjan"
+      invalid_recipients_segment: "Korisnički segment primatelja nije valjan"
     newsletters:
-      create_success: Newsletter je stvoren uspješno
+      create_success: Newsletter je uspješno stvoren
       update_success: Newsletter je uspješno ažuriran
       send_success: Newsletter je uspješno poslan
       delete_success: Newsletter je uspješno izbrisan
@@ -760,14 +764,14 @@ hr:
         empty_newsletters: Ne postoje newsletteri za prikaz
       new:
         title: Novi newsletter
-        header_footer_help_text: "Naslov i podnožje isti su za sve e-mail poruke, možete ih promijeniti na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Sliku zaglavlja možete promijeniti na %{link}."
+        header_footer_help_text: "Naslov i podnožje su isti za sve e-mail poruke, a možete ih promijeniti na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Sliku zaglavlja možete promijeniti na %{link}."
         image_link: "prilagođene slike"
       edit:
         title: Uredi newsletter
       show:
         title: Pogledaj newsletter
         send: Šalji
-        affected_users: (%{n} utječe na korisnike)
+        affected_users: (utječe na %{n} korisnika)
         sent_emails:
           one: 1 email poslan
           few: "%{count} emailova poslano"
@@ -807,7 +811,7 @@ hr:
         section_title: Pregledaj obavijest
         send: Pošalji obavijest
         will_get_notified: (%{n} korsnika će biti obaviješteno)
-        got_notified: (%{n} korsnika je obaviješteno)
+        got_notified: (%{n} korisnika je obaviješteno)
         sent_at: Pošalji u
         title: Naziv
         body: Tekst
@@ -820,17 +824,17 @@ hr:
       preview_pending:
         action: Pregled U Tijeku
         preview_of: Pregled %{name}
-        pending_to_be_sent: Ovo je sadržaj koji je u redu za slanje
+        pending_to_be_sent: Ovo je sadržaj koji čeka slanje
         moderate_pending: Uredi poslane obavijesti
         send_pending: Poslati na čekanje
         send_pending_notification: Obavijesti na čekanju su uspješno poslane
       proposal_notification_digest:
         title: "Obavijesti prijedloga su klasificirane"
-        description: "Sakuplja sve obavijesti prijedloga za korisnike u pojedinačnoj poruci, kako bi se izbjeglo previše emailova."
+        description: "Skuplja sve obavijesti prijedloga za korisnike u pojedinačnoj poruci, kako bi se izbjeglo previše emailova."
         preview_detail: "Korisnici će samo primati obavijesti od strane prijedloga koje sljede"
       budget_investment_created:
         title: "Investicija za budžet stvorena"
-        description: "Pošalji kada korisnik stvara budžet investicije."
+        description: "Pošalji kada korisnik stvori budžet investicije."
       budget_investment_selected:
         title: "Investicijski budžet odabran"
         description: "Pošalji autoru kada je investicijski budžet odabran."
@@ -845,7 +849,7 @@ hr:
         description: "Pošalji autoru kada dobije komentar."
       reply:
         title: "Odgovor"
-        description: "Pošalji autoru komentaru kada dobije odgovor."
+        description: "Pošalji autoru komentara kada dobije odgovor."
       direct_message_for_receiver:
         title: "Primatelj privatne poruke"
         description: "Pošalji privatnu poruku primatelju."
@@ -854,10 +858,10 @@ hr:
         description: "Pošalji privatnu poruku pošiljatelju."
       email_verification:
         title: "Email verificiran"
-        description: "Pošalji novom korisniku kako bi se potvrdio račun."
+        description: "Pošalji email novom korisniku kako bi se potvrdio račun."
       user_invite:
         title: "Korisnička Pozivnica"
-        description: "Pošalji osobi koja je pozvana za registraciju računa."
+        description: "Pošalji pozivnicu osobi za registraciju računa."
       evaluation_comment:
         title: "Novi komentar procjene"
         description: "Poslano administratorima i procjeniteljima povezanima s komentiranim ulaganjem"
@@ -935,7 +939,7 @@ hr:
     poll_officer_assignments:
       index:
         officers_title: "Popis činovnika"
-        no_officers: "Ne postoje činovnici pripisani ovoj anketi."
+        no_officers: "Ne postoje činovnici pridruženi ovom glasanju."
         table_name: "Ime"
         table_email: "Email"
       by_officer:
@@ -956,9 +960,9 @@ hr:
         remove_shift: "Ukloni"
         search_officer_button: Pretraga
         search_officer_placeholder: Pretraži činovnike
-        search_officer_text: Pretraži činovnike koji su pripisani novoj smjeni
+        search_officer_text: Pretraži činovnike koji će se dodijeliti novoj smjeni
         select_date: "Odaberi dan"
-        no_voting_days: "Glasovanje je dovršeno"
+        no_voting_days: "Glasanje je dovršeno"
         select_task: "Odaberi zadatak"
         table_shift: "Smjena"
         table_email: "Email"
@@ -973,17 +977,17 @@ hr:
     booth_assignments:
       manage_assignments: Upravljanje zadacima
       manage:
-        assignments_list: "Zadaci za glasovanje '%{poll}'"
+        assignments_list: "Zadaci za glasanje '%{poll}'"
         status:
           assign_status: Zadatak
           assigned: Dodjeljeno
-          unassigned: Nije dodjeljeno
+          unassigned: Nije dodijeljeno
         actions:
-          assign: Glasačko mjesto dodjeljeno
-          unassign: Glasačko mjesto nije dodjeljeno
+          assign: Glasačko mjesto dodijeljeno
+          unassign: Glasačko mjesto nije dodijeljeno
     poll_booth_assignments:
       alert:
-        shifts: "Postoje promjene povezane s ovim glasačkim mjestom. Ukoliko uklonite ono što je dodijeljeno glasačkom mjestu, promjene ne će biti spremljene. Želite li nastaviti?"
+        shifts: "Postoje smjene povezane s ovim glasačkim mjestom. Ukoliko uklonite dodijeljene činovnike, smjene će također biti obrisane. Želite li nastaviti?"
       show:
         location: "Lokacija"
         officers: "Činovnici"
@@ -998,31 +1002,31 @@ hr:
         total_system: Ukupno glasova (automatski)
       index:
         booths_title: "Popis glasačkih mjesta"
-        no_booths: "Ne postoje glasačka mjesta pripisana ovom glasanju."
+        no_booths: "Ne postoje glasačka mjesta dodijeljena ovom glasanju."
         table_name: "Ime"
         table_location: "Lokacija"
     active_polls:
       edit:
-        title: "Opis glasovanja"
+        title: "Opis glasanja"
       form:
         description:
-          help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasovanja. Može se koristiti za dodavanje konteksta kako bi otvorili glasovanje."
+          help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasanja. Može se koristiti za dodavanje konteksta kako bi otvorili glasanje."
     polls:
       index:
-        title: "Popis glasovanja"
-        no_polls: "Ne postoje glasovanja."
-        create: "Stvori glasovanje"
+        title: "Popis glasanja"
+        no_polls: "Ne postoje glasanja."
+        create: "Stvori novo glasanje"
         name: "Ime"
         dates: "Datumi"
         start_date: "Datum Početka"
         closing_date: "Datum Zatvaranja"
         geozone_restricted: "Zabranjeno za distrikte"
       new:
-        title: "Novo glasovanje"
-        submit_button: "Stvori glasovanje"
+        title: "Novo glasanje"
+        submit_button: "Stvori glasanje"
       edit:
-        title: "Uredi glasovanje"
-        submit_button: "Ažuriraj glasovanje"
+        title: "Uredi glasanje"
+        submit_button: "Ažuriraj glasanje"
       show:
         questions_tab: Pitanja
         booths_tab: Glasačka mjesta
@@ -1036,29 +1040,29 @@ hr:
         see_proposal: "(Vidi prijedlog)"
       flash:
         question_added: "Dodana pitanja ovom glasanju"
-        error_on_question_added: "Pitanja nisu mogla biti pripisana ovom glasanju"
+        error_on_question_added: "Pitanja nisu mogla biti dodijeljena ovom glasanju"
       destroy:
-        alert: "Akcija će se ukloniti s glasanja i svih povezanih pitanja."
-        success_notice: "Glasovanje uspješno obrisano"
-        unable_notice: "Ne možete obrisati glasovanje koje ima zabilježene glasove"
+        alert: "Akcija će ukloniti glasanja i sva povezana pitanja."
+        success_notice: "Glasanje uspješno obrisano"
+        unable_notice: "Ne možete obrisati glasanje koje ima zabilježene glasove"
     questions:
       index:
         title: "Pitanja"
         create: "Stvori pitanje"
         no_questions: "Ne postoje pitanja."
         filter_poll: Filtriraj po Glasanju
-        select_poll: Odaberi Glasovanje
+        select_poll: Odaberi Glasanje
         questions_tab: "Pitanja"
         successful_proposals_tab: "Uspješni prijedlozi"
         create_question: "Stvori pitanje"
         table_proposal: "Prijedlog"
         table_question: "Pitanje"
-        table_poll: "Glasovanje"
-        poll_not_assigned: "Glasovanje nije dodijeljeno"
+        table_poll: "Glasanje"
+        poll_not_assigned: "Glasanje nije dodijeljeno"
       edit:
         title: "Uredi Pitanje"
       new:
-        title: "Stvori pitanje za glasovanje %{poll}"
+        title: "Stvori pitanje za glasanje %{poll}"
         title_proposal: "Stvori pitanje"
       answers:
         images:
@@ -1108,7 +1112,7 @@ hr:
       index:
         title: "Prebrojavanje"
         no_recounts: "Ne postoje glasovi koje možemo prebrojati"
-        all_booths_total: "Ukupno kumulativno od svih glasačkih mjesta:"
+        all_booths_total: "Kumulativni total svih glasačkih mjesta:"
         total_final: "Završno prebrojavanje"
         total_system: "Glasovi (automatski)"
         table_booth_name: "Glasačko mjesto"
@@ -1120,7 +1124,7 @@ hr:
         no_results: "Ne postoje rezultati"
       result:
         table_whites: "Ukupno praznih glasova"
-        table_nulls: "Nevažeči glasovi"
+        table_nulls: "Nevažeći glasovi"
         table_total: "Ukupno glasova"
         table_answer: Odgovor
         table_votes: Glasovi
@@ -1132,7 +1136,7 @@ hr:
     booths:
       index:
         title: "Popis aktivnih glasačkih mjesta"
-        no_booths: "Ne postoje aktivna glasačka mjesta za nadolazeće glasovanje."
+        no_booths: "Ne postoje aktivna glasačka mjesta za nadolazeće glasanje."
         add_booth: "Dodaj glasačko mjesto"
         name: "Ime"
         location: "Lokacija"
@@ -1157,7 +1161,7 @@ hr:
         official_updated: Detalji činovnika spremljeni
       index:
         title: Službenici
-        help: Korisnički računi označen kao služben čime će intervencije na platformi biti označene. Oznaku koja se pojavljuje pokraj korisničkih imena tih računa može se definirati od najvažnije (razina 1) do najmanje važne (razina 5).
+        help: Korisnički računi označeni kao službeni će imati svoje intervencije na platformi naznačene. Oznaku koja se pojavljuje pokraj korisničkih imena tih računa može se definirati od najvažnije (razina 1) do najmanje važne (razina 5).
         no_officials: Ne postoje službenici.
         name: Ime
         official_position: Službena pozicija
@@ -1188,13 +1192,13 @@ hr:
         name: Ime
         email: Email
         phone_number: Telefon
-        responsible_name: Odgovnornost
+        responsible_name: Odgovornost
         status: Status
         no_organizations: Ne postoje organizacije.
         reject: Odbiti
         rejected: Odbijeno
         search: Pretraga
-        search_placeholder: Ime, email ili telfonski broj
+        search_placeholder: Ime, email ili telefonski broj
         title: Organizacije
         verified: Dopušteno
         verify: Potvrdi
@@ -1209,10 +1213,10 @@ hr:
         author: Autor
         select: Odaberi
         selected: Odabrano
-        milestones: Ključni ciljevi
+        milestones: Miljokaz
         no_proposals: Ne postoje prijedlozi.
       show:
-        create_question: Dodaj ovaj prijedlog glasanju kako bi glasali
+        create_question: Pridruži ovaj prijedlog glasanju
       form:
         update: Ažuriraj prijedlog
       update:
@@ -1224,7 +1228,7 @@ hr:
           all: Svi
           with_confirmed_hide: Potvrđeno
           without_confirmed_hide: U tijeku
-        title: Sakriveni prijedlozi
+        title: Skriveni prijedlozi
         no_hidden_proposals: Ne postoje skriveni prijedlozi.
     hidden_proposal_notifications:
       index:
@@ -1257,12 +1261,12 @@ hr:
             update: Konfiguracija mape je uspješno ažurirana.
           form:
             submit: Ažuriranje
-          how_to_enable: 'Prikažite na karti korisnike koje morate omogućiti "Prijedlozi i investicijski budžeti geolokacije" na "Značajke" kartici.'
+          how_to_enable: 'Kako bi prikazali kartu korisnicima, morate omogućiti "Prijedlozi i investicijski budžeti geolokacije" na kartici "Značajke".'
         dashboard:
           title: Glavni izbornik prijedloga
         remote_census:
           title: Konfiguracija udaljenog cenzusa
-          how_to_enable: 'Za konfiguraciju udaljenog cenzusa (SOAP) morate omogućiti "Konfiguriraj vezu za udaljeni cenzus (SOAP) u kartici "Značajke".'
+          how_to_enable: 'Za konfiguraciju udaljenog cenzusa (SOAP) morate omogućiti "Konfiguriraj vezu za udaljeni cenzus (SOAP) na kartici "Značajke".'
       remote_census_general_name: Opće informacije
       remote_census_request_name: Zatraži podatke
       remote_census_response_name: Podaci o odazivu
@@ -1280,10 +1284,10 @@ hr:
         placeholder: Pretraži glasačko mjesto po imenu
       poll_officers_search:
         button: Pretraga
-        placeholder: Pretraži činovnike za glasovanje
+        placeholder: Pretraži činovnike za glasanje
       poll_questions_search:
         button: Pretraga
-        placeholder: Pretraga pitanja glasovanja
+        placeholder: Pretraga pitanja glasanja
       proposal_search:
         button: Pretraga
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
@@ -1301,7 +1305,9 @@ hr:
           booths: "Pretraži aktivna glasačka mjesta"
           organizations: "Pretraži organizacije"
           users: "Pretraži korisnike"
-          proposals: "Pretraži prijedloge"
+          proposals: "Pretraži po nazivu, kodu, opisu ili pitanju"
+          debates: "Pretraži po nazivu i opisu"
+          poll_officers: Pretraži činovnike
       actions: Djelovanja
       title: Naziv
       description: Opis
@@ -1312,11 +1318,11 @@ hr:
       proposal: Prijedlog
       author: Autor
       content: Sadržaj
-      created_at: Stvoreno kod
+      created_at: Stvoreno
       delete: Izbriši
       color_help: Heksadecimalni format
       show_results_and_stats: "Prikaži rezultate i statistike"
-      results_and_stats_reminder: "Označi ove kućice rezultata i/ili status koji može biti javno dostupan i svaki korisnik će ih vidjeti."
+      results_and_stats_reminder: "Odaberi javno vidljive podatke."
     
       geozones:
       index:
@@ -1352,7 +1358,7 @@ hr:
         new: Nove potpisne liste
       new:
         title: Nove potpisne liste
-        document_numbers_note: "Napiši broj koji je odvojen zarezom (,)"
+        document_numbers_note: "Napiši brojeve odvojene točkom-zarezom (;)"
         submit: Stvori potpisnu listu
         text_help:
           required_fields_note: "Za provjeru korisnika, vašoj aplikaciji je potreban: Broj dokumenata"
@@ -1367,18 +1373,18 @@ hr:
         signature_count: "Broj potpisa:"
         verified:
           one: "Postoji %{count} valjani potpis"
-          few: "Postoji %{count} valjani potpisi"
-          other: "Postoji %{count} valjani potpisi"
+          few: "Postoji %{count} valjana potpisa"
+          other: "Postoji %{count} valjanih potpisa"
         unverified:
-          one: "Postoji %{count} nevažeč potpis"
-          few: "Postoji %{count} nevažeči potpisi"
-          other: "Postoji %{count} nevažeči potpisi"
+          one: "Postoji %{count} nevažeći potpis"
+          few: "Postoji %{count} nevažeća potpisa"
+          other: "Postoji %{count} nevažećih potpisa"
         unverified_error: (Nije potvrđeno Cenzusom)
         voted:
           zero: "Ne postoje glasovi stvoreni od strane potvrđenih potpisa."
           one: "Postoji %{count} glas stvoren od strane potvrđenih potpisa."
-          few: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
-          other: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
+          few: "Postoji %{count} glasa stvorenih od strane potvrđenih potpisa."
+          other: "Postoji %{count} glasova stvorenih od strane potvrđenih potpisa."
         loading: "Još ima potpisa koji se provjeravaju Cenzusom, molimo vas osvježite stranicu za nekoliko trenutaka"
     stats:
       show:
@@ -1405,25 +1411,25 @@ hr:
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
-        polls: Glasovanje
+        polls: Glasanje
       graph:
         debate_created: Rasprave
         visit: Broj posjeta
         level_2_user: Razina 2 korisnika
         proposal_created: Prijedlozi građana
       budgets:
-        no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasovanja."
+        no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasanja."
         title: "Participativni Budžeti - Participativne statistike"
         supporting_phase: Faza potpore
-        balloting_phase: Finalno glasovanje
+        balloting_phase: Finalno glasanje
       budget_balloting:
-        title: "Statistika finalnog glasovanja"
+        title: "Statistika finalnog glasanja"
         vote_count: Glasovi
         participant_count: Sudionici
         votes_per_heading: Glasova po naslovu
         participants_per_district: Sudionika po distriktu
       budget_supporting:
-        title: "Statistika faze statistike"
+        title: "Statistika faze podrške"
         headings: Naslovi
         users: Korisnici
         vote_count: Glasovi
@@ -1438,13 +1444,13 @@ hr:
         proposals_with_notifications: Prijedlozi s obavijestima
         not_available: "Prijedlozi nisu dostupni"
       polls:
-        title: Statstike Glasanja
-        all: Glasovanje
+        title: Statistike Glasanja
+        all: Glasanje
         web_participants: Web sudionici
         total_participants: Ukupno Sudionika
-        poll_questions: "Pitanja iz glasovanja: %{poll}"
+        poll_questions: "Pitanja iz glasanja: %{poll}"
         table:
-          poll_name: Glasovanje
+          poll_name: Glasanje
           question_name: Pitanje
           origin_web: Web sudionici
           origin_total: Ukupno sudionika
@@ -1504,7 +1510,7 @@ hr:
         new:
           title: Stvori novi sadržaj blokova
         content_block:
-          body: Tijelo
+          body: Sadržaj
           name: Ime
           names:
             top_links: Gornje Poveznice
@@ -1519,7 +1525,7 @@ hr:
           image: Slika
         update:
           notice: Slika je uspješno ažurirana
-          error: Slika nije uspješno ažurirana
+          error: Slika nije ažurirana
         destroy:
           notice: Slika je uspješno ažurirana
           error: Sliku nije moguće obrisati
@@ -1529,7 +1535,7 @@ hr:
           error: Sliku nije moguće stvoriti
         update:
           notice: Slika je uspješno ažurirana
-          error: Slika se ne može ažurirati
+          error: Slika nije moguće ažurirati
         destroy:
           notice: Slika je uspješno obrisana
         edit:
@@ -1545,9 +1551,9 @@ hr:
           title: Stvori novu prilagođenu stranicu
           slug_help: "Tekst u URL-u za prepoznavanje ove stranice, naprimjer <code>https://voxpopuli.providentium.hr/page-slug</code>"
         page:
-          created_at: Stvoreno kod
+          created_at: Stvoreno
           status: Status
-          updated_at: Ažurirano u
+          updated_at: Ažurirano
           title: Naziv
           slug: Žeton
           cards_title: Kartice

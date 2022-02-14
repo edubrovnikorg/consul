@@ -24,6 +24,7 @@ class Admin::Budgets::DurationComponent < ApplicationComponent
     end
 
     def formatted_date(time)
-      time_tag(time, format: :datetime)
+      # time_tag(time, format: :datetime)
+      time.strftime("%d.%m.%Y.")
     end
 end

@@ -17,14 +17,14 @@ hr:
       save_changes_submit: Spremi promjene
       recommendations: Preporuke
       title: Moj račun
-      user_permission_debates: Sudjelovati u raspravama
+      user_permission_debates: Sudjelovanje u raspravama
       user_permission_info: Sa svojim računom možete...
       user_permission_proposal: Izrađivati nove prijedloge
       user_permission_support_proposal: Podupirati prijedloge
-      user_permission_title: Sudjelovanje
+      user_permission_title: Sudjelovati
       user_permission_verify: Kako biste izvodili ove aktivnosti, potvrdite svoj račun.
       user_permission_verify_info: "* Samo za korisnike Cenzusa."
-      user_permission_votes: Sudjelovati u završnom glasanju
+      user_permission_votes: Sudjelovanje u završnom glasanju
       username_label: Korisničko ime
       verified_account: Račun provjeren
       verify_my_account: Potvrdi moj račun
@@ -68,7 +68,7 @@ hr:
       most_voted: S najviše glasova
       newest: Prvo najnoviji
       oldest: Prvo najstariji
-      most_commented: Najviše komentirani
+      most_commented: Najviše komentara
     select_order: Sortiraj po
     show:
       return_to_commentable: "Vrati se na "
@@ -91,7 +91,7 @@ hr:
       votes:
         zero: Nema glasova
         one: 1 glas
-        few: "%{count} glasova"
+        few: "%{count} glasa"
         other: "%{count} glasova"
     edit:
       editing: Uredi raspravu
@@ -114,9 +114,9 @@ hr:
       recommendations:
         without_results: Ne postoje rasprave povezane s vašim interesima
         without_interests: Slijedite sadržaje iz rubrike Prijedlozi kako biste vidjeli preporučene rasprave
-        disable: "Preporuke rasprave će zaustaviti prikazivanje istih ako ih odbacite. Vi ih možete ponovno omogućiti na dijelu stranice 'Moj račun'"
+        disable: "Preporuke rasprave se neće prikazivati ako ih uklonite. Možete ih ponovno omogućiti na dijelu stranice 'Moj račun'"
         actions:
-          success: "Preporuke za rapsrave su sada uklonjene za ovaj račun"
+          success: "Preporuke za rasprave su sada uklonjene za ovaj račun"
           error: "Greška se pojavila. Molimo vas idite na stranicu 'Moj račun' kako biste uklonili preporuke za rasprave"
       search_form:
         button: Pretraga
@@ -136,8 +136,8 @@ hr:
       section_footer:
         title: Pomoć oko rasprava
         description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
-        help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko može otkriti pitanja koja ih zanimaju i one koji žele podijeliti mišljenja s drugim ljudima."
-        help_text_2: 'Kako bi otvorili raspravu morate se pijraviti na %{org}. Korisnici također komentiraju otvorene rasprave i ocijenjuju ih s "Slažem se" ili "Ne slažem se" gumbima koji se nalaze na svakoj od njih.'
+        help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko želi iznijeti problematiku i pitanja koja ga zanimaju te one koji žele podijeliti mišljenja s drugim ljudima."
+        help_text_2: 'Kako bi otvorili raspravu morate se prijaviti na %{org}. Korisnici također mogu komentirati na otvorenim raspravama i ocijenjivati ih s "Slažem se" ili "Ne slažem se" gumbima koji se nalaze na svakoj raspravi.'
     new:
       form:
         submit_button: Započni raspravu
@@ -146,8 +146,8 @@ hr:
       more_info: Više informacija
       recommendation_four: Uživajte na ovom mjestu vaš glas će se također popuniti.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
-      recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
-      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
+      recommendation_three: Iskrena kritika je dobrodošla. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
+      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
       start_new: Započni raspravu
     show:
@@ -168,7 +168,7 @@ hr:
   errors:
     messages:
       user_not_found: Korisnik nije pronađen
-      invalid_date_range: "Nevažeč raspon podataka"
+      invalid_date_range: "Nevažeć raspon podataka"
   form:
     accept_terms: Slažem se s %{policy} i %{conditions}
     accept_terms_title: Slažem se s Politikom Privatnosti i Uvjetima korištenja
@@ -183,7 +183,7 @@ hr:
     proposal: Prijedlog
     proposal_notification: "Obavijest"
     budget/investment: Investicija
-    budget/group: Grupa za budžet
+    budget/group: Grupa budžeta
     budget/heading: Naslov Budžeta
     geozone: geozona
     legislation/draft_version: skica
@@ -222,7 +222,7 @@ hr:
         current_goal: Trenutni cilj
         supports:
           zero: Nema potpore
-          one: 1 Potpora
+          one: Potpora
           few: "Potpore"
           other: "Potpore"
     footer:
@@ -255,7 +255,7 @@ hr:
       my_activity_link: Moje aktivnosti
       open_gov: Otvorena vlada
       proposals: Prijedlozi
-      poll_questions: Glasovanje
+      poll_questions: Glasanje
       budgets: Participativni proračun
       notification_item:
         new_notifications:
@@ -322,7 +322,7 @@ hr:
         submit_button: Stvorite prijedlog
     created:
       title: Čestitamo! Napravili ste prvi korak.
-      motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
+      motivation: "Važno je pripremiti launch kampanju za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujući."
       motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao skicu i mi ćemo vas voditi.</strong>"
       publish: Ne, ja želim objaviti svoj prijedlog
       dashboard: Da, želim pomoć i objaviti ću kasnije
@@ -343,9 +343,9 @@ hr:
       retired_explanation_placeholder: Ukratko objasni zašto mislite da ovaj prijedlog više ne bi trebao primati potporu
       submit_button: Povuci prijedlog
     retire_options:
-      duplicated: Duplicirian
+      duplicated: Dupliciran
       started: Već je u tijeku
-      unfeasible: Nevažeč
+      unfeasible: Nevažeći
       done: Gotovo
       other: Drugi
     form:
@@ -353,9 +353,9 @@ hr:
       proposal_summary_note: "(maksimalno 200 slova)"
       proposal_video_url_note: Možete dodati poveznicu za YouTube ili Vimeo
       tag_category_label: "Kategorije"
-      tags_instructions: "Označi ovaj prijedlog. Možete odabrati od predloženih kategorija ili dodati svoju"
+      tags_instructions: "Označi ovaj prijedlog. Možete odabrati iz liste predloženih kategorija ili dodati svoju"
       tags_label: Oznake
-      tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (\",\")"
+      tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojene zarezom (\",\")"
       map_location: "Lokacija na karti"
       map_location_instructions: "Pronađi lokaciju na karti i stavi oznaku."
       map_remove_marker: "Ukloni oznaku s karte"
@@ -373,7 +373,7 @@ hr:
       recommendations:
         without_results: Nema prijedloga povezanih s vašim interesima
         without_interests: Slijedite prijedloge kako bismo vam dali preporuke
-        disable: "Preporuke za prijedloge će zaustaviti prikazivanje istih ako ih odbacite. Vi ih možete ponovno omogućiti na dijelu stranice 'Moj račun'"
+        disable: "Preporuke za prijedloge se neće prikazivati ako ih uklonite. Možete ih ponovno omogućiti na dijelu stranice 'Moj račun'"
         actions:
           success: "Preporuke za prijedloge su sada uklonjene za ovaj račun"
           error: "Greška se pojavila. Molimo vas idite na stranicu 'Moj račun' kako biste uklonili preporuke za prijedloge"
@@ -387,7 +387,7 @@ hr:
         all: Svi
         duplicated: Duplicirani
         started: U tijeku
-        unfeasible: Nevažeč
+        unfeasible: Nevažeći
         done: Gotovo
         other: Drugi
       search_form:
@@ -410,7 +410,7 @@ hr:
         help: Pomoć za prijedloge
       section_footer:
         title: Pomoć za prijedloge
-        description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
+        description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče o tome kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
     new:
       form:
         submit_button: Stvorite prijedlog
@@ -426,32 +426,32 @@ hr:
     proposal:
       created: "Vi ste stvorili prijedlog!"
       share:
-        guide: "Sada možete podjeliti kako bi ljudi mogli početi podržavati."
-        edit: "Prije nego što podjelite možete izmijeniti tekst koji vam se sviđa."
+        guide: "Sada možete podjeliti prijedlog, kako bi ljudi mogli početi podržavati."
+        edit: "Prije nego što podjelite prijedlog, možete izmijeniti tekst kako želite."
         view_proposal: Ne sad, idite na moj prijedlog
       already_supported: Vi ste već poduprli ovaj prijedlog. Podijelite ga!
       comments:
         zero: Bez komentara
         one: 1 komentar
-        few: "%{count} komentare"
-        other: "%{count} komentare"
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       support: Potpora
       support_title: Podupri ovaj prijedlog
       supports:
         zero: Nema potpore
         one: 1 potpora
-        few: "%{count} potopre"
-        other: "%{count} potopre"
+        few: "%{count} potpore"
+        other: "%{count} potpora"
       votes:
         zero: Nema glasova
         one: 1 glas
-        few: "%{count} glasove"
-        other: "%{count} glasove"
-      supports_necessary: "Potrebno je %{number} potpora"
+        few: "%{count} glasova"
+        other: "%{count} glasova"
+      supports_necessary: "Potrebno je %{number} potpora/e"
       reason_for_supports_necesarry: " tekst"
       total_percent: 100%
       archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
-      successful: "Prijedlog je dobio dovoljno potpore."
+      successful: "Prijedlog je dobio dovoljno potpora."
       selected: "Odabrani prijedlog"
     show:
       author_deleted: Korisnik obrisan
@@ -459,17 +459,17 @@ hr:
       comments:
         zero: Bez komentara
         one: 1 komentar
-        few: "%{count} komentare"
-        other: "%{count} komentare"
+        few: "%{count} komentara"
+        other: "%{count} komentara"
       comments_tab: Komentari
       dashboard_proposal_link: Upravljačka ploča
-      flag: Prijedlog je označen kao neprimjerena od strane više korisnika.
+      flag: Prijedlog je označen kao neprimjeren od strane više korisnika.
       notifications_tab: Obavijesti
-      milestones_tab: Ključni ciljevi
-      retired_warning: "Autor smatra da ovaj prijedlog više ne bi trebao primati podrške."
-      retired_warning_link_to_explanation: Pročitaj objašnjenje prije glasovanja.
+      milestones_tab: Miljokaz
+      retired_warning: "Autor smatra da ovaj prijedlog više ne bi trebao primati podršku."
+      retired_warning_link_to_explanation: Pročitaj objašnjenje prije glasanja.
       retired: Prijedlog je povučen od strane autora
-      share: Podjeli
+      share: Podijeli
       no_notifications: "Ovaj prijedlog nema obavijesti."
       embed_video_title: "Video je na %{proposal}"
       title_video_url: "Vanjski video"
@@ -493,7 +493,7 @@ hr:
     form:
       request: Zahtjev
     create_request:
-      success: Zahtjev je uspješno poslan. Mi ćemo vas kontatirati čim imamo više informacija.
+      success: Zahtjev je uspješno poslan. Mi ćemo vas kontaktirati čim budemo imamli više informacija.
       archived: Ovaj prijedlog je arhiviran i više ne može tražiti resurse.
     progress:
       title: Grafički prikaz
@@ -518,7 +518,7 @@ hr:
       required_supports: "Potrebno je %{supports} potpora"
       and: i
       view_resource: Vidi resurs
-      resource_requested: Resurs je već netko zahtjevao
+      resource_requested: Resurs je već netko zatraživao
       request_resource: Zatraži resurs
       resource_locked: Resurs je zaključan
     recommended_actions:
@@ -528,12 +528,12 @@ hr:
       hide_proposed_actions: Sakrij preporučeno djelovanje
       pending_title: U tijeku
       show_description: Prikaži opis
-      without_pending_actions: Nema predloženih djelovanja na čekanju
+      without_pending_actions: Nema preporučenih djelovanja na čekanju
       done_title: Gotovo
-      without_done_actions: Nema preporučenih gotovih djelovanja
+      without_done_actions: Nema izvršenih preporučenih djelovanja
     next_goal:
       title: Cilj
-      see_complete_course: Pogldaj kompletni kurs
+      see_complete_course: Pogledaj kompletni kurs
       hide_course: Sakrij kurseve
     goal:
       target_supports:
@@ -567,22 +567,22 @@ hr:
         links: Poveznice
         additiontal_information: Dodatne informacije
       new:
-        title: Novo glasovanje
+        title: Novo glasanje
         submit: Izradi anketu
       edit:
         submit: Ažuriraj anketu
       poll:
         responses:
           one: "%{count} odgovor"
-          few: "%{count} odgovore"
-          other: "%{count} odgovore"
+          few: "%{count} odgovora"
+          other: "%{count} odgovora"
         view_results: Pregledaj rezultate
         edit_poll: Uredi pregled
         show_results_help: Ako označite taj okvir, rezultati će biti javni i svi će ih korisnici moći vidjeti
         delete: Obriši pregled
         alert_notice: Akcija će se ukloniti s pregleda i svih povezanih pitanja.
         success_notice: Istraživanje je uspješno obrisano
-        unable_notice: Ne možete uništiti pregled koji ima odgovore
+        unable_notice: Ne možete uništiti pregled rezultata koji ima odgovore korisnika
       form:
         name: Naziv pregleda
         add_question: Dodaj pitanje
@@ -596,7 +596,7 @@ hr:
         title: Pregled postera
         poster_title: "Nemojte prestati tražiti,"
         poster_subtitle: "poduprite me! ;)"
-        intro_text: "<strong>Sudjelujem u %{org}</strong> svojim građanskim prijedlogom i samo ako i vi sudjelujete, moći ću ostvariti potrebnu potporu za stvaranje grada kakvog svi želimo."
+        intro_text: "<strong>Sudjelujem sa %{org}</strong> svojim građanskim prijedlogom i samo uz vašu potporu mogu ostvariti potrebnu potporu za stvaranje grada kakvog svi želimo."
         proposal_code: "Šifra prijedloga: %{code}"
         support: Podrži moj prijedlog
         footer: "<strong>Posjeti %{link} i podrži prijedlog.</strong> Što više, to bolje. Dajmo svoj doprinos! Hvala!"
@@ -633,28 +633,28 @@ hr:
       filters:
         current: "Otvoreno"
         expired: "Isteklo"
-      title: "Glasovanje"
+      title: "glasanje"
       participate_button: "Sudjelujte u ovoj anketi"
-      participate_button_expired: "Anketa završena"
+      participate_button_expired: "Anketa je završena"
       no_geozone_restricted: "Cijeli grad"
       geozone_restricted: "Gradska područja"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
-      not_logged_in: "Morate biti prijavljeni ili registrirani da bi sudjelovali"
-      unverified: "Morate potvrditi svoj račun da sudjelujete"
+      not_logged_in: "Morate biti prijavljeni ili registrirani kako biste sudjelovali"
+      unverified: "Morate potvrditi svoj račun kako biste sudjelovali"
       cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
-        icon_alt: Ikona glasovanja
-        title: Glasovanje
-        help: Pomoć oko glasovanja
+        icon_alt: Ikona glasanja
+        title: Glasanje
+        help: Pomoć oko glasanja
       section_footer:
-        title: Pomoć oko glasovanja
+        title: Pomoć oko glasanja
         description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke.
-      no_polls: "Ne postoji otvoreno glasovanje."
+      no_polls: "Trenutno nema glasanja."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
-      back: Nazad na glasovanje
+      back: Nazad na glasanje
       cant_answer_not_logged_in: "Morate %{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
@@ -669,9 +669,9 @@ hr:
       videos: "Vanjski video"
       info_menu: "Informacija"
       stats_menu: "Statistike sudjelovanja"
-      results_menu: "Rezultati glasovanja"
+      results_menu: "Rezultati glasanja"
       stats:
-        total_votes: "Ukupna količina datih glasova"
+        total_votes: "Ukupno glasova"
         votes: "GLASOVI"
         web: "WEB"
         mail: "MAIL"
@@ -679,10 +679,10 @@ hr:
         total: "UKUPNO"
         valid: "Vrijedi"
         white: "Bijeli glasovi"
-        null_votes: "Nevažeč"
+        null_votes: "Nevažeći"
       results:
         title: "Pitanja"
-        most_voted_answer: "Najviše izglasan odgovor: "
+        most_voted_answer: "Najviše glasova: "
     poll_header:
       back_to_proposal: Nazad na prijedlog
   poll_questions:
@@ -693,10 +693,10 @@ hr:
     new:
       title: "Pošalji poruku"
       submit_button: "Pošalji poruku"
-      info_about_receivers: "Ova će poruka biti poslana <strong>%{count} ljudima </strong> i bit će vidljiva u %{proposal_page}. <br>Poruke nisu poslane odmah, korisnici će periodično primati e-mail poruke s obavijestima o prijedlogu."
-      proposal_page: "na stranicu prijeldoga"
+      info_about_receivers: "Ova će poruka biti poslana <strong>%{count} primatelj/a </strong> i bit će vidljiva u %{proposal_page}. <br>Poruke se ne šalju odmah nego će korisnici periodično primati e-mail poruke s obavijestima o prijedlogu."
+      proposal_page: "na stranicu prijedloga"
     show:
-      back: "Nzad na moju aktivnost"
+      back: "Nazad na moju aktivnost"
   shared:
     edit: "Uredi"
     save: "Spremi"
@@ -751,7 +751,7 @@ hr:
     suggest:
       debate:
         found:
-          one: "Postoji rasprava s izrazom '%{query}', možete sudjelovati u njoj umjesto da otvarate novi."
+          one: "Postoji rasprava s izrazom '%{query}', možete sudjelovati u njoj umjesto da otvarate novu."
           few: "Postoje rasprave s izrazom '%{query}', možete sudjelovati u njima umjesto da otvarate nove."
           other: "Postoje rasprave s izrazom '%{query}', možete sudjelovati u njima umjesto da otvarate nove."
         message: "Vidite %{limit} od %{count} rasprava koje sadrže izraz '%{query}'"
@@ -759,15 +759,15 @@ hr:
       budget_investment:
         found:
           one: "Postoji ulaganje s izrazom '%{query}', možete sudjelovati u njemu umjesto otvaranja novog."
-          few: "Postoji ulaganja s izrazom '%{query}', možete sudjelovati u njima umjesto otvaranja novih."
-          other: "Postoji ulaganja s izrazom '%{query}', možete sudjelovati u njima umjesto otvaranja novih."
+          few: "Postoje ulaganja s izrazom '%{query}', možete sudjelovati u njima umjesto otvaranja novih."
+          other: "Postoje ulaganja s izrazom '%{query}', možete sudjelovati u njima umjesto otvaranja novih."
         message: "Vidite %{limit} od %{count} investicija koja sadrže termin '%{query}'"
         see_all: "Pogledaj sve"
       proposal:
         found:
           one: "Postoji prijedlog s izrazom \"%{query}\", možete mu pridonijeti umjesto stvaranja novog"
-          few: "Postoji prijedlozu s izrazom \"%{query}\", možete njima pridonijeti umjesto stvaranja novih"
-          other: "Postoji prijedlozu s izrazom \"%{query}\", možete njima pridonijeti umjesto stvaranja novih"
+          few: "Postoje prijedlozi s izrazom \"%{query}\", možete njima pridonijeti umjesto stvaranja novih"
+          other: "Postoje prijedlozi s izrazom \"%{query}\", možete njima pridonijeti umjesto stvaranja novih"
         message: "Vidite %{limit} od %{count} prijedloga koji sadrže pojam '%{query}'"
         see_all: "Pogledaj sve"
     tags_cloud:
@@ -818,10 +818,10 @@ hr:
       debates: Rasprave
       proposals: Prijedlozi
       comments: Komentari
-      proposal_votes: Glasovi za prijedlog
-      debate_votes: Glasovi za debate
-      comment_votes: Glasovi za komentare
-      votes: Totalno glasova
+      proposal_votes: Glasovi prijedloga
+      debate_votes: Glasovi debata
+      comment_votes: Glasovi komentara
+      votes: Ukupno glasova
       verified_users: Potvrđeni korisnici
       unverified_users: Korisnici koji nisu potvrđeni
   unauthorized:
@@ -856,12 +856,12 @@ hr:
       filters:
         comments:
           one: 1 Komentar
-          few: "%{count} Komentare"
-          other: "%{count} Komentare"
+          few: "%{count} Komentara"
+          other: "%{count} Komentara"
         debates:
           one: 1 Rasprava
           few: "%{count} Rasprave"
-          other: "%{count} Rasprave"
+          other: "%{count} Rasprava"
         proposals:
           one: 1 Prijedlog
           few: "%{count} Prijedloga"
@@ -869,13 +869,13 @@ hr:
         budget_investments:
           one: 1 Investicija
           few: "%{count} Investicije"
-          other: "%{count} Investicije"
+          other: "%{count} Investicija"
         follows:
           one: 1 Pratitelj
           few: "%{count} Pratitelja"
           other: "%{count} Pratitelja"
       no_activity: Nemate javnih aktivnosti
-      no_private_messages: "Ovaj korisnik ne prihvača privatne poruke."
+      no_private_messages: "Ovaj korisnik ne prihvaća privatne poruke."
       private_activity: Ovaj korisnik je odlučio da će listu aktivnosti zadržati privatnom.
       send_private_message: "Pošalji privatnu poruku"
       delete_alert: "Jeste li sigurni da želite obrisati svoj investicijski projekt? Ova akcija se ne može poništiti"
@@ -891,19 +891,19 @@ hr:
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
     comment_unauthenticated: Morate %{signin} ili %{signup} kako bi glasali.
     disagree: Ne slažem se
-    organizations: Organizacijama nije dopušteno glasovanje
+    organizations: Organizacijama nije dopušteno glasanje
     supports: Glasovi
-    verified_only: Samo potvrđenim korisnicima dozvoljeno je glasovanje za prijedloge; %{verify_account}.
+    verified_only: Samo je potvrđenim korisnicima dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
       not_logged_in: Morate %{signin} ili %{signup} da biste nastavili.
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
-      organization: Organizacijama nije dopušteno glasovanje
+      organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
-      not_voting_allowed: Faza glasovanja je zatvorena
+      not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
-        one: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
-        few: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
-        other: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        one: "Možete samo podržati investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        few: "Možete samo podržati investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        other: "Možete samo podržati investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -919,7 +919,7 @@ hr:
       title: Istaknuto
     recommended:
       title: Preporuke koje bi vas mogle zanimati
-      help: "Ove preporuke su napravljene od ozaka rasprava i prijedloga koje pratite."
+      help: "Ove preporuke su napravljene od oznaka rasprava i prijedloga koje pratite."
       debates:
         title: Preporučene rasprave
         btn_text_link: Sve preporučene rasprave
@@ -948,7 +948,7 @@ hr:
       user_permission_votes: Sudjelujte u finalnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
-    timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
+    timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovite radnju."
   related_content:
     title: "Povezani sadržaj"
     add: "Dodaj povezani sadržaj"
@@ -997,5 +997,5 @@ hr:
     text: Sadržaj ove stranice nije dostupan na vašem jeziku
     all_remote_translations_enqueued_text: Uskoro, osvježavanjem stranice, moći ćete vidjeti sav sadržaj na vašem jeziku.
     create:
-      enqueue_remote_translation: Prijevodi su pravilno zatraženi.
+      enqueue_remote_translation: Prijevodi su ispravno zatraženi.
     button: Prevedi stranicu

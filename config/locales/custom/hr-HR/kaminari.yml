@@ -2,10 +2,10 @@ hr:
   helpers:
     page_entries_info:
       entry:
-        zero: Unosi
+        zero: Unosa
         one: Unos
-        few: Unosi
-        other: Unosi
+        few: Unosa
+        other: Unosa
       more_pages:
         display_entries: Prikazivanje <strong>%{first}&nbsp;-&nbsp;%{last}</strong> u <strong>%{total}%{entry_name}</strong>
       one_page:

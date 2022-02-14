@@ -13,39 +13,39 @@ hr:
         budgets: "Participativni budžeti"
         polls: "Ankete"
         other: "Ostale informacije o interesima"
-        processes: "Procesi"
+        processes: "Javna savjetovanja"
       debates:
         title: "Rasprave"
-        description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
+        description: "U sekciji %{link} možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} stranice, a koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
         feature: "Možete otvarati rasprave, komentirati i ocjenjivati ih sa <strong>Slažem se</strong> ili <strong>Ne slažem se</strong>. Za to trebate %{link}."
-        feature_link: "registrirajte se na %{org}"
+        feature_link: "registrirati na %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
       proposals:
         title: "Prijedlozi"
-        description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko dobiju dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i provesti."
+        description: "U sekciji %{link} možete napraviti prijedlog za tijelo javne vlasti kako bi ga oni izvršili. Prijedlozima treba potpora te ukoliko dobiju dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i provesti."
         link: "prijedlozi građana"
         image_alt: "Gumb za potporu prijedloga"
         figcaption: 'Dugme za "Potporu" prijedloga.'
       budgets:
         title: "Participativni proračun"
-        description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
+        description: "Sekcija %{link} pomaže građanima u provedbi direktne odluke o trošenju dijela javnog proračuna."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
-        figcaption: '"Potpora" i "Glasovanje" faze sudioničkih proračuna.'
+        figcaption: '"Potpora" i "Glasanje" faze sudioničkih proračuna.'
       polls:
-        title: "Glasovanje"
-        description: "Sekcije za %{link} aktiviraju se svaki puta kada prijedlog postigne 1% potpore i započne izglasavanje ili kada tijelo javne vlasti predloži problem oko kojeg građani zatim odlučuju."
-        link: "glasovanje"
-        feature_1: "Kako bi sudjelovali u glasovanju %{link} i potvrdite svoj račun."
-        feature_1_link: "registrirajte se na %{org_name} platformi"
+        title: "Glasanje"
+        description: "Sekcije za %{link} aktiviraju se svaki puta kada prijedlog postigne 1% potpore i započne izglasavanje ili kada tijelo javne vlasti iznese problematiku o kojoj građani zatim odlučuju."
+        link: "glasanje"
+        feature_1: "Kako bi sudjelovali u glasanju %{link} i potvrdite svoj račun."
+        feature_1_link: "registrirajte se na %{org_name}"
       processes:
-        title: "Procesi"
-        description: "U %{link} sekciji građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područne javnog djelovanja i mogu ponuditi mišljenje na temu propisa u prošlim raspravama."
-        link: "procesi"
-        feature: "Kako biste sudjelovali u izglasavanju kliknite na %{link} i potvrdite svoj račun."
-        feature_link: "registrirajte se na %{org_name} platformi"
+        title: "Javno savjetovanje"
+        description: "U sekciji %{link}, građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područje javnog djelovanja te mogu ponuditi mišljenje na temu propisa iz prošlih rasprava."
+        link: "javno savjetovanje"
+        feature: "Kako biste sudjelovali u javnim savjetovanjima kliknite na %{link} i potvrdite svoj račun."
+        feature_link: "registrirajte se na %{org_name}"
       faq:
         title: "Tehnički problemi?"
         description: "Pročitajte FAQ kako biste dobili odgovore na svoja pitanja."

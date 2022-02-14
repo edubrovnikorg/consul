@@ -320,7 +320,7 @@ hr:
         no_progress_bars: "Ne postoji traka napretka"
         new_progress_bar: "Stvori novu traku napretka"
         primary: "Primarna traka napretka"
-        table_id: "Identifikacijski broj"
+        table_id: "ID"
         table_kind: "Tip"
         table_title: "Naziv"
         table_percentage: "Trenutni napredak"
@@ -329,7 +329,7 @@ hr:
       edit:
         title:
           primary: "Uredi primarnu traku napretka"
-          secondary: "Uredi traku napretka %{title}"
+          secondary: "Uredi %{title} traku napretka "
       create:
         notice: "Traka napretka je stvorena uspješno!"
       update:
