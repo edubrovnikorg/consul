@@ -74,23 +74,25 @@ hr:
         table_name: Naziv
         table_phase: Faza
         table_duration: Trajanje
+        table_completed: Dovršeno
+        table_phase_progress: Faza progresa
         table_investments: Investicije
         table_edit_groups: Tematska grupa
         table_edit_budget: Uredi
         table_admin_ballots: Glasački listići
         edit_groups: Uredi naslov grupa
-        edit_budget: Uredi budžet
+        edit_budget: Uredi proračun
         admin_ballots: Glasovi admina
-        no_budgets: "Ne postoje budžeti."
+        no_budgets: "Ne postoje proračuni."
       create:
-        notice: Novi participativni budžet je stvoren uspješno!
+        notice: Novi participativni proračun je stvoren uspješno!
       publish:
-        notice: Novi participativni budžet je stvoren uspješno!
+        notice: Novi participativni proračun je stvoren uspješno!
       update:
-        notice: Participativni budžet je ažuriran uspješno
+        notice: Participativni proračun je ažuriran uspješno
       edit:
-        title: Uredi Participativni budžet
-        delete: Obriši budžet
+        title: Uredi Participativni proračun
+        delete: Obriši proračun
         phase: Faza
         dates: Datumi
         enabled: Omogućeno
@@ -111,11 +113,11 @@ hr:
         empty_administrators: "Nema administratora"
         empty_valuators: "Nema procjenitelja"
       destroy:
-        success_notice: Budžet je uspješno obrisan
-        unable_notice: Ne možete obrisati budžet koji ima povezane investicije
-        unable_notice_polls: Nemožete obrisati budžet koji ima povezane glasove
+        success_notice: proračun je uspješno obrisan
+        unable_notice: Ne možete obrisati proračun koji ima povezane investicije
+        unable_notice_polls: Nemožete obrisati proračun koji ima povezane glasove
       new:
-        title: Novi participativni budžet
+        title: Novi participativni proračun
       winners:
         calculate: Izračunaj Pobjedničke Investicije
         calculated: Pobjednici se izračunavaju, potrebna je minuta.
@@ -504,7 +506,7 @@ hr:
           homepage_description: Ovdje možeš objasniti sadržaj poziva za javno savjetovanje
           banner_title: Boje naslova
         index:
-          create: Novi poziv za javno savjetovanje
+          create: Kreiraj novi poziv
           delete: Izbriši
           title: Poziv za javno savjetovanje
           filters:
@@ -567,7 +569,7 @@ hr:
           title: 'Uređivanje <span class="strong">%{draft_version_title}</span> od postupka <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
-          use_markdown: Koristi Markdown kako bi formatirali tekst
+          use_markdown: Koristite Markdown kako bi formatirali tekst
           hints:
             final_version: Ova verzija će se objaviti kao Konačni rezultat ovog poziva za javno savjetovanje. Komentari neće biti dopušteni u ovoj verziji.
             status:
@@ -935,7 +937,7 @@ hr:
         email_placeholder: Pretraži korisnika po emailu
         search: Pretraga
         user_not_found: Korisnik nije pronađen
-        help: "Dodaj ili ukloni činovnike ankete pomoću pretrage ispod."
+        help: "Dodaj ili ukloni činovnike pridružene glasanju pomoću pretrage ispod."
     poll_officer_assignments:
       index:
         officers_title: "Popis činovnika"

@@ -388,7 +388,7 @@ hr:
         title: "Naziv"
         description: "Opis"
       legislation/process:
-        title: Naslov procesa
+        title: Naslov poziva za javno savjetovanje
         summary: Sažetak
         description: Opis
         additional_info: Dodatne informacije
