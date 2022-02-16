@@ -7,9 +7,7 @@
 <% if @debates.any? %>
   <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.debates")) %>
 
-  <% if false %>
   <h3 class="inline-block"><%= page_entries_info @debates %></h3>
-  <% end %>
 
   <table>
     <thead>

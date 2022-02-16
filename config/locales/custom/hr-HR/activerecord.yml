@@ -15,17 +15,17 @@ hr:
         few: "Budžeti"
         other: "Budžeti"
       budget/investment:
-        one: "Investicija"
+        one: "Investicijski projekt"
         few: "Investicije"
         other: "Investicije"
       milestone:
-        one: "miljokaz"
-        few: "miljokaza"
-        other: "miljokaza"
+        one: "faza procesa"
+        few: "faze procesa"
+        other: "faza procesa"
       milestone/status:
-        one: "Status miljokaza"
-        few: "Status miljokaza"
-        other: "Status miljokaza"
+        one: "Status faza procesa"
+        few: "Status faza procesa"
+        other: "Status faza procesa"
       progress_bar:
         one: "Traka napretka"
         few: "Trake napretka"
@@ -83,9 +83,9 @@ hr:
         few: "kabine"
         other: "kabine"
       poll/officer:
-        one: "činovnik"
-        few: "činovnici"
-        other: "činovnici"
+        one: "službenik"
+        few: "službenika"
+        other: "službenika"
       poll/ballot_sheet:
         one: Glasački listić
         few: Glasački listići
@@ -95,9 +95,9 @@ hr:
         few: "Prijedlozi građana"
         other: "Prijedlozi građana"
       site_customization/page:
-        one: Prilagođena stranica
-        few: Prilagođene stranice
-        other: Prilagođene stranice
+        one: Dodatna stranica
+        few: Dodatne stranice
+        other: Dodatne stranice
       site_customization/image:
         one: Prilagođena slika
         few: Prilagođene slike
@@ -182,8 +182,8 @@ hr:
         description_finished: "Opis kada se finalizira budžet"
         phase: "Faza"
         currency_symbol: "Valuta"
-        voting_style: "Stil završnog glasovanja"
-        voting_style_knapsack: '"Knapsack"'
+        voting_style: "Metoda završnog glasovanja"
+        voting_style_knapsack: "Knapsack metoda"
         voting_style_approval: "Odobravanje"
       budget/translation:
         name: "Ime"
@@ -193,7 +193,7 @@ hr:
         description: "Opis"
         external_url: "Poveznica za dodatnu dokumentaciju"
         administrator_id: "Administrator"
-        location: "Lokacija (nije obavezno)"
+        location: "Lokacija (opcionalno)"
         organization_name: "Ukoliko predlažete u ime kolektiva/organizacija ili u ime više ljudi, napišite naziv kolektiva/organizacije"
         image: "Opsina slika prijedloga"
         image_title: "Naziv slike"
@@ -202,7 +202,7 @@ hr:
         feasibility_undecided: "Nedefinirano"
         feasibility_unfeasible: "Neizvedivo"
         incompatible: "Označite kao neusklađeno"
-        milestone_tag_list: "Oznake miljokaza"
+        milestone_tag_list: "Oznake faza procesa"
         price_explanation: "Obrazloženje cijene"
         selected: "Označite kao odabrano"
         selected_true: "Odabrano"
@@ -216,11 +216,11 @@ hr:
         description: "Opis"
       geozone:
         name: Ime
-        external_code: "Vanjski kod (nije obavezno)"
-        census_code: "Kod cenzusa (nije obavezno)"
-        html_map_coordinates: "HTML <map> Koordinate (nije obavezno)"
+        external_code: "Vanjski kod (opcionalno)"
+        census_code: "Kod cenzusa (opcionalno)"
+        html_map_coordinates: "HTML <map> Koordinate (opcionalno)"
       milestone:
-        status_id: "Trenutni status (nije obavezno)"
+        status_id: "Trenutni status (opcionalno)"
         title: "Naziv"
         description: "Opis (nije obavezno ukoliko je pripisan status)"
         publication_date: "Datum objave"
@@ -228,28 +228,28 @@ hr:
         description: "Opis"
       milestone/status:
         name: "Ime"
-        description: "Opis (nije obavezno)"
+        description: "Opis (opcionalno)"
       progress_bar:
         kind: "Tip"
         title: "Naziv"
-        percentage: "Trenutni progres"
+        percentage: "Trenutni napredak"
       progress_bar/kind:
-        primary: "Primarno"
-        secondary: "Sekundarno"
+        primary: "Primarna"
+        secondary: "Sekundarna"
       budget/group:
-        max_votable_headings: "Najveći broj naslova u kojima korisnik može glasovati"
+        max_votable_headings: "Najveći broj podgrupa u kojima korisnik može glasovati"
       budget/group/translation:
         name: "Naziv grupe"
       budget/heading:
-        allow_custom_content: "Dopustite blokiranje sadržaja"
-        latitude: "Visina (neobvezatno)"
-        longitude: "Širina (neobvezatno)"
-        name: "Ime naslova"
-        price: "Cijena"
+        allow_custom_content: "Dopustite blok sadržaja"
+        latitude: "Geografska širina (opcionalno)"
+        longitude: "Geografska visina (opcionalno)"
+        name: "Naziv"
+        price: "Ukupni iznos"
         population: "Populacija"
-        max_ballot_lines: "Dopušteno glasova"
+        max_ballot_lines: "Dopušteno glasanja"
       budget/heading/translation:
-        name: "Naziv naslova"
+        name: "Naziv"
       budget/phase:
         enabled: "Faza omogućena"
         ends_at: "Datum završetka"
@@ -338,7 +338,7 @@ hr:
       poll/ballot_sheet:
         data: CSV podaci
         poll_id: Glas
-        officer_assignment_id: Pripisani činovnik
+        officer_assignment_id: Pripisani službenik
       poll/shift:
         task: "Zadatak"
       proposal_notification:
@@ -346,14 +346,14 @@ hr:
         title: "Naziv"
       signature_sheet:
         title: "Naziv"
-        signable_type: "Tip potpisa"
-        signable_id: "Identifikator potpisa"
+        signable_type: "Potpis za:"
+        signable_id: "Identifikator"
         document_numbers: "Broj dokumenta"
       site_customization/page:
         content: Sadržaj
         created_at: Stvoreno
         subtitle: Podnaslov
-        slug: Žeton
+        slug: Url
         status: Status
         status_draft: "Skica"
         status_published: "Objavljeno"
@@ -381,8 +381,8 @@ hr:
       banner:
         background_color: Boja pozadine
         font_color: Boja fonta
-        post_ended_at: "Post je završio"
-        post_started_at: "Post je započeo"
+        post_ended_at: "Završetak prikazivanja"
+        post_started_at: "Početak prikazivanja"
         target_url: "Poveznica"
       banner/translation:
         title: "Naziv"
@@ -398,7 +398,7 @@ hr:
         debate_end_date: Kraj
         draft_start_date: Početak
         draft_end_date: Kraj
-        draft_publication_date: Datum objave publikacije
+        draft_publication_date: Datum objave nacrta publikacije
         allegations_start_date: Početak
         allegations_end_date: Kraj
         proposals_phase_start_date: Početak
@@ -406,9 +406,9 @@ hr:
         result_publication_date: Finalni rezultat datuma objave
         background_color: Pozadinska boja
         font_color: Boja fonta
-        homepage_enabled: "Glavna stranica omogućena"
+        homepage_enabled: "Naslovnica omogućena"
       legislation/process/translation:
-        title: Naslov Procesa
+        title: Naziv
         summary: Sažetak
         description: Opis
         additional_info: Dodatne informacije
@@ -420,7 +420,7 @@ hr:
         title: "Naziv prijedloga"
         video_url: "Poveznica na vanjski video"
       legislation/draft_version:
-        title: Naziv Verzije
+        title: Naziv
         body: Tekst
         changelog: Izmjene
         status: Status
@@ -428,7 +428,7 @@ hr:
         status_published: "Objavljeno"
         final_version: Finalna verzija
       legislation/draft_version/translation:
-        title: Naziv verzije
+        title: Naziv
         body: Tekst
         changelog: Izmjene
       legislation/question:
@@ -442,10 +442,10 @@ hr:
         text: Komentar
       document:
         title: Naziv
-        attachment: "Prilog"
+        attachment: "Odaberi"
       image:
         title: Naziv
-        attachment: "Prilog"
+        attachment: "Odaberi"
       poll/question/answer:
         title: Odgovor
         description: Opis
@@ -458,8 +458,8 @@ hr:
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet
-        from: "Pošiljatelj"
-        body: Sadržaj emaila
+        from: "Email adresa pošiljatelja"
+        body: Sadržaj newslettera
       admin_notification:
         segment_recipient: Primatelji
         title: Naziv
@@ -469,17 +469,17 @@ hr:
         title: Naslov
         body: Tekst
       widget/card:
-        label: Oznaka (nije obavezno)
+        label: Oznaka (opcionalno)
         title: Naziv
         description: Opis
-        link_text: Poveznica teksta
-        link_url: Poveznica URL
+        link_text: Tekst poveznice
+        link_url: URL poveznice
         columns: Broj stupaca
       widget/card/translation:
-        label: Oznaka (nije obavezno)
+        label: Oznaka (opcionalno)
         title: Naziv
         description: Opis
-        link_text: Link teksta
+        link_text: Tekst poveznice
       widget/feed:
         limit: Broj stavaka
       dashboard/action:

@@ -23,7 +23,7 @@ hr:
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
         organization: Organizacijama nije dozvoljeno glasanje
         not_selected: Investicijski projekti koji nisu odabrani ne mogu dobiti podršku
-        not_enough_money: "Već ste odabrali dostupan proračun.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
+        not_enough_money: "Već ste odabrali dostupan budžet.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
         no_ballots_allowed: Faza odabira je zatvorena
         different_heading_assigned: "Već ste glasovali za drugu temu: %{heading_link}"
         change_ballot: promijeni svoj glas
@@ -45,14 +45,14 @@ hr:
       publishing_prices: Objavljivanje cijena projekata
       balloting: Izglasavanje projekata
       reviewing_ballots: Pregled glasanja
-      finished: Finalizirani proračun
+      finished: Finalizirani budžet
     index:
-      title: Participativni proračun
-      empty_budgets: Ne postoje proračuni.
+      title: Participativni budžet
+      empty_budgets: Ne postoje budžeti.
       section_header:
         icon_alt: Participativni budžeti ikona
         title: Participativni budžeti
-        help: Pomoć oko participativnih proračuna
+        help: Pomoć oko participativnih budžeta
         all_phases: Pogledaj sve faze
       all_phases: Investicijske faze budžeta
       next_phase: Sljedeća faza
@@ -65,9 +65,9 @@ hr:
       finished_budgets: Dovršeni participativni budžeti
       see_results: Pogledaj rezultate
       section_footer:
-        title: Pomoć oko participativnih proračuna
-        description: S participativnim proračunom građani odlučuju koji će se dio proračuna utrošiti na pojedini projekt.
-      milestones: Miljokaz
+        title: Pomoć oko participativnih budžeta
+        description: S participativnim budžetom građani odlučuju koji će se dio budžeta utrošiti na pojedini projekt.
+      milestones: Faze procesa
     investments:
       form:
         tag_category_label: "Kategorije"
@@ -79,7 +79,7 @@ hr:
         map_remove_marker: "Ukloni oznaku s karte"
         map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ne znam."
       index:
-        title: Participativni proračun
+        title: Participativni budžet
         unfeasible: Neizvedive investicije za projekte
         unfeasible_text: "Ove investicije moraju zadovoljiti različite kriterije (zakonitost, konkretnost, ne smije premašiti limit budžeta) kako bi zadovoljile uvjete i ušle u krug do krajnjeg glasanja. Sve investicije koje ne zadovoljavaju kriterije označavaju se nezadovoljavajućim i objavljuju se na sljedećoj listi, zajedno s izvještajem zašto nisu pogodne."
         by_heading: "Investicijski projekti s ciljem: %{heading}"
@@ -116,7 +116,7 @@ hr:
         author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
-        code: "Lozinka investicijskog projekta: <strong>%{code}</strong>"
+        code: "ID investicijskog projekta: <strong>%{code}</strong>"
         location: "Lokacija: <strong>%{location}</strong>"
         organization_name: "Predložio: <strong>%{name}</strong>"
         share: Podijeli
@@ -125,7 +125,7 @@ hr:
         votes: Glasovi
         price: Cijena
         comments_tab: Komentari
-        milestones_tab: Miljokaz
+        milestones_tab: Faze procesa
         author: Autor
         project_unfeasible: "Ovaj je investicijski projekt <strong>označen kao neizvediv</strong> i neće ići u fazu izglasavanja."
         project_selected: "Ovaj je investicijski projekt <strong>odabran</strong> za fazu izglasavanja."

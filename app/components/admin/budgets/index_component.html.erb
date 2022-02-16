@@ -6,9 +6,7 @@
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
 <% if budgets.any? %>
-  <% if false %>
   <h3><%= page_entries_info budgets %></h3>
-  <% end %>
 
   <table class="budgets-table">
     <thead>
@@ -35,7 +33,7 @@
             <small><%= phase_progress_text(budget) %></small>
           </td>
           <td>
-            <%= dates(budget) %><br />
+            <%= dates(budget) %>
             <%= duration(budget) %>
           </td>
           <td>

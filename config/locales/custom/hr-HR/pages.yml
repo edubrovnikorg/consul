@@ -29,7 +29,7 @@ hr:
         image_alt: "Gumb za potporu prijedloga"
         figcaption: 'Dugme za "Potporu" prijedloga.'
       budgets:
-        title: "Participativni proračun"
+        title: "Participativni budžeti"
         description: "Sekcija %{link} pomaže građanima u provedbi direktne odluke o trošenju dijela javnog proračuna."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"

@@ -1,7 +1,6 @@
 <%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
 
 <% if @users.any? %>
-  <h3><%= page_entries_info @users %></h3>
 
   <table>
     <thead>
@@ -65,3 +64,5 @@
     <%= t("admin.users.index.no_users") %>
   </div>
 <% end %>
+
+

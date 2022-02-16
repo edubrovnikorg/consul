@@ -256,7 +256,7 @@ hr:
       open_gov: Otvorena vlada
       proposals: Prijedlozi
       poll_questions: Glasanje
-      budgets: Participativni proračun
+      budgets: Participativni budžet
       notification_item:
         new_notifications:
           one: Imate novu obavijest
@@ -275,16 +275,16 @@ hr:
       action:
         comments_on:
           one: Netko je komentirao na
-          few: Postoje %{count} komentari na
-          other: Postoje %{count} komentari na
+          few: Postoji %{count} komentara na
+          other: Postoji %{count} komentara na
         proposal_notification:
           one: Postoji jedna nova obavijest na
           few: Postoje %{count} nove obavijesti na
-          other: Postoje %{count} nove obavijesti na
+          other: Postoje %{count} novih obavijesti na
         replies_to:
           one: Netko je odgovorio na tvoj komentar na
-          few: Postoje %{count} novi odgovori na tvoj komentar na
-          other: Postoje %{count} novi odgovori na tvoj komentar na
+          few: Postoji %{count} nova odgovora na tvoj komentar na
+          other: Postoji %{count} novih odgovora na tvoj komentar na
       mark_as_read: Označi kao pročitano
       mark_as_unread: Označi kao nepročitano
       notifiable_hidden: Ovaj resurs više nije dostupan.
@@ -465,7 +465,7 @@ hr:
       dashboard_proposal_link: Upravljačka ploča
       flag: Prijedlog je označen kao neprimjeren od strane više korisnika.
       notifications_tab: Obavijesti
-      milestones_tab: Miljokaz
+      milestones_tab: Faze procesa
       retired_warning: "Autor smatra da ovaj prijedlog više ne bi trebao primati podršku."
       retired_warning_link_to_explanation: Pročitaj objašnjenje prije glasanja.
       retired: Prijedlog je povučen od strane autora
@@ -940,7 +940,7 @@ hr:
       title: Sudjelovati
       user_permission_debates: Sudjeluj u raspravi
       user_permission_info: Sa svojim računom možete...
-      user_permission_proposal: Kreiraj novi prijedlog
+      user_permission_proposal: Stvori novi prijedlog
       user_permission_support_proposal: Potpora prijedloga*
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
       user_permission_verify_info: "*Samo za korisnike Cenzusa."

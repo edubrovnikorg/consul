@@ -13,13 +13,11 @@ class Budgets::PhasesComponent < ApplicationComponent
     end
 
     def start_date(phase)
-      # time_tag(phase.starts_at.to_date, format: :long) if phase.starts_at.present?
-      phase.starts_at.to_date.strftime("%d.%m.%Y.")
+      time_tag(phase.starts_at.to_date, format: :long) if phase.starts_at.present?
     end
 
     def end_date(phase)
-      # time_tag(phase.ends_at.to_date - 1.day, format: :long) if phase.ends_at.present?
-      phase.starts_at.to_date.strftime("%d.%m.%Y.")
+      time_tag(phase.ends_at.to_date - 1.day, format: :long) if phase.ends_at.present?
     end
 
     def phase_dom_id(phase)

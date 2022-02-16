@@ -10,10 +10,10 @@ hr:
         display_entries: Prikazivanje <strong>%{first}&nbsp;-&nbsp;%{last}</strong> u <strong>%{total}%{entry_name}</strong>
       one_page:
         display_entries:
-          zero: "%{entry_name} - nema rezultata!"
+          zero: "Nema rezultata!"
           one: Postoji <strong> 1 %{entry_name}</strong>
-          few: Postoje <strong>%{count} %{entry_name}</strong>
-          other: Postoje <strong>%{count} %{entry_name}</strong>
+          few: Postoji <strong>%{count} %{entry_name}</strong>
+          other: Postoji <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
       current: Vi ste na stranici

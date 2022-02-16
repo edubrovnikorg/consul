@@ -1,0 +1,14 @@
+<tr id="<%= dom_id(poll) %>" class="poll">
+  <td><strong><%= poll.name %></strong></td>
+  <td class="text-center"><%=  poll.starts_at.to_date.strftime("%d.%m.%Y.") %></td>
+  <td class="text-center"><%=  poll.ends_at.to_date.strftime("%d.%m.%Y.") %></td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(poll,
+      destroy_confirmation: t("admin.polls.destroy.alert")
+    ) do |actions| %>
+      <%= actions.link_to t("admin.actions.configure"),
+                          admin_poll_path(poll),
+                          class: "configure-link" %>
+    <% end %>
+  </td>
+</tr>
