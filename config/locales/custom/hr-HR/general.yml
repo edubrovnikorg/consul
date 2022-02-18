@@ -256,6 +256,7 @@ hr:
       open_gov: Otvorena vlada
       proposals: Prijedlozi
       poll_questions: Glasanje
+      sdg: Ciljevi održivog razvoja
       budgets: Participativni budžet
       notification_item:
         new_notifications:
@@ -980,7 +981,7 @@ hr:
       cancel_button: Otkaži
     nested_links:
       title: Poveznice
-      note: Dodaj poveznice koje vas zanimaju
+      note: Dodaj poveznice od interesa
       add_new_link: Dodaj novu poveznicu
     link_fields:
       label_placeholder: Naslov poveznice

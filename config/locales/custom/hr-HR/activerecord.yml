@@ -488,9 +488,9 @@ hr:
         description: Opis
         link: Ekstrena poveznica
         request_to_administrators: Uključi u resurse gumb za zahtjev resursa od administratora
-        day_offset: Koliko dana želite odgoditi objavu stvorenog prijedloga?
+        day_offset: Koliko dana nakon stvaranja prijedloga želite da se aktivira?
         required_supports: Koliko potpore prijedlog mora dobiti kako bi se aktivirao?
-        order: Možete unijeti položaj na kojem će se ova radnja prikazati korisniku popis radnji
+        order: Unesite poziciju gdje će se ova akcija prikazati korisniku u popisu akcija
         active: Aktivirati
         action_type: Tip
         action_type_proposed_action: "Predložena radnja"

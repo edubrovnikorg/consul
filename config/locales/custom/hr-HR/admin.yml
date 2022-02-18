@@ -35,6 +35,7 @@ hr:
           proposals: Prijedlozi
           budgets: Participativno određivanje budžeta
           help_page: Stranica za pomoć
+          sdg: Ciljevi održivog razvoja
       edit:
         editing: Uredi banner
         form:
@@ -114,11 +115,11 @@ hr:
           one: "1 procjenitelj odabran"
           few: "%{count} procjenitelja odabrano"
           other: "%{count} procjenitelja odabrano"
-        info: 
+        info:
           budget_settings: Postavke budžeta
           phases_settings: "Postavke faza budžeta"
           staff_settings: "Postavke službenika"
-        name_description: " "  
+        name_description: " "
         empty_administrators: "Nema administratora"
         empty_valuators: "Nema procjenitelja"
       destroy:
@@ -400,14 +401,14 @@ hr:
           default:
             email: Email
             polls: Glasanje
-            poster: Poster
+            poster: Banner
         new:
-          creating: Nova akcija za glavni izbornik prijedloga
+          creating: Nova akcija za upravljačku ploču prijedloga
           back: Nazad na listu
         create:
           notice: Akcija je uspješno stvoreno
         edit:
-          editing: Uredi akciju za glavni izbornik prijedloga
+          editing: Uredi akciju za upravljačku ploču prijedloga
           back: Nazad na listu
         delete:
           success: Akcija uspješno obrisana
@@ -417,7 +418,7 @@ hr:
           published_proposal_help_text: Označi ovu kućicu kako bi stvorili akciju samo za objavljene prijedloge
       administrator_tasks:
         index:
-          description: "Objavljeni resursi na pokretnoj traci prijedloga mogu uključivati gumb za koji su potrebni administratori.\nZahtjevi korisnika su prikazani ispod."
+          description: "Resursi objavljeni na upravljačkoj ploči prijedloga mogu uključivati gumb za zahtjev od administratora.\nKorisnički zahtjevi su prikazani ispod."
           title: Zatraženi resursi
           solve: Riješi
           no_records: Ne postoje zatraženi resursi
@@ -655,6 +656,12 @@ hr:
         delete: Izbriši
       search:
         title: "Menadžeri: Pretraga korisnika"
+    sdg_managers:
+      index:
+        no_sdg_managers: Ne postoje menadžeri.
+    sdg/managers:
+      sdg/manager:
+        add: Dodaj
     menu:
       activity: Aktivnosti moderatora
       admin: Meni admina
@@ -671,6 +678,7 @@ hr:
       hidden_users: Skriveni korisnici
       administrators: Administratori
       managers: Menadžeri
+      sdg_managers: Menadžeri održivog razvoja
       moderators: Moderatori
       messaging_users: Poruke korisnicima
       newsletters: Newsletteri
@@ -716,7 +724,7 @@ hr:
       title_booths: Glasačke kabine
       legislation: Javno savjetovanje
       users: Korisnici
-      dashboard: Glavni izbornik prijedloga
+      dashboard: Upravljačka ploča prijedloga
       administrator_tasks: Zatraženi resursi
       dashboard_actions: Resursi i akcije
       debates: "Rasprave"
@@ -1260,30 +1268,33 @@ hr:
       flash:
         updated: Vrijednost ažurirana
       index:
-        title: Postavke konfiguracije
+        title: Globalne postavke
         general: Konfiguracijske postavke
         update_setting: Spremi
         participation_processes: "Participativni procesi"
         images_and_documents: "Slike i dokumenti"
         feature_flags: Značajke
         features:
-          enabled: "Značajke omogućene"
-          disabled: "Značajke isključene"
-          enable: "Omogući"
+          enabled: "Značajka uključena"
+          disabled: "Značajka isključena"
+          enable: "Uključi"
           disable: "Isključi"
         map:
-          title: Mapa konfiguracije
-          help: Ovdje možete prilagoditi način prikaza karte korisnicima. Povucite oznaku karte ili kliknite bilo gdje na karti, postavite željeno zumiranje i kliknite gumb "Ažuriraj".
+          title: Konfiguracije karte
+          help: Ovdje možete prilagoditi način prikaza karte korisnicima. Povucite oznaku karte ili kliknite bilo gdje na karti, postavite željeno uvećanje i kliknite gumb "Spremi".
           flash:
             update: Konfiguracija mape je uspješno ažurirana.
           form:
             submit: Spremi
           how_to_enable: 'Kako bi prikazali kartu korisnicima, morate omogućiti "Prijedlozi i investicijski budžeti geolokacije" na kartici "Značajke".'
         dashboard:
-          title: Glavni izbornik prijedloga
+          title: Upravljačka ploča prijedloga
         remote_census:
-          title: Konfiguracija udaljenog cenzusa
-          how_to_enable: 'Za konfiguraciju udaljenog cenzusa (SOAP) morate omogućiti "Konfiguriraj vezu za udaljeni cenzus (SOAP) na kartici "Značajke".'
+          title: Konfiguracija udaljenog popisa
+          how_to_enable: Za konfiguraciju udaljenog popisa stanovništva (SOAP) morate omogućiti opciju na kartici „Značajke“'
+        sdg:
+          title: Konfiguracija ciljeva održivog razvoja
+          how_to_enable: 'Kako bi omogućili konfiguraciju prvo omogućite opciju "Ciljevi održivog razvoja" na kartici "Značajke".'
       remote_census_general_name: Opće informacije
       remote_census_request_name: Zatraži podatke
       remote_census_response_name: Podaci o odazivu
@@ -1317,8 +1328,15 @@ hr:
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Svi ciljevi"
+            label: "Po cilju"
+          sdg_targets:
+            all: "Svi targeti"
+            label: "Po targetu"
         search: "Pretraga"
-        label: 
+        label:
           booths: "Pretraži aktivna glasačka mjesta"
           organizations: "Pretraži organizacije"
           users: "Pretraži korisnike"
@@ -1340,8 +1358,8 @@ hr:
       color_help: Heksadecimalni format
       show_results_and_stats: "Prikaži rezultate i statistike"
       results_and_stats_reminder: "Odaberi javno vidljive podatke."
-    
-      geozones:
+
+    geozones:
       index:
         title: Geozona
         create: Stvori geozonu
@@ -1423,7 +1441,7 @@ hr:
           verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nemaju prijedloge za izglasavanje
           visits: Broj posjeta
           votes: Ukupno glasova
-        budgets_title: Podržani investicijski projekti 
+        budgets_title: Podržani investicijski projekti
         participatory_budgets: Participativni budžeti
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
@@ -1579,7 +1597,7 @@ hr:
           cards_title: Kartice
           see_cards: Pogledaj Kartice
         cards:
-          cards_title: Kartice stranice 
+          cards_title: Kartice stranice
           create_card: Stvori karticu
           no_cards: Ne postoje kartice.
           title: Naziv
