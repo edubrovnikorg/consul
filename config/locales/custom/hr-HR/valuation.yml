@@ -7,16 +7,16 @@ hr:
       budgets: Participativni budžet
     budgets:
       index:
-        title: Participativni proračun
+        title: Participativni budžeti
         filters:
           current: Otvoreno
           finished: Dovršeno
-        table_name: Ime
+        table_name: Naziv
         table_phase: Faza
-        table_assigned_investments_valuation_open: Pripisani investicijski projekti su otvoreni s procjenom
+        table_assigned_investments_valuation_open: Investicijski projekti otvoreni za procjenjivanje
         table_actions: Akcije
-        evaluate: Procijeniti
-        no_budgets: "Ne postoje proračuni"
+        evaluate: Procijenjivanje
+        no_budgets: "Ne postoje budžeti"
     budget_investments:
       index:
         headings_filter_all: Svi naslovi

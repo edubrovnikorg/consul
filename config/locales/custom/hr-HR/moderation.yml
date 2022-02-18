@@ -46,7 +46,7 @@ hr:
     menu:
       flagged_comments: Komentari
       flagged_debates: Rasprave
-      flagged_investments: Proračunske investicije
+      flagged_investments: Investicijski projekti
       proposals: Prijedlozi
       proposal_notifications: Obavijesti o prijedlozima
       users: Blokiraj korisnike
@@ -80,14 +80,14 @@ hr:
           with_ignored_flag: Označite kao pogledano
         headers:
           moderate: Uredite
-          budget_investment: Budžet investicija
-        hide_budget_investments: Sakrij budžet investicije
+          budget_investment: Investicijski projekt
+        hide_budget_investments: Sakrij investicijske projekte
         ignore_flags: Označi kao pogledano
         order: Poredaj po
         orders:
           created_at: Posljednje
           flags: Najviše označeno
-        title: Budžet investicije
+        title: Investicijski projekti
     proposal_notifications:
       index:
         block_authors: Blok autora

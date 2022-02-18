@@ -85,7 +85,7 @@ hr:
         edit_budget: Uredi
         admin_ballots: Glasovi
         no_budgets: "Ne postoje budžeti."
-        help: "Participativni proračuni omogućuju građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
+        help: "Participativni budžeti omogućuju građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
       create:
         notice: Novi participativni budžet je uspješno stvoren!
       publish:
@@ -711,7 +711,7 @@ hr:
           polls: "Glasanje"
           layouts: "Raspored"
           mailers: "Email poruke"
-          management: "Menadžment"
+          management: "Upravljanje"
           welcome: "Dobrodošli"
         buttons:
           save: "Spremi"
@@ -1333,8 +1333,8 @@ hr:
             all: "Svi ciljevi"
             label: "Po cilju"
           sdg_targets:
-            all: "Svi targeti"
-            label: "Po targetu"
+            all: "Svi zadatci"
+            label: "Po zadatku"
         search: "Pretraga"
         label:
           booths: "Pretraži aktivna glasačka mjesta"
@@ -1343,6 +1343,11 @@ hr:
           proposals: "Pretraži po nazivu, kodu, opisu ili pitanju"
           debates: "Pretraži po nazivu i opisu"
           poll_officers: Pretraži službenike
+          polls: Pretraži glasanja
+          budget_investments: Pretraži investicijske projekte
+          debates: Pretraži rasprave
+          legislation_processes: "Javna savjetovanja"
+          legislation_proposals: Prijedlozi savjetovanja
       actions: Akcije
       title: Naziv
       description: Opis
@@ -1447,6 +1452,7 @@ hr:
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
         polls: Glasanje
+        sdg: COR
       graph:
         debate_created: Grafikon stvorenih rasprava
         legislation_answer_created: Grafikon stvorenih pitanja na javnim savjetovanjima
@@ -1490,6 +1496,15 @@ hr:
           question_name: Pitanje
           origin_web: Web sudionici
           origin_total: Ukupno sudionika
+      sdg:
+        budget_investments:
+          amount: "Odobreni iznos"
+          winners: "Pobjednički investicijski projekti"
+          sent: "Investicijski projekti poslani"
+        debates: "Rasprave"
+        polls: "Glasanja"
+        proposals: "Prijedlozi"
+        title: "Statistike ciljeva"
     tags:
       create: Stvori temu
       destroy: Izbriši temu

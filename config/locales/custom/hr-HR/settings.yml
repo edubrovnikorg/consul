@@ -132,6 +132,9 @@ hr:
       dashboard:
         notification_emails: "Email notifikacije sa kontrolne ploče"
         notification_emails_description: "Omogućuje slanje notifikacija autorima prijedloga"
+      sdg: COR
+      sdg_description: Omogući sekciju "Ciljevi održivog razvoja" u navigaciji unutar administracije i u Globalnim Postavkama.
+    remote_census:
     remote_census:
       general:
         endpoint: "Krajnja točka"

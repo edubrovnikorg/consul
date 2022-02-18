@@ -9,10 +9,10 @@ hr:
     show:
       title:
         proposal: Prijedlog zajednice
-        investment: Zajednica investicijskog proračuna
+        investment: Zajednica investicijskog projekta
       description:
         proposal: Sudjelujte u zajednici ovog prijedloga. Aktivna zajednica može pomoći u poboljšanju sadržaja prijedloga i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
-        investment: Sudjelujte u zajednici ove proračunske investicije. Aktivna zajednica može pomoći u poboljšanju sadržaja proračunske investicije i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+        investment: Sudjelujte u zajednici ovog investicijskog projekta. Aktivna zajednica može pomoći u poboljšanju sadržaja investicijskog projekta i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
       create_first_community_topic:
         first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
         first_theme: Stvorite prvu temu u vašoj zajednici

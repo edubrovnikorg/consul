@@ -9,8 +9,8 @@ hr:
       updated: "Zaporka je uspješno ažurirana"
     confirmations:
       confirmed: "Vaš račun je potvrđen."
-      send_instructions: "Unutar nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje lozinke."
-      send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka, zaprimit ćete u nekoliko minuta e-mail koji sadrži upute za ponovno postavljanje lozinke."
+      send_instructions: "Unutar nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje zaporke."
+      send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka, zaprimit ćete u nekoliko minuta e-mail koji sadrži upute za ponovno postavljanje zaporke."
     failure:
       already_authenticated: "Već ste prijavljeni."
       inactive: "Vaš račun još nije aktiviran."
@@ -26,16 +26,16 @@ hr:
       confirmation_instructions:
         subject: "Upute za potvrdu"
       reset_password_instructions:
-        subject: "Upute za ponovno uspostavljanje lozinke"
+        subject: "Upute za ponovno uspostavljanje zaporke"
       unlock_instructions:
         subject: "Otključavanje uputa"
     omniauth_callbacks:
       failure: 'Nije Vas moguće autorizirati kao %{kind} zbog "%{reason}".'
       success: "Uspješno prepoznat kao %{kind}."
     passwords:
-      no_token: "Ne možete pristupiti ovoj stranici osim putem linka za obnovu lozinke. Ukoliko ste probali pristupiti preko linka za obnovu lozinke, molimo vas provjerite je li URL ispravan."
-      send_instructions: "Za nekoliko minuta dobit ćete e-mail s uputama za obnovu lozinke."
-      send_paranoid_instructions: "Ako je Vaš e-mail u našoj bazi podataka, u nekoliko minuta ćete dobiti link za obnovu lozinke."
+      no_token: "Ne možete pristupiti ovoj stranici osim putem linka za obnovu zaporke. Ukoliko ste probali pristupiti preko linka za obnovu zaporke, molimo vas provjerite je li URL ispravan."
+      send_instructions: "Za nekoliko minuta dobit ćete e-mail s uputama za obnovu zaporke."
+      send_paranoid_instructions: "Ako je Vaš e-mail u našoj bazi podataka, u nekoliko minuta ćete dobiti link za obnovu zaporke."
       updated: "Vaša zaporka je uspješno promijenjena. Autentifikacija uspješna."
       updated_not_active: "Vaša zaporka je uspješno promijenjena."
     registrations:
@@ -67,4 +67,4 @@ hr:
         one: "1 greška nije dopustila spremanje %{resource}. Molimo provjerite označena polja kako biste ih znali ispraviti:"
         few: "%{count} grešaka nije dopustilo spremanje %{resource}. Molimo provjerite označena polja kako biste ih znali ispraviti:"
         other: "%{count} grešaka ne omogućava spremanje %{resource}. Molimo Vas da provjerite označena polja kako biste ih znali izmijeniti:"
-      equal_to_current_password: "mora biti različita od trenutne lozinke."
+      equal_to_current_password: "mora biti različita od trenutne zaporke."

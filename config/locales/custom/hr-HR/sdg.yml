@@ -1,0 +1,474 @@
+hr:
+  sdg:
+    goals:
+      goal_1:
+        title: "Ne siromaštvu"
+        title_in_two_lines: "Ne\nsiromaštvu"
+        description: "Ukinuti siromaštvo u svim njegovim oblicima, svugdje."
+        long_description: '<p>Globally, the number of people living in extreme poverty declined from 36 per cent in 1990 to 10 per cent in 2015. But the pace of change is decelerating and the COVID-19 crisis <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">risks reversing decades of progress</a> in the fight against poverty. <a href="https://www.wider.unu.edu/node/237051">New research</a> published by the UNU World Institute for Development Economics Research warns that the economic fallout from <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">the global pandemic could increase global poverty by as much as half a billion people</a>, or 8% of the total human population. This would be the first time that poverty has increased globally in thirty years, since 1990.</p> <p>More than <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 million people</a>, or 10 per cent of the world population, still live in extreme poverty today, struggling to fulfil the most basic needs like health, education, and access to water and sanitation, to name a few. The majority of people living on less than $1.90 a day live in sub-Saharan Africa. Worldwide, the <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">poverty rate in rural areas is 17.2 per cent</a>—more than three times higher than in urban areas.&nbsp;</p> <p>For those who work, having a job does not guarantee a decent living. In fact, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">8 per cent</a> of employed workers and their families worldwide lived in extreme poverty in 2018. One out of five children live in extreme poverty. Ensuring social protection for all children and other vulnerable groups is critical to reduce poverty.</p>'
+        targets:
+          target_1_1:
+            title: "Do 2030. iskorijeniti ekstremno siromaštvo za sve ljude posvuda, trenutni podaci pokazuju kako ima ljudi koji žive s manje od 1,25 dolara dnevno"
+          target_1_2:
+            title: "Do 2030. smanjiti barem za polovicu udio muškaraca, žena i djece svih dobi koji žive u siromaštvu u svim njegovim dimenzijama prema nacionalnim definicijama"
+          target_1_3:
+            title: "Provesti nacionalno primjerene sustave i mjere socijalne zaštite za sve i do 2030. postići znatnu pokrivenost siromašnih i ranjivih skupina"
+          target_1_4:
+            title: "Do 2030. osigurati da svi muškarci i žene, posebno siromašni i ranjivi, imaju jednaka prava na ekonomske resurse, kao i pristup osnovnim uslugama, vlasništvo i kontrolu nad zemljom i drugim oblicima vlasništva, nasljeđe, prirodna bogatstva, odgovarajuće nove tehnologije i financijske usluge, uključujući mikrofinanciranje"
+          target_1_5:
+            title: "Do 2030. izgraditi otpornost siromašnih i onih u ranjivim situacijama te smanjiti njihovu izloženost i ranjivost ekstremnim događajima povezanim s klimom i drugim gospodarskim, društvenim i ekološkim šokovima i katastrofama"
+          target_1_A:
+            title: "Osigurati značajnu mobilizaciju resursa iz različitih izvora, uključujući kroz poboljšanu razvojnu suradnju, kako bi se osigurala prikladna i predvidljiva sredstva za zemlje u razvoju, posebno najmanje razvijene zemlje, za provedbu programa i politika za okončanje siromaštva u svim njegovim dimenzijama"
+          target_1_B:
+            title: "Stvoriti dobre političke okvire na nacionalnoj, regionalnoj i međunarodnoj razini, temeljene na razvojnim strategijama za siromašne i rodno osjetljivim, kako bi se podržalo ubrzano ulaganje u akcije iskorjenjivanja siromaštva"
+      goal_2:
+        title: "Ne gladi"
+        title_in_two_lines: "Ne\nGladi"
+        description: "Nulta stopa gladi"
+        long_description: '<p>After decades of steady decline, the number of people who suffer from hunger – as measured by the prevalence of undernourishment – began to slowly increase again in 2015. Current estimates show that <a href="http://www.fao.org/publications/sofi/2020/en/">nearly 690 million people are hungry, or 8.9 percent of the world population</a> – up by 10 million people in one year and by nearly 60 million in five years.</p> <p>The world is not on track to achieve Zero Hunger by 2030. If recent trends continue, the number of people affected by hunger would surpass 840 million by 2030.</p> <p>According to the World Food Programme, <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 million suffer from acute hunger</a> largely due to man-made conflicts, climate change and economic downturns. The COVID-19 pandemic could now double that number, putting an additional 130 million people at risk of suffering acute hunger by the end of 2020.</p> <p>With more than <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">a quarter of a billion people potentially at the brink of starvation</a>, swift action needs to be taken to provide food and humanitarian relief to the most at-risk regions.</p> <p>At the same time,&nbsp;a profound change of the global food and agriculture system is needed if we are to nourish the more than 690 million people who are hungry today – and the&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">additional 2 billion people</a>&nbsp;the world will have by 2050. Increasing agricultural productivity and sustainable food production are crucial to help alleviate the perils of hunger.</p>'
+        targets:
+          target_2_1:
+            title: "Do 2030. zaustaviti glad i osigurati pristup svim ljudima, posebno siromašnima i osobama u ranjivim situacijama, uključujući dojenčad, sigurnoj, hranjivoj i dovoljnoj hrani tijekom cijele godine."
+          target_2_2:
+            title: "Do 2030. okončati sve oblike pothranjenosti, uključujući postizanje, do 2025., međunarodno dogovorenih ciljeva u pogledu zaostajanja u razvoju i iscrpljenosti kod djece mlađe od 5 godina, te rješavati prehrambene potrebe adolescenata, trudnica i dojilja te starijih osoba."
+          target_2_3:
+            title: "Do 2030. udvostručiti poljoprivrednu produktivnost i prihode malih proizvođača hrane, posebice žena, autohtonih naroda, obiteljskih poljoprivrednika, stočara i ribara, uključujući siguran i jednak pristup zemlji, drugim proizvodnim resursima i inputima, znanju, financijskim uslugama, tržišta i mogućnosti za dodatnu vrijednost i zapošljavanje izvan poljoprivrede."
+          target_2_4:
+            title: "Do 2030. osigurati održive sustave proizvodnje hrane i implementirati otporne poljoprivredne prakse koje povećavaju produktivnost i proizvodnju, koje pomažu u održavanju ekosustava, koje jačaju sposobnost prilagodbe klimatskim promjenama, ekstremnim vremenskim prilikama, suši, poplavama i drugim katastrofama i koje progresivno poboljšavaju kvalitetu zemljišta i tla."
+          target_2_5:
+            title: "Do 2020. održavati genetsku raznolikost sjemena, kultiviranih biljaka te uzgojenih i udomaćenih životinja i srodnih divljih vrsta, uključujući kroz dobro vođene i raznolike banke sjemena i biljaka na nacionalnoj, regionalnoj i međunarodnoj razini, te promicati pristup i pošteno i pravično dijeljenje koristi koje proizlaze iz korištenja genetskih resursa i povezanog tradicionalnog znanja, kako je međunarodno dogovoreno."
+          target_2_A:
+            title: "Povećati ulaganja, uključujući kroz pojačanu međunarodnu suradnju, u ruralnu infrastrukturu, poljoprivredna istraživanja i savjetodavne usluge, razvoj tehnologije i banke gena biljaka i stoke kako bi se poboljšao kapacitet poljoprivrede u zemljama u razvoju, posebno u najmanje razvijenim zemljama."
+          target_2_B:
+            title: "Ispraviti i spriječiti trgovinska ograničenja i poremećaje na svjetskim poljoprivrednim tržištima, uključujući paralelno ukidanje svih oblika poljoprivrednih izvoznih subvencija i svih izvoznih mjera s jednakim učinkom, u skladu s mandatom Razvojne runde iz Dohe."
+          target_2_C:
+            title: "Usvojiti mjere kako bi se osiguralo ispravno funkcioniranje tržišta prehrambenih proizvoda i njihovih derivata te olakšao pravovremeni pristup tržišnim informacijama, uključujući i rezerve hrane, kako bi se pomoglo u ograničavanju ekstremne volatilnosti cijena hrane."
+      goal_3:
+        title: "Dobro zdravstvo i blagostanje"
+        title_in_two_lines: "Dobro zdravstvo i\nblagostanje"
+        description: "Osigurati zdrav život i promicati dobrobit za sve u svim dobima."
+        long_description: '<p>Ensuring healthy lives and promoting well-being at all ages is essential to sustainable development. Currently, the world is facing a <a href="https://www.un.org/coronavirus">global health crisis</a> unlike any other — COVID-19 is spreading human suffering, destabilizing the global economy and upending the lives of billions of people around the globe.&nbsp;</p> <p>Before the pandemic, major progress was made in <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">improving the health of millions of people</a>. Significant strides were made in increasing life expectancy and reducing some of the common killers associated with child and maternal mortality. But more efforts are needed to fully eradicate a wide range of diseases and address many different persistent and emerging health issues. By focusing on providing more efficient funding of health systems, improved sanitation and hygiene, and increased access to physicians, significant progress can be made in helping to save the lives of millions.</p> <p>Health emergencies such as COVID-19 pose a global risk and have shown the critical need for preparedness. The United Nations Development Programme highlighted huge disparities in <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">countries’ abilities to cope with and recover from the COVID-19 crisis</a>. The pandemic provides a watershed moment for health emergency preparedness and for investment in critical 21st century public services.&nbsp;</p>'
+        targets:
+          target_3_1:
+            title: "Do 2030. smanjiti globalni omjer smrtnosti majki na manje od 70 na 100 000 živorođenih."
+          target_3_2:
+            title: "Do 2030. okončati spriječiti smrt novorođenčadi i djece mlađe od 5 godina, pri čemu je cilj svih zemalja smanjiti neonatalnu smrtnost na najviše 12 na 1.000 živorođenih, a smrtnost mlađe od 5 godina na najviše 25 na 1.000 živih rođenja."
+          target_3_3:
+            title: "Do 2030. okončati epidemije AIDS-a, tuberkuloze, malarije i zanemarenih tropskih bolesti te suzbiti hepatitis, bolesti koje se prenose vodom i druge zarazne bolesti."
+          target_3_4:
+            title: "Do 2030. smanjiti za jednu trećinu preranu smrtnost od nezaraznih bolesti prevencijom i liječenjem te promicati mentalno zdravlje i dobrobit."
+          target_3_5:
+            title: "Ojačati prevenciju i liječenje zlouporabe supstanci, uključujući zlouporabu opojnih droga i štetnu upotrebu alkohola."
+          target_3_6:
+            title: "Do 2020. prepoloviti globalni broj smrtnih slučajeva i ozljeda u prometnim nesrećama."
+          target_3_7:
+            title: "Do 2030. osigurati univerzalni pristup uslugama seksualnog i reproduktivnog zdravlja, uključujući planiranje obitelji, informiranje i obrazovanje, te integraciju reproduktivnog zdravlja u nacionalne strategije i programe."
+          target_3_8:
+            title: "Ostvariti univerzalnu zdravstvenu pokrivenost, uključujući zaštitu od financijskih rizika, pristup kvalitetnim osnovnim zdravstvenim uslugama i pristup sigurnim, učinkovitim, kvalitetnim i pristupačnim esencijalnim lijekovima i cjepivima za sve."
+          target_3_9:
+            title: "Do 2030. značajno smanjiti broj smrtnih slučajeva i bolesti od opasnih kemikalija te onečišćenja i onečišćenja zraka, vode i tla."
+          target_3_A:
+            title: "Po potrebi ojačati provedbu Okvirne konvencije Svjetske zdravstvene organizacije o kontroli duhana u svim zemljama."
+          target_3_B:
+            title: "Podržati istraživanje i razvoj cjepiva i lijekova za zarazne i nezarazne bolesti koje prvenstveno pogađaju zemlje u razvoju, osigurati pristup pristupačnim esencijalnim lijekovima i cjepivima, u skladu s Deklaracijom iz Dohe o Sporazumu TRIPS i javnom zdravstvu, koja potvrđuje pravo na razvoj državama da u potpunosti koriste odredbe Sporazuma o trgovinskim aspektima prava intelektualnog vlasništva u vezi sa fleksibilnostima za zaštitu javnog zdravlja, a posebno, omogući pristup lijekovima za sve."
+          target_3_C:
+            title: "Znatno povećati financiranje zdravstva i zapošljavanje, razvoj, obuku i zadržavanje zdravstvene radne snage u zemljama u razvoju, posebno u najmanje razvijenim zemljama i malim otočnim državama u razvoju."
+          target_3_D:
+            title: "Ojačati kapacitete svih zemalja, posebno zemalja u razvoju, za rano upozoravanje, smanjenje rizika i upravljanje nacionalnim i globalnim zdravstvenim rizicima."
+      goal_4:
+        title: "Kvalitetno obrazovanje"
+        title_in_two_lines: "Kvalitetno\nObrazovanje"
+        description: "Kvalitetno obrazovanje."
+        long_description: '<p>Education enables upward socioeconomic mobility and is a key to escaping poverty. Over the past decade, major progress was made towards increasing access to education and school enrollment rates at all levels, particularly for girls. Nevertheless, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">about 260 million children were still out of school</a> in 2018 — nearly one fifth of the global population in that age group. And more than half of all children and adolescents worldwide are <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">not meeting minimum proficiency standards</a> in reading and mathematics.&nbsp;</p> <p>In 2020, as the COVID-19 pandemic spread across the globe, a majority of countries announced the temporary closure of schools, impacting more than 91 per cent of students worldwide. By April 2020, close to <a href="https://en.unesco.org/covid19/educationresponse">1.6 billion children and youth were out of school</a>. And nearly <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 million children who rely on school meals</a> needed to look to other sources for daily nutrition.&nbsp;</p> <p>Never before have so many children been out of school at the same time, disrupting learning and upending lives, especially the most vulnerable and marginalised. The global pandemic has far-reaching consequences that may jeopardize hard won gains made in improving global education.</p>'
+        targets:
+          target_4_1:
+            title: "Do 2030. osigurati da sve djevojke i dječaci završe besplatno, pravedno i kvalitetno osnovno i srednje obrazovanje koje vodi do relevantnih i učinkovitih ishoda učenja za cilj 4."
+          target_4_2:
+            title: "Do 2030. osigurati da sve djevojčice i dječaci imaju pristup kvalitetnom razvoju u ranom djetinjstvu, skrbi i predškolskom obrazovanju kako bi bili spremni za osnovno obrazovanje."
+          target_4_3:
+            title: "Do 2030. osigurati jednak pristup svim ženama i muškarcima pristupačnom i kvalitetnom tehničkom, strukovnom i tercijarnom obrazovanju, uključujući sveučilišno."
+          target_4_4:
+            title: "Do 2030. značajno povećati broj mladih i odraslih koji imaju relevantne vještine, uključujući tehničke i strukovne vještine, za zapošljavanje, dostojanstvene poslove i poduzetništvo."
+          target_4_5:
+            title: "Do 2030. eliminirati spolne razlike u obrazovanju i osigurati jednak pristup svim razinama obrazovanja i strukovnog osposobljavanja za ugrožene, uključujući osobe s invaliditetom, autohtono stanovništvo i djecu u ranjivim situacijama."
+          target_4_6:
+            title: "Do 2030. osigurati da svi mladi i znatan dio odraslih, i muškaraca i žena, steknu pismenost i računanje."
+          target_4_7:
+            title: "Do 2030. osigurati da svi učenici steknu znanja i vještine potrebne za promicanje održivog razvoja, uključujući, između ostalog, kroz obrazovanje za održivi razvoj i održive stilove života, ljudska prava, ravnopravnost spolova, promicanje kulture mira i nenasilja, globalno građanstvo i uvažavanje kulturne raznolikosti i doprinosa kulture održivom razvoju."
+          target_4_A:
+            title: "Izgraditi i nadograditi obrazovne ustanove koje su osjetljive na djecu, invaliditet i rod i osigurati sigurno, nenasilno, uključivo i učinkovito okruženje za učenje za sve."
+          target_4_B:
+            title: "Do 2020. značajno globalno proširiti broj stipendija dostupnih zemljama u razvoju, posebno najmanje razvijenim zemljama, malim otočnim državama u razvoju i afričkim zemljama, za upis u visoko obrazovanje, uključujući strukovno osposobljavanje i informacijske i komunikacijske tehnologije, tehničke, inženjerske i znanstvene programe , u razvijenim zemljama i drugim zemljama u razvoju."
+          target_4_C:
+            title: "Do 2030. znatno povećati ponudu kvalificiranih nastavnika, uključujući međunarodnu suradnju za obuku nastavnika u zemljama u razvoju, posebno u najmanje razvijenim zemljama i malim otočnim državama u razvoju."
+      goal_5:
+        title: "Jednakost spolova"
+        title_in_two_lines: "Jednakost\nspolova"
+        description: "Ostvariti ravnopravnost spolova i osnažiti sve žene i djevojke."
+        long_description: '<p>Gender equality is not only a fundamental human right, but a necessary foundation for a peaceful, prosperous and sustainable world.&nbsp;</p> <p>There has been <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">progress</a> over the last decades: More girls are going to school, fewer girls are forced into early marriage, more women are serving in parliament and positions of leadership, and laws are being reformed to advance gender equality.&nbsp;</p> <p>Despite these gains, many <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">challenges</a> remain: discriminatory laws and social norms remain pervasive, women continue to be underrepresented at all levels of political leadership, and 1 in 5 women and girls between the ages of 15 and 49 report experiencing physical or sexual violence by an intimate partner within a 12-month period.</p> <p>The effects of <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">the COVID-19 pandemic could reverse the limited progress</a> that has been made on gender equality and women’s rights.&nbsp; The coronavirus outbreak <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">exacerbates existing inequalities</a> for women and girls across every sphere – from health and the economy, to security and social protection.&nbsp;</p> <p>Women play a disproportionate role in responding to the virus, including as frontline healthcare workers and carers at home. Women’s unpaid care work has increased significantly as a result of school closures and the increased needs of older people. Women are also harder hit by the economic impacts of COVID-19, as they disproportionately work in insecure labour markets. Nearly 60 per cent of women work in the informal economy, which puts them at greater risk of falling into poverty.&nbsp;</p> <p>The pandemic has also led to a steep increase in <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">violence against women and girls</a>. With lockdown measures in place, many women are trapped at home with their abusers, struggling to access services that are suffering from cuts and restrictions. Emerging data shows that, since the outbreak of the pandemic, violence against women and girls – and particularly domestic violence – has intensified.</p>'
+        targets:
+          target_5_1:
+            title: "Zaustaviti sve oblike diskriminacije svih žena i djevojaka posvuda."
+          target_5_2:
+            title: "Ukloniti sve oblike nasilja nad svim ženama i djevojkama u javnoj i privatnoj sferi, uključujući trgovinu ljudima te seksualno i druge vrste iskorištavanja."
+          target_5_3:
+            title: "Ukloniti sve štetne prakse, kao što su dječji, rani i prisilni brakovi i sakaćenje ženskih genitalija."
+          target_5_4:
+            title: "Prepoznati i vrednovati neplaćenu skrb i kućni rad kroz pružanje javnih usluga, infrastrukture i politike socijalne zaštite te promicanje zajedničke odgovornosti unutar kućanstva i obitelji prema nacionalnom primjeru."
+          target_5_5:
+            title: "Osigurati puno i učinkovito sudjelovanje žena i jednake mogućnosti za vodstvo na svim razinama donošenja odluka u političkom, gospodarskom i javnom životu."
+          target_5_6:
+            title: "Osigurati univerzalni pristup seksualnom i reproduktivnom zdravlju i reproduktivnim pravima kako je dogovoreno u skladu s Programom djelovanja Međunarodne konferencije o stanovništvu i razvoju i Pekinškom platformom za djelovanje i ishodnim dokumentima njihovih konferencija"
+          target_5_A:
+            title: "Poduzeti reforme kako bi se ženama dala jednaka prava na ekonomske resurse, kao i pristup vlasništvu i kontroli nad zemljištem i drugim oblicima vlasništva, financijskim uslugama, nasljedstvom i prirodnim resursima, u skladu s nacionalnim zakonima."
+          target_5_B:
+            title: "Unaprijediti korištenje tehnologije koja omogućuje, posebno informacijske i komunikacijske tehnologije, za promicanje osnaživanja žena."
+          target_5_C:
+            title: "Usvojiti i ojačati zdrave politike i provedivo zakonodavstvo za promicanje ravnopravnosti spolova i osnaživanje svih žena i djevojaka na svim razinama."
+      goal_6:
+        title: "Čista voda i kanalizacija"
+        title_in_two_lines: "Čista voda i\nkanalizacija"
+        description: "Osigurati pristup vodi i sanitarnim uvjetima za sve."
+        long_description: '<p>While substantial progress has been made in increasing access to clean drinking water and sanitation, billions of people—mostly in rural areas—still lack these basic services. Worldwide, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">one in three people do not have access to safe drinking water</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">two out of five people do not have a basic hand-washing facility</a> with soap and water, and more than <a href="https://news.un.org/en/story/2019/11/1051561">673 million people still practice open defecation</a>.</p> <p>The COVID-19 pandemic has demonstrated the critical importance of sanitation, hygiene and adequate access to clean water for preventing and containing diseases. <a href="https://www.unwater.org/water-facts/handhygiene/">Hand hygiene saves lives</a>. According to the World Health Organization, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">handwashing is one of the most effective actions you can take</a> to reduce the spread of pathogens and prevent infections, including the COVID-19 virus. Yet billions of people still lack safe water sanitation, and funding is inadequate.</p>'
+        targets:
+          target_6_1:
+            title: "Do 2030. postići univerzalan i jednak pristup sigurnoj i pristupačnoj pitkoj vodi za sve."
+          target_6_2:
+            title: "Do 2030. postići pristup odgovarajućim i pravednim sanitarnim i higijenskim uvjetima za sve i okončati otvorenu defekaciju, obraćajući posebnu pozornost na potrebe žena i djevojaka te onih u ranjivim situacijama."
+          target_6_3:
+            title: "Do 2030. poboljšati kvalitetu vode smanjenjem onečišćenja, eliminiranjem odlaganja i smanjenjem oslobađanja opasnih kemikalija i materijala na najmanju moguću mjeru, prepolovljavanjem udjela neobrađene otpadne vode i znatno povećanje recikliranja i sigurne ponovne upotrebe na globalnoj razini."
+          target_6_4:
+            title: "Do 2030. značajno povećati učinkovitost korištenja vode u svim sektorima i osigurati održivo povlačenje i opskrbu slatkom vodom kako bi se riješila nestašica vode i znatno smanjio broj ljudi koji pate od nestašice vode."
+          target_6_5:
+            title: "Do 2030. implementirati integrirano upravljanje vodnim resursima na svim razinama, uključujući po potrebi prekograničnu suradnju."
+          target_6_6:
+            title: "Do 2020. zaštititi i obnoviti ekosustave povezane s vodom, uključujući planine, šume, močvare, rijeke, vodonosnike i jezera."
+          target_6_A:
+            title: "Do 2030. proširiti međunarodnu suradnju i potporu za izgradnju kapaciteta zemljama u razvoju u aktivnostima i programima vezanim uz vodu i kanalizaciju, uključujući prikupljanje vode, desalinizaciju, učinkovitost korištenja vode, obradu otpadnih voda, recikliranje i ponovnu upotrebu."
+          target_6_B:
+            title: "Podržati i osnažiti sudjelovanje lokalnih zajednica u poboljšanju upravljanja vodama i kanalizacijom."
+      goal_7:
+        title: "Obnoviljva i pristupačna energija"
+        title_in_two_lines: "Obnovljiva i\npristupačna energija"
+        description: "Osigurati pristupačnu, pouzdanu, održivu i modernu energiju."
+        long_description: '<p>The world is making <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">progress towards Goal 7</a>, with encouraging signs that energy is becoming more sustainable and widely available. Access to electricity in poorer countries has begun to accelerate, energy efficiency continues to improve, and renewable energy is making impressive gains in the electricity sector.&nbsp;</p> <p>Nevertheless, more focused attention is needed to improve access to clean and safe cooking fuels and technologies for 3 billion people, to expand the use of renewable energy beyond the electricity sector, and to increase electrification in sub-Saharan Africa.</p> <p>The <a href="https://trackingsdg7.esmap.org/">Energy Progress Report</a> provides global dashboard to register progress on energy access, energy efficiency and renewable energy. It assesses the progress made by each country on these three pillars and provides a snapshot of how far we are from achieving the 2030 Sustainable Development Goals targets.</p>'
+        targets:
+          target_7_1:
+            title: "Do 2030. osigurati univerzalni pristup pristupačnim, pouzdanim i modernim energetskim uslugama."
+          target_7_2:
+            title: "Do 2030. značajno povećati udio obnovljive energije u globalnom energetskom miksu."
+          target_7_3:
+            title: "Do 2030. udvostručiti globalnu stopu poboljšanja energetske učinkovitosti."
+          target_7_A:
+            title: "Do 2030. poboljšati međunarodnu suradnju kako bi se olakšao pristup istraživanju i tehnologiji čiste energije, uključujući obnovljivu energiju, energetsku učinkovitost i naprednu i čišću tehnologiju fosilnih goriva, te promicati ulaganja u energetsku infrastrukturu i tehnologiju čiste energije."
+          target_7_B:
+            title: "Do 2030. proširiti infrastrukturu i unaprijediti tehnologiju za opskrbu modernim i održivim energetskim uslugama za sve u zemljama u razvoju, posebno u najmanje razvijenim zemljama, malim otočnim državama u razvoju i zemljama u razvoju bez izlaza na more, u skladu s njihovim programima potpore."
+      goal_8:
+        title: "Dobra radna mjesta i gospodarstva"
+        title_in_two_lines: "Dobra radna mjesta i\ngospodarstva"
+        description: "Promicati uključiv i održiv gospodarski rast, zapošljavanje i dostojanstven rad za sve."
+        long_description: '<p>Sustained and inclusive economic growth can drive progress, create decent jobs for all and improve living standards.&nbsp;</p> <p>COVID-19 has <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">disrupted billions of lives</a> and endangered the global economy. The International Monetary Fund (IMF) expects a <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">global recession</a> as bad as or worse than in 2009. As job losses escalate, the International Labor Organization estimates that <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">nearly half of the global workforce is at risk</a> of losing their livelihoods.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Even before the outbreak of COVID-19</a>, one in five countries – home to billions of people living in poverty – were likely to see per capita incomes stagnate or decline in 2020. Now, the<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> economic and financial shocks</a> associated with COVID-19—such as disruptions to industrial production, falling commodity prices, financial market volatility, and rising insecurity—are derailing the already tepid economic growth and compounding heightened risks from other factors.&nbsp;&nbsp;</p>'
+        targets:
+          target_8_1:
+            title: "Održavati gospodarski rast po glavi stanovnika u skladu s nacionalnim prilikama, a posebno najmanje 7 posto rasta bruto domaćeg proizvoda godišnje u najmanje razvijenim zemljama."
+          target_8_2:
+            title: "Ostvarite višu razinu gospodarske produktivnosti kroz diverzifikaciju, tehnološku nadogradnju i inovacije, uključujući kroz fokus na sektore s visokom dodanom vrijednošću i radno intenzivne sektore."
+          target_8_3:
+            title: "Promicati razvojno orijentirane politike koje podupiru produktivne aktivnosti, dostojanstveno otvaranje radnih mjesta, poduzetništvo, kreativnost i inovacije te poticati formalizaciju i rast mikro, malih i srednjih poduzeća, uključujući pristup financijskim uslugama."
+          target_8_4:
+            title: "Progresivno, do 2030. godine, poboljšati globalnu učinkovitost resursa u potrošnji i proizvodnji i nastojati odvojiti gospodarski rast od degradacije okoliša, u skladu s 10-godišnjim okvirom programa za održivu potrošnju i proizvodnju, pri čemu razvijene zemlje preuzimaju vodeću ulogu."
+          target_8_5:
+            title: "Do 2030. postići punu i produktivnu zaposlenost i dostojanstven rad za sve žene i muškarce, uključujući mlade i osobe s invaliditetom, te jednaku plaću za rad jednake vrijednosti"
+          target_8_6:
+            title: "Do 2020. znatno smanjiti udio mladih koji nisu zaposleni, ne obrazuju se ili ne osposobljavaju."
+          target_8_7:
+            title: "Poduzeti hitne i učinkovite mjere za iskorjenjivanje prisilnog rada, okončanje modernog ropstva i trgovine ljudima te osiguravanje zabrane i eliminacije najgorih oblika dječjeg rada, uključujući novačenje i korištenje djece vojnika, te do 2025. ukinuti dječji rad u svim njegovim oblicima."
+          target_8_8:
+            title: "Štiti radnička prava i promicati sigurno i sigurno radno okruženje za sve radnike, uključujući radnike migrante, posebno žene migrantice, i one na nesigurnim poslovima."
+          target_8_9:
+            title: "Do 2030. osmisliti i provesti politike za promicanje održivog turizma koji otvara radna mjesta i promiče lokalnu kulturu i proizvode"
+          target_8_10:
+            title: "Ojačati kapacitete domaćih financijskih institucija za poticanje i proširenje pristupa bankarstvu, osiguranju i financijskim uslugama za sve."
+          target_8_A:
+            title: "Povećati potporu pomoći za trgovinu za zemlje u razvoju, posebno najmanje razvijene zemlje, uključujući kroz Unaprijeđeni integrirani okvir za tehničku pomoć u vezi s trgovinom najmanje razvijenim zemljama."
+          target_8_B:
+            title: "Do 2020. razviti i operacionalizirati globalnu strategiju za zapošljavanje mladih i implementirati Globalni pakt o zapošljavanju Međunarodne organizacije rada."
+      goal_9:
+        title: "Industrija, inovacija i dobra infrastruktura"
+        title_in_two_lines: "Industrija, inovacija i\ndobra infrastruktura"
+        description: "Izgraditi otpornu infrastrukturu, promicati održivu industrijalizaciju i poticati inovacije."
+        long_description: '<p>Inclusive and sustainable industrialization, together with <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">innovation and infrastructure</a>, can unleash dynamic and competitive economic forces that generate employment and income. They play a key role in introducing and promoting new technologies, facilitating international trade and enabling the efficient use of resources.&nbsp;</p> <p>However, the world still has a long way to go to fully tap this potential. Least developed countries, in particular, need to accelerate the development of their manufacturing sector if they are to meet the 2030 target, and scale up investment in scientific research and innovation.&nbsp;</p> <p>Global manufacturing growth has been steadily declining, even before the outbreak of the COVID-19 pandemic. The pandemic is <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">hitting manufacturing industries</a> hard and causing disruptions in global value chains and the supply of products.&nbsp;</p> <p>Innovation and technological progress are key to finding lasting solutions to both economic and environmental challenges, such as increased resource and energy-efficiency. Globally, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">investment in research and development</a> (R&amp;D) as a proportion of GDP increased from 1.5 per cent in 2000 to 1.7 per cent in 2015 and remained almost unchanged in 2017, but was only less than 1 per cent&nbsp; in developing regions.</p> <p>In terms of communications infrastructure, more than half of the world’s population is now online and almost the entire world population lives in an area covered by a mobile network. It is estimated that in 2019, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">96.5 per cent were covered by at least a 2G network</a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p>The coronavirus pandemic has revealed the urgent <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">need for resilient infrastructure</a>. The Asian Development Bank notes that critical infrastructure in the region remains far from adequate in many countries, despite the rapid economic growth and development the region has experienced over the past decade. The <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Economic and Social Survey of Asia and the Pacific</a> highlights that making infrastructure resilient to disasters and climate change will require an additional investment of $434 billion per year. This sum may need to be even greater in some subregions, such as the Pacific small island developing states.&nbsp; &nbsp; &nbsp; </p>'
+        targets:
+          target_9_1:
+            title: "Razviti kvalitetnu, pouzdanu, održivu i otpornu infrastrukturu, uključujući regionalnu i prekograničnu infrastrukturu, za potporu gospodarskom razvoju i ljudskoj dobrobiti, s naglaskom na pristupačan i jednak pristup za sve."
+          target_9_2:
+            title: "Promicati uključivu i održivu industrijalizaciju i do 2030. značajno povećati udio industrije u zaposlenosti i bruto domaćem proizvodu, u skladu s nacionalnim okolnostima, te udvostručiti svoj udio u najmanje razvijenim zemljama."
+          target_9_3:
+            title: "Povećati pristup malih industrijskih i drugih poduzeća, posebno u zemljama u razvoju, financijskim uslugama, uključujući pristupačne kredite, i njihovu integraciju u lance vrijednosti i tržišta."
+          target_9_4:
+            title: "Do 2030. nadograditi infrastrukturu i preurediti industrije kako bi bile održive, uz povećanu učinkovitost korištenja resursa i veće usvajanje čistih i ekološki prihvatljivih tehnologija i industrijskih procesa, pri čemu sve zemlje poduzimaju mjere u skladu sa svojim mogućnostima."
+          target_9_5:
+            title: "Unaprijediti znanstvena istraživanja, unaprijediti tehnološke sposobnosti industrijskih sektora u svim zemljama, posebno u zemljama u razvoju, uključujući, do 2030., poticanje inovacija i značajno povećanje broja istraživača i razvojnih radnika na milijun ljudi te javne i privatne izdatke za istraživanje i razvoj."
+          target_9_A:
+            title: "Olakšati održiv i otporan razvoj infrastrukture u zemljama u razvoju kroz poboljšanu financijsku, tehnološku i tehničku podršku afričkim zemljama, najmanje razvijenim zemljama, zemljama u razvoju bez izlaza na more i malim otočnim državama u razvoju "
+          target_9_B:
+            title: "Podupirati domaći tehnološki razvoj, istraživanje i inovacije u zemljama u razvoju, uključujući osiguravanjem povoljnog političkog okruženja za, između ostalog, industrijsku diverzifikaciju i dodavanje vrijednosti robi."
+          target_9_C:
+            title: "Značajno povećati pristup informacijskoj i komunikacijskoj tehnologiji i nastojati osigurati univerzalan i pristupačan pristup internetu u najmanje razvijenim zemljama do 2020. godine."
+      goal_10:
+        title: "Smanjenje nejednakosti"
+        title_in_two_lines: "Smanjenje \nnejednakosti"
+        description: "Smanjiti nejednakost unutar i među zemljama."
+        long_description: '<p>Reducing inequalities and ensuring no one is left behind are integral to achieving the Sustainable Development Goals.&nbsp;</p> <p>Inequality within and among countries is a persistent cause for concern. Despite some positive signs toward reducing inequality in some dimensions, such as reducing relative income inequality in some countries and preferential trade status benefiting lower-income countries, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">inequality still persists</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">COVID-19 has deepened existing inequalities</a>, hitting the poorest and most vulnerable communities the hardest. It has put a spotlight on economic inequalities and fragile social safety nets that leave vulnerable communities to bear the brunt of the crisis.&nbsp; At the same time, social, political and economic inequalities have amplified the impacts of the pandemic.</p> <p>On the economic front, the COVID-19 pandemic has significantly increased global <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">unemployment</a> and dramatically slashed workers’ incomes.</p> <p>COVID-19 also puts at risk the limited progress that has been made on <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">gender equality</a> and women’s rights over the past decades. Across every sphere, from health to the economy, security to social protection, the impacts of COVID-19 are exacerbated for women and girls simply by virtue of their sex.</p> <p>Inequalities are also deepening for <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">vulnerable populations</a> in countries with weaker health systems and those facing existing humanitarian crises. Refugees and migrants, as well as indigenous peoples, older persons, people with disabilities and children are particularly at risk of being left behind. And <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">hate speech</a> targeting vulnerable groups is rising.</p>'
+        targets:
+          target_10_1:
+            title: "Do 2030. progresivno postići i održati rast dohotka donjih 40 posto stanovništva po stopi višoj od nacionalnog prosjeka."
+          target_10_2:
+            title: "Do 2030. osnažiti i promicati društvenu, ekonomsku i političku uključenost svih, bez obzira na dob, spol, invaliditet, rasu, etničku pripadnost, podrijetlo, vjeru ili ekonomski ili drugi status."
+          target_10_3:
+            title: "Osigurati jednake mogućnosti i smanjiti nejednakosti ishoda, uključujući eliminiranje diskriminirajućih zakona, politika i praksi te promicanjem odgovarajućeg zakonodavstva, politika i djelovanja u tom pogledu."
+          target_10_4:
+            title: "Usvojiti politike, posebno fiskalne politike, politike plaća i socijalne zaštite, te postupno postići veću jednakost."
+          target_10_5:
+            title: "Unaprijediti regulaciju i praćenje globalnih financijskih tržišta i institucija te ojačati provedbu takvih propisa."
+          target_10_6:
+            title: "Osigurati pojačanu zastupljenost i glas zemalja u razvoju u donošenju odluka u globalnim međunarodnim ekonomskim i financijskim institucijama kako bi se pružile učinkovitije, vjerodostojnije, odgovornije i legitimnije institucije."
+          target_10_7:
+            title: "Olakšati urednu, sigurnu, redovitu i odgovornu migraciju i mobilnost ljudi, uključujući provedbu planiranih i dobro vođenih migracijskih politika."
+          target_10_A:
+            title: "Provesti načelo posebnog i različitog tretmana za zemlje u razvoju, posebno najmanje razvijene zemlje, u skladu sa sporazumima Svjetske trgovinske organizacije."
+          target_10_B:
+            title: "Poticati službenu razvojnu pomoć i financijske tokove, uključujući izravna strana ulaganja, prema državama u kojima je najveća potreba, posebno u najmanje razvijenim zemljama, afričkim zemljama, malim otočnim državama u razvoju i zemljama u razvoju bez izlaza na more, u skladu s njihovim nacionalnim planovima i programima."
+          target_10_C:
+            title: "Do 2030. smanjiti transakcijske troškove doznaka migranata na manje od 3 posto i eliminirati koridore za doznake s troškovima višim od 5 posto."
+      goal_11:
+        title: "Održivi gradovi i zajednice"
+        title_in_two_lines: "Održivi gradovi\ni zajednice"
+        description: "Učinite gradove uključivim, sigurnim, otpornim i održivim."
+        long_description: '<p>The world is becoming increasingly urbanized. Since 2007, <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">more than half the world’s population has been living in cities</a>, and that share is projected to rise to 60 per cent by 2030.&nbsp;</p> <p>Cities and metropolitan areas are powerhouses of economic growth—contributing about 60 per cent of global GDP. However, they also account for about 70 per cent of global carbon emissions and over 60 per cent of resource use.&nbsp;</p> <p>Rapid urbanization is resulting in a growing number of slum dwellers, inadequate and overburdened infrastructure and services (such as waste collection and water and sanitation systems, roads and transport), worsening air pollution and unplanned urban sprawl.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">The impact of COVID-19</a> will be most devastating in poor and densely populated urban areas, especially for the one billion people living in informal settlements and slums worldwide, where overcrowding also makes it difficult to follow recommended measures such as social distancing and self-isolation.&nbsp;</p> <p>The UN food agency, FAO, warned that hunger and fatalities could rise significantly in urban areas, without measures to ensure that poor and vulnerable residents have <a href="https://news.un.org/en/story/2020/05/1063622">access to food</a>.&nbsp;</p>'
+        targets:
+          target_11_1:
+            title: "Do 2030. osigurati svima pristup adekvatnom, sigurnom i pristupačnom stanovanju i osnovnim uslugama te nadograditi sirotinjske četvrti."
+          target_11_2:
+            title: "Do 2030. osigurati pristup sigurnim, pristupačnim, pristupačnim i održivim prometnim sustavima za sve, poboljšavajući sigurnost na cestama, posebice širenjem javnog prijevoza, s posebnom pažnjom na potrebe onih u ranjivim situacijama, žena, djece, osoba s invaliditetom i starijih osoba."
+          target_11_3:
+            title: "Do 2030. poboljšati uključivu i održivu urbanizaciju i kapacitete za participativno, integrirano i održivo planiranje i upravljanje ljudskim naseljima u svim zemljama."
+          target_11_4:
+            title: "Ojačati napore za zaštitu i očuvanje svjetske kulturne i prirodne baštine."
+          target_11_5:
+            title: "Do 2030. značajno smanjiti broj umrlih i broj pogođenih ljudi te značajno smanjiti izravne gospodarske gubitke u odnosu na globalni bruto domaći proizvod uzrokovan katastrofama, uključujući katastrofe povezane s vodom, s naglaskom na zaštiti siromašnih i ljudi u ranjivim situacijama."
+          target_11_6:
+            title: "Do 2030. godine smanjiti negativan utjecaj gradova na okoliš po glavi stanovnika, uključujući obraćanje posebne pažnje na kvalitetu zraka i gospodarenje komunalnim i drugim otpadom."
+          target_11_7:
+            title: "Do 2030. osigurati univerzalni pristup sigurnim, uključivim i pristupačnim, zelenim i javnim prostorima, posebno za žene i djecu, starije osobe i osobe s invaliditetom."
+          target_11_A:
+            title: "Podupirati pozitivne gospodarske, društvene i ekološke veze između urbanih, peri urbanih i ruralnih područja jačanjem nacionalnog i regionalnog planiranja razvoja."
+          target_11_B:
+            title: "Do 2020. značajno povećati broj gradova i ljudskih naselja koji usvajaju i provode integrirane politike i planove za uključivanje, učinkovitost resursa, ublažavanje i prilagodbu klimatskim promjenama, otpornost na katastrofe, te razviti i implementirati, u skladu sa Sendaiskim okvirom za rizik od katastrofa Smanjenje 2015.-2030., holističko upravljanje rizikom od katastrofa na svim razinama."
+          target_11_C:
+            title: "Podrška najmanje razvijenim zemljama, uključujući financijsku i tehničku pomoć, u izgradnji održivih i otpornih zgrada korištenjem lokalnih materijala."
+      goal_12:
+        title: "Odgovorno upotrebljavanje resursa, Osiguranje održive potrošnje i načina proizvodnje"
+        title_in_two_lines: "Odgovorno upotrebljavanje resursa,\nOsiguranje održive potrošnje i načina proizvodnje"
+        description: "Osigurati održive obrasce potrošnje i proizvodnje."
+        long_description: '<p>Worldwide consumption and production — a driving force of the global economy — rest on the use of the natural environment and resources in a way that continues to have destructive impacts on the planet.&nbsp;</p> <p>Economic and social progress over the last century has been accompanied by environmental degradation that is endangering the very systems on which our future development — indeed, our very survival — depends.&nbsp;</p> <p>A few <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">facts and figures</a>:</p> <ul> <li style="font-weight: 400">Each year, an estimated one third of all food produced – equivalent to 1.3 billion tonnes worth around $1 trillion – ends up rotting in the bins of consumers and retailers, or spoiling due to poor transportation and harvesting practices.</li> <li style="font-weight: 400">If people worldwide switched to energy efficient light bulbs the world would save US$120 billion annually.</li> <li style="font-weight: 400">Should the global population reach 9.6 billion by 2050, the equivalent of almost three planets could be required to provide the natural resources needed to sustain current lifestyles.</li> </ul> <p>The COVID-19 pandemic offers countries an opportunity to build recovery plans that will reverse current trends and change our consumption and production patterns towards a more sustainable future.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Sustainable consumption and production</a> is about doing more and better with less. It is also about decoupling economic growth from environmental degradation, increasing resource efficiency and promoting sustainable lifestyles.</p> <p>Sustainable consumption and production can also contribute substantially to poverty alleviation and the transition towards low-carbon and green economies.</p>'
+        targets:
+          target_12_1:
+            title: "Odgovorno upotrebljavanje resursa Osiguranje održive potrošnje i načina proizvodnje."
+          target_12_2:
+            title: "Provesti 10-godišnji okvir programa o održivoj potrošnji i proizvodnji, sve zemlje poduzimaju mjere, a razvijene zemlje preuzimaju vodstvo, uzimajući u obzir razvoj i sposobnosti zemalja u razvoju."
+          target_12_3:
+            title: "Do 2030. godine postići održivo upravljanje i učinkovito korištenje prirodnih resursa."
+          target_12_4:
+            title: "Do 2030. prepoloviti globalni otpad hrane po glavi stanovnika na maloprodajnoj i potrošačkoj razini i smanjiti gubitke hrane duž proizvodnih i opskrbnih lanaca, uključujući gubitke nakon žetve."
+          target_12_5:
+            title: "Do 2020. postići ekološki prihvatljivo gospodarenje kemikalijama i svim otpadom tijekom njihovog životnog ciklusa, u skladu s dogovorenim međunarodnim okvirima, te značajno smanjiti njihovo ispuštanje u zrak, vodu i tlo kako bi se smanjili njihovi štetni utjecaji na zdravlje ljudi i okoliš."
+          target_12_6:
+            title: "Potaknite tvrtke, posebno velike i transnacionalne tvrtke, da usvoje održive prakse i integriraju informacije o održivosti u svoj ciklus izvješćivanja."
+          target_12_7:
+            title: "Promicati prakse javne nabave koje su održive, u skladu s nacionalnim politikama i prioritetima."
+          target_12_8:
+            title: "Do 2030. osigurati da ljudi posvuda imaju relevantne informacije i svijest o održivom razvoju i životnim stilovima u skladu s prirodom."
+          target_12_A:
+            title: "Podržati zemlje u razvoju da ojačaju svoje znanstvene i tehnološke kapacitete kako bi krenule prema održivijim obrascima potrošnje i proizvodnje."
+          target_12_B:
+            title: "Razviti i implementirati alate za praćenje učinaka održivog razvoja za održivi turizam koji otvara radna mjesta i promiče lokalnu kulturu i proizvode."
+          target_12_C:
+            title: "Racionalizirati neučinkovite subvencije za fosilna goriva koje potiču rasipnu potrošnju uklanjanjem poremećaja tržišta, u skladu s nacionalnim okolnostima, uključujući restrukturiranje oporezivanja i postupno ukidanje tih štetnih subvencija, ako postoje, kako bi odražavale njihov utjecaj na okoliš, uzimajući u potpunosti u obzir posebne potrebe i uvjetima u zemljama u razvoju i minimiziranju mogućih štetnih utjecaja na njihov razvoj na način koji štiti siromašne i pogođene zajednice."
+      goal_13:
+        title: "Zaštita klime"
+        title_in_two_lines: "Zaštita\nklime"
+        description: "Poduzeti hitne mjere u borbi protiv klimatskih promjena i njihovih učinaka."
+        long_description: '<p>2019 was the <a href="https://news.un.org/en/story/2020/03/1059061">second warmest year on record</a> and the end of the warmest decade (2010- 2019) ever recorded.&nbsp;&nbsp;</p> <p>Carbon dioxide (CO2) levels and other <a href="https://news.un.org/en/story/2020/04/1062332">greenhouse gases in the atmosphere</a> rose to new records in 2019.&nbsp;</p> <p>Climate change is affecting every country on every continent. It is disrupting national economies and affecting lives. Weather patterns are changing, sea levels are rising, and weather events are becoming more extreme.</p> <p>Although greenhouse gas emissions are projected to drop about 6 per cent in 2020 due to travel bans and economic slowdowns resulting from the COVID-19 pandemic, this improvement is only temporary. <a href="https://news.un.org/en/story/2020/04/1062332">Climate change is not on pause</a>. Once the global economy begins to recover from the pandemic, emissions are expected to return to higher levels.</p> <p>Saving lives and livelihoods requires urgent action to address both the pandemic and the climate emergency.</p> <p>The <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Paris Agreement</a>, adopted in 2015, aims to strengthen the global response to the threat of climate change by keeping a global temperature rise this century well below 2 degrees Celsius above pre-industrial levels. The agreement also aims to strengthen the ability of countries to deal with the impacts of climate change, through appropriate financial flows, a new technology framework and an enhanced capacity building framework.</p>'
+        targets:
+          target_13_1:
+            title: "Ojačati otpornost i sposobnost prilagodbe klimatskim opasnostima i prirodnim katastrofama u svim zemljama."
+          target_13_2:
+            title: "Integrirati mjere klimatskih promjena u nacionalne politike, strategije i planiranje."
+          target_13_3:
+            title: "Poboljšati obrazovanje, podizanje svijesti te ljudske i institucionalne kapacitete za ublažavanje klimatskih promjena, prilagodbu, smanjenje utjecaja i rano upozoravanje."
+          target_13_A:
+            title: "Provesti obvezu koju su strane razvijene zemlje preuzele u okviru Okvirne konvencije Ujedinjenih naroda o klimatskim promjenama u cilju zajedničkog mobiliziranja 100 milijardi dolara godišnje do 2020. iz svih izvora za rješavanje potreba zemalja u razvoju u kontekstu smislenih mjera ublažavanja i transparentnosti u provedbi i u potpunosti operacionalizirati Zeleni klimatski fond kroz njegovu kapitalizaciju što je prije moguće."
+          target_13_B:
+            title: "Promicati mehanizme za podizanje kapaciteta za učinkovito planiranje i upravljanje klimatskim promjenama u najmanje razvijenim zemljama i malim otočnim državama u razvoju, uključujući fokusiranje na žene, mlade i lokalne i marginalizirane zajednice."
+      goal_14:
+        title: "Održivi oceani"
+        title_in_two_lines: "Održivi\nOceani"
+        description: "Očuvati i održivo koristiti oceane, mora i morske resurse."
+        long_description: '<p>The ocean drives global systems that make the Earth habitable for humankind. Our rainwater, drinking water, weather, climate, coastlines, much of our food, and even the oxygen in the air we breathe, are all ultimately provided and regulated by the sea.&nbsp;</p> <p>Careful management of this <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">essential global resource</a> is a key feature of a sustainable future. However, at the current time, there is a continuous deterioration of coastal waters owing to pollution, and ocean acidification is having an adversarial effect on the functioning of ecosystems and biodiversity. This is also negatively impacting small scale fisheries.&nbsp;</p> <p>Saving our ocean must remain a priority. Marine biodiversity is critical to the health of people and our planet. Marine protected areas need to be effectively managed and well-resourced and regulations need to be put in place to reduce overfishing, marine pollution and ocean acidification.</p>'
+        targets:
+          target_14_1:
+            title: "Do 2025. spriječiti i značajno smanjiti onečišćenje mora svih vrsta, posebno od aktivnosti na kopnu, uključujući morski otpad i onečišćenje nutrijentima."
+          target_14_2:
+            title: "Do 2020. održivo upravljati i štititi morske i obalne ekosustave kako bi se izbjegli značajni štetni utjecaji, uključujući jačanje njihove otpornosti, te poduzeti mjere za njihovu obnovu kako bi se postigli zdravi i produktivni oceani."
+          target_14_3:
+            title: "Minimizirati i riješiti utjecaje zakiseljavanja oceana, uključujući poboljšanu znanstvenu suradnju na svim razinama."
+          target_14_4:
+            title: "Do 2020. učinkovito regulirati ulov i okončati prekomjerni izlov, nezakonit, neprijavljen i nereguliran ribolov i destruktivne ribolovne prakse te provesti znanstveno utemeljene planove upravljanja, kako bi se riblji fondovi obnovili u najkraćem mogućem vremenu, barem do razina koje mogu proizvesti maksimalni održivi prinos što je određeno njihovim biološkim karakteristikama."
+          target_14_5:
+            title: "Do 2020. očuvati najmanje 10 posto obalnih i morskih područja, u skladu s nacionalnim i međunarodnim pravom i na temelju najboljih dostupnih znanstvenih informacija."
+          target_14_6:
+            title: "Do 2020. zabraniti određene oblike subvencioniranja ribarstva koji doprinose prekomjernom kapacitetu i prekomjernom izlovu, eliminirati subvencije koje doprinose nezakonitom, neprijavljenom i nereguliranom ribolovu i suzdržati se od uvođenja novih takvih subvencija, prepoznajući prikladan i učinkovit poseban i različit tretman za zemlje u razvoju i najmanje razvijene zemlje trebao bi biti sastavni dio pregovora Svjetske trgovinske organizacije o subvencioniranju ribarstva."
+          target_14_7:
+            title: "Do 2030. povećati ekonomske koristi za male otočne države u razvoju i najmanje razvijene zemlje od održivog korištenja morskih resursa, uključujući održivo upravljanje ribarstvom, akvakulturom i turizmom."
+          target_14_A:
+            title: "Povećati znanstveno znanje, razviti istraživačke kapacitete i prenijeti morsku tehnologiju, uzimajući u obzir kriterije i smjernice Međuvladine oceanografske komisije o prijenosu morske tehnologije, kako bi se poboljšalo zdravlje oceana i povećao doprinos morske biološke raznolikosti razvoju zemalja u razvoju, posebice male otočne države u razvoju i najmanje razvijene zemlje."
+          target_14_B:
+            title: "Omogućiti pristup malim zanatskim ribarima morskim resursima i tržištima."
+          target_14_C:
+            title: "Unaprijediti očuvanje i održivo korištenje oceana i njihovih resursa provedbom međunarodnog prava kao što je prikazano u UNCLOS-u, koji pruža pravni okvir za očuvanje i održivo korištenje oceana i njihovih resursa, kao što se podsjeća u stavku 158. Budućnosti koju želimo."
+      goal_15:
+        title: "Održivo iskorištavanje zemlje"
+        title_in_two_lines: "Održivo\niskorištavanje zemlje"
+        description: "Održivo upravljati šumama, boriti se protiv dezertifikacije, zaustaviti i preokrenuti degradaciju zemljišta, zaustaviti gubitak biološke raznolikosti."
+        long_description: '<p>Nature is critical to our survival: nature provides us with our oxygen, regulates our weather patterns, pollinates our crops, produces our food, feed and fibre. But it is under increasing stress. <a href="https://news.un.org/en/story/2020/04/1061082">Human activity has altered almost 75 per cent of the earth’s surface</a>, squeezing wildlife and nature into an ever-smaller corner of the planet.</p> <p>Around <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 million animal and plant species are threatened with extinction</a> – many within decades – according to the 2019 Global Assessment Report on Biodiversity and Ecosystem Service. The report called for transformative changes to restore and protect nature. It found that the health of ecosystems on which we and all other species depend is deteriorating more rapidly than ever, affecting&nbsp; the very foundations of our economies, livelihoods, food security, health and quality of life worldwide.&nbsp;</p> <p>Deforestation and desertification – caused by human activities and climate change – pose major challenges to sustainable development and have affected the lives and livelihoods of millions of people. <a href="https://news.un.org/en/story/2019/05/1038291">Forests are vitally important </a>for sustaining life on Earth, and play a major role in the fight against climate change. And investing in <a href="https://news.un.org/en/story/2019/09/1045802">land restoration</a> is critical for improving livelihoods, reducing vulnerabilities, and reducing risks for the economy.</p> <p>The health of our planet also plays an important role in <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">the emergence of zoonotic diseases</a>, i.e. diseases that are transmissible between animals and humans. As we continue to encroach on fragile ecosystems, we bring humans into ever-greater contact with wildlife, enabling pathogens in wildlife to spill over to livestock and humans, increasing the risk of disease emergence and amplification.</p>'
+        targets:
+          target_15_1:
+            title: "Do 2020. osigurati očuvanje, obnovu i održivo korištenje kopnenih i kopnenih slatkovodnih ekosustava i njihovih usluga, posebno šuma, močvara, planina i suhih područja, u skladu s obvezama iz međunarodnih sporazuma."
+          target_15_2:
+            title: "Do 2020. promicati provedbu održivog gospodarenja svim vrstama šuma, zaustaviti krčenje šuma, obnoviti degradirane šume i značajno povećati pošumljavanje i pošumljavanje na globalnoj razini."
+          target_15_3:
+            title: "Do 2030. boriti se protiv dezertifikacije, obnoviti degradirano zemljište i tlo, uključujući zemljište zahvaćeno dezertifikacijom, sušom i poplavama, te nastojati postići svijet neutralan zbog degradacije zemljišta."
+          target_15_4:
+            title: "Do 2030. osigurati očuvanje planinskih ekosustava, uključujući njihovu biološku raznolikost, kako bi se poboljšala njihova sposobnost pružanja prednosti koje su ključne za održivi razvoj."
+          target_15_5:
+            title: "Poduzeti hitne i značajne mjere za smanjenje degradacije prirodnih staništa, zaustavljanje gubitka biološke raznolikosti te do 2020. godine zaštititi i spriječiti izumiranje ugroženih vrsta."
+          target_15_6:
+            title: "Promicati pošteno i pravedno dijeljenje koristi koje proizlaze iz korištenja genetskih resursa i promicati odgovarajući pristup takvim resursima, kako je međunarodno dogovoreno."
+          target_15_7:
+            title: "Poduzeti hitne mjere za zaustavljanje krivolova i trgovine zaštićenim vrstama flore i faune i rješavanje potražnje i ponude ilegalnih proizvoda iz divljih životinja."
+          target_15_8:
+            title: "Do 2020. godine uvesti mjere za sprječavanje unošenja i značajno smanjenje utjecaja invazivnih stranih vrsta na kopnene i vodene ekosustave te kontrolu ili iskorjenjivanje prioritetnih vrsta."
+          target_15_9:
+            title: "Do 2020. integrirati vrijednosti ekosustava i bioraznolikosti u nacionalno i lokalno planiranje, razvojne procese, strategije i račune za smanjenje siromaštva."
+          target_15_A:
+            title: "Mobilizirati i značajno povećati financijska sredstva iz svih izvora za očuvanje i održivo korištenje biološke raznolikosti i ekosustava."
+          target_15_B:
+            title: "Mobilizirati značajna sredstva iz svih izvora i na svim razinama za financiranje održivog gospodarenja šumama i pružiti odgovarajuće poticaje zemljama u razvoju da unaprijede takvo gospodarenje, uključujući očuvanje i pošumljavanje."
+          target_15_C:
+            title: "Povećati globalnu potporu naporima u borbi protiv krivolova i trgovine zaštićenim vrstama, uključujući povećanje kapaciteta lokalnih zajednica da traže održive mogućnosti za život."
+      goal_16:
+        title: "Mir i Pravednost"
+        title_in_two_lines: "Mir i\nPravednost"
+        description: "Promicati pravedna, mirna i uključiva društva."
+        long_description: '<p>Conflict, insecurity, weak institutions and limited access to justice remain a great threat to sustainable development.&nbsp;</p> <p>The number of <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">people fleeing war, persecution and conflict exceeded 70 million</a> in 2018, the highest level recorded by the UN refugee agency (UNHCR) in almost 70 years.&nbsp;</p> <p>In 2019, the United Nations tracked <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 killings and 30 enforced disappearances</a> of human rights defenders, journalists and trade unionists in 47 countries.</p> <p>And the births of around <a href="https://data.unicef.org/topic/child-protection/birth-registration/">one in four children</a> under age 5 worldwide are never officially recorded, depriving them of a proof of legal identity crucial for the protection of their rights and for access to justice and social services.</p>'
+        targets:
+          target_16_1:
+            title: "Značajno smanjiti sve oblike nasilja i povezane stope smrtnosti posvuda."
+          target_16_2:
+            title: "Prekinuti zlostavljanje, iskorištavanje, trgovinu i sve oblike nasilja nad djecom i torture."
+          target_16_3:
+            title: "Promicati vladavinu prava na nacionalnoj i međunarodnoj razini i osigurati jednak pristup pravdi za sve."
+          target_16_4:
+            title: "Do 2030. značajno smanjiti nezakonite financijske tokove i tokove oružja, ojačati povrat i povrat ukradene imovine i boriti se protiv svih oblika organiziranog kriminala."
+          target_16_5:
+            title: "Znatno smanjiti korupciju i mito u svim njihovim oblicima."
+          target_16_6:
+            title: "Razviti učinkovite, odgovorne i transparentne institucije na svim razinama."
+          target_16_7:
+            title: "Osigurati odgovorno, uključivo, participativno i reprezentativno donošenje odluka na svim razinama."
+          target_16_8:
+            title: "Proširiti i ojačati sudjelovanje zemalja u razvoju u institucijama globalnog upravljanja."
+          target_16_9:
+            title: "Do 2030. osigurati pravni identitet za sve, uključujući registraciju rođenja."
+          target_16_10:
+            title: "Osigurati pristup javnosti informacijama i zaštititi temeljne slobode, u skladu s nacionalnim zakonodavstvom i međunarodnim sporazumima."
+          target_16_A:
+            title: "Ojačati relevantne nacionalne institucije, uključujući međunarodnu suradnju, za izgradnju kapaciteta na svim razinama, posebno u zemljama u razvoju, za sprječavanje nasilja i borbu protiv terorizma i kriminala."
+          target_16_B:
+            title: "Promicati i provoditi nediskriminatorne zakone i politike za održivi razvoj."
+      goal_17:
+        title: "Partnerstva za održivi razvoj"
+        title_in_two_lines: "Partnerstva\nza održivi razvoj"
+        description: "Revitalizirati globalno partnerstvo za održivi razvoj."
+        long_description: '<p>The SDGs can only be realized with strong global partnerships and cooperation.</p> <p>A successful development agenda requires inclusive partnerships — at the global, regional, national and local levels — built upon principles and values, and upon a shared vision and shared goals placing people and the planet at the centre.</p> <p>Many countries require Official Development Assistance to encourage growth and trade. Yet, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">aid levels are falling</a> and donor countries have not lived up to their pledge to ramp up development finance.</p> <p>Due to the COVID-19 pandemic, the <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">global economy</a> is projected to contract sharply, by 3 per cent, in 2020, experiencing its worst recession since the Great Depression.</p> <p>Strong international cooperation is needed now more than ever to ensure that countries have the means to recover from the pandemic, build back better and achieve the Sustainable Development Goals.</p>'
+        targets:
+          target_17_1:
+            title: "Ojačati mobilizaciju domaćih resursa, uključujući međunarodnu potporu zemljama u razvoju, kako bi se poboljšali domaći kapaciteti za prikupljanje poreza i drugih prihoda."
+          target_17_2:
+            title: "Razvijene zemlje moraju u potpunosti provesti svoje obveze službene razvojne pomoći, uključujući obvezu mnogih razvijenih zemalja da postignu cilj od 0,7 posto ODA/BND-a zemljama u razvoju i 0,15 do 0,20 posto ODA/BND-a najmanje razvijenim zemljama pružateljeODA-e se ohrabruje da razmotre postavljanje cilja kojim bi se najmanje razvijenim zemljama osiguralo najmanje 0,20 posto ODA/BND-a."
+          target_17_3:
+            title: "Mobilizirati dodatna financijska sredstva za zemlje u razvoju iz više izvora."
+          target_17_4:
+            title: "Pomozite zemljama u razvoju u postizanju dugoročne održivosti duga kroz koordiniranu politiku usmjerenu na poticanje financiranja duga, otplatu duga i restrukturiranje duga, prema potrebi, te rješavanje vanjskog duga visoko zaduženih siromašnih zemalja kako bi se smanjila dužnička kriza."
+          target_17_5:
+            title: "Usvojiti i provesti režime poticanja ulaganja za najmanje razvijene zemlje."
+          target_17_6:
+            title: "Unaprijediti regionalnu i međunarodnu suradnju sjever-jug, jug-jug i trokutastu regionalnu i međunarodnu suradnju i pristup znanosti, tehnologiji i inovacijama i poboljšati razmjenu znanja pod obostrano dogovorenim uvjetima, uključujući kroz poboljšanu koordinaciju među postojećim mehanizmima, posebno na razini Ujedinjenih naroda, i kroz globalni mehanizam za olakšavanje tehnologije."
+          target_17_7:
+            title: "Promicati razvoj, prijenos, širenje i širenje ekološki prihvatljivih tehnologija u zemlje u razvoju pod povoljnim uvjetima, uključujući koncesijske i povlaštene uvjete."
+          target_17_8:
+            title: "U potpunosti operacionalizirati banke tehnologije i mehanizam za izgradnju kapaciteta za znanost, tehnologiju i inovacije za najmanje razvijene zemlje do 2017. i poboljšati korištenje tehnologije koja omogućuje, posebno informacijske i komunikacijske tehnologije."
+          target_17_9:
+            title: "Povećati međunarodnu potporu za provedbu učinkovite i ciljane izgradnje kapaciteta u zemljama u razvoju kako bi se podržali nacionalni planovi za provedbu svih ciljeva održivog razvoja, uključujući suradnju sjever-jug, jug-jug i trokutnu suradnju."
+          target_17_10:
+            title: "Promicati univerzalni, na pravilima utemeljen, otvoren, nediskriminirajući i pravičan multilateralni trgovinski sustav pod Svjetskom trgovinskom organizacijom, uključujući zaključenje pregovora u okviru razvojne agende iz Dohe."
+          target_17_11:
+            title: "Značajno povećati izvoz zemalja u razvoju, posebno s ciljem udvostručenja udjela najmanje razvijenih zemalja u globalnom izvozu do 2020."
+          target_17_12:
+            title: "Ostvariti pravovremenu provedbu bescarinskog i bez kvotnog pristupa tržištu na trajnoj osnovi za sve najmanje razvijene zemlje, u skladu s odlukama Svjetske trgovinske organizacije, uključujući osiguravanjem da povlaštena pravila o podrijetlu koja se primjenjuju na uvoz iz najmanje razvijenih zemalja budu transparentna i jednostavna, i pridonijeti olakšavanju pristupa tržištu."
+          target_17_13:
+            title: "Unaprijediti globalnu makroekonomsku stabilnost, uključujući koordinaciju politika i dosljednost politike."
+          target_17_14:
+            title: "Unaprijediti koherentnost politika za održivi razvoj."
+          target_17_15:
+            title: "Poštujte politički prostor i vodstvo svake zemlje u uspostavljanju i provedbi politika za iskorjenjivanje siromaštva i održivi razvoj."
+          target_17_16:
+            title: "Unaprijediti globalno partnerstvo za održivi razvoj, dopunjeno partnerstvima s više dionika koja mobiliziraju i dijele znanje, stručnost, tehnologiju i financijske resurse, kako bi se podržalo postizanje ciljeva održivog razvoja u svim zemljama, posebno u zemljama u razvoju."
+          target_17_17:
+            title: "Poticati i promicati učinkovito javno, javno-privatno i civilno partnerstvo, nadovezujući se na iskustvo i strategije partnerstva."
+          target_17_18:
+            title: "Do 2020. pojačati potporu za izgradnju kapaciteta zemljama u razvoju, uključujući najmanje razvijene zemlje i male otočne države u razvoju, kako bi se značajno povećala dostupnost visokokvalitetnih, pravovremenih i pouzdanih podataka razvrstanih prema prihodu, spolu, dobi, rasi, etničkoj pripadnosti, migracijskom statusu, invaliditetu, zemljopisnom položaju i drugim karakteristikama relevantnim u nacionalnim kontekstima."
+          target_17_19:
+            title: "Do 2030. nadograđivati ​​postojeće inicijative za razvoj mjerenja napretka u održivom razvoju koja nadopunjuju bruto domaći proizvod i podržavaju izgradnju statističkih kapaciteta u zemljama u razvoju."
+      help:
+        title: "Sekcija pomoći ciljeva održivog razvoja"
+        description: "You can align your contributions to the community (debates, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
+      show:
+        read_more: "Prikaži više o %{goal}"
+        read_less: "Prikaži manje o %{goal}"
+        targets:
+          no_local_targets: Ovaj cilj nema lokalnih zadataka
+      title: "Ciljevi održivog razvoja"
+      filter:
+        heading: "Filter prema COR-u"
+        link: "Vidi sve iz %{resources} povezanih sa zadatkom %{code}"
+        more:
+          one: "Još jedan cilj"
+          other: "Još %{count} ciljeva"
+    related_list_selector:
+      goal_identifier: "COR%{code}"
+      goal_list: "Lista ciljeva"
+      help:
+        title: "Which SDGs and targets are aligned with my %{record}?"
+        text: "pomoći za COR"
+      hint: Možete uvesti šifru određenog cilja/cilja ili tekst da biste ga pronašli. Za više informacija posjetite stranicu %{link}.
+      placeholder: "Write a goal or target code or description"
+      remove_tag: "Obriši"
+      title: "Zadatci i ciljevi održivog razvoja"
+    targets:
+      filter:
+        link: "Vidi sve %{resources} povezane sa zadatkom %{code}"
+        more:
+          one: "Još jedan zadatak"
+          other: "Još %{count} zadataka"

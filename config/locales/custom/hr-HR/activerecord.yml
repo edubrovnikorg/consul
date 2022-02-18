@@ -4,6 +4,7 @@ hr:
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Prikaži statistike"
     advanced_stats_enabled: "Prikaži napredne statistike"
+    related_sdg_list: Zadatci i ciljevi
   activerecord:
     models:
       activity:
@@ -94,6 +95,24 @@ hr:
         one: "Prijedlog građana"
         few: "Prijedlozi građana"
         other: "Prijedlozi građana"
+      sdg/goal:
+        one: "cilj"
+        few: "cilja"
+        many: "ciljeva"
+        other: "ciljevi"
+      sdg/local_target:
+        one: "Lokalni zadatak"
+        few: "Lokalna zadatka"
+        many: "Lokalnih zadataka"
+        other: "Lokalni zadatci"
+      sdg/manager:
+        one: "COR menadžer"
+        other: "COR menadžeri"
+      sdg/target:
+        one: "zadatak"
+        few: "zadatka"
+        many: "zadataka"
+        other: "zadatci"
       site_customization/page:
         one: Dodatna stranica
         few: Dodatne stranice
@@ -349,6 +368,24 @@ hr:
         signable_type: "Potpis za:"
         signable_id: "Identifikator"
         document_numbers: "Broj dokumenta"
+      sdg/goal:
+        code: "ID"
+        title: "Naziv"
+        description: "Opis"
+      sdg/local_target:
+        code: "ID"
+        target_id: "Zadatak"
+        title: "Naziv"
+      sdg/local_target/translation:
+        title: "Naziv"
+        description: "Opis"
+      sdg/phase/kind:
+        sensitization: "Senzibilizacija"
+        planning: "Planiranje"
+        monitoring: "Nadzor"
+      sdg/target:
+        code: "ID"
+        title: "Naziv"
       site_customization/page:
         content: Sadržaj
         created_at: Stvoreno
@@ -599,6 +636,10 @@ hr:
           attributes:
             locale:
               already_translated: Već preveden izvor
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "Mora započeti istim kodom kao i zadatak, nastaviti točkom i završiti s brojem"
       messages:
         translations_too_short: Obvezno je priložiti barem jedan prijevod
         record_invalid: "Validacija nije uspjela: %{errors}"

@@ -13,7 +13,7 @@ hr:
         back: Nazad
         password:
           password: Zaporka
-          send_email: Pošalji e-mail za obnovu lozinke
+          send_email: Pošalji e-mail za obnovu zaporke
           reset_email_send: E-mail poslan ispravno.
           reseted: Zaporka je uspješno obnovljena
           random: Stvori nasumičnu zaporku
@@ -30,7 +30,7 @@ hr:
     check: Provjeri dokument
     dashboard:
       index:
-        title: Menadžment
+        title: Upravljanje
         info: Ovdje možete upravljati korisnicima putem svih akcija koje su navedene u lijevom izborniku.
     document_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
@@ -63,7 +63,7 @@ hr:
       create_budget_investment: Stvori investicijski budžet
       print_budget_investments: Ispiši investicijske budžete
       support_budget_investments: Podupri investicijske budžete
-      users: Korisnički menadžment
+      users: Upravljanje korisnicima
       user_invites: Pošalji pozivnice
       select_user: Odaberi korisnika
     permissions:
@@ -84,14 +84,16 @@ hr:
         print_button: Ispiši
       index:
         title: Stvori prijedloge
+      support:
+        title: Podupri prijedloge
     budgets:
-      create_new_investment: Stvorite investicijski budžet
+      create_new_investment: Stvorite investicijski projekt
       print_investments: Ispiši investicijski budžet
-      support_investments: Podrži investicijski budžet
-      table_name: Ime
+      support_investments: Podupri investicijske budžete
+      table_name: Naziv
       table_phase: Faza
-      table_actions: Djelovanja
-      no_budgets: Ne postoje aktivni participativni budžeti.
+      table_actions: Akcije
+      no_budgets: Ne postoje aktivni investicijski projekti.
     budget_investments:
       alert:
         unverified_user: Korisnik nije verificiran

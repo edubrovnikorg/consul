@@ -201,6 +201,7 @@ hr:
     local_census_records/import: Uvoz zapisa lokalnih cenzusa
     site_customization/content_block: blokiranje sadržaja
     site_customization/page: stranica
+    sdg/local_target: lokalni zadatak
   geozones:
     none: Cijeli grad
   layouts:
@@ -246,7 +247,7 @@ hr:
       debates: Rasprave
       locale: "Jezik:"
       logo: VOXPOPULI logo
-      management: Menadžment
+      management: Upravljanje
       moderation: Uređivanje
       valuation: Procjena
       officing: Službenici za bilježenje glasova
@@ -257,7 +258,7 @@ hr:
       proposals: Prijedlozi
       poll_questions: Glasanje
       sdg: Ciljevi održivog razvoja
-      budgets: Participativni budžet
+      budgets: Participativni budžeti
       notification_item:
         new_notifications:
           one: Imate novu obavijest
@@ -265,6 +266,7 @@ hr:
           other: Vi imate %{count} nove obavijesti
         notifications: Obavijesti
         no_notifications: "Nemate novu obavijest"
+      sdg: COR
   notifications:
     index:
       empty_notifications: Nemate nove obavijesti.
@@ -966,7 +968,7 @@ hr:
     content_title:
       proposal: "Prijedlog"
       debate: "Rasprava"
-      budget_investment: "Budžet investicija"
+      budget_investment: "Investicijski projekti"
   admin/widget:
     header:
       title: Administracija

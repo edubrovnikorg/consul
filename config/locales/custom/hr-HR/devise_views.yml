@@ -9,7 +9,7 @@ hr:
         instructions: Potvrda računa putem e-mail adrese %{email}
         new_password_confirmation_label: Ponovi zaporku za pristup
         new_password_label: Nova zaporka za pristup
-        please_set_password: Molimo vas stvorite novu lozinku (ovo će Vam omogućiti prijavu putem gornjeg e-maila)
+        please_set_password: Molimo vas stvorite novu zaporku (ovo će Vam omogućiti prijavu putem gornjeg e-maila)
         submit: Potvrdi
         title: Potvrdi moj račun
     mailer:
@@ -21,12 +21,12 @@ hr:
         title: Dobrodošli
         welcome: Poštovani/a
       reset_password_instructions:
-        change_link: Promijeni moju lozinku
+        change_link: Promijeni moju zaporku
         hello: Pozdrav
-        ignore_text: Ukoliko niste zatražili izmjenu lozinke, možete zanemariti ovaj e-mail.
+        ignore_text: Ukoliko niste zatražili izmjenu zaporke, možete zanemariti ovaj e-mail.
         info_text: Vaša zaporka se neće mijenjati ukoliko ne pristupite poveznici te ju izmjenite.
         text: "Zaprimili smo zahtjev za izmjenu zaporke. Izmjenu možete napraviti na sljedećoj poveznici:"
-        title: Izmijeni svoju lozinku
+        title: Izmijeni svoju zaporku
       unlock_instructions:
         hello: Pozdrav
         info_text: Vaš račun je blokiran zbog višestrukih neuspješnih prijava.
@@ -45,7 +45,7 @@ hr:
         new:
           email_label: E-mail
           organization_name_label: Naziv organizacije
-          password_confirmation_label: Potvrdi lozinku
+          password_confirmation_label: Potvrdi zaporku
           password_label: Zaporka
           phone_number_label: Broj telefona
           responsible_name_label: Puno ime osobe odgovorne za kolektiv
@@ -61,10 +61,10 @@ hr:
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
-        change_submit: Promijeni moju lozinku
-        password_confirmation_label: Potvrdi novu lozinku
+        change_submit: Promijeni moju zaporku
+        password_confirmation_label: Potvrdi novu zaporku
         password_label: Nova zaporka
-        title: Promijeni vašu lozinku
+        title: Promijeni vašu zaporku
       new:
         email_label: E-mail
         send_submit: Pošalji upute

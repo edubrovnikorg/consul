@@ -1,0 +1,50 @@
+hr:
+  sdg_management:
+    actions:
+      edit: "Upravljaj zadatcima i ciljevima"
+    header:
+      title: "Ciljevi održivog razvoja"
+    homepage:
+      title: "Podešavanje Početne stranice"
+      header:
+        create: "Stvori karticu naslova"
+        no_cards: "Ne postoje naslovi"
+        title: "Naslov"
+      create_card: 'Kreiraj karticu u fazi: "%{phase}"'
+      no_cards: "Nema kartica u ovoj fazi"
+    menu:
+      budget_investments: "Investicijski projekti"
+      debates: "Debate"
+      legislation_processes: "Javna savjetovanja"
+      legislation_proposals: "Prijedlozi savjetovanja"
+      polls: "Glasanja"
+      proposals: "Prijedlozi"
+      sdg_content: "Zadatci i ciljevi"
+      sdg_homepage: "COR naslovna"
+    local_targets:
+      create:
+        notice: "Lokalni zadatak je uspješno kreiran"
+      destroy:
+        notice: "Lokalni zadatak je uspješno obrisan"
+      edit:
+        title: "Uredi lokalni zadatak"
+      form:
+        code: "Kod mora početi sa kodom odabranog zadatka i nakon toga točkom"
+        description: "Ovaj će se opis prikazivati korisnicima kao pomoć."
+      index:
+        new: "Stvori lokalni zadatak"
+      new:
+        title: "Novi lokalni zadatak"
+      update:
+        notice: "Lokalni zadatak je uspješno ažuriran"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "Sve"
+          pending_sdg_review: "Na čekanju"
+          sdg_reviewed: "Pregledano"
+      update:
+        notice: "%{relatable} je uspješno ažuriran"
+      update_and_review:
+        notice: "%{relatable} je uspješno ažuriran i označen kao pregledan"
