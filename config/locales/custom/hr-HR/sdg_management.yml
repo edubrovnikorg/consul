@@ -10,7 +10,7 @@ hr:
         create: "Stvori karticu naslova"
         no_cards: "Ne postoje naslovi"
         title: "Naslov"
-      create_card: 'Kreiraj karticu u fazi: "%{phase}"'
+      create_card: 'Stvori karticu u fazi: "%{phase}"'
       no_cards: "Nema kartica u ovoj fazi"
     menu:
       budget_investments: "Investicijski projekti"
