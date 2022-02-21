@@ -246,7 +246,7 @@ hr:
           author: Autor
         cannot_calculate_winners: Budžet mora ostati u fazi "Izglašavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
         see_results: "Pogledaj rezultate"
-        milestone_tags_filter_all: "Sve faze poziva"
+        milestone_tags_filter_all: "Sve faze procesa"
       show:
         assigned_admin: Dodijeljen administrator
         assigned_valuators: Pripisani procjenitelji
@@ -293,47 +293,47 @@ hr:
         table_publication_date: "Datum objave"
         table_status: Stanje
         table_actions: "Akcije"
-        delete: "Obriši fazu poziva"
-        no_milestones: "Nemate definirane faze poziva"
+        delete: "Obriši fazu procesa"
+        no_milestones: "Nemate definirane faze procesa"
         image: "Slika"
         show_image: "Pogledaj sliku"
         documents: "Dokumenti"
-        milestone: Faze poziva
-        new_milestone: Stvori novu fazu poziva
-        milestone_tags: Oznake faza poziva
+        milestone: Faze procesa
+        new_milestone: Stvori novu fazu procesa
+        milestone_tags: Oznake faza procesa
       form:
         admin_statuses: Upravljaj statusima
         no_statuses_defined: Još ne postoji definirani status
       new:
-        creating: Stvori novu fazu poziva
+        creating: Stvori novu fazu procesa
       edit:
-        title: Uredi fazu poziva
+        title: Uredi fazu procesa
       create:
-        notice: Nova faza poziva je uspješno stvorena!
+        notice: Nova faza procesa je uspješno stvorena!
       update:
-        notice: Faza poziva je uspješno ažurirana
+        notice: Faza procesa je uspješno ažurirana
       delete:
-        notice: Faza poziva je uspješno obrisana
+        notice: Faza procesa je uspješno obrisana
     statuses:
       index:
-        title: Status faze poziva
+        title: Status faze procesa
         empty_statuses: Nisu stvoreni statusi faze
-        new_status: Stvori novi status faze poziva
+        new_status: Stvori novi status faze procesa
         table_name: Naziv
         table_description: Opis
         table_actions: Akcije
         delete: Izbriši
         edit: Uredi
       edit:
-        title: Uredi statuse faze poziva
+        title: Uredi statuse faze procesa
       update:
-        notice: Faza poziva uspješno ažurirana
+        notice: Faza procesa uspješno ažurirana
       new:
-        title: Stvori status faza poziva
+        title: Stvori status faza procesa
       create:
-        notice: Faza poziva uspješno stvorena
+        notice: Faza procesa uspješno stvorena
       delete:
-        notice: Faza poziva uspješno obrisana
+        notice: Faza procesa uspješno obrisana
     progress_bars:
       manage: "Upravljaj trakom napretka"
       index:
@@ -1238,7 +1238,7 @@ hr:
         author: Autor
         select: Odaberi
         selected: Odabrano
-        milestones: Faza poziva
+        milestones: Faza procesa
         no_proposals: Ne postoje prijedlozi.
       show:
         create_question: Pridruži ovaj prijedlog glasanju

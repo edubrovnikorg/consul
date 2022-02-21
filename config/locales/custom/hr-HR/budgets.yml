@@ -58,7 +58,7 @@ hr:
       next_phase: Sljedeća faza
       prev_phase: Prethodna faza
       current_phase: Trenutna faza
-      map: Prijedlozi investiranja budžeta prema geografskoj lokaciji
+      map: Prijedlozi investicijskih projekata prema geografskoj lokaciji
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
       not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za glasanje
@@ -101,7 +101,7 @@ hr:
           check_ballot_link: "pregledu mojih glasova"
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
           verified_only: "Kako bi se stvorio novi investcijski budžet %{verify}."
-          create: "Stvori investicijski budžet"
+          create: "Stvori investicijski projekt"
           not_logged_in: "Kako bi stvorili novi investicijski budžet morate se prijaviti - %{sign_in} ili %{sign_up}."
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti

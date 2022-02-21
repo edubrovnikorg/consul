@@ -33,7 +33,7 @@ hr:
         description: "Sekcija %{link} pomaže građanima u provedbi direktne odluke o trošenju dijela javnog proračuna."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
-        figcaption: '"Potpora" i "Glasanje" faze sudioničkih proračuna.'
+        figcaption: '"Potpora" i "Glasanje" faze participativnih budžeta.'
       polls:
         title: "Glasanje"
         description: "Sekcije za %{link} aktiviraju se svaki puta kada prijedlog postigne 1% potpore i započne izglasavanje ili kada tijelo javne vlasti iznese problematiku o kojoj građani zatim odlučuju."
@@ -56,6 +56,7 @@ hr:
       other:
         title: "Ostale zanimljive informacije"
         how_to_use: "Koristi %{org_name} u svojem gradu"
+        description: Svoj doprinos zajednici (rasprave, prijedlozi građana i investicijski projekti) možete uskladiti s ciljevima održivog razvoja 2030, što će nam omogućiti da imamo pregled našeg doprinosa svakom od ciljeva održivog razvoja. U nastavku možete saznati o svim ciljevima, njihovim zadacima i lokaliziranim zadacima.
       how_to_use:
         text: |-
           Koristite ga za Vašu lokalnu vlast ili nam pomognite poboljšati ga, softver je besplatan. 
