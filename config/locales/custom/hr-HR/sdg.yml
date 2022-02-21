@@ -443,7 +443,7 @@ hr:
             title: "Do 2030. nadograđivati ​​postojeće inicijative za razvoj mjerenja napretka u održivom razvoju koja nadopunjuju bruto domaći proizvod i podržavaju izgradnju statističkih kapaciteta u zemljama u razvoju."
       help:
         title: "Sekcija pomoći ciljeva održivog razvoja"
-        description: "You can align your contributions to the community (debates, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
+        description: Svoj doprinos zajednici (rasprave, prijedlozi građana i investicijski projekti) možete uskladiti s ciljevima održivog razvoja 2030, što će nam omogućiti da imamo pregled našeg doprinosa svakom od ciljeva održivog razvoja. U nastavku možete saznati o svim ciljevima, njihovim zadacima i lokaliziranim zadacima.
       show:
         read_more: "Prikaži više o %{goal}"
         read_less: "Prikaži manje o %{goal}"
