@@ -82,7 +82,7 @@ hr:
         title: Participativni budžet
         unfeasible: Neizvedive investicije za projekte
         unfeasible_text: "Ove investicije moraju zadovoljiti različite kriterije (zakonitost, konkretnost, ne smije premašiti limit budžeta) kako bi zadovoljile uvjete i ušle u krug do krajnjeg glasanja. Sve investicije koje ne zadovoljavaju kriterije označavaju se nezadovoljavajućim i objavljuju se na sljedećoj listi, zajedno s izvještajem zašto nisu pogodne."
-        by_heading: "Investicijski projekti s ciljem: %{heading}"
+        by_heading: "Investicijski projekti za: %{heading}"
         search_form:
           button: Pretraga
           placeholder: Pretraga investicijskih projekata...
@@ -106,6 +106,13 @@ hr:
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti
           unfeasible: Neizvedivi projekti
+        filter: "Primjenjeni filteri: "
+        filters:
+          not_unfeasible: "Izvedivo"
+          selected: "Odabrano"
+          unfeasible: "Nije izvedivo"
+          unselected: "Nije odabrano"
+          winners: "Pobjednici"
         orders:
           random: nasumično
           confidence_score: najbolje ocijenjeni
@@ -153,7 +160,7 @@ hr:
         different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako promijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "pregledu mojih glasova"
-        price: "Ova tema ima budžet od"
+        price: "Ukupni budžet"
     progress_bar:
       assigned: "Vi ste pripisali: "
       available: "Dostupan budžet: "

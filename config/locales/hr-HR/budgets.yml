@@ -45,7 +45,7 @@ hr:
       publishing_prices: Objavljivanje cijena projekata
       balloting: Izglasavanje projekata
       reviewing_ballots: Pregled glasanja
-      finished: Finalizirani proračun
+      finished: Finalizirani budžet
     index:
       title: Participativni proračun
       empty_budgets: Ne postoje proračuni.
@@ -70,7 +70,7 @@ hr:
         tag_category_label: "Kategorije"
         tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
         tags_label: Oznake
-        tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (\",\")"
+        tags_placeholder: 'Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (",")'
         map_location: "Lokacija na karti"
         map_location_instructions: "Pronađi lokaciju na karti i stavi oznaku."
         map_remove_marker: "Ukloni oznaku s karte"

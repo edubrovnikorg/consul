@@ -207,7 +207,7 @@ hr:
       budget/translation:
         name: "Ime"
       budget/investment:
-        heading_id: "Naslov"
+        heading_id: "Grupa"
         title: "Naziv"
         description: "Opis"
         external_url: "Poveznica za dodatnu dokumentaciju"

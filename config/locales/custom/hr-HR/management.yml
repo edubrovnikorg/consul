@@ -97,8 +97,8 @@ hr:
     budget_investments:
       alert:
         unverified_user: Korisnik nije verificiran
-      create: Stvori investicijski budžet
-      edit: Uredite investicijski budžet
+      create: Stvori investicijski projekt
+      edit: Uredite investicijski projekt
       filters:
         heading: Koncept
         unfeasible: Neizvediva investicija

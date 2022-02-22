@@ -721,11 +721,12 @@ hr:
       from: "Od"
       general: "Tekst za pretragu"
       general_placeholder: "Napiši tekst"
-      goal: "By SDG"
-      goal_blank: "Select a goal"
+      goal: "COR"
+      goal_blank: "Odaberite cilj"
       search: "Traži"
       target: Zadatak
-      title: "Svi zadatci"
+      target_blank: Odaberite zadatak
+      title: "Napredna pretraga"
       to: "Do"
     author_info:
       author_deleted: Korisnik obrisan
