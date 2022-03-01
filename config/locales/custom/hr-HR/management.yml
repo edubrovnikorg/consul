@@ -60,9 +60,9 @@ hr:
       create_proposal: Stvorite prijedlog
       print_proposals: Ispiši prijedloge
       support_proposals: Podupri prijedlog
-      create_budget_investment: Stvori investicijski budžet
-      print_budget_investments: Ispiši investicijske budžete
-      support_budget_investments: Podupri investicijske budžete
+      create_budget_investment: Stvori investicijski projekt
+      print_budget_investments: Ispiši investicijske projekte
+      support_budget_investments: Podupri investicijske projekte
       users: Upravljanje korisnicima
       user_invites: Pošalji pozivnice
       select_user: Odaberi korisnika
@@ -88,8 +88,8 @@ hr:
         title: Podupri prijedloge
     budgets:
       create_new_investment: Stvorite investicijski projekt
-      print_investments: Ispiši investicijski budžet
-      support_investments: Podupri investicijske budžete
+      print_investments: Ispiši investicijski projekt
+      support_investments: Podupri investicijske projekte
       table_name: Naziv
       table_phase: Faza
       table_actions: Akcije

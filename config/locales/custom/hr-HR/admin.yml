@@ -76,7 +76,7 @@ hr:
         table_phase: Faza
         table_duration: Trajanje
         table_completed: Dovršeno
-        table_phase_progress: Faza progresa
+        table_phase_progress: Trenutna faza
         table_investments: Investicije
         table_edit_groups: Tematska grupa
         table_edit_budget: Uredi
@@ -96,7 +96,7 @@ hr:
         drafting: Nacrt
         publish: Objavi
         duration: Trajanje
-        title: Uredi Participativni budžet
+        title: Uredi participativni budžet
         delete: Obriši budžet
         phase: Faza
         dates: Datumi
@@ -172,9 +172,9 @@ hr:
         success_notice: "Podgrupu je uspješno obrisan"
         unable_notice: "Ne možete obrisati podgrupu koji ima povezane investicije"
       form:
-        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati pod ovom podgrupom tijekom faze "Glasanje o projektima". Samo za budžete koji koriste potvrdno glasanje.'
-        population_info: "Opcionalno, služi za informativni prikaz postotka populacije područja koja je glasala"
-        coordinates_info: "Ako su geografska visina i širina dostupne, stranica će prikazivati kartu centriranu na te koordinate."
+        max_ballot_lines_info: 'Maksimalan broj projekata na kojima korisnik može glasati tijekom faze "Izglasavanje projekata".'
+        population_info: "Opcionalno, služi za informativni prikaz postotka populacije područja koja je glasala."
+        coordinates_info: "Ako su geografska dužina i širina unesene stranica će prikazivati kartu, centriranu na te koordinate."
         content_blocks_info: "Ako je omogućeno moći možete dodati dodatni sadržaj pod postavkama > prilagodi blokove sadržaja."
         create: "Stvori novu podgrupu"
         edit: "Uredi podgrupu"
@@ -595,7 +595,7 @@ hr:
           body_placeholder: Napiši tekst nacrta pozvia
         index:
           title: Verzije nacrta
-          create: Spremi
+          create: Stvori novu verziju
           delete: Izbriši
           preview: Pregled
         new:
@@ -684,7 +684,7 @@ hr:
       newsletters: Newsletteri
       admin_notifications: Obavijesti
       system_emails: Email poruke sustava
-      emails_download: Preuzmi emailove
+      emails_download: Preuzmi email adrese
       valuators: Procjenitelji
       poll_officers: Službenici za bilježenje glasova
       polls: Glasanje
@@ -729,7 +729,7 @@ hr:
       dashboard_actions: Resursi i akcije
       debates: "Rasprave"
       comments: "Komentari"
-      local_census_records: Upravljanje lokalnim cenzusom
+      local_census_records: Upravljanje lokalnim popisom
     administrators:
       index:
         title: Administratori
@@ -779,7 +779,7 @@ hr:
         new_newsletter: Novi newsletter
         subject: Predmet
         segment_recipient: Primatelji
-        sent: Pošalji
+        sent: Status slanja
         actions: Akcije
         draft: Nacrt
         edit: Uredi
@@ -1398,7 +1398,7 @@ hr:
         new: Nova potpisna lista
       new:
         title: Nova potpisna liste
-        document_numbers_note: "Napiši brojeve dokumenata građan odvojene ;"
+        document_numbers_note: "Napiši brojeve dokumenata građana odvojene ;"
         submit: Stvori potpisnu listu
         text_help:
           required_fields_note: "Za provjeru korisnika, vašoj aplikaciji je potreban: Broj dokumenata"
@@ -1667,7 +1667,7 @@ hr:
       empty: "Nema zabilježenih izmjena"
     local_census_records:
       index:
-        title: Upravljanje lokalnim cenzusom
+        title: Upravljanje lokalnim popisom
         create: Stvorite novi zapis lokalnog cenzusa
         no_local_census_records: Nema zapisa lokalnog cenzusa.
         document_type: Vrsta dokumenta
@@ -1695,7 +1695,7 @@ hr:
         create:
           notice: Uvez zapisa lokalnog cenzusa uspješno izvršen!
         show:
-          title: Upravljanje lokalnim cenzusom
+          title: Upravljanje lokalnim popisom
           subtitle: Uvezi rezultate postupka
           import: Uvezi ponovo
           errored: Retci s greškom

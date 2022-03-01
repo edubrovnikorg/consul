@@ -266,7 +266,7 @@ hr:
         name: "Naziv"
         price: "Ukupni iznos"
         population: "Populacija"
-        max_ballot_lines: "Dopušteno glasanja"
+        max_ballot_lines: "Dopušteno glasova"
       budget/heading/translation:
         name: "Naziv"
       budget/phase:
@@ -331,19 +331,20 @@ hr:
         name: "Ime organizacije"
         responsible_name: "Osoba odgovorna za grupu"
       poll:
-        name: "Ime"
+        name: "Naziv"
+        title: "Naziv"
         starts_at: "Datum početka"
-        ends_at: "Datum zatvaranja"
+        ends_at: "Datum završetka"
         geozone_restricted: "Ograničeno geozonom"
         summary: "Sažetak"
         description: "Opis"
       active_poll/translation:
         description: "Opis"
       poll/booth:
-        name: "Ime"
+        name: "Naziv"
         location: "Lokacija"
       poll/translation:
-        name: "Ime"
+        name: "Naziv"
         summary: "Sažetak"
         description: "Opis"
       poll/question:
@@ -390,7 +391,7 @@ hr:
         content: Sadržaj
         created_at: Stvoreno
         subtitle: Podnaslov
-        slug: Url
+        slug: URL
         status: Status
         status_draft: "Skica"
         status_published: "Objavljeno"
