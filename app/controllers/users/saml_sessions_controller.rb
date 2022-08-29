@@ -189,7 +189,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
   
   def failed_sign_up_params
-    params.require([:sessionIndex, :subjectId, :subjectIdFormat])
+    params.require([:sessionIndex, :subjectId])
     params.permit([:sessionIndex, :subjectId, :subjectIdFormat])
   end
 end
