@@ -23,7 +23,7 @@
 /config/maintenance.yml
 # Ignore certificates
 /config/certificates/*  
-
+cacert.pem
 
 /coverage
 
