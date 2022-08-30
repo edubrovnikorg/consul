@@ -77,6 +77,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       session_index = CGI.escape(current_user.session_index)
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     when :logout_nias
+      log.info "#{params}"
       subject_id = CGI.escape(params[:subjectId])
       subject_id_format = CGI.escape(params[:subjectIdFormat])
       session_index = CGI.escape(params[:sessionIndex])
