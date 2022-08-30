@@ -31,7 +31,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         raise StandardError, "User validation error."
       rescue StandardError => e
         logger.debug e.message
-        Rails.cache.write("subjectIdFormat", params[:subjectIdFormat], expires_in 1.minute)
+        Rails.cache.write("subjectIdFormat", params[:subjectIdFormat], expires_in: 1.minute)
         head 403
       end
     end
@@ -80,7 +80,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     when :logout_nias
       log.info "#{params}"
       subject_id = CGI.escape(params[:subjectId])
-      subject_id_format = CGI.escape(Rails.cache.fetch("subjectIdFormat"]) unless !Rails.cache.exist?("subjectIdFormat")
+      subject_id_format = CGI.escape(Rails.cache.fetch("subjectIdFormat")) unless !Rails.cache.exist?("subjectIdFormat")
       session_index = CGI.escape(params[:sessionIndex])
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     end
