@@ -78,8 +78,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     when :logout_nias
       subject_id = CGI.escape(params[:subjectId])
+      subject_id_format = CGI.escape(params[:subjectIdFormat])
       session_index = CGI.escape(params[:sessionIndex])
-      url << "/logoutNiasRequest?subjectId=#{subject_id}&sessionIndex=#{session_index}"
+      url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     end
     url
   end
@@ -141,12 +142,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       user = get_nias_user(:session)
     rescue StandardError => e
-      logger.debug "Flushing users failed!"
+      logger.error "Flushing users failed!"
       return 500;
     end
     sign_out user
     if !user.invalidate_all_sessions!
-      logger.debug "Flushing users failed!"
+      logger.error "Flushing users failed!"
       head :bad_request
     else
       head :ok
@@ -188,7 +189,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
   
   def failed_sign_up_params
-    params.require([:sessionIndex, :subjectId])
+    params.require([:sessionIndex, :subjectId, :subjectIdFormat])
     params.permit([:sessionIndex, :subjectId, :subjectIdFormat])
   end
 end
