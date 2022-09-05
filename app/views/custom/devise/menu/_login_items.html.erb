@@ -26,15 +26,6 @@
       <%= link_to t("devise_views.menu.login_items.nias_logout"),
                   nias_logout_path, rel: "nofollow", method: :get %>
     </li>
-<% end %> 
-
-<% else %>
-  <li>
-    <%= link_to t("devise_views.menu.login_items.login"),
-                new_user_session_path, rel: "nofollow" %>
-  </li>
-  <li>
-    <%= link_to t("devise_views.menu.login_items.signup"),
-                new_user_registration_path, rel: "nofollow", class: "button" %>
-  </li>
+  <% end %> 
+ 
 <% end %>

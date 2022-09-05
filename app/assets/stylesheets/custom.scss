@@ -20,10 +20,13 @@
 .grad-dbk-header {
   background: #ededed;
   padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .grad-dbk-header img {
   width: auto;
-  height: 65px;
+  height: 80px;
   max-width: 70%;
 }
 h1.top-bar-title {
@@ -201,7 +204,7 @@ div.row.account div.float-right.text-right{display:none !important;}
 #notifications{display:none !important;}
 #new_user{display:block !important;}
 div.auth-form.margin div.text-center{display:none !important;}
-div.auth-form.margin p{display:none !important;}
+// div.auth-form.margin p{display:none !important;}
 
 em.text-small {
   font-size: 14px;
@@ -209,4 +212,49 @@ em.text-small {
 
 div.container-username {
   margin-bottom: 2rem;
+}
+
+
+div.go_wrapper {
+  width: 124px;
+  display: inline;
+  float: right;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: font-url('roboto-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+a.go_register {
+
+  height: 40px;
+  width: 120px;
+  font-family: 'Roboto';
+  font-size: 0.875em;
+  /* 14px */
+  font-weight: 500;
+  line-height: 42px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #ca1720;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+a.go_register:hover {
+  color: #fff;
+  background-color: #2cad56;
+}
+
+a.go_register img {
+  flex: 0;
+  display: block;
+  margin: 0 10px 0 6px;
+  height: 30px;
 }

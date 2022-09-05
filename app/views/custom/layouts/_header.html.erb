@@ -12,9 +12,18 @@
 <%# zaglavlje grad dbk %>
 
 <div class="grad-dbk-header">
-<a href="/">
-        <%= image_tag(image_path_for("grb-header.svg"), alt: setting["org_name"]) %>
-        </a>
+  <a href="/">
+    <%= image_tag(image_path_for("grb-header.svg"), alt: setting["org_name"]) %>
+  </a>
+
+  <% if !user_signed_in? %>
+    <div class="go_wrapper">
+      <a href="<%= nias_login_path %>" class="go_register">
+        <%= image_tag(image_path_for("prijava.svg"), alt: "Prijavite se preko sustava e-Građani") %> 
+        <div>Prijava</div>
+      </a>
+    </div>
+  <% end %>
 </div>
 
   <div class="top-links">
