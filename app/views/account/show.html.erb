@@ -18,7 +18,7 @@
 
           <h2><%= t("account.show.personal") %></h2>
 
-          <div class="small-12 medium-10">
+          <div class="small-12 medium-10 container-username">
             <% if @account.organization? %>
               <%= f.fields_for :organization do |fo| %>
                 <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
@@ -28,6 +28,7 @@
 
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+              <em class="text-small"><%= t("account.show.username_detail") %></em>
             <% end %>
           </div>
 
@@ -70,7 +71,7 @@
           <% end %>
 
           <% if feature?("user.recommendations") %>
-            <h2><%= t("account.show.recommendations") %></h2>
+            <h2><%= t("account.show.recommendations") %></h2>v
 
             <% if feature?("user.recommendations_on_debates") %>
               <div>

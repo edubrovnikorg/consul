@@ -1,9 +1,10 @@
 hr:
   auth:
-    confirm_btn: "Potvrdi prijavu"
+    confirm_btn: "Nastavak"
     fail_btn: "Odjavi me s e-Građana"
   account:
     show:
+      username_detail: Unos Korisničkog imena je obavezan. Korisničko ime je ime koje ćete koristiti u ovoj aplikaciji prilikom Vaših aktivnosti u participativnim procesima. To je ime koje će biti vidljivo ostalim sudionicima. Ukoliko želite, kao korisničko ime možete koristiti svoje puno ime i prezime, ali i pseudonim. Javnost će isključivo moći vidjeti Vaše korisničko ime. Isključivo ovlaštene osobe Grada Dubrovnika, raspolagat će informacijom o Vašim stvarnim podacima. Odabirom niže navedenih opcija određujete hoće li sve vaše aktivnosti biti vidljive javno, kao i informacija o sadržajima koje su vama interesantne i koje pratite.
       change_credentials_link: Izmjeni moje vjerodajnice
       erase_account_link: Obriši moj račun
       finish_verification: Završi provjeru
@@ -256,7 +257,7 @@ hr:
       my_activity_link: Moje aktivnosti
       open_gov: Otvorena vlada
       proposals: Prijedlozi
-      poll_questions: Glasanje
+      poll_questions: Ankete
       sdg: Ciljevi održivog razvoja
       budgets: Participativni budžeti
       notification_item:
@@ -487,7 +488,7 @@ hr:
       progress: Napredak
       resources: Resursi
       community: Zajednica
-      polls: Glasovi
+      polls: Ankete
       mailing: Email
       poster: Banner
       recommended_actions: Preporučeno djelovanje
@@ -561,7 +562,7 @@ hr:
       previous_notifications: Vidi prošle obavijesti
     polls:
       index:
-        title: Glasovi
+        title: Anketa
         create: Izradi anketu
         count:
           one: Izradili ste %{count} anketu.
@@ -570,7 +571,7 @@ hr:
         links: Poveznice
         additiontal_information: Dodatne informacije
       new:
-        title: Novo glasanje
+        title: Nova anketa
         submit: Izradi anketu
       edit:
         submit: Ažuriraj anketu
@@ -636,28 +637,28 @@ hr:
       filters:
         current: "Otvoreno"
         expired: "Isteklo"
-      title: "glasanje"
+      title: "anketa"
       participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Anketa je završena"
       no_geozone_restricted: "Cijeli grad"
       geozone_restricted: "Gradska područja"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
-      already_answer: "Vi ste već sudjelovali u ovom glasanju"
+      already_answer: "Vi ste već sudjelovali u ovoj anketi"
       not_logged_in: "Morate biti prijavljeni ili registrirani kako biste sudjelovali"
       unverified: "Morate potvrditi svoj račun kako biste sudjelovali"
       cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
-        icon_alt: Ikona glasanja
-        title: Glasanje
-        help: Pomoć oko glasanja
+        icon_alt: Ikona ankete
+        title: Anketa
+        help: Pomoć oko ankete
       section_footer:
-        title: Pomoć oko glasanja
+        title: Pomoć oko ankete
         description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke.
-      no_polls: "Trenutno nema glasanja."
+      no_polls: "Trenutno nema anketa."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
-      back: Nazad na glasanje
+      back: Nazad na anketu
       cant_answer_not_logged_in: "Morate %{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
@@ -672,7 +673,7 @@ hr:
       videos: "Vanjski video"
       info_menu: "Informacija"
       stats_menu: "Statistike sudjelovanja"
-      results_menu: "Rezultati glasanja"
+      results_menu: "Rezultati ankete"
       stats:
         total_votes: "Ukupno glasova"
         votes: "GLASOVI"

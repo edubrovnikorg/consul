@@ -348,7 +348,7 @@ hr:
         summary: "Sažetak"
         description: "Opis"
       poll/question:
-        poll_id: "Glasanje"
+        poll_id: "Anketa"
         title: "Pitanje"
         summary: "Sažetak"
         description: "Opis"
@@ -644,7 +644,7 @@ hr:
       messages:
         translations_too_short: Obvezno je priložiti barem jedan prijevod
         record_invalid: "Validacija nije uspjela: %{errors}"
-        another_poll_active: Postoji još jedno aktivno glasanje za taj period
+        another_poll_active: Postoji još jedna aktivna anketa za taj period
         restrict_dependent_destroy:
           has_one: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
           has_many: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"

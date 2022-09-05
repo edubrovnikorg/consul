@@ -190,3 +190,23 @@ body > div.footer > footer > div:nth-child(1) {
 #debate_2 {
   display: none;
 }
+
+#edit_account > div > div.small-12.medium-7.column > h2:nth-child(5) {display:none !important;}
+label[for="account_email_digest"] {display:none !important;}
+label[for="account_email_on_comment"] {display:none !important;}
+label[for="account_email_on_comment_reply"] {display:none !important;}
+label[for="account_newsletter"] {display:none !important;}
+label[for="account_email_on_direct_message"] {display:none !important;}
+div.row.account div.float-right.text-right{display:none !important;}
+#notifications{display:none !important;}
+#new_user{display:block !important;}
+div.auth-form.margin div.text-center{display:none !important;}
+div.auth-form.margin p{display:none !important;}
+
+em.text-small {
+  font-size: 14px;
+}
+
+div.container-username {
+  margin-bottom: 2rem;
+}
