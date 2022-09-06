@@ -19,7 +19,7 @@ hr:
         description: "U sekciji %{link} možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} stranice, a koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
         feature: "Možete otvarati rasprave, komentirati i ocjenjivati ih sa <strong>Slažem se</strong> ili <strong>Ne slažem se</strong>. Za to trebate %{link}."
-        feature_link: "registrirati na %{org}"
+        feature_link: "prijaviti na %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
       proposals:
@@ -39,13 +39,13 @@ hr:
         description: "Sekcije za %{link} aktiviraju se svaki puta kada prijedlog postigne 1% potpore i započne izglasavanje ili kada tijelo javne vlasti iznese problematiku o kojoj građani zatim odlučuju."
         link: "anketa"
         feature_1: "Kako bi sudjelovali u anketi %{link} i potvrdite svoj račun."
-        feature_1_link: "registrirajte se na %{org_name}"
+        feature_1_link: "prijavite se na %{org_name}"
       processes:
         title: "Javno savjetovanje"
         description: "U sekciji %{link}, građani sudjeluju u stvaranju i modifikaciji propisa koji utječu na područje javnog djelovanja te mogu ponuditi mišljenje na temu propisa iz prošlih rasprava."
         link: "javno savjetovanje"
         feature: "Kako biste sudjelovali u javnim savjetovanjima kliknite na %{link} i potvrdite svoj račun."
-        feature_link: "registrirajte se na %{org_name}"
+        feature_link: "prijavite se na %{org_name}"
       faq:
         title: "Tehnički problemi?"
         description: "Pročitajte FAQ kako biste dobili odgovore na svoja pitanja."

@@ -10,5 +10,6 @@ module Consul
         ) 
       end 
     end 
+
   end
 end

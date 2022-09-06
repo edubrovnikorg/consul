@@ -23,6 +23,13 @@
         <div>Prijava</div>
       </a>
     </div>
+  <% else %>
+    <div class="go_wrapper">
+      <a href="<%= nias_logout_path %>" class="go_register">
+        <%= image_tag(image_path_for("prijava.svg"), alt: "Odjavite se preko sustava e-Građani") %> 
+        <div>Odjava</div>
+      </a>
+    </div>
   <% end %>
 </div>
 

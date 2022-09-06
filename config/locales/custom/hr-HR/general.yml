@@ -659,7 +659,7 @@ hr:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
       back: Nazad na anketu
-      cant_answer_not_logged_in: "Morate %{signin} ili %{signup} da biste sudjelovali."
+      cant_answer_not_logged_in: "Morate %{signin} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
       verify_link: "potvrdi svoj račun"
@@ -837,8 +837,8 @@ hr:
     manage:
       all: "Nemate pristup za ovo djelovanje %{action} za %{subject}."
   users:
-    login_to_comment: "Morate %{signin} ili %{signup} da biste ostavili komentar."
-    login_to_continue: "Morate %{signin} ili %{signup} da biste nastavili."
+    login_to_comment: "Morate %{signin} da biste ostavili komentar."
+    login_to_continue: "Morate %{signin} da biste nastavili."
     signin: "se prijaviti"
     signup: "registrirati"
     verify_account: "potvrdite svoj račun"
@@ -897,13 +897,13 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
-    comment_unauthenticated: Morate %{signin} ili %{signup} kako bi glasali.
+    comment_unauthenticated: Morate %{signin} kako bi glasali.
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasanje
     supports: Glasovi
     verified_only: Samo je potvrđenim korisnicima dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
-      not_logged_in: Morate %{signin} ili %{signup} da biste nastavili.
+      not_logged_in: Morate %{signin} da biste nastavili.
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
       organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
