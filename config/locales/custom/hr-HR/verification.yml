@@ -55,7 +55,7 @@ hr:
           residence_card: Boravišna iskaznica
           spanish_id: Osobna iskaznica
         error_not_allowed_age: Nemate potreban broj godina da bi sudjelovali
-        error_not_allowed_postal_code: Kako bi vas potvrdili, morate se registrirati.
+        error_not_allowed_postal_code: Kako bi vas potvrdili, morate se prijaviti.
         error_verifying_census: Popis nije mogao potvrditi vaše podatke. Molimo potvrdite da su vaši popisni podaci točni pozivom gradskoj upravi ili posjetite jedan Ured za podršku građanima.
         form_errors: spriječena je potvrda vašeg prebivališta
         postal_code_note: Ukoliko želite potvrditi svoj račun morate biti registrirani
