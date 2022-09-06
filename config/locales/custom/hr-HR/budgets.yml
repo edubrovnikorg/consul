@@ -102,7 +102,7 @@ hr:
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
           verified_only: "Kako bi se stvorio novi investcijski budžet %{verify}."
           create: "Stvori investicijski projekt"
-          not_logged_in: "Kako bi stvorili novi investicijski budžet morate se prijaviti - %{sign_in} ili %{sign_up}."
+          not_logged_in: "Kako bi stvorili novi investicijski budžet morate %{sign_in}"
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti
           unfeasible: Neizvedivi projekti
