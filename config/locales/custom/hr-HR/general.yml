@@ -980,7 +980,7 @@ hr:
   annotator:
     help:
       alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
-      text: Da biste komentirali ovaj dokument morate %{sign_in} ili %{sign_up}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
+      text: Da biste komentirali ovaj dokument morate %{sign_in}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
       title: Kako mogu komentirati ovaj dokument?
   links:
     form:
