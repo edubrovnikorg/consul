@@ -258,3 +258,34 @@ a.go_register img {
   margin: 0 10px 0 6px;
   height: 30px;
 }
+
+a.go_logout {
+
+  height: 40px;
+  width: 120px;
+  font-family: 'Roboto';
+  font-size: 0.875em;
+  /* 14px */
+  font-weight: 500;
+  line-height: 42px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #2cad56;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+a.go_logout:hover {
+  color: #fff;
+  background-color: #ca1720;
+}
+
+a.go_logout img {
+  flex: 0;
+  display: block;
+  margin: 0 10px 0 6px;
+  height: 30px;
+}
