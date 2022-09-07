@@ -24,7 +24,7 @@ hr:
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
       proposals:
         title: "Prijedlozi"
-        description: "U sekciji %{link} možete napraviti prijedlog za tijelo javne vlasti kako bi ga oni izvršili. Prijedlozima treba potpora te ukoliko dobiju dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i provesti."
+        description: "Sekcija Prijedlozi predstavlja dio participacije građana koji se odnosi na iznošenje konstruktivnih ideja i prijedloga koji doprinose kvalitetnijoj organizaciji života u gradu i boljem efikasnijem načinu upravljanja gradom. Treba jasno razlikovati prijavu prijedloga ili ideje od nekog komunalnog problema ili investicijskog projekta s kojim se susrećemo kroz participativno budžetiranje. Prijedlog se podnosi u svrhu kako bi se sugeriralo nadležnim gradskim tijelima na promjene u načinu njihovog upravljanja, kako bi se sugerirala potreba za promjenom neke postojeće odluke, kako bi se promijenili nazivi ulica ili trgova, kako bi se organiziralo neko događanje, kako bi se preispitala neka odluka ili slično. Dakle, sekcija prijedlozi tj. predložene aktivnosti koje proizlaze iz prihvaćenih prijedloga ili ideja, nisu veliki projekti ili zahvati koji u gradskom proračunu imaju vlastitu stavku, već se po potrebi, ukoliko je za njihovu realizaciju potrebno finaciranje, financiraju iz postojećih stavki. Svi građani prijedloge podržavaju ili ne podržavaju i mogu ih komentirati. Gradska nadležna tijela mogu razmatrati svaki prijedlog, a ukoliko neki prijedlog prikupi značaju potporu od minimalno 250 građana, taj prijedlog se  prioritetno razmatra i to na višim instancama gradske uprave."
         link: "prijedlozi građana"
         image_alt: "Gumb za potporu prijedloga"
         figcaption: 'Dugme za "Potporu" prijedloga.'
@@ -36,7 +36,7 @@ hr:
         figcaption: '"Potpora" i "Glasanje" faze participativnih budžeta.'
       polls:
         title: "Ankete"
-        description: "Sekcije za %{link} aktiviraju se svaki puta kada prijedlog postigne 1% potpore i započne izglasavanje ili kada tijelo javne vlasti iznese problematiku o kojoj građani zatim odlučuju."
+        description: "SSekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana."
         link: "anketa"
         feature_1: "Kako bi sudjelovali u anketi %{link} i potvrdite svoj račun."
         feature_1_link: "prijavite se na %{org_name}"
