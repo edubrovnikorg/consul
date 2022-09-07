@@ -414,7 +414,7 @@ hr:
         help: Pomoć za prijedloge
       section_footer:
         title: Pomoć za prijedloge
-        description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče o tome kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
+        description: Sekcija Prijedlozi predstavlja dio participacije građana koji se odnosi na iznošenje konstruktivnih ideja i prijedloga koji doprinose kvalitetnijoj organizaciji života u gradu i boljem efikasnijem načinu upravljanja gradom. Treba jasno razlikovati prijavu prijedloga ili ideje od nekog komunalnog problema ili investicijskog projekta s kojim se susrećemo kroz participativno budžetiranje. Prijedlog se podnosi u svrhu kako bi se sugeriralo nadležnim gradskim tijelima na promjene u načinu njihovog upravljanja, kako bi se sugerirala potreba za promjenom neke postojeće odluke, kako bi se promijenili nazivi ulica ili trgova, kako bi se organiziralo neko događanje, kako bi se preispitala neka odluka ili slično. Dakle, sekcija prijedlozi tj. predložene aktivnosti koje proizlaze iz prihvaćenih prijedloga ili ideja, nisu veliki projekti ili zahvati koji u gradskom proračunu imaju vlastitu stavku, već se po potrebi, ukoliko je za njihovu realizaciju potrebno finaciranje, financiraju iz postojećih stavki. Svi građani prijedloge podržavaju ili ne podržavaju i mogu ih komentirati. Gradska nadležna tijela mogu razmatrati svaki prijedlog, a ukoliko neki prijedlog prikupi značaju potporu od minimalno 250 građana, taj prijedlog se  prioritetno razmatra i to na višim instancama gradske uprave.građana.
     new:
       form:
         submit_button: Stvorite prijedlog
@@ -653,7 +653,7 @@ hr:
         help: Pomoć oko ankete
       section_footer:
         title: Pomoć oko ankete
-        description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke.
+        description: Sekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana. 
       no_polls: "Trenutno nema anketa."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
