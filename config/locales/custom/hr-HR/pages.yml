@@ -36,7 +36,7 @@ hr:
         figcaption: '"Potpora" i "Glasanje" faze participativnih budžeta.'
       polls:
         title: "Ankete"
-        description: "SSekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana."
+        description: "Sekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana."
         link: "anketa"
         feature_1: "Kako bi sudjelovali u anketi %{link} i potvrdite svoj račun."
         feature_1_link: "prijavite se na %{org_name}"
