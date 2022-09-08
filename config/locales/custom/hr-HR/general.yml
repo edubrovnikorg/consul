@@ -101,7 +101,7 @@ hr:
       show_link: Pogledaj raspravu
     form:
       debate_title: Upišite naslov
-      tags_instructions: Označi ovu raspravu.
+      tags_instructions: "Ukoliko želite, Vašu raspravu možete označiti ili tagirati da ga drugi mogu lakše pronaći prilikom pretrage. Raspravu možete označiti ili tagirati na način da ga svrstate u neku Kategoriju. Kategoriju definirate samostalno tako da u prostor za Kategoriju unesete što kraći opis područja na koji se odnosi vaša rasprava (npr. promet, zdravstvo, skolstvo, komunalna infrastruktura, kultura i sl.). Označavanje rasprave nije obvezno."
       tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
     index:
       featured_debates: Istaknuto

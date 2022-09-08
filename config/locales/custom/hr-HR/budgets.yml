@@ -71,7 +71,7 @@ hr:
     investments:
       form:
         tag_category_label: "Kategorije"
-        tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
+        tags_instructions: "Ukoliko želite, Vaš projekt možete označiti ili tagirati da ga drugi mogu lakše pronaći prilikom pretrage. Projekt možete označiti ili tagirati na način da ga svrstate u neku Kategoriju i/ili u grupu koja predstavlja neki od definiranih Ciljeva održivog razvoja i zadataka tih ciljeva. Kategoriju definirate samostalno tako da u prostor za Kategoriju unesete što kraći opis područja na koji se odnosi Vaš projekt (npr. promet, zdravstvo, školstvo, komunalna infrastruktura, kultura i sl.). Da biste odabrali neki od Ciljeva održivog razvoja pod kojeg želite svrstati Vaš projekt dovoljno je kliknuti na ikonicu od niže ponuđenih, imajući u vidu da odaberete onaj cilj u kojeg se najbolje uklapa Vaš projekt. Poput Kategorije, ukoliko želite, u prostor ispod ikonica COR-a, možete unijeti i dodatni tekst pomoću kojega će drugi lakše pronaći Vaš projekt. Označavanje projekta nije obvezno."
         tags_label: Oznake
         tags_placeholder: 'Unesite svoje oznake koje želite koristiti, odvojene sa zarezom (",")'
         map_location: "Lokacija na karti"
