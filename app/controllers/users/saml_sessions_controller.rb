@@ -156,6 +156,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       user = get_nias_user(:logout, data[:requestId])
     rescue StandardError => e
+      reset_session
       redirect_to nias_index_path, error: "Nepostojeći korisnik! Odjavite se sa eGrađana."
       return
     end
