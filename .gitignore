@@ -25,6 +25,8 @@
 /config/certificates/*  
 cacert.pem
 
+consul.code-workspace
+
 /coverage
 
 /config/beta-testers.txt
