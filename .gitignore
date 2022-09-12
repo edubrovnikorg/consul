@@ -22,10 +22,11 @@
 /config/deploy-secrets.yml
 /config/maintenance.yml
 # Ignore certificates
-/config/certificates/*  
+/config/certificates/*
 cacert.pem
 
 consul.code-workspace
+Gemfile.lock
 
 /coverage
 
