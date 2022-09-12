@@ -156,7 +156,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     begin
       user = get_nias_user(:logout, data[:requestId])
     rescue StandardError => e
-      redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+      redirect_to nias_index_path, error: "Nepostojeći korisnik! Odjavite se sa eGrađana."
       return
     end
 
@@ -165,7 +165,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       user.invalidate_all_sessions!
       redirect_to root_path, notice: "Uspješno ste odjavljeni!"
     else
-      redirect_to nias_index_path, error: "Odjava je zaustavljena."
+      redirect_to root_path, error: "Odjava je zaustavljena."
     end
   end
 
