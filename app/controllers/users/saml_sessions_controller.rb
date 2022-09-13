@@ -13,9 +13,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         @params = failed_sign_up_params
         @params["subjectIdFormat"] = Rails.cache.fetch("#{params[:subjectId]}")
         logger.info "Logging session specifics"
-        logger.info session[:subjectIdFormat]
-        logger.info session[:subjectId]
-        logger.info session[:sessionIndex]
+        logger.info @params
       end
       render :index
     else
