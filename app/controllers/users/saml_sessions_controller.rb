@@ -11,7 +11,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug e.message
         @user = nil
         @params = failed_sign_up_params
-        @params["subjectIdFormat"] = session[params["subjectId"]]
+        @params["subjectIdFormat"] = session[:subjectIdFormat]
+        logger.info "Logging session specifics"
+        logger.info session[:subjectIdFormat]
+        logger.info session[:subjectId]
+        logger.info session[:sessionIndex]
       end
       render :index
     else
