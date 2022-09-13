@@ -41,8 +41,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug params[:sessionIndex]
         logger.debug params[:subjectId]
         logger.debug params[:subjectIdFormat]
-        params = { "sessionIndex" => params[:sessionIndex], "subjectId"=> params[:subjectId], "subjectIdFormat" => params[:subjectIdFormat] }
-        Rails.cache.write("#{params[:subjectId]}", params, expires_in: 15.minutes)
+        new_params = { :sessionIndex => params[:sessionIndex], :subjectId => params[:subjectId], :subjectIdFormat => params[:subjectIdFormat] }
+        Rails.cache.write("#{params[:subjectId]}", new_params, expires_in: 15.minutes)
         logger.info "Logging session specifics"
         loggger.info Rails.cache.fetch("#{params[:subjectId]}")
         head 403
