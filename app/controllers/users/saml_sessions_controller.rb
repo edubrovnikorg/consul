@@ -11,7 +11,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug e.message
         @user = nil
         @params = failed_sign_up_params
-        @params["subjectIdFormat"] = Rails.cache.fetch("#{params[:subjectId]}")
+        non_local = Rails.cache.fetch("#{params[:subjectId]}")
+        @params["subjectIdFormat"] = non_local[:subjectIdFormat]
         logger.info "Logging session specifics"
         logger.info @params
       end
@@ -44,7 +45,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         new_params = { :sessionIndex => params[:sessionIndex], :subjectId => params[:subjectId], :subjectIdFormat => params[:subjectIdFormat] }
         Rails.cache.write("#{params[:subjectId]}", new_params, expires_in: 15.minutes)
         logger.info "Logging session specifics"
-        loggger.info Rails.cache.fetch("#{params[:subjectId]}")
+        loggger.info Rails.cache.fetch(params[:subjectId])
         head 403
       end
     end
@@ -137,7 +138,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         redirect_to root_path, error: "Greška! Molimo ponovite radnju."
       end
     rescue StandardError => e
-      session[:vox_non_local_user] = params[:requestId]
+      non_local = Rails.cache.fetch("#{params[:subjectId]}")
+      non_local[:requestId] = params[:requestId]
+      Rails.cache.write("#{params[:requestId]}", non_local, expires_in: 15.minutes)
       return
     end
   end
@@ -169,7 +172,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       begin
         user = get_nias_user(:logout, data[:requestId])
       rescue StandardError => e
-        session.delete(:vox_non_local_user) if session.has_key?(:vox_non_local_user)
         redirect_to root_path, error: "Uspješno ste odjavljeni."
         return
       end
@@ -178,11 +180,13 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       redirect_to root_path, notice: "Uspješno ste odjavljeni!"
     else
       # Non-local users must be redirected to index
-      if session[:vox_non_local_user]
-        params = { "sessionIndex" => session[:sessionIndex], "subjectId"=> session[:subjectId], "subjectIdFormat" => session[:subjectIdFormat]}
+
+      if Rail.cache.exist?(data[:requestId])
+        user = Rail.cache.fetch(data[:requestId])
+        params = { "sessionIndex" => user[:sessionIndex], "subjectId"=> user[:subjectId], "subjectIdFormat" => user[:subjectIdFormat]}
         logger.info "Parameters for redirect to index"
         logger.info params
-        redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.}", turbolinks: false
+        redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
       else
         redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
       end
