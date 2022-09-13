@@ -11,7 +11,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug e.message
         @user = nil
         @params = failed_sign_up_params
-        @params["subjectIdFormat"] = session[:subjectIdFormat]
+        @params["subjectIdFormat"] = Rails.cache.fetch("#{params[:subjectId]}")
         logger.info "Logging session specifics"
         logger.info session[:subjectIdFormat]
         logger.info session[:subjectId]
@@ -40,14 +40,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         raise StandardError, "User validation error. Place of residence check failed."
       rescue StandardError => e
         logger.debug e.message
-        session["subjectIdFormat"] = params[:subjectIdFormat]
-        session["subjectId"] = params[:subjectId]
-        session["sessionIndex"] = params[:sessionIndex]
+        params = { "sessionIndex" => params[:sessionIndex], "subjectId"=> params[:subjectId], "subjectIdFormat" => params[:subjectIdFormat]}
+        Rails.cache.write("#{params[:subjectId]}", params, expires_in: 15.minutes)
         logger.info "Logging session specifics"
-        logger.info session[:subjectIdFormat]
-        logger.info session[:subjectId]
-        logger.info session[:sessionIndex]
-
+        logger.info params
+        loggger.info Rails.cache.fetch("#{params[:subjectId]}")
         head 403
       end
     end
