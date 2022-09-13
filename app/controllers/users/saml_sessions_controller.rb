@@ -39,6 +39,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         session["subjectIdFormat"] = params[:subjectIdFormat]
         session["subjectId"] = params[:subjectId]
         session["sessionIndex"] = params[:sessionIndex]
+        logger.info "Logging session specifics"
+        logger.info session[:subjectIdFormat]
+        logger.info session[:subjectId]
+        logger.info session[:sessionIndex]
+
         head 403
       end
     end
