@@ -38,7 +38,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug e.message
         session["subjectIdFormat"] = params[:subjectIdFormat]
         session["subjectId"] = params[:subjectId]
-        session["sessionIndex"] = params[:subjectIdFormat]
+        session["sessionIndex"] = params[:sessionIndex]
         head 403
       end
     end
@@ -86,7 +86,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     when :logout_nias
       subject_id = CGI.escape(params[:subjectId])
-      subject_id_format = CGI.escape(session[:subjectIdFormat])
+      subject_id_format = CGI.escape(params[:subjectIdFormat])
       session_index = CGI.escape(params[:sessionIndex])
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     end
@@ -173,7 +173,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     else
       # Non-local users must be redirected to index
       if session[:vox_non_local_user]
-        params = { "sessionIndex" => session[:sessionIndex], "subjectId"=> session[:subjectId] }
+        params = { "sessionIndex" => session[:sessionIndex], "subjectId"=> session[:subjectId], "subjectIdFormat" => session[:subjectIdFormat]}
         redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.}", turbolinks: false
       else
         redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
