@@ -4,17 +4,18 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    begin
-      @user = get_nias_user(:session)
-    rescue StandardError => e
-      @user = nil
-      @params = failed_sign_up_params
-    end
-
-    if user_signed_in?
-      redirect_to root_path
-    else
+    unless user_signed_in?
+      begin
+        @user = get_nias_user(:session)
+      rescue StandardError => e
+        logger.debug e.message
+        @user = nil
+        @params = failed_sign_up_params
+        @params["subjectIdFormat"] = session[params["subjectId"]]
+      end
       render :index
+    else
+      redirect_to root_path
     end
   end
 
@@ -32,10 +33,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       end
     else
       begin
-        raise StandardError, "User validation error."
+        raise StandardError, "User validation error. Place of residence check failed."
       rescue StandardError => e
         logger.debug e.message
-        Rails.cache.write("subjectIdFormat", params[:subjectIdFormat], expires_in: 1.minute)
+        session["subjectIdFormat"] = params[:subjectIdFormat]
+        session["subjectId"] = params[:subjectId]
+        session["sessionIndex"] = params[:subjectIdFormat]
         head 403
       end
     end
@@ -83,7 +86,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     when :logout_nias
       subject_id = CGI.escape(params[:subjectId])
-      subject_id_format = CGI.escape(Rails.cache.fetch("subjectIdFormat")) unless !Rails.cache.exist?("subjectIdFormat")
+      subject_id_format = CGI.escape(session[:subjectIdFormat])
       session_index = CGI.escape(params[:sessionIndex])
       url << "/logoutNiasRequest?subjectId=#{subject_id}&subjectIdFormat=#{subject_id_format}&sessionIndex=#{session_index}"
     end
@@ -120,15 +123,17 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   def prepare_user_for_logout
     begin
-      raise StandardError, "Pogreška pri odjavi! Korisnik nije odjavljen." unless params[:requestId]
-      user = get_nias_user(:session)
+      if params[:requestId]
+        user = get_nias_user(:session)
+        user.logout_request_id = params[:requestId]
+        user.save!
+      else
+        redirect_to root_path, error: "Greška! Molimo ponovite radnju."
+      end
     rescue StandardError => e
-      flash[:error] = e.message
-      redirect_to root_path
+      session[:vox_non_local_user] = params[:requestId]
       return
     end
-    user.logout_request_id = params[:requestId]
-    user.save!
   end
 
   #### LOGOUT
@@ -153,20 +158,26 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     data = Base64.decode64(params[:response])
     data = JSON.parse(data, object_class: OpenStruct)
 
-    begin
-      user = get_nias_user(:logout, data[:requestId])
-    rescue StandardError => e
-      reset_session
-      redirect_to nias_index_path, error: "Nepostojeći korisnik! Odjavite se sa eGrađana."
-      return
-    end
-
     if logout_status_ok data
+      # Get user and invalidate all sessions
+      begin
+        user = get_nias_user(:logout, data[:requestId])
+      rescue StandardError => e
+        session.delete(:vox_non_local_user) if session.has_key?(:vox_non_local_user)
+        redirect_to root_path, error: "Uspješno ste odjavljeni."
+        return
+      end
       sign_out user
       user.invalidate_all_sessions!
       redirect_to root_path, notice: "Uspješno ste odjavljeni!"
     else
-      redirect_to root_path, error: "Odjava je zaustavljena."
+      # Non-local users must be redirected to index
+      if session[:vox_non_local_user]
+        params = { "sessionIndex" => session[:sessionIndex], "subjectId"=> session[:subjectId] }
+        redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.}", turbolinks: false
+      else
+        redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
+      end
     end
   end
 
