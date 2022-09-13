@@ -45,7 +45,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         new_params = { :sessionIndex => params[:sessionIndex], :subjectId => params[:subjectId], :subjectIdFormat => params[:subjectIdFormat] }
         Rails.cache.write("#{params[:subjectId]}", new_params, expires_in: 15.minutes)
         logger.info "Logging session specifics"
-        loggger.info Rails.cache.fetch(params[:subjectId])
+        logger.info Rails.cache.fetch(params[:subjectId])
         head 403
       end
     end
@@ -181,8 +181,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     else
       # Non-local users must be redirected to index
 
-      if Rail.cache.exist?(data[:requestId])
-        user = Rail.cache.fetch(data[:requestId])
+      if Rails.cache.exist?(data[:requestId])
+        user = Rails.cache.fetch(data[:requestId])
         params = { "sessionIndex" => user[:sessionIndex], "subjectId"=> user[:subjectId], "subjectIdFormat" => user[:subjectIdFormat]}
         logger.info "Parameters for redirect to index"
         logger.info params
