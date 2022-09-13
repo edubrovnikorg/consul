@@ -11,10 +11,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         logger.debug e.message
         @user = nil
         @params = failed_sign_up_params
-        non_local = Rails.cache.fetch("#{params[:subjectId]}")
+        non_local = Rails.cache.fetch(params[:subjectId])
         @params["subjectIdFormat"] = non_local[:subjectIdFormat]
-        logger.info "Logging session specifics"
-        logger.info @params
       end
       render :index
     else
@@ -39,13 +37,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
         raise StandardError, "User validation error. Place of residence check failed."
       rescue StandardError => e
         logger.debug e.message
-        logger.debug params[:sessionIndex]
-        logger.debug params[:subjectId]
-        logger.debug params[:subjectIdFormat]
         new_params = { :sessionIndex => params[:sessionIndex], :subjectId => params[:subjectId], :subjectIdFormat => params[:subjectIdFormat] }
         Rails.cache.write("#{params[:subjectId]}", new_params, expires_in: 15.minutes)
-        logger.info "Logging session specifics"
-        logger.info Rails.cache.fetch(params[:subjectId])
         head 403
       end
     end
@@ -184,8 +177,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       if Rails.cache.exist?(data[:requestId])
         user = Rails.cache.fetch(data[:requestId])
         params = { "sessionIndex" => user[:sessionIndex], "subjectId"=> user[:subjectId], "subjectIdFormat" => user[:subjectIdFormat]}
-        logger.info "Parameters for redirect to index"
-        logger.info params
         redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
       else
         redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
