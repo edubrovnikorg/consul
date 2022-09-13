@@ -174,6 +174,8 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       # Non-local users must be redirected to index
       if session[:vox_non_local_user]
         params = { "sessionIndex" => session[:sessionIndex], "subjectId"=> session[:subjectId], "subjectIdFormat" => session[:subjectIdFormat]}
+        logger.info "Parameters for redirect to index"
+        logger.info params
         redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.}", turbolinks: false
       else
         redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
