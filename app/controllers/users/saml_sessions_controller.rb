@@ -8,7 +8,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       @user = get_nias_user(:session)
       if @user.nias_session.user_type == :non_local
         @params = failed_sign_up_params
-        @params["subjectIdFormat"] = non_local[:subjectIdFormat]
+        @params["subjectIdFormat"] = @user.nias_session.subject_id_format
       end
 
       render :index
