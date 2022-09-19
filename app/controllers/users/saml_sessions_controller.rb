@@ -73,13 +73,16 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   #### LOGIN
 
   def log_in_with_nias
-    user = User.where(id: finish_sign_up_params).first
-    # raise("No user found for log in.") unless user
-    if sign_in(:user, user)
-      user.nias_session.update(:login_status => :login_finished)
-      redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+    unless user_signed_in? && !user_in_session
+      user = User.where(id: finish_sign_up_params).first
+      if sign_in(:user, user)
+        user.nias_session.update(:login_status => :login_finished)
+        redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+      else
+        redirect_to root_path, error: "Greška prilikom prijave!"
+      end
     else
-      redirect_to root_path, error: "Greška prilikom prijave!"
+      redirect_to root_path, info: "Već ste prijavljeni"
     end
   end
 
@@ -97,7 +100,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       logger.error "Flushing users failed!"
       head :bad_request
     else
-      user.nias_session.update(:logout_status => :finished)
+      user.nias_session.destroy
       head :ok
     end
   end
@@ -109,9 +112,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     head 422 unless user
     if logout_status_ok data
       # Get user and invalidate all sessions
+      byebug
+
       sign_out user
       user.invalidate_all_sessions!
-      user.nias_session.update(:logout_status => :logout_finished)
+      user.nias_session.destroy
       redirect_to root_path, notice: "Uspješno ste odjavljeni!"
     else
       # Non-local users must be redirected to index
