@@ -106,17 +106,15 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def log_out_with_nias
     data = Base64.decode64(params[:response])
     data = JSON.parse(data, object_class: OpenStruct)
-    user = get_nias_user(:logout, data[:requestId])
-    head 422 unless user
+
     if logout_status_ok data
-      # Get user and invalidate all sessions
-      sign_out user
-      user.invalidate_all_sessions!
-      user.nias_session.destroy
       redirect_to root_path, notice: "Uspješno ste odjavljeni!"
     else
       # Non-local users must be redirected to index
+      user = get_nias_user(:logout, data[:requestId])
+      head 422 unless user
       user.nias_session.update(:logout_status => :logout_denied)
+
       if user.nias_session.user_type == "non_local"
         params = {:sessionIndex => user.nias_session.session_index, :subjectId => user.nias_session.subject_id}
         redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
