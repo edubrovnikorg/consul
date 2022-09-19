@@ -71,8 +71,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   #### LOGIN
 
   def log_in_with_nias
-    unless user_signed_in? || !user_in_session
-      user = User.where(id: finish_sign_up_params).first
+    user = User.where(id: finish_sign_up_params).first
+
+    unless user_signed_in? || !user_in_session(user)
       if sign_in(:user, user)
         user.nias_session.update(:login_status => :login_finished)
         redirect_to root_path, notice: "Uspješno ste prijavljeni!"
