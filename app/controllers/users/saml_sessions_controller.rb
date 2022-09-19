@@ -27,7 +27,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
     if User.is_local? params[:mjesto]
       user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :local, :login_status => :authenticated);
-      byebug
       head :no_content
     else
       user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :non_local, :login_status => :login_denied);
@@ -109,7 +108,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     data = JSON.parse(data, object_class: OpenStruct)
     user = get_nias_user(:logout, data[:requestId])
     head 422 unless user
-    byebug
     if logout_status_ok data
       # Get user and invalidate all sessions
       sign_out user
