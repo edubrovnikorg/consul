@@ -39,7 +39,11 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def ssout
-    redirect_to url_nias(:logout), turbolinks: false
+    if user_signed_in?
+      redirect_to url_nias(:logout), turbolinks: false
+    else
+      redirect_to root_path
+    end
   end
 
   def after_initiate_logout
