@@ -6,7 +6,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   def show
     unless user_signed_in? && !user_in_session
       @user = get_nias_user(:session)
-      byebug
       if @user.nias_session.user_type == :non_local
         @params = failed_sign_up_params
         @params["subjectIdFormat"] = non_local[:subjectIdFormat]
@@ -31,7 +30,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       head :no_content
     else
       user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :non_local, :login_status => :login_denied);
-      byebug
       head 403
     end
   end
@@ -112,8 +110,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     head 422 unless user
     if logout_status_ok data
       # Get user and invalidate all sessions
-      byebug
-
       sign_out user
       user.invalidate_all_sessions!
       user.nias_session.destroy
@@ -122,7 +118,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
       # Non-local users must be redirected to index
       user.nias_session.update(:logout_status => :logout_denied)
       if user.nias_session.user_type == "non_local"
-    byebug
         params = {:sessionIndex => user.nias_session.session_index, :subjectId => user.nias_session.subject_id}
         redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
       else
