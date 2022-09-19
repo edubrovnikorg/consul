@@ -4,8 +4,9 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    unless user_signed_in? && !user_in_session
-      @user = get_nias_user(:session)
+    @user = get_nias_user(:session) unless user_signed_in?
+
+    if @user && user_in_session(@user)
       if @user.nias_session.user_type == "non_local"
         @params = failed_sign_up_params
         @params["subjectIdFormat"] = @user.nias_session.subject_id_format
@@ -128,7 +129,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   #### UTIL
 
   def user_in_session(user)
-    return false if user.nias_session.count = 0
+    return false unless user.nias_session.present?
   end
 
   def logout_status_ok(data)
