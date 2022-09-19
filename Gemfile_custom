@@ -6,3 +6,7 @@
 gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.1'
 
 gem 'mimemagic', '~> 0.3.10'
+
+group :development do
+  gem 'rufo'
+end

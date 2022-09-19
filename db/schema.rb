@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_001037) do
+ActiveRecord::Schema.define(version: 2022_09_14_225346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -932,6 +932,20 @@ ActiveRecord::Schema.define(version: 2021_08_10_001037) do
     t.datetime "hidden_at"
   end
 
+  create_table "nias_sessions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "session_index", null: false
+    t.string "subject_id", null: false
+    t.string "subject_id_format", null: false
+    t.integer "user_type", default: 0
+    t.integer "login_status", default: 0
+    t.integer "logout_status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_nias_sessions_on_subject_id"
+    t.index ["user_id"], name: "index_nias_sessions_on_user_id", unique: true
+  end
+
   create_table "notifications", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "notifiable_type"
@@ -1718,6 +1732,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_001037) do
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
+  add_foreign_key "nias_sessions", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"

@@ -1,3 +1,4 @@
+
 class CreateSDGReviews < ActiveRecord::Migration[5.2]
   def change
     create_table :sdg_reviews do |t|

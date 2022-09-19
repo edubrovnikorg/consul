@@ -77,6 +77,10 @@ class User < ApplicationRecord
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 
+  has_one :nias_session,
+    dependent: :destroy,
+    class_name: "NiasSession"
+
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
@@ -127,11 +131,11 @@ class User < ApplicationRecord
 
   before_validation :clean_document_number
 
-  def active_for_authentication? 
-    super && approved? 
-  end 
-  
-  def inactive_message 
+  def active_for_authentication?
+    super && approved?
+  end
+
+  def inactive_message
     approved? ? super : :not_approved
   end
 
@@ -198,13 +202,13 @@ class User < ApplicationRecord
 
   def self.is_local?(city)
     [
-      "bosanka", 
+      "bosanka",
       "brsečine",
       "dubravica",
       "dubrovnik",
       "donje obuljeno",
       "čajkovica",
-      "ćajkovići", 
+      "ćajkovići",
       "gornje obuljeno",
       "gromača",
       "kaštel lukšić",
@@ -225,10 +229,10 @@ class User < ApplicationRecord
       "pobrežje",
       "rožat",
       "sudurad",
-      "sustjepan", 
+      "sustjepan",
       "šipanska luka",
-      "šumet", 
-      "trsteno", 
+      "šumet",
+      "trsteno",
       "zaton"
     ].include? city.downcase
   end

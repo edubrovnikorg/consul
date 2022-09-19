@@ -4,16 +4,14 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    unless user_signed_in?
-      begin
-        @user = get_nias_user(:session)
-      rescue StandardError => e
-        logger.debug e.message
-        @user = nil
+    unless user_signed_in? && !user_in_session
+      @user = get_nias_user(:session)
+      byebug
+      if @user.nias_session.user_type == :non_local
         @params = failed_sign_up_params
-        non_local = Rails.cache.fetch(params[:subjectId])
         @params["subjectIdFormat"] = non_local[:subjectIdFormat]
       end
+
       render :index
     else
       redirect_to root_path
@@ -25,23 +23,21 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def auth
+    user = get_nias_user(:login)
+    head 422 unless user
+
     if User.is_local? params[:mjesto]
-      begin
-        user = get_nias_user(:login)
-        head :no_content
-      rescue StandardError => e
-        head 422
-      end
+      user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :local, :login_status => :authenticated);
+      head :no_content
     else
-      begin
-        raise StandardError, "User validation error. Place of residence check failed."
-      rescue StandardError => e
-        logger.debug e.message
-        new_params = { :sessionIndex => params[:sessionIndex], :subjectId => params[:subjectId], :subjectIdFormat => params[:subjectIdFormat] }
-        Rails.cache.write("#{params[:subjectId]}", new_params, expires_in: 15.minutes)
-        head 403
-      end
+      user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :non_local, :login_status => :login_denied);
+      byebug
+      head 403
     end
+  end
+
+  def finish_sign_up
+    log_in_with_nias
   end
 
   def ssout
@@ -49,12 +45,15 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def after_initiate_logout
-    prepare_user_for_logout
+    if params[:requestId]
+      user = get_nias_user(:session)
+      user.logout_request_id = params[:requestId]
+      user.save!
+      user.nias_session.update(:logout_status => :requested)
+    else
+      redirect_to root_path, error: "Greška! Molimo ponovite radnju."
+    end
     head :no_content
-  end
-
-  def finish_sign_up
-    log_in_with_nias
   end
 
   def finish_sign_out
@@ -71,7 +70,76 @@ class Users::SamlSessionsController < Devise::RegistrationsController
 
   private
 
+  #### LOGIN
+
+  def log_in_with_nias
+    user = User.where(id: finish_sign_up_params).first
+    # raise("No user found for log in.") unless user
+    if sign_in(:user, user)
+      user.nias_session.update(:login_status => :login_finished)
+      redirect_to root_path, notice: "Uspješno ste prijavljeni!"
+    else
+      redirect_to root_path, error: "Greška prilikom prijave!"
+    end
+  end
+
+  #### LOGOUT
+
+  def flush_user_data
+    begin
+      user = get_nias_user(:session)
+    rescue StandardError => e
+      logger.error "Flushing users failed!"
+      return 500
+    end
+    sign_out user
+    if !user.invalidate_all_sessions!
+      logger.error "Flushing users failed!"
+      head :bad_request
+    else
+      user.nias_session.update(:logout_status => :finished)
+      head :ok
+    end
+  end
+
+  def log_out_with_nias
+    data = Base64.decode64(params[:response])
+    data = JSON.parse(data, object_class: OpenStruct)
+    user = get_nias_user(:logout, data[:requestId])
+    head 422 unless user
+    if logout_status_ok data
+      # Get user and invalidate all sessions
+      sign_out user
+      user.invalidate_all_sessions!
+      user.nias_session.update(:logout_status => :logout_finished)
+      redirect_to root_path, notice: "Uspješno ste odjavljeni!"
+    else
+      # Non-local users must be redirected to index
+      user.nias_session.update(:logout_status => :logout_denied)
+      if user.nias_session.user_type == "non_local"
+    byebug
+        params = {:sessionIndex => user.nias_session.session_index, :subjectId => user.nias_session.subject_id}
+        redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
+      else
+        redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
+      end
+    end
+  end
+
   #### UTIL
+
+  def user_in_session(user)
+    return false if user.nias_session.count = 0
+  end
+
+  def logout_status_ok(data)
+    data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
+    if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
+      return true
+    else
+      return false
+    end
+  end
 
   def url_nias(action)
     url = "http://#{request.host_with_port}:8443/NiasIntegrationTest"
@@ -98,99 +166,12 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     case action
     when :login
       user = User.first_or_initialize_for_nias(nias_params)
-      raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik" unless user
     when :session
       user = User.where(session_index: params[:sessionIndex]).where(subject_id: params[:subjectId]).first
-      raise StandardError, "Pogreška prilikom prijave! Nepostojeći korisnik." unless user
     when :logout
       user = User.where(logout_request_id: param).first
-      raise StandardError, "Korisnik je odjavljen." unless user
     end
     user
-  end
-
-  #### LOGIN
-
-  def log_in_with_nias
-    user = User.where(id: finish_sign_up_params).first
-    # raise("No user found for log in.") unless user
-    if sign_in(:user, user)
-      redirect_to root_path, notice: "Uspješno ste prijavljeni!"
-    else
-      redirect_to root_path, error: "Greška prilikom prijave!"
-    end
-  end
-
-  def prepare_user_for_logout
-    begin
-      if params[:requestId]
-        user = get_nias_user(:session)
-        user.logout_request_id = params[:requestId]
-        user.save!
-      else
-        redirect_to root_path, error: "Greška! Molimo ponovite radnju."
-      end
-    rescue StandardError => e
-      non_local = Rails.cache.fetch("#{params[:subjectId]}")
-      non_local[:requestId] = params[:requestId]
-      Rails.cache.write("#{params[:requestId]}", non_local, expires_in: 15.minutes)
-      return
-    end
-  end
-
-  #### LOGOUT
-
-  def flush_user_data
-    begin
-      user = get_nias_user(:session)
-    rescue StandardError => e
-      logger.error "Flushing users failed!"
-      return 500
-    end
-    sign_out user
-    if !user.invalidate_all_sessions!
-      logger.error "Flushing users failed!"
-      head :bad_request
-    else
-      head :ok
-    end
-  end
-
-  def log_out_with_nias
-    data = Base64.decode64(params[:response])
-    data = JSON.parse(data, object_class: OpenStruct)
-
-    if logout_status_ok data
-      # Get user and invalidate all sessions
-      begin
-        user = get_nias_user(:logout, data[:requestId])
-      rescue StandardError => e
-        redirect_to root_path, error: "Uspješno ste odjavljeni."
-        return
-      end
-      sign_out user
-      user.invalidate_all_sessions!
-      redirect_to root_path, notice: "Uspješno ste odjavljeni!"
-    else
-      # Non-local users must be redirected to index
-
-      if Rails.cache.exist?(data[:requestId])
-        user = Rails.cache.fetch(data[:requestId])
-        params = { "sessionIndex" => user[:sessionIndex], "subjectId"=> user[:subjectId], "subjectIdFormat" => user[:subjectIdFormat]}
-        redirect_to nias_index_path(params), error: "Odjava odbijena. Radi ugodnijeg korisničkog iskustva vas molimo da se odjavite s usluge.", turbolinks: false
-      else
-        redirect_to root_path, error: "Odjava je zaustavljena.", turbolinks: false
-      end
-    end
-  end
-
-  def logout_status_ok(data)
-    data[:statusCode].slice! "urn:oasis:names:tc:SAML:2.0:status:"
-    if data[:statusCode] == "PartialLogout" || data[:statusCode] == "Success"
-      return true
-    else
-      return false
-    end
   end
 
   #### PARAMETERS
