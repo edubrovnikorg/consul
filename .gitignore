@@ -50,3 +50,5 @@ public/system/
 config/deploy-secrets.yml~
 
 consul_startup.sh
+
+/installer/*
