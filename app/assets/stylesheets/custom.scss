@@ -7,7 +7,14 @@
 //fontovi
 
 //header
-
+.bg-wrapper {
+  background: linear-gradient(180deg, #c1161c, #810f13);
+}
+@media only screen and (max-width: 320px) {
+  h1.top-bar-title {
+    font-size: 1.8rem;
+  }
+}
 .top-links {
   background: none;
 }
@@ -23,10 +30,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 89px;
 }
 .grad-dbk-header img {
   width: auto;
-  height: 80px;
+  height: 94px;
   max-width: 70%;
 }
 h1.top-bar-title {
@@ -219,7 +227,6 @@ div.go_wrapper {
   width: 124px;
   display: inline;
   float: right;
-  margin-right: 2.5rem;
 }
 
 @font-face {
