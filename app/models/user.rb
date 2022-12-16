@@ -183,7 +183,8 @@ class User < ApplicationRecord
         tid: auth[:tid],
         subject_id_format: auth[:subjectIdFormat],
         session_index: auth[:sessionIndex],
-        subject_id: auth[:subjectId]
+        subject_id: auth[:subjectId],
+        address: auth[:adresa],
       )
 
       nias_user[:residence_verified_at] = DateTime.current
@@ -194,6 +195,7 @@ class User < ApplicationRecord
       nias_user.session_index = auth[:sessionIndex]
       nias_user.subject_id = auth[:subjectId]
       nias_user.subject_id_format = auth[:subjectIdFormat]
+      nias_user.address = auth[:adresa]
       nias_user.save!
     end
     nias_user = User.find_by(oib: auth[:oib]) unless nias_user

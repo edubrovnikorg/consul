@@ -42,6 +42,20 @@ hr:
           submit_button: Spremi
       new:
         creating: Stvori banner
+    streets:
+      id: "ID"
+      title: "Filtrirane ulice"
+      filter: "Ograniči na ulice"
+      create: "Unesi novu ulicu"
+      edit: "Uredi ulicu"
+      delete: "Obriši ulicu"
+      name: "Ime Ulice"
+      county: "Kotar"
+      no_streets: "Nema ulica"
+      search: "Pretraži ulice"
+      submit_button: "Filtriraj ulicu"
+      success: "Uspješno ste izuzeli ulicu iz ankete"
+      fail: "Greška! Ulica nije izuzeta iz ankete."
     activity:
       show:
         action: Akcija
@@ -1031,7 +1045,7 @@ hr:
         table_location: "Lokacija"
     active_polls:
       edit:
-        title: "Opis stranice"
+        title: "Uredi Opis stranice"
       form:
         description:
           help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasanja. Može se koristiti za dodavanje konteksta kako bi otvorili glasanje."
@@ -1045,6 +1059,8 @@ hr:
         start_date: "Datum početka"
         closing_date: "Datum završetka"
         geozone_restricted: "Zabranjeno za distrikte"
+        street_restricted: "Ograničeno na ulice"
+        manage_streets: "Upravljaj ulicama"
       new:
         title: "Novo glasanje"
         submit_button: "Stvori glasanje"
@@ -1057,6 +1073,7 @@ hr:
         officers_tab: Službenici
         recounts_tab: Prebrojavanje
         results_tab: Rezultati
+        streets_tab: Filter po ulici
         no_questions: "Ne postoje pitanja pripisana ovom glasovanju."
         questions_title: "Popis pitanja"
         table_title: "Naziv"

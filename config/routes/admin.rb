@@ -123,7 +123,7 @@ namespace :admin do
   end
 
   resources :users, only: [:index, :show] do
-    post :approve, on: :collection       
+    post :approve, on: :collection
   end
 
 
@@ -131,6 +131,10 @@ namespace :admin do
     resources :polls do
       get :booth_assignments, on: :collection
       patch :add_question, on: :member
+      post :set_street_filter, on: :collection
+      delete :remove_street_filter, on: :collection
+
+
 
       resources :booth_assignments, only: [:index, :show, :create, :destroy] do
         get :search_booths, on: :collection
@@ -168,6 +172,9 @@ namespace :admin do
     end
 
     resource :active_polls, only: [:create, :edit, :update]
+
+    #CUSTOM
+    resource :streets
   end
 
   resources :verifications, controller: :verifications, only: :index do
@@ -310,3 +317,4 @@ end
 resolve "Poll::Question::Answer::Video" do |video, options|
   [:video, options.merge(id: video)]
 end
+

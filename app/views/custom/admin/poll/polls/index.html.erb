@@ -8,6 +8,10 @@
             new_admin_poll_path,
             class: "button float-right" %>
 
+<%= link_to t("admin.polls.index.manage_streets"),
+            admin_streets_path,
+            class: "button float-right" %>
+
 <% if @polls.any? %>
   <table>
     <thead>

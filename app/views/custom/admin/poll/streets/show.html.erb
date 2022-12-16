@@ -1,0 +1,28 @@
+<h2 class="inline-block">Streets</h2>
+
+<%= link_to t("admin.streets.create"),
+            new_admin_streets_path,
+            class: "button float-right" %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.streets.search")) %>
+
+<% if @streets.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.streets.name") %></th>
+      <th class="text-center"><%= t("admin.streets.county") %></th>
+      <th class="text-center"><%= t("admin.streets.date_added") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+     <% @streets.each do |street| %>
+      <%= render "street", street: street %>
+    <% end %>
+    </tbody>
+  </table>
+  <%= paginate @streets %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.streets.no_streets") %>
+  </div>
+<% end %>

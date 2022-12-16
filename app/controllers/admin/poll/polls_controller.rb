@@ -59,6 +59,32 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     @polls = Poll.current.created_by_admin
   end
 
+  def set_street_filter
+    @poll = Poll.find(params[:poll_id])
+    street = Poll::Street.find(params[:poll][:street_ids])
+
+    if street.present?
+      @poll.streets << street
+      notice = t("admin.streets.success")
+    else
+      notice = t("admin.streets.fail")
+    end
+    redirect_to admin_poll_path(@poll), notice: notice
+  end
+
+  def remove_street_filter
+    @poll = Poll.find(params[:poll_id])
+    street = Poll::Street.find(params[:street_id])
+
+    if street.present?
+      @poll.streets.delete(street)
+      notice = t("admin.streets.success")
+    else
+      notice = t("admin.streets.fail")
+    end
+    redirect_to admin_poll_path(@poll), notice: notice
+  end
+
   def destroy
     if ::Poll::Voter.where(poll: @poll).any?
       redirect_to admin_poll_path(@poll), alert: t("admin.polls.destroy.unable_notice")

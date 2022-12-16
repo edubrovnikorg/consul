@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_14_225346) do
+ActiveRecord::Schema.define(version: 2022_12_16_032722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1189,6 +1189,13 @@ ActiveRecord::Schema.define(version: 2022_09_14_225346) do
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
   end
 
+  create_table "polls_streets", id: false, force: :cascade do |t|
+    t.bigint "poll_id"
+    t.bigint "street_id"
+    t.index ["poll_id"], name: "index_polls_streets_on_poll_id"
+    t.index ["street_id"], name: "index_polls_streets_on_street_id"
+  end
+
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
     t.integer "progress_bar_id", null: false
     t.string "locale", null: false
@@ -1465,6 +1472,13 @@ ActiveRecord::Schema.define(version: 2022_09_14_225346) do
     t.index ["process_type", "process_id"], name: "index_stats_versions_on_process_type_and_process_id"
   end
 
+  create_table "streets", force: :cascade do |t|
+    t.string "name"
+    t.string "county"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -1584,6 +1598,7 @@ ActiveRecord::Schema.define(version: 2022_09_14_225346) do
     t.string "subject_id", default: "f"
     t.string "logout_request_id", default: "f"
     t.string "nias_token", default: "f"
+    t.string "address", default: "f"
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

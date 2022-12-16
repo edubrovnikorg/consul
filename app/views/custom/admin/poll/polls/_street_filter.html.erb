@@ -1,0 +1,52 @@
+<h3 class="inline-block"><%= t("admin.streets.title") %></h3>
+
+<%= link_to t("admin.streets.create"), new_admin_streets_path(poll_id: @poll.id),
+            class: "button float-right" %>
+
+<%= form_tag set_street_filter_admin_polls_path, :method => :post do %>
+  <%= collection_select :poll, :street_ids, Poll::Street.order(:name), :id, :name, include_blank: true %>
+  <%= hidden_field_tag :poll_id, @poll.id %>
+  <div class="small-12 medium-4 large-2 column">
+    <%= submit_tag t("admin.streets.submit_button"),
+      class: "button success expanded margin-top" %>
+  </div>
+<% end %>
+
+<% if @poll.streets.empty? %>
+  <div class="callout primary margin-top">
+    <%= t("admin.streets.no_streets") %>
+  </div>
+<% else %>
+  <table class="margin">
+    <thead>
+      <tr>
+        <th><%= t("admin.streets.id") %></th>
+        <th><%= t("admin.streets.name") %></th>
+        <th><%= t("admin.street.county") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <% @poll.streets.each do |street| %>
+      <tr id="<%= dom_id(street) %>">
+        <td>
+          <strong><%= street.id %></strong>
+        </td>
+        <td>
+          <strong><%= street.name %></strong>
+        </td>
+        <td>
+          <strong><%= street.county %></strong>
+        </td>
+        <td>
+        <%= render Admin::TableActionsComponent.new(street,
+          actions: [:edit, :destroy],
+          edit_text: t("admin.streets.edit"),
+          edit_path: edit_admin_streets_path(id: street.id),
+          destroy_text: t("admin.streets.destroy"),
+          destroy_path: remove_street_filter_admin_polls_path(poll_id: @poll.id, street_id: street.id)
+        ) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

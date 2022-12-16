@@ -653,9 +653,10 @@ hr:
         help: Pomoć oko ankete
       section_footer:
         title: Pomoć oko ankete
-        description: Sekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana. 
+        description: Sekcija Ankete aktiviraju se kada službeno gradsko tijelo iznese određenu problematiku ili dvojbu o kojoj svojim glasom, građani mogu dati svoje mišljenje. Rezultati anketa nisu obvezujući za gradsku upravu već predstavljaju isključivo indikativan pokazatelj za određene odluke ili akcije, tj. predstavljaju bilo građana.
       no_polls: "Trenutno nema anketa."
     show:
+      filtered_streets: "Anketa je ograničena po ulici. Vaša ulica nije u popisu ulica ankete, stoga ne možete glasati u ovoj anekti."
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
       back: Nazad na anketu

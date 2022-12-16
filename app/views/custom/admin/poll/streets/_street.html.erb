@@ -1,0 +1,25 @@
+<tr id="street_<%= street.id %>" class="street">
+  <td>
+    <%= street.name %>
+  </td>
+  <td>
+    <%= street.county %>
+  </td>
+  <td>
+    <% if controller_name == "shifts" || controller_name == "streets" && action_name == "available" %>
+      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+        <%= actions.link_to t("admin.streets.street.shifts"),
+                            new_admin_street_shift_path(street),
+                            class: "shifts-link" %>
+      <% end %>
+    <% else %>
+      <%= render Admin::TableActionsComponent.new(street,
+        actions: [:edit, :destroy],
+        edit_text: t("admin.streets.edit"),
+        edit_path: edit_admin_streets_path(id: street.id),
+        destroy_text: t("admin.streets.delete"),
+        destroy_path: admin_streets_path(id: street.id)
+      ) %>
+    <% end %>
+  </td>
+</tr>
