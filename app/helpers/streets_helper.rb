@@ -6,7 +6,7 @@ module StreetsHelper
       street_name = street.name.downcase
       user_address = current_user.address.downcase
       user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
-      unless street_name == user_address
+      unless street_name.include?(user_address)
         result = false
         break
       end
