@@ -54,8 +54,8 @@ hr:
       no_streets: "Nema ulica"
       search: "Pretraži ulice"
       submit_button: "Filtriraj ulicu"
-      success: "Uspješno ste izuzeli ulicu iz ankete"
-      fail: "Greška! Ulica nije izuzeta iz ankete."
+      success: "Anketa je uspješno ograničena na ulicu."
+      fail: "Greška! Anketa nije ograničena na ulicu."
     activity:
       show:
         action: Akcija
