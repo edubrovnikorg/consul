@@ -31,7 +31,7 @@
         <% end %>
       <% end %>
 
-      <% if user_signed_in %>
+      <% if user_signed_in? %>
         <% unless street_filter_helper(current_user, @poll) %>
           <div class="callout warning">
               <%= t("polls.show.filtered_streets") %>
