@@ -2,7 +2,7 @@ module StreetsHelper
   def street_filter_helper(current_user, poll)
     result = true
 
-    if current_user.address.present?
+    if current_user.address.present? || poll.streets.count > 0
       poll.streets.each do |street|
         street_name = street.name.downcase
         user_address = current_user.address.downcase
