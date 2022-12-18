@@ -31,11 +31,14 @@
         <% end %>
       <% end %>
 
-      <% unless current_user && street_filter_helper(current_user, @poll) %>
-        <div class="callout warning">
-            <%= t("polls.show.filtered_streets") %>
-          </div>
+      <% if user_signed_in %>
+        <% unless street_filter_helper(current_user, @poll) %>
+          <div class="callout warning">
+              <%= t("polls.show.filtered_streets") %>
+            </div>
+        <% end %>
       <% end %>
+
 
       <% @questions.each do |question| %>
         <%= render "polls/questions/question", question: question, token: @token, poll: @poll %>
