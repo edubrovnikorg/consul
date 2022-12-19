@@ -9,7 +9,11 @@ module StreetsHelper
     poll.streets.each do |street|
       street_name = street.name.downcase
       user_address = current_user.address.downcase
-      user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
+
+      unless user_address.match(/\d+/) === nil
+        user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
+      end
+
       if street_name.include?(user_address) || user_address.include?(street_name)
         result = true
         break

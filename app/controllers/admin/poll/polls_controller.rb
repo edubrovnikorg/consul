@@ -13,7 +13,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def show
-    @poll = Poll.find(params[:id])
+    @poll = Poll.includes(:streets).find(params[:id])
   end
 
   def new
