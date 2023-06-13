@@ -52,4 +52,4 @@ config/deploy-secrets.yml~
 consul_startup.sh
 
 /installer/*
-installer/*
+installer
