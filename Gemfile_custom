@@ -9,4 +9,6 @@ gem 'mimemagic', '~> 0.3.10'
 
 group :development do
   gem 'rufo'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
