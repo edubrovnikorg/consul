@@ -1,7 +1,11 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
-  include FeatureFlags
-  include CommentableActions
-  include Translatable
+    include FeatureFlags
+    include CommentableActions
+    include FlagActions
+    include RandomSeed
+    include ImageAttributes
+    include Translatable
+    include InvestmentFilters
 
   feature_flag :budgets
 
@@ -9,10 +13,32 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   has_filters %w[all], only: [:index, :toggle_selection]
 
   before_action :load_budget
+  authorize_resource :budget, only: [:new, :create]
+  load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
+                              only: [:new, :create]
+
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
+  before_action :load_categories, only: [:new, :create]
+
+  def new
+    @investment = @budget.investments.build
+  end
+
+  def create
+    @investment = @budget.investments.build(investment_params)
+    @investment.author = current_user
+
+    if @investment.save
+      Mailer.budget_investment_created(@investment).deliver_later
+      redirect_to admin_budget_budget_investments_path(@budget),
+                  notice: t("flash.actions.create.budget_investment")
+    else
+      render :new
+    end
+  end
 
   def index
     load_tags
@@ -96,6 +122,16 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
                     :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
+
+
+      def investment_params
+        attributes = [:heading_id, :tag_list, :organization_name, :location,
+                      :terms_of_service, :skip_map, :related_sdg_list,
+                      image_attributes: image_attributes,
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      map_location_attributes: [:latitude, :longitude, :zoom]]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+      end
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]

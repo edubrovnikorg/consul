@@ -54,6 +54,7 @@ namespace :admin do
   resources :budgets do
     member do
       patch :publish
+      patch :next_phase
       put :calculate_winners
     end
 
@@ -61,7 +62,7 @@ namespace :admin do
       resources :headings, except: [:show], controller: "budget_headings"
     end
 
-    resources :budget_investments, only: [:index, :show, :edit, :update] do
+    resources :budget_investments, controller: "budget_investments" do
       member { patch :toggle_selection }
 
       resources :audits, only: :show, controller: "budget_investment_audits"

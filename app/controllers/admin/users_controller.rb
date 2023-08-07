@@ -18,6 +18,7 @@ class Admin::UsersController < Admin::BaseController
 
   def approve
     @user[:approved] = true;
+    @user[:confirmed_at] = Time.now.utc;
     if @user.save
       redirect_to admin_users_path(filter: @current_filter, page: "1")
     else

@@ -80,6 +80,10 @@ hr:
       index:
         title: Participativni budžeti
         new_link: Stvori novi budžet
+        next_phase:
+          reviewing: Objavi budžet
+          selecting: Pokreni glasovanje
+          finished: Završi glasovanje
         filter: Filter
         filters:
           all: Svi
@@ -206,6 +210,7 @@ hr:
         save_changes: Spremi
     budget_investments:
       index:
+        add_new_budget_investment: Dodaj novi investicijski projekt
         heading_filter_all: Sve podgrupe
         administrator_filter_all: Svi administratori
         valuator_filter_all: Svi procjenitelji
@@ -1358,11 +1363,10 @@ hr:
           organizations: "Pretraži organizacije"
           users: "Pretraži korisnike"
           proposals: "Pretraži po nazivu, kodu, opisu ili pitanju"
-          debates: "Pretraži po nazivu i opisu"
+          debates: "Pretraži rasprave"
           poll_officers: Pretraži službenike
           polls: Pretraži glasanja
           budget_investments: Pretraži investicijske projekte
-          debates: Pretraži rasprave
           legislation_processes: "Javna savjetovanja"
           legislation_proposals: Prijedlozi savjetovanja
       actions: Akcije

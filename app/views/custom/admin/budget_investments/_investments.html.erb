@@ -1,6 +1,10 @@
 <%= link_to t("admin.budget_investments.index.download_current_selection"),
             admin_budget_budget_investments_path(csv_params),
-            class: "float-right small clear" %>
+            class: "button float-right" %>
+
+<%= link_to t("admin.budget_investments.index.add_new_budget_investment"),
+            { :controller => :budget_investments, :action => :new },
+            class: "button float-right" %>
 
 <% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>

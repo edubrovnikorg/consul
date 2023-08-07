@@ -61,11 +61,11 @@ module Abilities
 
       can :manage, Dashboard::Action
 
-      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
+      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners, :next_phase], Budget
       can :publish, Budget, id: Budget.drafting.ids
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
-      can [:hide, :admin_update, :toggle_selection], Budget::Investment
+      can [:create, :hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
         Budget::Investment, budget: { phase: "finished" }

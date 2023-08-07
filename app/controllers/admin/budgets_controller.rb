@@ -24,7 +24,27 @@ class Admin::BudgetsController < Admin::BaseController
   def edit
   end
 
+  def next_phase
+    if @budget.phase == "reviewing"
+      @budget.phase = :selecting
+    elsif @budget.phase == "selecting"
+      @budget.investments.sort_by_supports.each_with_index do |investment, key|
+        if key == 0
+          investment.winner = true
+        end
+        investment.feasibility = "feasible"
+        investment.selected = true
+        investment.save
+      end
+      @budget.phase = :finished;
+    end
+    @budget.save
+
+    redirect_to admin_budget_budget_investments_path(budget_id: @budget.id)
+  end
+
   def publish
+    @budget.phase = :reviewing
     @budget.publish!
     redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
@@ -40,6 +60,10 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def update
+    if(budget_params[:phase] == 'accepting')
+      @budget.published = false
+      @budget.save
+    end
     if @budget.update(budget_params)
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
     else

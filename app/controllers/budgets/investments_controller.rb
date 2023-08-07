@@ -41,6 +41,13 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
+      @voted = false;
+      @investments.each do |investment|
+        if current_user.voted_for? investment
+          @voted = true;
+          break;
+        end
+      end
 
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
@@ -54,6 +61,13 @@ module Budgets
     end
 
     def show
+      @voted = false;
+      @budget.investments.each do |investment|
+        if current_user.voted_for? investment
+          @voted = true;
+          break;
+        end
+      end
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)

@@ -15,6 +15,7 @@
       <tr>
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
+        <th>Sljedeća <%= t("admin.budgets.index.table_phase") %></th>
         <th><%= t("admin.budgets.index.table_duration") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
@@ -33,6 +34,15 @@
           <td>
             <%= budget.current_phase.name %>
             <small><%= phase_progress_text(budget) %></small>
+          </td>
+          <td>
+            <% if budget.phase == 'accepting' %>
+              <%= link_to t("admin.budgets.index.next_phase.reviewing"), publish_admin_budget_path(budget), method: :patch %>
+            <% elsif budget.phase == 'reviewing'%>
+              <%= link_to t("admin.budgets.index.next_phase.selecting"), next_phase_admin_budget_path(budget), method: :patch %>
+            <% elsif budget.phase == 'selecting' %>
+              <%= link_to t("admin.budgets.index.next_phase.finished"), next_phase_admin_budget_path(budget), method: :patch %>
+            <% end %>
           </td>
           <td>
             <%= dates(budget) %><br />

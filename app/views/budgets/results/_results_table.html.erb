@@ -53,14 +53,7 @@
             <td class="text-center">
               <%= @budget.formatted_amount(investment.price) %>
             </td>
-            <% if results_type == :compatible %>
-              <td class="small text-right"
-                  title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
-                  <%= @budget.formatted_amount(amount_available - investment.price) %>
-                  <% amount_available -= investment.price if investment.winner? %>
-              </td>
-            <% end %>
-        </tr>
+          </tr>
       <% end %>
     </tbody>
   </table>
