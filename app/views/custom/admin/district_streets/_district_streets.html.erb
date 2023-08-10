@@ -1,0 +1,20 @@
+<tr id="district_street_<%= district_street.id %>" class="district_street">
+  <td>
+    <%= district_street.name %>
+  </td>
+  <td>
+    0
+  </td>
+  <td>
+    <%= district_street.created_at.to_formatted_s(:long) %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(district_street,
+      actions: [:edit, :destroy],
+      edit_text: t("admin.district_street.edit"),
+      edit_path: edit_admin_district_district_street_path(id: district_street.id),
+      destroy_text: t("admin.district_street.delete"),
+      destroy_path: admin_district_district_street_path(id: district_street.id),
+    ) %>
+  </td>
+</tr>

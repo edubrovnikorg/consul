@@ -1,0 +1,34 @@
+<%= back_link_to admin_districts_path %>
+
+<h2 class="inline-block">
+  <%= @category %>
+  <%= @district.name %>
+  - ulice
+</h2>
+
+<%= link_to t("admin.district_streets.create"),
+            new_admin_district_district_street_path,
+            class: "button float-right" %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.district_streets.search")) %>
+
+<% if @district_streets.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.district_streets.name") %></th>
+      <th class="text-center"><%= t("admin.district_streets.filters") %></th>
+      <th class="text-center"><%= t("admin.district_streets.date_added") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+     <% @district_streets.each do |district_street| %>
+      <%= render "district_streets", district_street: district_street %>
+    <% end %>
+    </tbody>
+  </table>
+  <%# <%= paginate @district_streets %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.district.no_district_streets") %>
+  </div>
+<% end %>

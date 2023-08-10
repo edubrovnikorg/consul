@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>District streets:</strong>
+  <%= @district_street_filter.district_streets %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @district_street_filter.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @district_street_filter.to %>
+</p>
+
+<%= link_to 'Edit', edit_district_street_filter_path(@district_street_filter) %> |
+<%= link_to 'Back', district_street_filters_path %>

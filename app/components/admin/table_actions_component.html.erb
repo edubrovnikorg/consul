@@ -8,4 +8,8 @@
   <% if actions.include?(:destroy) %>
     <%= link_to destroy_text, destroy_path, destroy_options %>
   <% end %>
+
+  <% if actions.include?(:district_streets) %>
+    <%= link_to district_streets_text, district_streets_path, district_streets_options %>
+  <% end %>
 </div>

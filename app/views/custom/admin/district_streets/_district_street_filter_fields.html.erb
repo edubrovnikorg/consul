@@ -1,0 +1,25 @@
+<%# <%= render "shared/errors", resource: f %>
+<div class="nested-fields">
+  <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= f.number_field :from, label: "Od kućnog broja: " %>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= f.number_field :to, label: "Do kućnog broja:" %>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="clear">
+      <div class="small-12 medium-4 large-2 column">
+        <%= link_to_remove_association f, class: "delete" do %>
+          Ukloni
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

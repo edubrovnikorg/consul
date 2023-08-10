@@ -1,5 +1,5 @@
 <div class="<%= results_type == :compatible ? "success" : "js-discarded" %>"
-     style="<%= results_type != :compatible ? "display: none" : "" %>"
+     style="<%= results_type != :compatible ? "js-discarded" : "" %>"
      id="<%= results_type %>-container">
 
   <h4><%= title %></h4>
@@ -30,7 +30,7 @@
       <% investments.each do |investment| %>
           <tr id="<%= dom_id(investment) %>"
               class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
-              style="<%= investment.winner? ? "" : "display: none" %>">
+              style="<%= investment.winner? ? "" : "js-discarded" %>">
             <td>
               <% if investment.winner? %>
                 <span class="icon-check">
@@ -48,7 +48,7 @@
               <%= link_to investment.title, budget_investment_path(@budget, investment) %>
             </td>
             <td class="text-center">
-              <%= investment.ballot_lines_count %>
+              <%= votes_to_percent(investment.votes_for.size, @total_votes) %>%
             </td>
             <td class="text-center">
               <%= @budget.formatted_amount(investment.price) %>

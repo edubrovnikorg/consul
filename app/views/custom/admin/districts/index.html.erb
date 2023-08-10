@@ -1,0 +1,28 @@
+<h2 class="inline-block">Gradski kotari i mjesni odbori</h2>
+
+<%= link_to t("admin.district.create"),
+            new_admin_district_path,
+            class: "button float-right" %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.district.search")) %>
+
+<% if @districts.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.district.name") %></th>
+      <th class="text-center"><%= t("admin.district.category") %></th>
+      <th class="text-center"><%= t("admin.district.date_added") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+     <% @districts.each do |district| %>
+      <%= render "district", district: district %>
+    <% end %>
+    </tbody>
+  </table>
+  <%# <%= paginate @districts %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.district.no_districts") %>
+  </div>
+<% end %>

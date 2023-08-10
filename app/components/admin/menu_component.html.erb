@@ -33,6 +33,10 @@
     </li>
   <% end %>
 
+  <li class="<%= "is-active" if controller_name == "districts" %>">
+    <%= link_to t("admin.menu.districts"), admin_districts_path, class: "districts-link" %>
+  </li>
+
   <li>
     <a href="#" class="booths-link"><%= t("admin.menu.title_booths") %></a>
     <%= link_list(

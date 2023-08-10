@@ -113,6 +113,8 @@ module Abilities
       can [:create, :read], LocalCensusRecords::Import
 
       can :manage, Poll::Street
+      can :manage, District
+      can :manage, DistrictStreet
     end
   end
 end

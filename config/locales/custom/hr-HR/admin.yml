@@ -56,6 +56,35 @@ hr:
       submit_button: "Filtriraj ulicu"
       success: "Anketa je uspješno ograničena na ulicu."
       fail: "Greška! Anketa nije ograničena na ulicu."
+    district:
+      create: "Stvori novi Kotar ili Odbor"
+      search: "Pretraga po Gradskom Kotru ili Mjesnom odboru"
+      name: "Naziv"
+      date_added: "Kreirano"
+      actions: "Akcije"
+      no_districts: "Nema unešenih Gradskih kotara ili mjesnih odobora!"
+      edit: "Uredi"
+      delete: "Obriši"
+      category: "Kategorija"
+      streets: "Ulice"
+      notice:
+        created: ! "%{type} je uspješno dodan"
+        updated: ! "Uspješno ste ažurirali %{type}"
+        delete_success: ! "Uspješno ste obrisali %{type} %{name}!"
+    district_streets:
+      search: "Pretraga po ulici"
+      create: "Nova ulica"
+      name: "Naziv"
+      filters: "Ograničenja"
+      date_added: "Kreirano"
+      no_district_streets: "Nema ulica u ovom distriktu"
+      notice:
+        created: ! "Uspješno ste dodali ulicu za %{type} %{name}"
+        updated: ! "Uspješno ste uredili ulicu za %{type} %{name}"
+        exists: ! "%{type} %{name} unešenih ulica. Molimo obrišite ulice prvo."
+        success: ! "Uspješno ste dodali novu ulicu za %{type} %{name}"
+        delete_success: ! "Uspješno ste obrisali ulicu!"
+
     activity:
       show:
         action: Akcija
@@ -749,6 +778,7 @@ hr:
       debates: "Rasprave"
       comments: "Komentari"
       local_census_records: Upravljanje lokalnim popisom
+      districts: "Gradski kotari i Mjesni odbori"
     administrators:
       index:
         title: Administratori

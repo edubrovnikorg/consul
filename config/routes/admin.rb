@@ -269,7 +269,12 @@ namespace :admin do
   namespace :local_census_records do
     resources :imports, only: [:new, :create, :show]
   end
+
+  resources :districts do
+    resources :district_streets
+  end
 end
+# admin namespace end
 
 resolve "Milestone" do |milestone|
   [*resource_hierarchy_for(milestone.milestoneable), milestone]

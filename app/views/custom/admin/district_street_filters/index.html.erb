@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin District Street Filters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>District streets</th>
+      <th>From</th>
+      <th>To</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @district_street_filters.each do |district_street_filter| %>
+      <tr>
+        <td><%= district_street_filter.district_streets %></td>
+        <td><%= district_street_filter.from %></td>
+        <td><%= district_street_filter.to %></td>
+        <td><%= link_to 'Show', district_street_filter %></td>
+        <td><%= link_to 'Edit', edit_district_street_filter_path(district_street_filter) %></td>
+        <td><%= link_to 'Destroy', district_street_filter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin District Street Filter', new_district_street_filter_path %>

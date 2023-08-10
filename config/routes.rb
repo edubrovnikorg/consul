@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :district_street_filters
+  end
   get 'mup_api/show'
 
 

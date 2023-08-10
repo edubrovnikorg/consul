@@ -45,4 +45,16 @@ class Admin::TableActionsComponent < ApplicationComponent
     def destroy_confirmation
       options[:destroy_confirmation] || t("admin.actions.confirm")
     end
+
+    def district_streets_text
+      options[:district_streets_text] || t("admin.district.streets");
+    end
+
+    def district_streets_path
+      options[:district_streets_path] || namespaced_polymorphic_path(namespace, record)
+    end
+
+    def district_streets_options
+      { class: "groups-link" }.merge(options[:district_streets_options] || {})
+    end
 end

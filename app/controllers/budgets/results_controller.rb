@@ -5,10 +5,16 @@ module Budgets
 
     authorize_resource :budget
 
+    helper InvestmentsVoteHelper
+
     def show
       authorize! :read_results, @budget
       @investments = Budget::Result.new(@budget, @heading).investments
       @headings = @budget.headings.sort_by_name
+      @total_votes = 0
+      @investments.each do |investment|
+        @total_votes += investment.votes_for.size
+      end
     end
 
     private

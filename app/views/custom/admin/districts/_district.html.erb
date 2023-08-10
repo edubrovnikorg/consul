@@ -1,0 +1,22 @@
+<tr id="district_<%= district.id %>" class="district">
+  <td>
+    <%= district.name %>
+  </td>
+  <td>
+    <%= district.category == 0 ? "Gradski kotar" : "Mjesni odbor" %>
+  </td>
+  <td>
+    <%= district.created_at.to_formatted_s(:long) %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(district,
+      actions: [:edit, :destroy, :district_streets],
+      edit_text: t("admin.district.edit"),
+      edit_path: edit_admin_district_path(id: district.id),
+      destroy_text: t("admin.district.delete"),
+      destroy_path: admin_district_path(id: district.id),
+      district_streets_text: t("admin.district.streets"),
+      district_streets_path: admin_district_district_streets_path(district_id: district.id),
+    ) %>
+  </td>
+</tr>

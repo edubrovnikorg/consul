@@ -1,0 +1,33 @@
+  <%= render "shared/errors", resource: @district_street %>
+
+  <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :name, label: "Naziv" %>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column ">
+      <%= f.fields_for :district_street_filters, nil do |ff| %>
+        <%= render 'district_street_filter_fields', f: ff %>
+      <% end %>
+
+        <div class="js-add-fields-container">
+          <div class="small-12 medium-9 column">
+            <%= link_to_add_association 'Dodaj', f, :district_street_filters, class: "button hollow" %>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="clear">
+      <div class="small-12 medium-4 large-2 column">
+        <%= f.submit "Spremi ulicu",
+                     class: "button success expanded margin-top" %>
+      </div>
+    </div>
+  </div>
+
+

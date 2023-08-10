@@ -75,6 +75,10 @@
       @include icon(check-circle, regular);
     }
 
+    &.districts-link {
+      @include icon(file-alt, regular);
+    }
+
     &.print-proposals-link,
     &.print-investments-link {
       @include icon(print, solid);

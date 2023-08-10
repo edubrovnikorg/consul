@@ -1,0 +1,9 @@
+<%= back_link_to admin_districts_path %>
+
+<div class="small-12 column">
+  <h2>Dodaj Gradski kotar ili mjesni odbor</h2>
+</div>
+
+<%= form_for @district, url: admin_districts_path(@district) do |f| %>
+  <%= render "form", f: f %>
+<% end %>

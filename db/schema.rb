@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_16_032722) do
+ActiveRecord::Schema.define(version: 2023_08_10_203025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -534,6 +534,30 @@ ActiveRecord::Schema.define(version: 2022_12_16_032722) do
     t.integer "receiver_id"
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "district_street_filters", force: :cascade do |t|
+    t.bigint "district_street_id"
+    t.integer "from"
+    t.integer "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_street_id"], name: "index_district_street_filters_on_district_street_id"
+  end
+
+  create_table "district_streets", force: :cascade do |t|
+    t.bigint "district_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_district_streets_on_district_id"
+  end
+
+  create_table "districts", force: :cascade do |t|
+    t.string "name"
+    t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -1733,6 +1757,8 @@ ActiveRecord::Schema.define(version: 2022_12_16_032722) do
   add_foreign_key "dashboard_administrator_tasks", "users"
   add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
   add_foreign_key "dashboard_executed_actions", "proposals"
+  add_foreign_key "district_street_filters", "district_streets"
+  add_foreign_key "district_streets", "districts"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"

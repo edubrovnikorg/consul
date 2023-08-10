@@ -45,6 +45,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def publish
     @budget.phase = :reviewing
+    @budget.save
     @budget.publish!
     redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
   end
