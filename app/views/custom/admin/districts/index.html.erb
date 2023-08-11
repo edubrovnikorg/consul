@@ -3,6 +3,12 @@
 <%= link_to t("admin.district.create"),
             new_admin_district_path,
             class: "button float-right" %>
+<%= link_to t("admin.district.delete_all"),
+            delete_all_admin_districts_path,
+            method: "delete",
+            class: "button float-right" %>
+
+<%= render "search_form" %>
 
 <%= render Admin::SearchComponent.new(label: t("admin.district.search")) %>
 

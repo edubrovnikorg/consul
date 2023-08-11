@@ -271,7 +271,14 @@ namespace :admin do
   end
 
   resources :districts do
-    resources :district_streets
+    collection do
+      post :import
+      delete :delete_all
+      post :import_streets
+    end
+    resources :district_streets do
+      delete :delete_streets
+    end
   end
 end
 # admin namespace end

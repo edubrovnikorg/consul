@@ -58,6 +58,7 @@ hr:
       fail: "Greška! Anketa nije ograničena na ulicu."
     district:
       create: "Stvori novi Kotar ili Odbor"
+      delete_all: "Obriši sve unose"
       search: "Pretraga po Gradskom Kotru ili Mjesnom odboru"
       name: "Naziv"
       date_added: "Kreirano"
@@ -67,6 +68,13 @@ hr:
       delete: "Obriši"
       category: "Kategorija"
       streets: "Ulice"
+      import:
+        kotari_odbori: "Uvezi Kotare/Odbore"
+        ulice: "Uvezi ulice"
+      filter:
+        kotari: "Gradski kotari"
+        odbori: "Mjesni odbori"
+        button: "Uvezi"
       notice:
         created: ! "%{type} je uspješno dodan"
         updated: ! "Uspješno ste ažurirali %{type}"

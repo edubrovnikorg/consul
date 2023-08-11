@@ -1230,3 +1230,22 @@ table {
     }
   }
 }
+
+
+// 12. Custom
+
+.district-import {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.district-import > * {
+  width: auto;
+}
+.district-button {
+  // margin-left: auto !important;
+}

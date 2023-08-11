@@ -10,7 +10,7 @@ class Admin::DistrictStreetsController < Admin::BaseController
   end
 
   def index
-
+    @district_streets = @district.district_streets
   end
 
   def create
@@ -39,6 +39,11 @@ class Admin::DistrictStreetsController < Admin::BaseController
     redirect_to admin_district_district_streets_path, notice: 'Filter je uspješno uklonjen.'
   end
 
+  def delete_streets
+    @district.streets.delete_all
+    render :index
+  end
+  
   private
 
   def set_district
