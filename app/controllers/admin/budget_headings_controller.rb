@@ -19,6 +19,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   end
 
   def create
+    debugger
     @heading = @group.headings.new(budget_heading_params)
     if @heading.save
       redirect_to headings_index, notice: t("admin.budget_headings.create.notice")

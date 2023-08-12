@@ -4,6 +4,7 @@
 
 <header>
   <h2><%= @budget.name %></h2>
+  <%= link_to t("admin.budget_groups.form.add_districts"), add_districts_admin_budget_groups_path(@budget), method: "post" %>
   <%= link_to t("admin.budget_groups.form.create"), new_admin_budget_group_path %>
 </header>
 

@@ -25,6 +25,7 @@ class Budget
 
     has_many :investments
     has_many :content_blocks
+    has_many :district_streets
 
     validates_translation :name, presence: true
     validates :group_id, presence: true

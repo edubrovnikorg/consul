@@ -6,6 +6,8 @@
             { :controller => :budget_investments, :action => :new },
             class: "button float-right" %>
 
+<%= render "import_form" %>
+
 <% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),

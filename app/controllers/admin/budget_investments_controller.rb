@@ -40,6 +40,37 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
   end
 
+  def import_budget_investments
+    return redirect_to request.referer, notice: 'Niste dodali datoteku.' if params[:file].nil?
+    return redirect_to request.referer, notice: 'Dozvoljene su samo CSV datoteke.' unless params[:file].content_type == 'text/csv'
+
+    ImportService.new.call(params[:file].path) do |res|
+      budget_investment = {
+        "author" => current_user,
+        "heading_id"=> res["Subgroup"],
+        "tag_list"=>"",
+        "organization_name"=>"",
+        "location"=>"",
+        "terms_of_service"=>"1",
+        "translations_attributes"=>
+          {
+            "0"=>
+              {
+                "locale"=>"hr",
+                "_destroy"=>"false",
+                "title"=> res["Name"],
+                "description"=>"<p>" + res["Description"] + "</p>\r\n"
+              }
+          }
+      }
+
+      @budget.investments.new(budget_investment);
+      @budget.save
+    end
+
+    redirect_to admin_budget_budget_investments_path(@budget)
+  end
+
   def index
     load_tags
     respond_to do |format|

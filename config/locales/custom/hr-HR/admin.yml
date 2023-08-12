@@ -211,6 +211,7 @@ hr:
         edit: "Uredi grupu"
         max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasovati samo za jedau podgrupu po skupini."
         submit: "Spremi grupu"
+        add_districts: "Dodaj Kotare/Odbore"
       index:
         back: "Idi nazad na budžet"
     budget_headings:

@@ -4,7 +4,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
   feature_flag :budgets
 
   before_action :load_budget
-  before_action :load_group, except: [:index, :new, :create]
+  before_action :load_group, except: [:index, :new, :create, :add_districts]
 
   def index
     @groups = @budget.groups.order(:id)
@@ -24,6 +24,37 @@ class Admin::BudgetGroupsController < Admin::BaseController
     else
       render :new
     end
+  end
+
+  def add_districts
+    @districts = ::District.all
+    @districts.uniq.pluck(:category).each do |category|
+      hash = {"translations_attributes"=>{"0"=>{"locale"=>"hr", "_destroy"=>"false", "name"=> category === 0 ? "Gradski kotar" : "Mjesni odbor" }}}
+      group = @budget.groups.new(hash)
+      group.save
+    end
+    @districts.each do |district|
+      group = @budget.groups.find_by_slug(district.category == 0 ? "gradski-kotar" : "mjesni-odbor")
+      hash = {
+        "price"=>"10",
+        "population"=>"",
+        "allow_custom_content"=>"0",
+        "latitude"=>"",
+        "longitude"=>"",
+        "translations_attributes"=>
+          {
+            "0"=>
+            {
+              "locale"=>"hr",
+              "_destroy"=>"false",
+              "name"=> district.name
+            }
+          }
+        }
+      group.headings.new(hash)
+      group.save
+    end
+    redirect_to admin_budget_groups_path(@budget)
   end
 
   def update

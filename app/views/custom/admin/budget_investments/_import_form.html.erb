@@ -1,0 +1,27 @@
+<div class="small-12 column">
+  <%= link_to "#advanced_filters_content",
+              data: { toggle: "advanced_filters" },
+              class: "advanced-filters button hollow float-right clear" do %>
+    <%= t("admin.districts.import.kotari_odbori") %>
+  <% end %>
+</div>
+
+<div id="advanced_filters" data-toggler=".hide">
+  <div class="small-12 column">
+    <div class="advanced-filters-content">
+      <%= form_tag import_budget_investments_admin_budget_budget_investments_path(@budget), method: :post, multipart: true, class: "district-import " do %>
+        <%= file_field_tag :file, accept: ".csv" %>
+        <div class="small-12 medium-3 column end district-button">
+          <%= submit_tag t("admin.district.filter.button"), class: "button expanded " %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -59,12 +59,13 @@ namespace :admin do
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do
+      post :add_districts, on: :collection
       resources :headings, except: [:show], controller: "budget_headings"
     end
 
     resources :budget_investments, controller: "budget_investments" do
       member { patch :toggle_selection }
-
+      post :import_budget_investments, on: :collection
       resources :audits, only: :show, controller: "budget_investment_audits"
       resources :milestones, controller: "budget_investment_milestones"
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
