@@ -4,6 +4,7 @@ class ImportService
   def call(file)
     # opened_file = File.open(file)
     options = { headers: true, col_sep: ',', encoding: Encoding::WINDOWS_1252 }
+    ApplicationLogger.new.info "CSV import starting"
     begin
       CSV.open(file.path, **options).each do |row|
         next if empty_row?(row)
