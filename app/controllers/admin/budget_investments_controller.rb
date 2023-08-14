@@ -71,7 +71,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       if investment.save
         logger.info "CSV import row success"
       else
-        byebug
         logger.error "CSV import row error!"
         logger.error investment.errors.full_messages
       end
