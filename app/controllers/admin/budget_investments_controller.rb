@@ -63,7 +63,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
           }
       }
 
-      @budget.investments.new(budget_investment);
+      @budget.investments.build(budget_investment);
       @budget.save
     end
 
