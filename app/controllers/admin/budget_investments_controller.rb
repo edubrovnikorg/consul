@@ -28,7 +28,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def create
-    byebug
     @investment = @budget.investments.build(investment_params)
     @investment.author = current_user
 
@@ -69,7 +68,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       }
 
       investment = @budget.investments.build(budget_investment);
-      logger.debug "CSV import investment: #{investment.to_hash}"
+      logger.debug "CSV import investment: #{investment.to_s}"
 
       if investment.save
         logger.info "CSV import row success"
