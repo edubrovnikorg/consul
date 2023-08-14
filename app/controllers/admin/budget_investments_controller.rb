@@ -44,6 +44,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     return redirect_to request.referer, notice: 'Niste dodali datoteku.' if params[:file].nil?
     return redirect_to request.referer, notice: 'Dozvoljene su samo CSV datoteke.' unless params[:file].content_type == 'text/csv'
     ImportService.new.call(params[:file]) do |res|
+      ApplicationLogger.new.info "CSV import row: #{res}"
       budget_investment = {
         "author" => current_user,
         "heading_id"=> res["Subgroup"],
