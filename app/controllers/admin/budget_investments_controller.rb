@@ -17,7 +17,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
                               only: [:new, :create]
 
-  before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
+  before_action :load_investment, only: [:show, :edit, :update, :toggle_selection, :delete_all]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
@@ -125,6 +125,14 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     load_investments
   end
 
+  def delete_all
+    if @investment.delete
+      redirect_to admin_budget_budget_investments_path(@budget), notice: t("admin.budget_investments.destroy.success")
+    else
+      redirect_to admin_budget_budget_investments_path(@budget), notice: t("admin.budget_investments.destroy.failure")
+    end
+  end
+
   private
 
     def load_comments
@@ -169,7 +177,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_investment
-      @investment = @budget.investments.find(params[:id])
+      @investment = @budget.investments.find(params[:id] || params[:budget_investment_id])
     end
 
     def load_staff

@@ -58,6 +58,8 @@ namespace :admin do
       put :calculate_winners
     end
 
+    delete :delete_all
+
     resources :groups, except: [:show], controller: "budget_groups" do
       post :add_districts, on: :collection
       resources :headings, except: [:show], controller: "budget_headings"
@@ -66,6 +68,7 @@ namespace :admin do
     resources :budget_investments, controller: "budget_investments" do
       member { patch :toggle_selection }
       post :import_budget_investments, on: :collection
+      delete :delete_all
       resources :audits, only: :show, controller: "budget_investment_audits"
       resources :milestones, controller: "budget_investment_milestones"
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"

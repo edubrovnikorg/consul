@@ -138,6 +138,7 @@ hr:
         table_admin_ballots: Glasački listići
         edit_groups: Uredi grupe
         edit_budget: Uredi
+        destroy_budget: Izbriši budžet
         admin_ballots: Glasovi
         no_budgets: "Ne postoje budžeti."
         help: "Participativni budžeti omogućuju građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
@@ -181,6 +182,9 @@ hr:
         success_notice: Participativni budžet je uspješno obrisan
         unable_notice: Ne možete obrisati budžet koji ima povezane investicije
         unable_notice_polls: Nemožete obrisati budžet koji ima povezane glasove
+      delete_all:
+        success: "Uspješno ste obrisali participativni budžet."
+        failure: "Greška prilikom brisanja participativnog budžeta!"
       new:
         title: Novi participativni budžet
       winners:
@@ -341,6 +345,9 @@ hr:
         user_tags: Korisnik je dopisao oznake
         tags_placeholder: "Dopiši oznake koje želiš odjeljene zarezom (,)"
         undefined: Nedefinirano
+      destroy:
+        success: "Uspješno ste obrisali investicijski projekt"
+        failure: "Greška prilikom brisanja investicijskog projekta!"
       search_unfeasible: Pretraga neizvediva
     milestones:
       index:

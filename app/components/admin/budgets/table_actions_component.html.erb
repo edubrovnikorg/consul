@@ -1,4 +1,10 @@
-<%= render Admin::TableActionsComponent.new(budget, actions: [:edit], edit_text: t("admin.budgets.index.edit_budget")) do %>
+<%= render Admin::TableActionsComponent.new(
+    budget,
+    actions: [:edit, :destroy],
+    edit_text: t("admin.budgets.index.edit_budget"),
+    destroy_path: admin_budget_delete_all_path(budget),
+    destroy_text: t("admin.budgets.index.destroy_budget")
+  ) do %>
   <%= link_to t("admin.budgets.index.budget_investments"),
                  admin_budget_budget_investments_path(budget_id: budget.id),
                  class: "investments-link" %>

@@ -105,3 +105,14 @@
     <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
   </td>
 <% end %>
+
+<td class="small text-center">
+<%= render Admin::TableActionsComponent.new(
+    investment,
+    actions: [:destroy],
+    edit_text: t("admin.budgets.index.edit_budget"),
+    destroy_path: admin_budget_budget_investment_delete_all_path(@budget, investment),
+    destroy_text: t("admin.budgets.index.destroy_budget")
+) %>
+</td>
+

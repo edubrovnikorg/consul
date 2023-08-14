@@ -92,6 +92,14 @@ class Admin::BudgetsController < Admin::BaseController
     end
   end
 
+  def delete_all
+    if @budget.delete
+      redirect_to admin_budgets_path, notice: t("admin.budgets.delete_all.success")
+    else
+      redirect_to admin_budgets_path, notice: t("admin.budgets.delete_all.failure")
+    end
+  end
+
   private
 
     def budget_params
@@ -106,7 +114,7 @@ class Admin::BudgetsController < Admin::BaseController
     end
 
     def load_budget
-      @budget = Budget.find_by_slug_or_id! params[:id]
+      @budget = Budget.find_by_slug_or_id! params[:id] || params[:budget_id]
     end
 
     def load_staff
