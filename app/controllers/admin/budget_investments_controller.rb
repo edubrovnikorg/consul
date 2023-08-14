@@ -68,11 +68,12 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       investment = @budget.investments.build(budget_investment);
       logger.debug "CSV import investment: #{investment}"
 
-      if investment.save!
+      if investment.save
         logger.info "CSV import row success"
       else
+        byebug
         logger.error "CSV import row error!"
-        log.debug my_object.errors.full_messages
+        logger.error investment.errors.full_messages
       end
     end
 
