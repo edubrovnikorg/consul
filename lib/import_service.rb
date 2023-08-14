@@ -2,12 +2,12 @@ class ImportService
   require 'csv'
 
   def call(file)
-    opened_file = File.open(file)
+    # opened_file = File.open(file)
     options = { headers: true, col_sep: ',', encoding: Encoding::WINDOWS_1252 }
     begin
-      CSV.foreach(opened_file, **options) do |row|
+      CSV.open(file.path, **options).each do |row|
+        next if empty_row?(row)
         yield row
-        ApplicationLogger.new.info "CSV import row: #{row}"
       end
     rescue Exception => e
       ApplicationLogger.new.error "CSV import error: #{e.message}"
@@ -15,6 +15,10 @@ class ImportService
   end
 
   private
+
+  def empty_row?(row)
+    row.all? { |_, cell| cell.nil? }
+  end
 
   def convert_to_utf8_encoding(original_file)
     original_string = original_file.read
