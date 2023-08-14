@@ -52,7 +52,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         "tag_list"=>"",
         "organization_name"=>"",
         "location"=>"",
-        "skip_map" => true
+        "skip_map" => true,
         "terms_of_service"=>"1",
         "translations_attributes"=>
           {
