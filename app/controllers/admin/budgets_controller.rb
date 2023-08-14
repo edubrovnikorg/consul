@@ -93,6 +93,12 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def delete_all
+    if @budget.budget_administrators.exists?
+      @budget.budget_administrators.delete_all
+    end
+    if @budget.budget_valuators.exists?
+      @budget.budget_valuators.delete_all
+    end
     if @budget.delete
       redirect_to admin_budgets_path, notice: t("admin.budgets.delete_all.success")
     else

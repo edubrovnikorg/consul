@@ -4,8 +4,13 @@ class ImportService
   def call(file)
     opened_file = File.open(file)
     options = { headers: true, col_sep: ',', encoding: Encoding::WINDOWS_1252 }
-    CSV.foreach(opened_file, **options) do |row|
-      yield row
+    begin
+      CSV.foreach(opened_file, **options) do |row|
+        yield row
+        ApplicationLogger.new.info "CSV import row: #{row}"
+      end
+    rescue Exception => e
+      ApplicationLogger.new.error "CSV import error: #{e.message}"
     end
   end
 
