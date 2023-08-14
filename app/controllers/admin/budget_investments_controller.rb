@@ -68,7 +68,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       investment = @budget.investments.build(budget_investment);
       logger.debug "CSV import investment: #{investment}"
 
-      if investment.save!
+      investment.save!
     end
 
     redirect_to admin_budget_budget_investments_path(@budget)
