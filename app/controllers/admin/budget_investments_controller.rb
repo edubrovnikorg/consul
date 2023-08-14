@@ -28,6 +28,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def create
+    byebug
     @investment = @budget.investments.build(investment_params)
     @investment.author = current_user
 
@@ -52,8 +53,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         "tag_list"=>"",
         "organization_name"=>"",
         "location"=>"",
-        "skip_map" => true,
+        "skip_map" => "1",
         "terms_of_service"=>"1",
+        "map_location_attributes"=>{"latitude"=>"", "longitude"=>"", "zoom"=>""},
         "translations_attributes"=>
           {
             "0"=>
