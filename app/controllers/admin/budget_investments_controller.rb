@@ -63,8 +63,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
           }
       }
 
-      @budget.investments.build(budget_investment);
-      @budget.save
+      investment = @budget.investments.build(budget_investment);
+      investment.save
     end
 
     redirect_to admin_budget_budget_investments_path(@budget)
