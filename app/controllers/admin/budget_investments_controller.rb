@@ -66,6 +66,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       }
 
       investment = @budget.investments.build(budget_investment);
+      logger.debug "CSV import investment: #{investment}"
+
       investment.save
     end
 
