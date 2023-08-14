@@ -69,7 +69,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       }
 
       investment = @budget.investments.build(budget_investment);
-      logger.debug "CSV import investment: #{investment}"
+      logger.debug "CSV import investment: #{investment.to_hash}"
 
       if investment.save
         logger.info "CSV import row success"
