@@ -40,7 +40,8 @@ class Budget
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
-    scope :allow_custom_content,  -> { where(allow_custom_content: true).sort_by(&:name) }
+    scope :allow_custom_content,  ->                              { where(allow_custom_content: true).sort_by(&:name) }
+    scope :by_budget_district,    ->(budget_id, district_id)      { where(budget_id: budget_id, district_id: district_id) }
 
     def self.sort_by_name
       all.sort do |heading, other_heading|

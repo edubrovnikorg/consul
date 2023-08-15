@@ -48,13 +48,15 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       logger.debug "CSV import row: #{res}"
       budget_investment = {
         "author" => current_user,
-        "heading_id"=> res["Subgroup"],
+        "heading_id"=> Budget::Heading.by_budget_district(@budget.id, res["Subgroup"]).first.id,
         "tag_list"=>"",
         "organization_name"=>"",
         "location"=>"",
         "skip_map" => "1",
         "terms_of_service"=>"1",
         "map_location_attributes"=>{"latitude"=>"", "longitude"=>"", "zoom"=>""},
+        "valuator_ids"=>["", Valuator.find_by(user_id: current_user.id).id],
+        "valuator_assignments_count"=> 1,
         "translations_attributes"=>
           {
             "0"=>
@@ -68,7 +70,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       }
 
       investment = @budget.investments.build(budget_investment);
-      logger.debug "CSV import investment: #{investment.to_s}"
 
       if investment.save
         logger.info "CSV import row success"

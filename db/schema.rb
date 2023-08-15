@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_10_203025) do
+ActiveRecord::Schema.define(version: 2023_08_15_134731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -217,6 +217,10 @@ ActiveRecord::Schema.define(version: 2023_08_10_203025) do
     t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "budget_id"
+    t.integer "district_id"
+    t.index ["budget_id"], name: "index_budget_headings_on_budget_id"
+    t.index ["district_id"], name: "index_budget_headings_on_district_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 

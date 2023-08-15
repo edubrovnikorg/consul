@@ -38,6 +38,8 @@ class Admin::BudgetGroupsController < Admin::BaseController
       hash = {
         "price"=>"10",
         "population"=>"",
+        "budget_id" => @budget.id,
+        "district_id" => district.id,
         "allow_custom_content"=>"0",
         "latitude"=>"",
         "longitude"=>"",

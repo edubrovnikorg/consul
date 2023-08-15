@@ -43,6 +43,7 @@ module Budgets
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
       @voted = false;
       @investments.each do |investment|
+        break unless current_user
         if current_user.voted_for? investment
           @voted = true;
           break;
@@ -63,6 +64,7 @@ module Budgets
     def show
       @voted = false;
       @budget.investments.each do |investment|
+        break unless current_user
         if current_user.voted_for? investment
           @voted = true;
           break;

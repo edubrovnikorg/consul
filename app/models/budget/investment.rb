@@ -38,7 +38,7 @@ class Budget
     end
 
     belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :budget_investments
-    belongs_to :heading
+    belongs_to :heading, :autosave => true
     belongs_to :group
     belongs_to :budget
     belongs_to :administrator
