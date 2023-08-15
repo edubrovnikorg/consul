@@ -13,7 +13,6 @@ module Budgets
       @headings = @budget.headings.sort_by_name
       @total_votes = 0
       @investments.each do |investment|
-        byebug
         @total_votes += investment.votes_for.size
       end
     end
