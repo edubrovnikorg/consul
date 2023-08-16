@@ -279,23 +279,45 @@ class Budget
 
       streets = DistrictStreet.where(district_id: district_id)
 
-      result = :wrong_district
+      result = nil
+
       streets.each do |street|
-        logger.info(street)
+        puts "street #{street.name}"
+        puts "last_result #{result}"
         street_name = street.name.downcase
         user_address = user.address.downcase
+        user_number = user_address.delete("^0-9")
 
-        unless user_address.match(/\d+/) === nil
+        # byebug if street.name == "Dr. Ante Šercera"
+
+        if user_number === nil
+          result = :no_district
+          break
+        elsif user_number
           user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
         end
 
-        if street_name.include?(user_address) || user_address.include?(street_name)
-          result = nil
+        unless street_name.include?(user_address) || user_address.include?(street_name)
+          result = :wrong_district
+          next
+        end
+
+        if street.district_street_filters.size > 0
+          street.district_street_filters.each do |street_filter|
+            filter = (street_filter.from..street_filter.to).step(2).to_a
+            next unless filter.include?(user_number)
+            result = :wrong_district
+          end
           break
         end
+        result = nil
+        break
       end
-
       result
+    end
+
+    def check_address_district(street, number)
+
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)
