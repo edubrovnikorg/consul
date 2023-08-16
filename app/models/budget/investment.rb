@@ -257,11 +257,45 @@ class Budget
       update!(unfeasible_email_sent_at: Time.current)
     end
 
-    def reason_for_not_being_selectable_by(user)
+    def reason_for_not_being_selectable_by(user, investment = nil, district_id = nil)
       return permission_problem(user) if permission_problem?(user)
-      return :different_heading_assigned unless valid_heading?(user)
+      return :different_heading_assigned if valid_heading?(user)
+
+      if investment && district_id
+        return district_problem(user, investment, district_id) if district_problem?(user, investment, district_id)
+      end
 
       return :no_selecting_allowed unless budget.selecting?
+    end
+
+    def district_problem?(user, investment, district_id)
+      district_problem(user,investment, district_id).present?
+    end
+
+    def district_problem(user, investment, district_id)
+      if user.address == 'f'
+        return :no_district
+      end
+
+      streets = DistrictStreet.where(district_id: district_id)
+
+      result = :wrong_district
+      streets.each do |street|
+        logger.info(street)
+        street_name = street.name.downcase
+        user_address = user.address.downcase
+
+        unless user_address.match(/\d+/) === nil
+          user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
+        end
+
+        if street_name.include?(user_address) || user_address.include?(street_name)
+          result = nil
+          break
+        end
+      end
+
+      result
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)
@@ -291,8 +325,8 @@ class Budget
     end
 
     def valid_heading?(user)
-      voted_in?(heading, user) ||
-      can_vote_in_another_heading?(user)
+      voted_in?(heading, user)
+      # || can_vote_in_another_heading?(user)
     end
 
     def can_vote_in_another_heading?(user)
@@ -300,6 +334,7 @@ class Budget
     end
 
     def voted_in?(heading, user)
+
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
 

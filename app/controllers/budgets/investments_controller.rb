@@ -49,7 +49,6 @@ module Budgets
           break;
         end
       end
-
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 

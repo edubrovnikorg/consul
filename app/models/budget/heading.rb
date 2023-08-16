@@ -57,6 +57,8 @@ class Budget
       investments.empty?
     end
 
+
+
     private
 
       def generate_slug?

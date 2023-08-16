@@ -10,7 +10,7 @@ class Admin::DistrictStreetsController < Admin::BaseController
   end
 
   def index
-    @district_streets = @district.district_streets
+    @district_streets = DistrictStreet.where(district_id: @district.id)
   end
 
   def create
@@ -43,7 +43,7 @@ class Admin::DistrictStreetsController < Admin::BaseController
     @district.streets.delete_all
     render :index
   end
-  
+
   private
 
   def set_district

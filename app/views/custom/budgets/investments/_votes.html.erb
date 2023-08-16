@@ -1,4 +1,4 @@
-<% reason = investment.reason_for_not_being_selectable_by(current_user) %>
+<% reason = investment.reason_for_not_being_selectable_by(current_user, investment, district_id) %>
 <% voting_allowed = true unless reason.presence == :not_voting_allowed %>
 <% user_voted_for = voted_for?(investment_votes, investment) %>
 
