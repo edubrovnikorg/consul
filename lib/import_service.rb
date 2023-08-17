@@ -3,7 +3,7 @@ class ImportService
 
   def call(file)
     # opened_file = File.open(file)
-    options = { headers: true, col_sep: ',', encoding: Encoding::WINDOWS_1252 }
+    options = { headers: true, col_sep: ';', encoding: "UTF-8" }
     ApplicationLogger.new.info "CSV import starting"
     begin
       CSV.open(file.path, **options).each do |row|

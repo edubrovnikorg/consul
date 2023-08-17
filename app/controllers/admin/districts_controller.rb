@@ -44,7 +44,7 @@ class Admin::DistrictsController < Admin::BaseController
     return redirect_to request.referer, notice: 'Niste dodali datoteku.' if params[:file].nil?
     return redirect_to request.referer, notice: 'Dozvoljene su samo CSV datoteke.' unless params[:file].content_type == 'text/csv'
 
-    ImportService.new.call(params[:file].path) do |res|
+    ImportService.new.call(params[:file]) do |res|
       district_hash = Hash.new
       district_hash[:name] = res["name"]
       district_hash[:category] = res["category"]
@@ -58,7 +58,7 @@ class Admin::DistrictsController < Admin::BaseController
     return redirect_to request.referer, notice: 'Niste dodali datoteku.' if params[:file].nil?
     return redirect_to request.referer, notice: 'Dozvoljene su samo CSV datoteke.' unless params[:file].content_type == 'text/csv'
 
-    ImportService.new.call(params[:file].path) do |res|
+    ImportService.new.call(params[:file]) do |res|
       district_streets_hash = Hash.new
       district_streets_hash[:name] = res["name"]
       district_streets_hash[:district] = District.find(res["kotar/odbor"]);
@@ -70,6 +70,10 @@ class Admin::DistrictsController < Admin::BaseController
   end
 
   def delete_all
+    District.all.each do |district|
+      DistrictStreet.where(district_id: district.id).destroy_all
+    end
+    byebug
     District.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('districts')
     render :index
