@@ -49,12 +49,8 @@
             <% end %>
           <% else %>
             <h2 class="margin-top">
-              <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+              <%= t("budgets.investments.index.by_heading", category: @category, heading: @heading.name) %>
             </h2>
-            <h3>
-              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
-              <%= @budget.formatted_heading_price(@heading) %>
-            </h3>
           <% end %>
         </div>
       </div>

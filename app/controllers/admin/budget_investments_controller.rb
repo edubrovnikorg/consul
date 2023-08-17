@@ -57,6 +57,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         "map_location_attributes"=>{"latitude"=>"", "longitude"=>"", "zoom"=>""},
         "valuator_ids"=>["", Valuator.find_by(user_id: current_user.id).id],
         "valuator_assignments_count"=> 1,
+        "image_id" => res["Image"],
         "translations_attributes"=>
           {
             "0"=>

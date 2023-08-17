@@ -290,13 +290,12 @@ class Budget
 
         # byebug if street.name == "Dr. Ante Šercera"
 
-        if user_number === nil
+        if user_number == ""
           result = :no_district
           break
         elsif user_number
           user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
         end
-
         unless street_name.include?(user_address) || user_address.include?(street_name)
           result = :wrong_district
           next

@@ -73,7 +73,6 @@ class Admin::DistrictsController < Admin::BaseController
     District.all.each do |district|
       DistrictStreet.where(district_id: district.id).destroy_all
     end
-    byebug
     District.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!('districts')
     render :index

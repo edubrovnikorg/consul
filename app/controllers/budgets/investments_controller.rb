@@ -42,8 +42,11 @@ module Budgets
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
       @voted = false;
+      @category = '';
       @investments.each do |investment|
         break unless current_user
+        district = Budget::Heading.where(id: investment.heading_id).first.district_id
+        @category = District.where(id: district).first.category == 0 ? "Gradski kotar" : "Mjesni odbor"
         if current_user.voted_for? investment
           @voted = true;
           break;
