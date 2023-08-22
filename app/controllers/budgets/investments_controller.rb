@@ -8,7 +8,7 @@ module Budgets
     include Translatable
     include InvestmentFilters
 
-    PER_PAGE = 10
+    # PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
     before_action :load_budget, except: :json_data
@@ -40,7 +40,7 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
+      @investments = investments
       @voted = false;
       @category = '';
       @investments.each do |investment|

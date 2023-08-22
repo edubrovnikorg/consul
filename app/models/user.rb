@@ -185,6 +185,7 @@ class User < ApplicationRecord
         session_index: auth[:sessionIndex],
         subject_id: auth[:subjectId],
         address: auth[:adresa],
+        city: auth[:mjesto],
       )
 
       nias_user[:residence_verified_at] = DateTime.current

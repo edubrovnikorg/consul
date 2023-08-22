@@ -1,8 +1,8 @@
 <% provide :title do %><%= t("budgets.investments.index.title") %><% end %>
 <% content_for :header_addon do %>
-  <%= render "shared/search_form",
-             search_path: budget_investments_path(budget_id: @budget.id, page: 1),
-             i18n_namespace: "budgets.investments.index.search_form" %>
+  <%# <%= render "shared/search_form", %>
+             <%# search_path: budget_investments_path(budget_id: @budget.id, page: 1), %>
+             <%# i18n_namespace: "budgets.investments.index.search_form" %>
 <% end %>
 <% content_for :canonical do %>
   <% if @heading.present? %>
@@ -90,7 +90,7 @@
         <% end %>
       <% end %>
 
-      <%= paginate @investments %>
+      <%# <%= paginate @investments %>
     </div>
 
     <%# <div class="small-12 medium-3 column">

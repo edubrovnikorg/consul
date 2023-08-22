@@ -52,7 +52,7 @@ hr:
       section_header:
         icon_alt: Participativni budžeti ikona
         title: Participativni budžeti
-        help: Pomoć oko participativnih budžeta
+        help: Na ovom linku pronađite opširnije upute za glasanje.
         all_phases: Pogledaj sve faze
       all_phases: Investicijske faze budžeta
       next_phase: Sljedeća faza
@@ -82,7 +82,7 @@ hr:
         title: Participativni budžet
         unfeasible: Neizvedive investicije za projekte
         unfeasible_text: "Ove investicije moraju zadovoljiti različite kriterije (zakonitost, konkretnost, ne smije premašiti limit budžeta) kako bi zadovoljile uvjete i ušle u krug do krajnjeg glasanja. Sve investicije koje ne zadovoljavaju kriterije označavaju se nezadovoljavajućim i objavljuju se na sljedećoj listi, zajedno s izvještajem zašto nisu pogodne."
-        by_heading: "Investicijski projekti za: %{category} %{heading}"
+        by_heading: "Projektni prijedlozi za za: %{category} %{heading}"
         search_form:
           button: Pretraga
           placeholder: Pretraga investicijskih projekata...
@@ -143,10 +143,10 @@ hr:
       investment:
         add: Glas
         already_added: Vi ste već dodali glas investicijskom projektu
-        already_supported: Vi ste već poduprli ovaj investicijski projekt. Podijelite ga!
+        already_supported: Dali ste svoj glas za ovaj projektni prijedlog.
         support_title: Poduprite ovaj projekt
         confirm_group:
-          one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+          one: "Možete samo poduprijeti projekte samo jednom u svojem Gradskom kotaru/Mjesnom odboru. Jeste li sigurni da želite glasati za ovaj projekt?"
           few: "Možete samo poduprijeti investicije u %{count} distrikta. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           other: "Možete samo poduprijeti investicije u %{count} distrikta. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         supports:

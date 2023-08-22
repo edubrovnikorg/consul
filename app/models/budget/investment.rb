@@ -277,6 +277,12 @@ class Budget
         return :no_district
       end
 
+      if user.city
+        city = user.city.downcase.capitalize
+        user_district_id = District.where(name: city).id
+        return :wrong_district unless district_id == user_district_id
+      end
+
       streets = DistrictStreet.where(district_id: district_id)
 
       result = nil

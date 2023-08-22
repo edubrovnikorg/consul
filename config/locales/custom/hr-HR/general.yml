@@ -907,8 +907,8 @@ hr:
       organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
-      wrong_district: "Ne možete glasati za investicijske projekte koji nisu za vaš Gradski kotar ili Mjesni odbor."
-      no_district: "Adresa korisnika neispravna! Molimo vas obratite se administratoru."
+      wrong_district: "Ne možete glasovati za ovaj projektni prijedlog - nije unutar Vašeg gradskog kotara/mjesnog odbora"
+      no_district: "Adresa korisnika neispravna! Molimo Vas obratite nam se na info@dura.hr"
       different_heading_assigned:
         one: "Možete samo podržati investicijske projekte u %{count} gradskom kotaru ili mjesnom odboru. Poduprli ste investicije u %{supported_headings}."
         few: "Možete samo podržati investicijske projekte u %{count} gradskom kotaru ili mjesnom odboru. Poduprli ste investicije u %{supported_headings}."
