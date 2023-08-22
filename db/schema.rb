@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_17_193114) do
+ActiveRecord::Schema.define(version: 2023_08_22_210728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1628,6 +1628,7 @@ ActiveRecord::Schema.define(version: 2023_08_17_193114) do
     t.string "logout_request_id", default: "f"
     t.string "nias_token", default: "f"
     t.string "address", default: "f"
+    t.string "city"
     t.index ["approved"], name: "index_users_on_approved"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
