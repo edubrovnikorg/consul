@@ -279,12 +279,12 @@ class Budget
 
       if user.city && user.city.downcase != 'dubrovnik'
         city = user.city.downcase.capitalize
-        user_district_id = District.where(name: city).id
+        user_district_id = District.where(name: city).first.id
         return :wrong_district unless district_id == user_district_id
       end
 
       streets = DistrictStreet.where(district_id: district_id)
-
+      return :wrong_district if streets.empty?
       result = nil
 
       streets.each do |street|
