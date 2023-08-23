@@ -910,7 +910,7 @@ hr:
       wrong_district: "Ne možete glasovati za ovaj projektni prijedlog - nije unutar Vašeg gradskog kotara/mjesnog odbora"
       no_district: "Adresa korisnika neispravna! Molimo Vas obratite nam se na info@dura.hr"
       different_heading_assigned:
-        one: "Možete samo podržati investicijske projekte u %{count} gradskom kotaru ili mjesnom odboru. Poduprli ste investicije u %{supported_headings}."
+        one: "Vaš glas je već zabilježen. Možete glasovati samo za jedan projektni prijedlog.  ."
         few: "Možete samo podržati investicijske projekte u %{count} gradskom kotaru ili mjesnom odboru. Poduprli ste investicije u %{supported_headings}."
         other: "Možete samo podržati investicijske projekte u %{count} gradskom kotaru ili mjesnom odboru. Poduprli ste investicije u %{supported_headings}."
   welcome:
