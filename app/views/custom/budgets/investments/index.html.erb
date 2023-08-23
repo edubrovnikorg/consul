@@ -80,7 +80,8 @@
                      investment_ids: @investment_ids,
                      investment_votes: @investment_votes,
                      ballot: @ballot,
-                     district_id: @heading.district_id %>
+                     district_id: @heading.district_id,
+                     votes_percent: votes_to_percent(investment.votes_for.size, @total_votes) %>
         <% end %>
       <% else %>
 

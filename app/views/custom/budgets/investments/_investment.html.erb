@@ -36,7 +36,8 @@
                  investment: investment,
                  investment_votes: investment_votes,
                  district_id: @heading.district_id,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes") %>
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes"),
+                 votes_percent: votes_percent %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"

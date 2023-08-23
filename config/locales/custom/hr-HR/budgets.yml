@@ -149,11 +149,7 @@ hr:
           one: "Možete glasovati samo za jedan projekt u svojem gradskom kotaru/mjesnom odboru. Želite li dati svoj glas ovom projektu?"
           few: "Možete samo poduprijeti investicije u %{count} distrikta. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
           other: "Možete samo poduprijeti investicije u %{count} distrikta. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
-        supports:
-          zero: Nema potpore
-          one: 1 potpora
-          few: "%{count} potpore"
-          other: "%{count} potpora"
+        supports: "%{count}% glasova"
         give_support: Glasuj
       header:
         check_ballot: Provjeri i potvrdi moj glas

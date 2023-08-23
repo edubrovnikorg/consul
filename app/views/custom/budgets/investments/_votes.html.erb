@@ -4,6 +4,11 @@
 
 <div class="supports js-participation">
 
+  <span class="total-supports <%= "no-button" unless voting_allowed || user_voted_for %>">
+    <%= t("budgets.investments.investment.supports", count: votes_percent) %>
+  </span>
+
+
   <div class="in-favor js-in-favor">
     <% if user_voted_for %>
       <div class="supported callout success">

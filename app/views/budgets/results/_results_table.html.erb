@@ -48,7 +48,7 @@
               <%= link_to investment.title, budget_investment_path(@budget, investment) %>
             </td>
             <td class="text-center">
-              <%= votes_to_percent(investment.votes_for.size, @total_votes) %>%
+              
             </td>
             <td class="text-center">
               <%= @budget.formatted_amount(investment.price) %>

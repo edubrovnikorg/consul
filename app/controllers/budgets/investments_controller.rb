@@ -8,6 +8,8 @@ module Budgets
     include Translatable
     include InvestmentFilters
 
+    helper InvestmentsVoteHelper
+
     # PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
@@ -43,14 +45,18 @@ module Budgets
       @investments = investments
       @voted = false;
       @category = '';
+      @total_votes = 0;
       @investments.each do |investment|
         break unless current_user
         district = Budget::Heading.where(id: investment.heading_id).first.district_id
         @category = District.where(id: district).first.category == 0 ? "Gradski kotar" : "Mjesni odbor"
+        @total_votes += investment.votes_for.size
         if current_user.voted_for? investment
           @voted = true;
           break;
         end
+      end
+      @investments.each do |investment|
       end
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
