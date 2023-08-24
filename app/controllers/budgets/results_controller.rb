@@ -10,10 +10,24 @@ module Budgets
     def show
       authorize! :read_results, @budget
       @investments = Budget::Result.new(@budget, @heading).investments
-      @headings = @budget.headings.sort_by_name
+      @headings = @budget.headings
       @total_votes = 0
       @investments.each do |investment|
         @total_votes += investment.votes_for.size
+      end
+
+      @sorted_investments = [];
+      winner = nil
+      @investments.each do |investment|
+        if investment.winner?
+          winner = investment
+        else
+          @sorted_investments.push(investment)
+        end
+      end
+      @sorted_investments.sort_by! { |i| i.title }
+      unless winner.nil?
+        @sorted_investments.unshift(winner)
       end
     end
 

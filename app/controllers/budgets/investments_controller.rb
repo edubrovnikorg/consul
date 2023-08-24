@@ -47,9 +47,9 @@ module Budgets
       @category = '';
       @total_votes = 0;
       @investments.each do |investment|
-        break unless current_user
         district = Budget::Heading.where(id: investment.heading_id).first.district_id
         @category = District.where(id: district).first.category == 0 ? "Gradski kotar" : "Mjesni odbor"
+        break unless current_user
         @total_votes += investment.votes_for.size
         if current_user.voted_for? investment
           @voted = true;

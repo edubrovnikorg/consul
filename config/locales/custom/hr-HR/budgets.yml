@@ -172,7 +172,7 @@ hr:
       link: Rezultati
       page_title: "%{budget} - Rezultati"
       heading: "Rezultati participativnog budžetiranja"
-      heading_selection_title: "Po distriktu"
+      heading_selection_title: "Gradski kotari/Mjesni odbori"
       ballot_lines_count: Glasovi
       hide_discarded_link: Sakrij odbačene
       show_all_link: Pokaži sve
@@ -189,7 +189,7 @@ hr:
       link: "Miljokaz"
       page_title: "%{budget} - Miljokaz"
       heading: "Miljokaz participativnog budžetiranja"
-      heading_selection_title: "Po distriktu"
+      heading_selection_title: "Gradski kotari/Mjesni odbori"
       no_winner_investments: "Nema pobjedničkih investicija u ovom stadiju"
       filters:
         status:

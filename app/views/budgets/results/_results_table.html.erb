@@ -13,15 +13,6 @@
         <th scope="col" class="text-center">
           <%= t("budgets.results.ballot_lines_count") %>
         </th>
-        <th scope="col" class="text-center">
-          <%= t("budgets.results.price") %>
-        </th>
-        <% if results_type == :compatible %>
-          <th scope="col" class="text-right">
-            <small><%= t("budgets.results.amount_available") %></small><br>
-            <%= @budget.formatted_amount(heading_price) %><br>
-          </th>
-        <% end %>
       </tr>
     </thead>
 
@@ -48,10 +39,7 @@
               <%= link_to investment.title, budget_investment_path(@budget, investment) %>
             </td>
             <td class="text-center">
-              
-            </td>
-            <td class="text-center">
-              <%= @budget.formatted_amount(investment.price) %>
+              <%= votes_to_percent(investment.votes_for.size, @total_votes) %>%
             </td>
           </tr>
       <% end %>
