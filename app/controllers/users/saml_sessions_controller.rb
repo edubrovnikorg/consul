@@ -26,7 +26,7 @@ class Users::SamlSessionsController < Devise::RegistrationsController
     head 422 unless user
 
     if User.is_local? params[:mjesto]
-      user.city = params[:mjesto].downcase.capitalize
+      user.city = params[:mjesto].downcase
       user.save
       user.create_nias_session(:session_index => params[:sessionIndex], :subject_id => params[:subjectId], :subject_id_format => params[:subjectIdFormat], :user_type => :local, :login_status => :authenticated);
       head :no_content

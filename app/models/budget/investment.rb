@@ -277,14 +277,19 @@ class Budget
         return :no_district
       end
 
+      byebug
+      selected_district = nil;
       if user.city && user.city.downcase != 'dubrovnik'
-        city = user.city.downcase.capitalize
-        user_district_id = District.where(name: city).first.id
-        return :wrong_district unless district_id == user_district_id
+        user_district = District.where('name LIKE ?', "#{user.city.split.first.capitalize}%").first
+        return :wrong_district if user_district.nil? || (user_district.id != district_id)
+      else
+        byebug
+        selected_district = District.where(id: district_id).first
+        return :wrong_district if selected_district.nil?
       end
 
       streets = DistrictStreet.where(district_id: district_id)
-      return :wrong_district if streets.empty?
+
       result = nil
 
       streets.each do |street|
@@ -293,7 +298,6 @@ class Budget
         street_name = street.name.downcase
         user_address = user.address.downcase
         user_number = user_address.delete("^0-9")
-
 
         if user_number == ""
           result = :no_district
@@ -305,18 +309,19 @@ class Budget
           result = :wrong_district
           next
         end
+        result = nil
 
         if street.district_street_filters.size > 0
           street.district_street_filters.each do |street_filter|
-            # byebug if street.name == "Andrije Hebranga"
+            # byebug if street.name == "Dr. Ante Šercera"
 
             filter = (street_filter.from..street_filter.to).step(2).to_a
+            result = nil
             break if filter.include?(user_number.to_i)
             result = :wrong_district
           end
           break
         end
-        result = nil
         break
       end
       result
