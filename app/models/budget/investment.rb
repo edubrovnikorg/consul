@@ -277,15 +277,12 @@ class Budget
         return :no_district
       end
 
-      byebug
       selected_district = nil;
-      if user.city && user.city.downcase != 'dubrovnik'
+      if user.city
         user_district = District.where('name LIKE ?', "#{user.city.split.first.capitalize}%").first
         return :wrong_district if user_district.nil? || (user_district.id != district_id)
       else
-        byebug
-        selected_district = District.where(id: district_id).first
-        return :wrong_district if selected_district.nil?
+        return :no_district
       end
 
       streets = DistrictStreet.where(district_id: district_id)
