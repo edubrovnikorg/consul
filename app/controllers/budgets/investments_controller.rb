@@ -53,7 +53,6 @@ module Budgets
         @total_votes += investment.votes_for.size
         if current_user.voted_for? investment
           @voted = true;
-          break;
         end
       end
       @investments.each do |investment|

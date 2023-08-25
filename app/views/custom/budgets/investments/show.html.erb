@@ -7,18 +7,8 @@
   investment: @investment,
   investment_ids: @investment_ids,
   investment_votes: @investment_votes,
-  ballot: @ballot %>
+  ballot: @ballot,
+  budget: @budget %>
 
-<div class="row">
-  <div class="small-12 column">
-    <%= render "budgets/investments/filter_subnav" %>
-  </div>
-</div>
-
-<div class="tabs-content" data-tabs-content="investments_tabs">
-  <div class="tabs-panel is-active" id="tab-comments">
-    <%= render "/comments/comment_tree", comment_tree: @comment_tree,
-                                         display_comments_count: false %>
-  </div>
 
 </div>

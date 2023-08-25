@@ -1,0 +1,45 @@
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_investments_path(investment),
+            social_title: investment.title,
+            social_description: investment.description,
+            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
+            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+<% end %>
+
+<% cache [locale_and_user_status(investment),
+          investment,
+          investment.image,
+          investment.author,
+          Flag.flagged?(current_user, investment),
+          @investment_votes] do %>
+  <section class="budget-investment-show" id="<%= dom_id(investment) %>">
+
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to budget_results_path(budget, heading_id: budget.headings.first) %>
+
+        <%= render "/budgets/investments/investment_detail", investment: investment, budget: budget %>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+        <%= render "/budgets/investments/author_actions", investment: investment %>
+
+        <%= image_tag(image_path_for("PB2023_" + investment.image_id.to_s + ".png"), alt: "Kategorija investicijskog projekta") %>
+
+        <%= render "shared/social_share",
+          share_title: t("budgets.investments.show.share"),
+          title: investment.title,
+          image_url: image_absolute_url(investment.image, :thumb),
+          url: budget_investment_url(investment.budget, investment),
+          description: t("budgets.investments.share.message",
+                          title: investment.title,
+                          handle: setting["org_name"]),
+          mobile: t("budgets.investments.share.message",
+                     title: investment.title,
+                     handle: setting["twitter_handle"]) %>
+
+       </aside>
+    </div>
+  </section>
+<% end %>

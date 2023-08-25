@@ -1,12 +1,12 @@
 <h1><%= investment.title %></h1>
 <div class="budget-investment-info">
-  <%= render "/shared/author_info", resource: investment %>
+  <%# <%= render "/shared/author_info", resource: investment %>
 
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%# <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.created_at.to_date.strftime("%d.%m.%Y.") %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <%= investment.heading.name %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%# <span class="bullet">&nbsp;&bull;&nbsp;</span> %>
+  <%# <%= investment.heading.name %>
+  <%# <span class="bullet">&nbsp;&bull;&nbsp;</span> %>
   <% if local_assigns[:preview].nil? %>
     <span class="js-flag-actions">
       <%= render "shared/flag_actions", flaggable: investment %>
@@ -48,30 +48,3 @@
               max_documents_allowed: Budget::Investment.max_documents_allowed %>
 <% end %>
 
-<%= render "shared/tags", taggable: investment %>
-
-<% if investment.external_url.present? %>
-  <div class="document-link">
-    <%= sanitize_and_auto_link investment.external_url %>
-  </div>
-<% end %>
-
-<% if investment.should_show_unfeasibility_explanation? %>
-  <h2><%= t("budgets.investments.show.unfeasibility_explanation") %></h2>
-  <p><%= investment.unfeasibility_explanation %></p>
-<% end %>
-
-<% if investment.should_show_price_explanation? %>
-  <h2 id="price_explanation" data-magellan-target="price_explanation">
-    <%= t("budgets.investments.show.price_explanation") %>
-  </h2>
-  <p><%= investment.price_explanation %></p>
-<% end %>
-
-<% if local_assigns[:preview].nil? %>
-  <%= render "relationable/related_content", relationable: investment %>
-
-  <div class="js-moderator-investment-actions margin">
-    <%= render "budgets/investments/actions", investment: investment %>
-  </div>
-<% end %>
