@@ -278,11 +278,10 @@ class Budget
       end
 
       selected_district = nil;
-      if user.city
+      city_district_count = District.where(category: 0).count
+      if user.city && district_id > city_district_count
         user_district = District.where('name LIKE ?', "#{user.city.split.first.capitalize}%").first
         return :wrong_district if user_district.nil? || (user_district.id != district_id)
-      else
-        return :no_district
       end
 
       streets = DistrictStreet.where(district_id: district_id)
