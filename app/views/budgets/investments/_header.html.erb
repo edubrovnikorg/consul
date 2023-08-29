@@ -24,7 +24,7 @@
             <% if @ballot.valid_heading?(@heading) %>
               <div class="progress-bar-nav" data-fixed-bar>
                 <h2>
-                  <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                  <%= t("budgets.investments.index.by_heading", category: @category, heading: @heading.name) %>
                 </h2>
                 <div id="progress_bar">
                   <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>

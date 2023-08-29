@@ -23,19 +23,6 @@
               class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
               style="<%= investment.winner? ? "" : "js-discarded" %>">
             <td>
-              <% if investment.winner? %>
-                <span class="icon-check">
-                  <span class="show-for-sr">
-                    <%= t("budgets.results.accepted") %>
-                  </span>
-                </span>
-              <% else %>
-                <span class="icon-x delete">
-                  <span class="show-for-sr">
-                    <%= t("budgets.results.discarded") %>
-                  </span>
-                </span>
-              <% end %>
               <%= link_to investment.title, budget_investment_path(@budget, investment) %>
             </td>
             <td class="text-center">

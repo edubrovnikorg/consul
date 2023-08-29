@@ -273,20 +273,20 @@ class Budget
     end
 
     def district_problem(user, investment, district_id)
-      if user.address == 'f'
-        return :no_district
-      end
+      return :no_district if user.address == 'f'
 
       selected_district = nil;
       city_district_count = District.where(category: 0).count
+      city_name = mutate_city(user.city)
+      result = nil
+
       if user.city && district_id > city_district_count
-        user_district = District.where('name LIKE ?', "#{user.city.split.first.capitalize}%").first
+        user_district = District.where('name LIKE ?', "#{city_name.split.first.capitalize}%").first
         return :wrong_district if user_district.nil? || (user_district.id != district_id)
       end
 
       streets = DistrictStreet.where(district_id: district_id)
 
-      result = nil
 
       streets.each do |street|
         puts "street #{street.name}"
@@ -323,8 +323,25 @@ class Budget
       result
     end
 
-    def check_address_district(street, number)
+    def mutate_city(city)
+      dubrovnik = ["sustjepan"]
+      komolac = ["čajkovica", "čajkovići", "knežica", "prijevor", "rožat", "šumet"]
+      mokosica = ["donje obuljeno", "gornje obuljeno", "nova mokošica", "petrovo selo", "pobrežje"]
+      zaton = ["lozica", "zaton veliki"]
 
+      if dubrovnik.include?(city.downcase)
+        return "Dubrovnik"
+      end
+      if komolac.include?(city.downcase)
+        return "Komolac"
+      end
+      if mokosica.include?(city.downcase)
+        return "Mokošica"
+      end
+      if zaton.include?(city.downcase)
+        return "Zaton"
+      end
+      city
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)

@@ -22,6 +22,31 @@
 <%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
 <hr>
 
+<h2>Image</h2>
+
+<div class="image-wrapper">
+  <div class="image-controls">
+    <% images_array = [
+      ["Komunalno-Promet, rasvjeta, otpad", "1"],
+      ["Parkovi", "2"],
+      ["Uređenje građevine, ulice", "3"],
+      ["Igrališta", "4"],
+      ["Bus", "5"],
+      ["Dokumentacija", "6"]
+    ]; %>
+    <%= select_tag 'js-investment-change-image',
+                    options_for_select(images_array),
+                    prompt: "Odaberite sliku..." %>
+    </select>
+    <button id="save_image" class="button" data-budget-id="<%= @budget.id %>" data-investment-id="<%= @investment.id %>">Postavi novu sliku</button>
+  </div>
+  <div class="image-container">
+    <%= image_tag(image_path_for("PB2023_" + @investment.image_id.to_s + ".png"), id: 'js-investment-image', data: { image_id: @investment.image_id.to_s }, alt: "Kategorija investicijskog projekta") %>
+  </div>
+</div>
+
+<hr>
+
 <h2 id="classification"><%= t("admin.budget_investments.show.classification") %></h2>
 
 <p><strong><%= t("admin.budget_investments.show.assigned_admin") %>:</strong>

@@ -49,6 +49,7 @@
 //= require initial
 //= require ahoy
 //= require app
+//= require app_assets
 //= require check_all_none
 //= require comments
 //= require foundation_extras
@@ -115,6 +116,7 @@
 //= require datepicker
 //= require_tree ./sdg
 //= require_tree ./sdg_management
+//= require_tree ./admin
 
 var initialize_modules = function() {
   "use strict";
@@ -170,6 +172,7 @@ var initialize_modules = function() {
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.BudgetInvestmentImages.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

@@ -1,0 +1,13 @@
+.image {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &-container {
+    width:15rem;
+  }
+}
+
