@@ -74,6 +74,7 @@ namespace :admin do
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
 
+    resource :results, only: :show, controller: "budgets/results"
     resources :budget_phases, only: [:edit, :update]
   end
 

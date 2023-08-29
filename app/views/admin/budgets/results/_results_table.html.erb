@@ -1,0 +1,54 @@
+<div class="<%= results_type == :compatible ? "success" : "js-discarded" %>"
+     style="<%= results_type != :compatible ? "js-discarded" : "" %>"
+     id="<%= results_type %>-container">
+
+  <h4><%= title %></h4>
+
+  <table id="budget-investments-<%= results_type %>" class="table-for-mobile">
+    <thead>
+      <tr>
+        <th scope="col">
+          <%= t("budgets.results.investment_title") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.ballot_lines_count") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.total_votes") %>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% amount_available = heading_price %>
+      <% investments.each do |investment| %>
+          <tr id="<%= dom_id(investment) %>"
+              class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
+              style="<%= investment.winner? ? "" : "js-discarded" %>">
+            <td>
+              <% if investment.winner? %>
+                <span class="icon-check">
+                  <span class="show-for-sr">
+                    <%= t("budgets.results.accepted") %>
+                  </span>
+                </span>
+              <% else %>
+                <span class="icon-x delete">
+                  <span class="show-for-sr">
+                    <%= t("budgets.results.discarded") %>
+                  </span>
+                </span>
+              <% end %>
+              <%= link_to investment.title, budget_investment_path(@budget, investment), target: "_blank" %>
+            </td>
+            <td class="text-center">
+              <%= votes_to_percent(investment.votes_for.size, @total_votes) %>%
+            </td>
+            <td class="text-center">
+              <%= investment.votes_for.size %>
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

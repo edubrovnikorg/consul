@@ -177,6 +177,7 @@ hr:
       hide_discarded_link: Sakrij odbačene
       show_all_link: Pokaži sve
       price: Cijena
+      total_votes: Ukupno glasova
       amount_available: Dostupan budžet
       accepted: "Prihvati prijedlog potrošnje: "
       discarded: "Odbaci prijedlog potrošnje: "
