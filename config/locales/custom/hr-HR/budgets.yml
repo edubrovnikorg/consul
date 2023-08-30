@@ -47,12 +47,12 @@ hr:
       reviewing_ballots: Pregled glasanja
       finished: Finalizirani budžet
     index:
-      title: Participativni budžet
+      title: Participativno budžetiranje
       empty_budgets: Ne postoje budžeti.
       section_header:
         icon_alt: Participativni budžeti ikona
-        title: Participativni budžeti
-        help: Na ovom linku pronađite opširnije upute za glasanje.
+        title: Participativno budžetiranje
+        help: Na ovoj poveznici možete pronaći upute kako glasovati.
         all_phases: Pogledaj sve faze
       all_phases: Investicijske faze budžeta
       next_phase: Sljedeća faza
@@ -79,7 +79,7 @@ hr:
         map_remove_marker: "Ukloni oznaku s karte"
         map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ne znam."
       index:
-        title: Participativni budžet
+        title: Participativno budžetiranje
         unfeasible: Neizvedive investicije za projekte
         unfeasible_text: "Ove investicije moraju zadovoljiti različite kriterije (zakonitost, konkretnost, ne smije premašiti limit budžeta) kako bi zadovoljile uvjete i ušle u krug do krajnjeg glasanja. Sve investicije koje ne zadovoljavaju kriterije označavaju se nezadovoljavajućim i objavljuju se na sljedećoj listi, zajedno s izvještajem zašto nisu pogodne."
         by_heading: "Projektni prijedlozi za: %{category} %{heading}"

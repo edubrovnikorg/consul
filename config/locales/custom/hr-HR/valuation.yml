@@ -4,10 +4,10 @@ hr:
       title: Procjena
     menu:
       title: Procjena
-      budgets: Participativni budžet
+      budgets: Participativno budžetiranje
     budgets:
       index:
-        title: Participativni budžeti
+        title: Participativno budžetiranje
         filters:
           current: Otvoreno
           finished: Dovršeno

@@ -10,7 +10,7 @@ hr:
       menu:
         debates: "Rasprave"
         proposals: "Prijedlozi"
-        budgets: "Participativni budžeti"
+        budgets: "Participativno budžetiranje"
         polls: "Ankete"
         other: "Ostale informacije o interesima"
         processes: "Javna savjetovanja"
@@ -29,9 +29,9 @@ hr:
         image_alt: "Gumb za potporu prijedloga"
         figcaption: 'Dugme za "Potporu" prijedloga.'
       budgets:
-        title: "Participativni budžeti"
+        title: "Participativno budžetiranje"
         description: "Sekcija %{link} pomaže građanima u provedbi direktne odluke o trošenju dijela javnog proračuna."
-        link: "participativni budžeti"
+        link: "participativno budžetiranje"
         image_alt: "Različite faze participativnog budžetiranja"
         figcaption: '"Potpora" i "Glasanje" faze participativnih budžeta.'
       polls:
@@ -60,9 +60,9 @@ hr:
         sdg: COR
       how_to_use:
         text: |-
-          Koristite ga za Vašu lokalnu vlast ili nam pomognite poboljšati ga, softver je besplatan. 
+          Koristite ga za Vašu lokalnu vlast ili nam pomognite poboljšati ga, softver je besplatan.
 
-          Ovaj Otvoreni Portal Vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github') besplatni softvere, s [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), koja znači jednostavnije riječi koje svatko može slobodno koristiti, kopirati, detaljno pregledati, modificirati i redistribuirati ih svijetu s modifikacijama koje žele (prilikom čega i ostali mogu isto napraviti). Zato jer mi mislimo da je kultura bolja i bogatija kada se dijeli. 
+          Ovaj Otvoreni Portal Vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github') besplatni softvere, s [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), koja znači jednostavnije riječi koje svatko može slobodno koristiti, kopirati, detaljno pregledati, modificirati i redistribuirati ih svijetu s modifikacijama koje žele (prilikom čega i ostali mogu isto napraviti). Zato jer mi mislimo da je kultura bolja i bogatija kada se dijeli.
 
           Ako ste programer možete vidjeti kod i pomoći nam poboljšati ga [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
@@ -98,7 +98,7 @@ hr:
             - key_column: 3
               page_column: Glas
             - key_column: 4
-              page_column: Participativni budžeti
+              page_column: Participativno budžetiranje
             - key_column: 5
               page_column: Zakonski procesi
         browser_table:

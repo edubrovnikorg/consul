@@ -50,7 +50,7 @@ hr:
       intro: "Pozdrav <strong>%{author}</strong>,"
       text: "Hvala vam što ste pokrenuli ulaganje <strong>%{investment}</strong> za participativne budžete <strong>%{budget}</strong>."
       follow: "Obavijestit ćemo vas o tijeku postupka, koji i sami možete pratiti na <strong>%{link}</strong>."
-      follow_link: "Participativni budžet"
+      follow_link: "Participativno budžetiranje"
       sincerely: "Iskreno,"
       share: "Podijelite svoj projekt"
     budget_investment_unfeasible:

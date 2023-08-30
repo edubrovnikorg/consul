@@ -115,7 +115,7 @@ hr:
         no_activity: Ne postoje aktivnosti moderatora.
     budgets:
       index:
-        title: Participativni budžeti
+        title: Participativno budžetiranje
         new_link: Stvori novi budžet
         next_phase:
           reviewing: Objavi budžet
@@ -141,7 +141,7 @@ hr:
         destroy_budget: Izbriši budžet
         admin_ballots: Glasovi
         no_budgets: "Ne postoje budžeti."
-        help: "Participativni budžeti omogućuju građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
+        help: "Participativno budžetiranje omogućuje građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
       create:
         notice: Novi participativni budžet je uspješno stvoren!
       publish:
@@ -732,7 +732,7 @@ hr:
       banner: Upravljaj bannerima
       proposals: Prijedlozi
       proposals_topics: Teme prijedloga
-      budgets: Participativni budžeti
+      budgets: Participativno budžetiranje
       geozones: Uredi geozone
       hidden_comments: Skriveni komentari
       hidden_debates: Skrivene rasprave
@@ -1514,7 +1514,7 @@ hr:
           visits: Broj posjeta
           votes: Ukupno glasova
         budgets_title: Podržani investicijski projekti
-        participatory_budgets: Participativni budžeti
+        participatory_budgets: Participativno budžetiranje
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
@@ -1528,7 +1528,7 @@ hr:
         proposal_created: Prijedlozi građana
       budgets:
         no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasanja."
-        title: "Participativni budžeti - Participativne statistike"
+        title: "Participativno budžetiranje - Participativne statistike"
         supporting_phase: Faza potpore
         balloting_phase: Finalno glasanje
       budget_balloting:

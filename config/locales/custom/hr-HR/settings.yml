@@ -132,9 +132,6 @@ hr:
       dashboard:
         notification_emails: "Email notifikacije sa kontrolne ploče"
         notification_emails_description: "Omogućuje slanje notifikacija autorima prijedloga"
-      sdg: COR
-      sdg_description: Omogući sekciju "Ciljevi održivog razvoja" u navigaciji unutar administracije i u Globalnim Postavkama.
-    remote_census:
     remote_census:
       general:
         endpoint: "Krajnja točka"
@@ -181,7 +178,7 @@ hr:
       proposals_description: "Prijedlozi građana prilika su da susjedstva i zajednice izravno odluče kako žele da njihovo društvo izgleda, ukoliko dobiju dovoljnu potporu i ako ih građani izglasaju"
       polls: "Glasanje"
       polls_description: "Participativni mehanizam pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
-      budgets: "Participativni budžet"
+      budgets: "Participativno budžetiranje"
       budgets_description: "Pomoću participativnih budžeta građani odlučuju koji projekti će se financirati u njihovom gradu"
       legislation: "Javno savjetovanje"
       legislation_description: "Pruža priliku građanima za sudjelovanje u pripremi uredbi koje utječu na društvo i daju svoje mišljenje oko planiranih programa"
