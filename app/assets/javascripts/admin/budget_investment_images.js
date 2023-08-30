@@ -20,17 +20,7 @@
         }
       });
     },
-    change_image: function(event) {
-      event.preventDefault();
-      const id = event.target.value !== "" ? event.target.value : $("#js-investment-image").data("image-id");
-      $('#js-investment-image').attr('src', '/assets/custom/PB2023_'+ id +'.png');
-    },
     initialize: function() {
-      $("#js-investment-change-image").on({
-        change: function(event) {
-          App.BudgetInvestmentImages.change_image(event);
-        }
-      });
       $('#save_image').on({
         click: function(event) {
           App.BudgetInvestmentImages.save_image(event);
