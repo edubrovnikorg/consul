@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   draw :valuation
   draw :verification
 
-  root "welcome#index"
+  root "budgets#index"
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
 
