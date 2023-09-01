@@ -280,9 +280,13 @@ class Budget
       city_name = mutate_city(user.city)
       result = nil
 
-      if user.city && district_id > city_district_count
-        user_district = District.where('name LIKE ?', "#{city_name.split.first.capitalize}%").first
-        return :wrong_district if user_district.nil? || (user_district.id != district_id)
+      if user.city
+        if user.city.downcase != 'dubrovnik'
+          user_district = District.where('name LIKE ?', "#{city_name.split.first.capitalize}%").first
+          return :wrong_district if user_district.nil? || (user_district.id != district_id)
+        else
+          return :wrong_district if district_id > 8
+        end
       end
 
       streets = DistrictStreet.where(district_id: district_id)
@@ -301,10 +305,11 @@ class Budget
         elsif user_number
           user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
         end
-        unless street_name.include?(user_address) || user_address.include?(street_name)
+        unless user_belongs_to_district(user_address, street_name)
           result = :wrong_district
           next
         end
+
         result = nil
 
         if street.district_street_filters.size > 0
@@ -321,6 +326,16 @@ class Budget
         break
       end
       result
+    end
+
+    def user_belongs_to_district(user_address, street_name)
+      return false unless street_name.include?(user_address) || user_address.include?(street_name)
+      similarity = (String::Similarity.cosine user_address.downcase, street_name.downcase) * 100
+      if similarity > 80
+        return true
+      else
+        return false
+      end
     end
 
     def mutate_city(city)

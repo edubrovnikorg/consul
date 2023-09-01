@@ -7,6 +7,8 @@ gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.1'
 
 gem 'mimemagic', '~> 0.3.10'
 
+gem 'string-similarity'
+
 group :development do
   gem 'rufo'
   gem 'ed25519'
