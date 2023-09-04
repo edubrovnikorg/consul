@@ -280,8 +280,8 @@ class Budget
       city_name = mutate_city(user.city)
       result = nil
 
-      if user.city
-        if user.city.downcase != 'dubrovnik'
+      if city_name
+        if city_name.downcase != 'dubrovnik'
           user_district = District.where('name LIKE ?', "#{city_name.split.first.capitalize}%").first
           return :wrong_district if user_district.nil? || (user_district.id != district_id)
         else
