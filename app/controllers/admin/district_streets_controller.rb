@@ -6,7 +6,8 @@ class Admin::DistrictStreetsController < Admin::BaseController
   before_action :set_district_streets, only: [:edit, :update, :destroy]
 
   def new
-    @district_street = @district.district_streets.build
+    byebug
+    @district_street = @district.district_streets.new
   end
 
   def index
