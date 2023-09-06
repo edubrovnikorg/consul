@@ -1,17 +1,17 @@
 class ImportService
   require 'csv'
 
-  def call(file)
+  def call(file, logger)
     # opened_file = File.open(file)
     options = { headers: true, col_sep: ';', encoding: "UTF-8" }
-    ApplicationLogger.new.info "CSV import starting"
+    puts "CSV import starting"
     begin
       CSV.open(file.path, **options).each do |row|
         next if empty_row?(row)
         yield row
       end
     rescue Exception => e
-      ApplicationLogger.new.error "CSV import error: #{e.message}"
+      puts "CSV import error: #{e.message}"
     end
   end
 

@@ -44,8 +44,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     return redirect_to request.referer, notice: 'Niste dodali datoteku.' if params[:file].nil?
     return redirect_to request.referer, notice: 'Dozvoljene su samo CSV datoteke.' unless params[:file].content_type == 'text/csv'
     logger.debug "Import started..."
-    ImportService.new.call(params[:file]) do |res|
+    ImportService.new.call(params[:file], logger) do |res|
       logger.debug "CSV import row: #{res}"
+      logger.debug "Current user id: #{current_user.id}"
+      logger.debug "Valuator id: #{Valuator.find_by(user_id: current_user.id).id}"
       budget_investment = {
         "author" => current_user,
         "heading_id"=> Budget::Heading.by_budget_district(@budget.id, res["Subgroup"]).first.id,
@@ -75,8 +77,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       if investment.save
         logger.info "CSV import row success"
       else
-        logger.error "CSV import row error!"
-        logger.error investment.errors.full_messages
+        logger.info "CSV import row error!"
+        logger.info investment.errors.full_messages
       end
     end
 
