@@ -1,7 +1,7 @@
 class ImportService
   require 'csv'
 
-  def call(file, logger)
+  def call(file)
     # opened_file = File.open(file)
     options = { headers: true, col_sep: ';', encoding: "UTF-8" }
     Rails.logger.debug "CSV import starting"
