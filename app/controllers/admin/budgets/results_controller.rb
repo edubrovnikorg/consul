@@ -9,7 +9,7 @@ class Admin::Budgets::ResultsController < Admin::BaseController
     def show
       authorize! :read_results, @budget
       @investments = Budget::Result.new(@budget, @heading).investments
-      @headings = @budget.headings.sort_by(:id)
+      @headings = @budget.headings.sort_by { |heading| heading.id }
       @total_votes = 0
       @investments.each do |investment|
         @total_votes += investment.votes_for.size
