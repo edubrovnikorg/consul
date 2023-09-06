@@ -4,14 +4,14 @@ class ImportService
   def call(file, logger)
     # opened_file = File.open(file)
     options = { headers: true, col_sep: ';', encoding: "UTF-8" }
-    puts "CSV import starting"
+    Rails.logger.debug "CSV import starting"
     begin
       CSV.open(file.path, **options).each do |row|
         next if empty_row?(row)
         yield row
       end
     rescue Exception => e
-      puts "CSV import error: #{e.message}"
+      Rails.logger.debug "CSV import error: #{e.message}"
     end
   end
 
