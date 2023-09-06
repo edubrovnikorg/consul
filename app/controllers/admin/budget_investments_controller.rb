@@ -46,9 +46,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     logger.debug "Import started..."
     ImportService.new.call(params[:file], logger) do |res|
       logger.debug "CSV import row: #{res}"
-      logger.debug "Current user id: #{current_user.id}"
-      logger.debug "Valuator id: #{Valuator.find_by(user_id: current_user.id).id}"
-      logger.debug "Current budget id: #{Budget::Heading.by_budget_district(@budget.id, res["Subgroup"]).first.id}"
       budget_investment = {
         "author" => current_user,
         "heading_id"=> Budget::Heading.by_budget_district(@budget.id, res["Subgroup"]).first.id,
