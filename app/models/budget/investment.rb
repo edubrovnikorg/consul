@@ -299,6 +299,8 @@ class Budget
         user_address = user.address.downcase
         user_number = user_address.delete("^0-9")
 
+        byebug
+
         if user_number == ""
           result = :no_district
           break

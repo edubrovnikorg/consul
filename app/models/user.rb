@@ -211,17 +211,18 @@ class User < ApplicationRecord
       "dubrovnik",
       "donje obuljeno",
       "čajkovica",
-      "ćajkovići",
+      "čajkovići",
       "gornje obuljeno",
       "gromača",
-      "kaštel lukšić",
       "kliševo",
       "knežica",
       "komolac",
       "koločep",
-      "ljubac",
+      "ljubač",
       "lopud",
+      "lozica",
       "mokošica",
+      "nova mokošica",
       "mravinjac",
       "mrčevo",
       "nova mokošica",
@@ -231,12 +232,14 @@ class User < ApplicationRecord
       "prijevor",
       "pobrežje",
       "rožat",
-      "sudurad",
+      "riđica"
+      "suđurađ",
       "sustjepan",
       "šipanska luka",
       "šumet",
       "trsteno",
-      "zaton"
+      "zaton",
+      "zaton veliki"
     ].include? city.downcase
   end
 
