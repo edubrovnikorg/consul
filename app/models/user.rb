@@ -232,7 +232,7 @@ class User < ApplicationRecord
       "prijevor",
       "pobrežje",
       "rožat",
-      "riđica"
+      "riđica",
       "suđurađ",
       "sustjepan",
       "šipanska luka",
