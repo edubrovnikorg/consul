@@ -222,7 +222,6 @@ class User < ApplicationRecord
       "lopud",
       "lozica",
       "mokošica",
-      "nova mokošica",
       "mravinjac",
       "mrčevo",
       "nova mokošica",
