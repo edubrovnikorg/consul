@@ -277,7 +277,7 @@ class Budget
 
       selected_district = nil;
       city_district_count = District.where(category: 0).count
-      city_name = mutate_city(user.city)
+      city_name = mutate_city(user.city, user.address)
       result = nil
 
       if city_name
@@ -338,11 +338,12 @@ class Budget
       end
     end
 
-    def mutate_city(city)
+    def mutate_city(city, address)
       dubrovnik = ["sustjepan"]
       komolac = ["čajkovica", "čajkovići", "knežica", "prijevor", "rožat", "šumet"]
       mokosica = ["donje obuljeno", "gornje obuljeno", "nova mokošica", "petrovo selo", "pobrežje"]
       zaton = ["lozica", "zaton veliki"]
+      ridica = ["mravinjac"]
 
       if dubrovnik.include?(city.downcase)
         return "Dubrovnik"
@@ -356,6 +357,13 @@ class Budget
       if zaton.include?(city.downcase)
         return "Zaton"
       end
+
+      street = address.downcase.split.first
+      if ridica.include?(city.downcase) && street.downcase == 'riđica'
+        return "Riđica"
+      end
+
+      # return default if none
       city
     end
 
