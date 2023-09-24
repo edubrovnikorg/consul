@@ -330,6 +330,7 @@ class Budget
 
     def user_belongs_to_district(user_address, street_name)
       return false unless street_name.include?(user_address) || user_address.include?(street_name)
+      user_address = 'jurja klovića' if (user_address == 'klovića')
       similarity = (String::Similarity.cosine user_address.downcase, street_name.downcase) * 100
       if similarity > 80
         return true
