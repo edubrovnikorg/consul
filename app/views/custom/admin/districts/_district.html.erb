@@ -10,13 +10,15 @@
   </td>
   <td>
     <%= render Admin::TableActionsComponent.new(district,
-      actions: [:edit, :destroy, :district_streets],
+      actions: [:edit, :destroy, :district_streets, :district_zones],
       edit_text: t("admin.district.edit"),
       edit_path: edit_admin_district_path(id: district.id),
       destroy_text: t("admin.district.delete"),
       destroy_path: admin_district_path(id: district.id),
       district_streets_text: t("admin.district.streets"),
       district_streets_path: admin_district_district_streets_path(district_id: district.id),
+      district_zones_text: t("admin.district.zones"),
+      district_zones_path: admin_district_district_zones_path(district_id: district.id),
     ) %>
   </td>
 </tr>

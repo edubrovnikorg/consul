@@ -57,4 +57,16 @@ class Admin::TableActionsComponent < ApplicationComponent
     def district_streets_options
       { class: "groups-link" }.merge(options[:district_streets_options] || {})
     end
+
+    def district_zones_text
+      options[:district_zones_text] || t("admin.district.zones")
+    end
+
+    def district_zones_path
+      options[:district_zones_path] || namespaced_polymorphic_path(namespace, record)
+    end
+
+    def district_zones_options
+      { class: "ballots-link" }.merge(options[:district_zones_options] || {})
+    end
 end

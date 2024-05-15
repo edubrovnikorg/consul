@@ -1,0 +1,24 @@
+<tr id="image_<%= image.id %>" class="image">
+  <td>
+    <%= image.name %>
+  </td>
+  <td>
+    <%# <%= image_tag(image_path_for(image.filename), alt: admin_budgets_image.description) %> %>
+    <div class="feed-image">
+        <%= image_tag image.image_url(:medium),
+                      alt: proposal.image.description.unicode_normalize %>
+      </div>
+  </td>
+  <td>
+    <%= image.created_at.to_formatted_s(:long) %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(image,
+      actions: [:edit, :destroy],
+      edit_text: t("admin.district.image.edit"),
+      edit_path: edit_admin_budgets_image_path(id: image.id),
+      destroy_text: t("admin.district.image.delete"),
+      destroy_path: admin_budgets_image_path(id: image.id),
+    ) %>
+  </td>
+</tr>

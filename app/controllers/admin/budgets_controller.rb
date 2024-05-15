@@ -113,6 +113,8 @@ class Admin::BudgetsController < Admin::BaseController
       valid_attributes = [:phase,
                           :currency_symbol,
                           :voting_style,
+                          documents_attributes: [:id, :title, :attachment, :cached_attachment,
+                          :user_id, :_destroy],
                           administrator_ids: [],
                           valuator_ids: []
       ] + descriptions

@@ -68,6 +68,21 @@ hr:
       delete: "Obriši"
       category: "Kategorija"
       streets: "Ulice"
+      zones: "Naselja"
+      no_district_zones: "Nema naselja"
+      district_zones:
+        create: "Stvori naselje"
+        edit: "Uredi naselje"
+        delete: "Obriši naselje"
+        search: "Pretraži naselja"
+        name: "Naziv naselja"
+        date_added: "Kreirano"
+        notice:
+          created: ! "Uspješno ste dodali naselje za %{type} %{name}"
+          updated: ! "Uspješno ste uredili naselje za %{type} %{name}"
+          exists: ! "%{type} %{name} ima unešenih naselja. Molimo obrišite naselja prvo."
+          success: ! "Uspješno ste dodali novu naselje za %{type} %{name}"
+          deleted: ! "Uspješno ste obrisali naselje!"
       import:
         kotari_odbori: "Uvezi Kotare/Odbore"
         ulice: "Uvezi ulice"
@@ -161,6 +176,7 @@ hr:
         edit_phase: Uredi fazu
         active: Aktivni
         blank_dates: Datumi su prazni
+        description_text_help_text: Unesite opis koji će se pojaviti na početnoj stranici ispod naslova Participativnog budžeta
         administrators:
           zero: "Odaberite administratore"
           one: "1 administrator odabran"

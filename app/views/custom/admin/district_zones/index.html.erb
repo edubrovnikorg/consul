@@ -1,0 +1,33 @@
+<%= back_link_to admin_districts_path %>
+
+<h2 class="inline-block">
+  <%= @category %>
+  <%= @district.name %>
+  - naselja
+</h2>
+
+<%= link_to t("admin.district.district_zones.create"),
+            new_admin_district_district_zone_path,
+            class: "button float-right" %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.district.district_zones.search")) %>
+
+<% if @admin_district_zones.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.district.district_zones.name") %></th>
+      <th class="text-center"><%= t("admin.district.district_zones.date_added") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+     <% @admin_district_zones.sort_by { |e| I18n.transliterate e.name }.each do |zone| %>
+      <%= render "district_zones", district_zone: zone %>
+    <% end %>
+    </tbody>
+  </table>
+  <%# <%= paginate @district_zones %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.district.no_district_zones") %>
+  </div>
+<% end %>

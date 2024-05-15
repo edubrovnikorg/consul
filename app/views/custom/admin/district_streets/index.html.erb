@@ -21,7 +21,7 @@
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-     <% @district_streets.each do |district_street| %>
+     <% @district_streets.sort_by { |e| I18n.transliterate e.name }.each do |district_street| %>
       <%= render "district_streets", district_street: district_street %>
     <% end %>
     </tbody>

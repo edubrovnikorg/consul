@@ -1,0 +1,24 @@
+  <%= render "shared/errors", resource: @budget_image %>
+
+  <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :description, label: "Opis" %>
+      </div>
+  </div>
+
+   <div class="row">
+    <div class="small-12 column">
+      <%= render "images/admin_image", imageable: @budget_image, f: f %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="clear">
+      <div class="small-12 medium-4 large-2 column">
+        <%= f.submit "Spremi sliku",
+                     class: "button success expanded margin-top" %>
+      </div>
+    </div>
+  </div>
+
+

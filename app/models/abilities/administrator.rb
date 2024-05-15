@@ -115,6 +115,8 @@ module Abilities
       can :manage, Poll::Street
       can :manage, District
       can :manage, DistrictStreet
+      can :manage, DistrictZone
+      can :manage, BudgetImage
     end
   end
 end

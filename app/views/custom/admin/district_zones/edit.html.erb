@@ -1,0 +1,11 @@
+<%= back_link_to admin_district_district_zones_path(@district) %>
+
+<div class="small-12 column">
+  <h2>Uredi naselje</h2>
+</div>
+
+<%= form_for @district_zone, url: admin_district_district_zones_path(@district) do |f| %>
+  <%= render "form", f: f %>
+<% end %>
+
+

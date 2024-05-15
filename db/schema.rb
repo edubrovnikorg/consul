@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_22_210728) do
+ActiveRecord::Schema.define(version: 2024_05_14_230040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -224,6 +224,12 @@ ActiveRecord::Schema.define(version: 2023_08_22_210728) do
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 
+  create_table "budget_images", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "budget_investment_translations", id: :serial, force: :cascade do |t|
     t.integer "budget_investment_id", null: false
     t.string "locale", null: false
@@ -323,6 +329,7 @@ ActiveRecord::Schema.define(version: 2023_08_22_210728) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.text "description_text"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -367,6 +374,7 @@ ActiveRecord::Schema.define(version: 2023_08_22_210728) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.text "description_text"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -558,6 +566,14 @@ ActiveRecord::Schema.define(version: 2023_08_22_210728) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["district_id"], name: "index_district_streets_on_district_id"
+  end
+
+  create_table "district_zones", force: :cascade do |t|
+    t.string "name"
+    t.bigint "district_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_district_zones_on_district_id"
   end
 
   create_table "districts", force: :cascade do |t|
@@ -1765,6 +1781,7 @@ ActiveRecord::Schema.define(version: 2023_08_22_210728) do
   add_foreign_key "dashboard_executed_actions", "proposals"
   add_foreign_key "district_street_filters", "district_streets"
   add_foreign_key "district_streets", "districts"
+  add_foreign_key "district_zones", "districts"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"

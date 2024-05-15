@@ -62,7 +62,7 @@ hr:
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
       not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za glasanje
-      finished_budgets: Dovršeni participativni budžeti
+      finished_budgets: Protekli participativni budžeti
       see_results: Pogledaj rezultate
       section_footer:
         title: Pomoć oko participativnih budžeta

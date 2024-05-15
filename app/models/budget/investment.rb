@@ -260,7 +260,6 @@ class Budget
     def reason_for_not_being_selectable_by(user, investment = nil, district_id = nil)
       return permission_problem(user) if permission_problem?(user)
       return :different_heading_assigned if valid_heading?(user)
-
       if investment && district_id
         return district_problem(user, investment, district_id) if district_problem?(user, investment, district_id)
       end
@@ -274,43 +273,56 @@ class Budget
 
     def district_problem(user, investment, district_id)
       return :no_district if user.address == 'f'
+      user_address = user.address.dup
+      user_number = user_address.delete("^0-9")
 
-      selected_district = nil;
-      city_district_count = District.where(category: 0).count
-      city_name = mutate_city(user.city, user.address)
-      result = nil
-
-      if city_name
-        if city_name.downcase != 'dubrovnik'
-          user_district = District.where('name LIKE ?', "#{city_name.split.first.capitalize}%").first
-          return :wrong_district if user_district.nil? || (user_district.id != district_id)
-        else
-          return :wrong_district if district_id > 8
-        end
+      if user_number == ""
+        return :no_district
+      elsif user_number
+        user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
       end
 
+      city_district_count = District.where(category: 0).count
+      city_valid = validate_city(user.city, user_address, district_id)
+
+      return :wrong_district unless city_valid
+      return validate_streets(user.address, user_number, district_id)
+    end
+
+    def validate_city(city, address, district_id)
+      return true if city.downcase == 'dubrovnik'
+
+      # Check district
+      district = District.find(district_id)
+      return true if district.name.downcase == city.downcase
+
+      # Check special case
+      return true if city.downcase == 'mravinjac' && address.downcase.split.first == 'riđica'
+
+      # Check zones
+      district_zones = ::DistrictZone.where(district_id: district_id);
+      district_zones.each do |zone|
+        return true if zone.name.downcase.include?(city.downcase) || city.downcase.include?(zone.name.downcase)
+      end
+
+      # Not validated
+      return false
+    end
+
+    def validate_streets(address, address_number, district_id)
+      result = nil
+      user_address = address.downcase
+
       streets = DistrictStreet.where(district_id: district_id)
-
-
       streets.each do |street|
         puts "street #{street.name}"
         puts "last_result #{result}"
         street_name = street.name.downcase
-        user_address = user.address.downcase
-        user_number = user_address.delete("^0-9")
 
-        if user_number == ""
-          result = :no_district
-          break
-        elsif user_number
-          user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
-        end
-        unless user_belongs_to_district(user_address, street_name)
+        unless user_belongs_to_district_street(user_address, street_name)
           result = :wrong_district
           next
         end
-
-        result = nil
 
         if street.district_street_filters.size > 0
           street.district_street_filters.each do |street_filter|
@@ -318,7 +330,7 @@ class Budget
 
             filter = (street_filter.from..street_filter.to).step(2).to_a
             result = nil
-            break if filter.include?(user_number.to_i)
+            break if filter.include?(address_number.to_i)
             result = :wrong_district
           end
           break
@@ -328,7 +340,7 @@ class Budget
       result
     end
 
-    def user_belongs_to_district(user_address, street_name)
+    def user_belongs_to_district_street(user_address, street_name)
       return false unless street_name.include?(user_address) || user_address.include?(street_name)
       user_address = 'jurja klovića' if (user_address == 'klovića')
       similarity = (String::Similarity.cosine user_address.downcase, street_name.downcase) * 100
@@ -337,35 +349,6 @@ class Budget
       else
         return false
       end
-    end
-
-    def mutate_city(city, address)
-      dubrovnik = ["sustjepan"]
-      komolac = ["čajkovica", "čajkovići", "knežica", "prijevor", "rožat", "šumet"]
-      mokosica = ["donje obuljeno", "gornje obuljeno", "nova mokošica", "petrovo selo", "pobrežje"]
-      zaton = ["lozica", "zaton veliki"]
-      ridica = ["mravinjac"]
-
-      if dubrovnik.include?(city.downcase)
-        return "Dubrovnik"
-      end
-      if komolac.include?(city.downcase)
-        return "Komolac"
-      end
-      if mokosica.include?(city.downcase)
-        return "Mokošica"
-      end
-      if zaton.include?(city.downcase)
-        return "Zaton"
-      end
-
-      street = address.downcase.split.first
-      if ridica.include?(city.downcase) && street.downcase == 'riđica'
-        return "Riđica"
-      end
-
-      # return default if none
-      city
     end
 
     def reason_for_not_being_ballotable_by(user, ballot)

@@ -78,6 +78,8 @@ namespace :admin do
     resources :budget_phases, only: [:edit, :update]
   end
 
+  resources :budget_images
+
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
@@ -283,6 +285,9 @@ namespace :admin do
     end
     resources :district_streets do
       delete :delete_streets
+    end
+    resources :district_zones do
+      delete :delete_zones
     end
   end
 end

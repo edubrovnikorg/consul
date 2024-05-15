@@ -12,4 +12,8 @@
   <% if actions.include?(:district_streets) %>
     <%= link_to district_streets_text, district_streets_path, district_streets_options %>
   <% end %>
+
+  <% if actions.include?(:district_zones) %>
+    <%= link_to district_zones_text, district_zones_path, district_zones_options %>
+  <% end %>
 </div>

@@ -1,0 +1,31 @@
+<%= back_link_to admin_budgets_path %>
+
+<h2 class="inline-block">
+  Slike investicijskih projekata
+</h2>
+
+<%= link_to t("admin.budgets.images.create"),
+            new_admin_budget_image_path,
+            class: "button float-right" %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.budgets.images.search")) %>
+
+<% if @budget_images.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.budgets.images.name") %></th>
+      <th class="text-center"><%= t("admin.budgets.images.date_added") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+     <% @budget_images.sort_by { |e| e.image_id }.each do |image| %>
+      <%= render "images", image: image %>
+    <% end %>
+    </tbody>
+  </table>
+  <%# <%= paginate @district_zones %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.budgets.images.no_images") %>
+  </div>
+<% end %>

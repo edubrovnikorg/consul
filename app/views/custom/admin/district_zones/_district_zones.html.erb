@@ -1,0 +1,18 @@
+<tr id="district_zone_<%= district_zone.id %>" class="district_zone">
+  <td>
+    <%= district_zone.name %>
+  </td>
+
+  <td>
+    <%= district_zone.created_at.to_formatted_s(:long) %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(district_zone,
+      actions: [:edit, :destroy],
+      edit_text: t("admin.district.district_zones.edit"),
+      edit_path: edit_admin_district_district_zone_path(id: district_zone.id),
+      destroy_text: t("admin.district.district_zones.delete"),
+      destroy_path: admin_district_district_zone_path(id: district_zone.id),
+    ) %>
+  </td>
+</tr>

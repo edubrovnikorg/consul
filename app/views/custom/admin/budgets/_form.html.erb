@@ -10,6 +10,14 @@
                                           maxlength: Budget.title_max_length,
                                           hint: t("admin.budgets.edit.name_description") %>
       </div>
+      <div class="small-12 column">
+        <%= translations_form.text_area :description_text,
+                                        class: "html-area",
+                                        hint: t("admin.budgets.edit.description_text_help_text") %>
+      </div>
+      <div class="documents small-12 column">
+        <%= render "documents/nested_documents", documentable: @budget, f: f %>
+      </div>
     <% end %>
 
     <div class="small-12 medium-4 column">

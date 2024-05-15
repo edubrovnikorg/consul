@@ -3,8 +3,10 @@ class Budget < ApplicationRecord
   include Sluggable
   include StatsVersionable
   include Reportable
+  include Documentable
 
   translates :name, touch: true
+  translates :description_text, touch: true
   include Globalizable
 
   class Translation
@@ -23,6 +25,7 @@ class Budget < ApplicationRecord
   VOTING_STYLES = %w[knapsack approval].freeze
 
   validates_translation :name, presence: true
+  validates_translation :description_text, presence: true
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
