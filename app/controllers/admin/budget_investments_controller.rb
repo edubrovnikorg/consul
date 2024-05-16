@@ -97,7 +97,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   def show
     @image = BudgetImage.find_by(id: @investment.image_id)
-
     # Set images for select element options
     images = BudgetImage.all
     @images_array = [];
@@ -186,7 +185,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list, :image_id,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
-                    :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
+                    :milestone_tag_list, valuator_ids: [], valuator_group_ids: [],
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 
