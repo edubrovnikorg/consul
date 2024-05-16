@@ -157,6 +157,7 @@ hr:
         admin_ballots: Glasovi
         no_budgets: "Ne postoje budžeti."
         help: "Participativno budžetiranje omogućuje građanima da predlažu i izravno odlučuju kako će potrošiti dio proračuna, uz praćenje i rigoroznu evaluaciju prijedloga od strane institucije."
+        new_admin_budget_images_link: "Upravljaj slikama"
       create:
         notice: Novi participativni budžet je uspješno stvoren!
       publish:
@@ -209,6 +210,15 @@ hr:
         recalculate: Ponovno Izračunaj Pobjedničke Investicije
       actions:
         preview: "Pregled"
+      images:
+        create: "Dodaj sliku"
+        search: "Pretraži slike"
+        description: "Opis slike"
+        date_added: "Dodano"
+        no_images: "Nema slika za investicijske projekte"
+        edit: "Uredi sliku"
+        delete: "Obriši sliku"
+        image: "Trenutna slika"
     budget_groups:
       name: "Naziv"
       headings_name: "Podgrupe"

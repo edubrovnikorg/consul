@@ -26,22 +26,19 @@
 
 <div class="image-wrapper">
   <div class="image-controls">
-    <% images_array = [
-      ["Komunalno-Promet, rasvjeta, otpad", "1"],
-      ["Parkovi", "2"],
-      ["Uređenje građevine, ulice", "3"],
-      ["Igrališta", "4"],
-      ["Bus", "5"],
-      ["Dokumentacija", "6"]
-    ]; %>
     <%= select_tag 'js-investment-change-image',
-                    options_for_select(images_array),
+                    options_for_select(@images_array),
                     prompt: "Odaberite sliku..." %>
     </select>
     <button id="save_image" class="button" data-budget-id="<%= @budget.id %>" data-investment-id="<%= @investment.id %>">Postavi novu sliku</button>
   </div>
   <div class="image-container">
-    <%= image_tag(image_path_for("PB2023_" + @investment.image_id.to_s + ".png"), id: 'js-investment-image', data: { image_id: @investment.image_id.to_s }, alt: "Kategorija investicijskog projekta") %>
+    <% if @image %>
+      <%= image_tag @image.image.attachment.url(:large),
+        class: image_class(@image.image) + " investment-image",
+        alt: @image.image.title.unicode_normalize,
+        title: @image.image.title.unicode_normalize %>
+    <% end %>
   </div>
 </div>
 

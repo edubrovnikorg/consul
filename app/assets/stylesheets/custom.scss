@@ -324,3 +324,25 @@ a.go_logout img {
   border: 1px solid red;
   text-align: center;
 }
+
+.header-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  margin-left: auto;
+  & > a {
+    margin: 0px !important;
+    margin-left: 1rem !important;
+  }
+}
+
+.admin-content .persisted-image {
+  width: 30%;
+}
+
+.admin-content .investment-image {
+  width: 240px;
+  height: 240px;
+}

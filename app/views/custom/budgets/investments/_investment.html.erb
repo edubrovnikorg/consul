@@ -5,7 +5,16 @@
 
       <div class="small-12 medium-3 column text-center">
         <div data-equalizer-watch>
-          <%= image_tag(image_path_for("PB2023_" + investment.image_id.to_s + ".png"), alt: "Kategorija investicijskog projekta") %>
+          <% if @images[investment.id] %>
+            <%= image_tag @images[investment.id].image.attachment.url(:large),
+              class: image_class(@images[investment.id].image) + " investment-image",
+              alt: @images[investment.id].image.title.unicode_normalize,
+              title: @images[investment.id].image.title.unicode_normalize %>
+          <% elsif investment.image_id && investment.image_id != 0 && investment.image_id < 7 %>
+            <%= image_tag(image_path_for("PB2023_" + investment.image_id.to_s + ".png"), alt: "Kategorija investicijskog projekta") %>
+          <% else %>
+            <%= image_tag(image_path_for("PB2023_0.png"), alt: "Kategorija investicijskog projekta") %>
+          <% end %>
         </div>
       </div>
 
@@ -21,7 +30,7 @@
               <%= wysiwyg(investment.description) %>
               <%# <div class="truncate"></div> %>
             </div>
-            <%# <%= render "shared/tags", taggable: investment, limit: 5 %> 
+            <%# <%= render "shared/tags", taggable: investment, limit: 5 %>
           <% end %>
         </div>
       </div>

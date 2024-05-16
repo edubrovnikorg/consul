@@ -1,5 +1,7 @@
-class Admin::BudgetImagesController < ApplicationController
-  load_and_authorize_resource
+class Admin::BudgetImagesController < Admin::BaseController
+  include ImageAttributes
+
+  load_and_authorize_resource :budget_image, except: [:create]
   before_action :set_admin_budgets_image, only: [:edit, :update, :destroy]
 
   # GET /admin/budgets/images
@@ -52,6 +54,6 @@ class Admin::BudgetImagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_budgets_image_params
-      params.require(:budget_image).permit(:image_id, :filename)
+      params.require(:budget_image).permit(image_attributes: image_attributes)
     end
 end

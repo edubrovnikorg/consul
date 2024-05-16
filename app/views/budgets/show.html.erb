@@ -6,4 +6,5 @@
 <% end %>
 
 <%= render Budgets::BudgetComponent.new(@budget) %>
+<%= render "finished", budgets: @finished_budgets %>
 <%= render Budgets::FooterComponent.new %>

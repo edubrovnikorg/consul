@@ -46,6 +46,8 @@ module Budgets
       @voted = false;
       @category = '';
       @total_votes = 0;
+      @images = [];
+
       @investments.each do |investment|
         district = Budget::Heading.where(id: investment.heading_id).first.district_id
         @category = District.where(id: district).first.category == 0 ? "Gradski kotar" : "Mjesni odbor"
@@ -54,9 +56,9 @@ module Budgets
         if current_user.voted_for? investment
           @voted = true;
         end
+        @images[investment.id] = BudgetImage.find_by(id: investment.image_id)
       end
-      @investments.each do |investment|
-      end
+
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
@@ -70,6 +72,8 @@ module Budgets
 
     def show
       @voted = false;
+      @image = BudgetImage.find_by(id: @investment.image_id)
+
       @budget.investments.each do |investment|
         break unless current_user
         if current_user.voted_for? investment
@@ -77,6 +81,7 @@ module Budgets
           break;
         end
       end
+
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)

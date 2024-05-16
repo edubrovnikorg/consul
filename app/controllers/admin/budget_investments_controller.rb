@@ -96,6 +96,22 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def show
+    @image = BudgetImage.find_by(id: @investment.image_id)
+
+    # Set images for select element options
+    images = BudgetImage.all
+    @images_array = [];
+    images.each do |budget_image|
+      @images_array.push([budget_image.image.title, budget_image.id])
+    end
+    # images_array = [
+    #   ["Komunalno-Promet, rasvjeta, otpad", "1"],
+    #   ["Parkovi", "2"],
+    #   ["Uređenje građevine, ulice", "3"],
+    #   ["Igrališta", "4"],
+    #   ["Bus", "5"],
+    #   ["Dokumentacija", "6"]
+    # ];
     load_comments
   end
 

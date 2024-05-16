@@ -1,14 +1,11 @@
   <%= render "shared/errors", resource: @budget_image %>
 
-  <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= f.text_field :description, label: "Opis" %>
-      </div>
-  </div>
-
    <div class="row">
     <div class="small-12 column">
-      <%= render "images/admin_image", imageable: @budget_image, f: f %>
+        <%= image_tag budget_image.image.attachment.url(:large),
+                class: image_class(budget_image.image),
+                alt: budget_image.image.title.unicode_normalize,
+                title: budget_image.image.title.unicode_normalize %>
     </div>
   </div>
 

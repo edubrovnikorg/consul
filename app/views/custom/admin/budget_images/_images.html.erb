@@ -1,24 +1,23 @@
-<tr id="image_<%= image.id %>" class="image">
+<tr id="image_<%= budget_image.id %>" class="image">
   <td>
-    <%= image.name %>
+    <%= image_tag budget_image.image.attachment.url(:large),
+                  class: image_class(budget_image.image),
+                  alt: budget_image.image.title.unicode_normalize,
+                  title: budget_image.image.title.unicode_normalize %>
   </td>
   <td>
-    <%# <%= image_tag(image_path_for(image.filename), alt: admin_budgets_image.description) %> %>
-    <div class="feed-image">
-        <%= image_tag image.image_url(:medium),
-                      alt: proposal.image.description.unicode_normalize %>
-      </div>
+    <%= budget_image.image.title %>
   </td>
   <td>
-    <%= image.created_at.to_formatted_s(:long) %>
+    <%= budget_image.image.created_at.to_formatted_s(:long) %>
   </td>
   <td>
-    <%= render Admin::TableActionsComponent.new(image,
+    <%= render Admin::TableActionsComponent.new(budget_image.image,
       actions: [:edit, :destroy],
       edit_text: t("admin.district.image.edit"),
-      edit_path: edit_admin_budgets_image_path(id: image.id),
+      edit_path: edit_admin_budget_image_path(id: budget_image.id),
       destroy_text: t("admin.district.image.delete"),
-      destroy_path: admin_budgets_image_path(id: image.id),
+      destroy_path: admin_budget_image_path(id: budget_image.id),
     ) %>
   </td>
 </tr>

@@ -13,13 +13,14 @@
 <% if @budget_images.any? %>
   <table>
     <thead>
-      <th class="small-5"><%= t("admin.budgets.images.name") %></th>
+      <th class="small-5"><%= t("admin.budgets.images.image") %></th>
+      <th class="small-5"><%= t("admin.budgets.images.description") %></th>
       <th class="text-center"><%= t("admin.budgets.images.date_added") %></th>
       <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-     <% @budget_images.sort_by { |e| e.image_id }.each do |image| %>
-      <%= render "images", image: image %>
+     <% @budget_images.sort_by { |e| e.image.imageable_id }.each do |budget_image| %>
+      <%= render "images", budget_image: budget_image %>
     <% end %>
     </tbody>
   </table>

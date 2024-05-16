@@ -25,8 +25,16 @@
       <aside class="small-12 medium-3 column">
         <%# <%= render "/budgets/investments/author_actions", investment: investment %>
 
-        <%= image_tag(image_path_for("PB2023_" + investment.image_id.to_s + ".png"), alt: "Kategorija investicijskog projekta") %>
-
+       <% if @image %>
+            <%= image_tag @image.image.attachment.url(:large),
+              class: image_class(@image.image) + " investment-image",
+              alt: @image.image.title.unicode_normalize,
+              title: @image.image.title.unicode_normalize %>
+          <% elsif investment.image_id && investment.image_id != 0 && investment.image_id < 7 %>
+            <%= image_tag(image_path_for("PB2023_" + investment.image_id.to_s + ".png"), alt: "Kategorija investicijskog projekta") %>
+          <% else %>
+            <%= image_tag(image_path_for("PB2023_1.png"), alt: "Kategorija investicijskog projekta") %>
+          <% end %>
         <%# <%= render "shared/social_share",
           share_title: t("budgets.investments.show.share"),
           title: investment.title,

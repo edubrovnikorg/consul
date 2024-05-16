@@ -1,6 +1,8 @@
 <%= header do %>
-  <%= link_to t("admin.budgets.index.new_link"), new_admin_budget_path %>
-  <%= link_to t("admin.budgets.index.new_admin_budget_images_link"), admin_budget_images_path %>
+  <div class="header-buttons">
+    <%= link_to t("admin.budgets.index.new_admin_budget_images_link"), admin_budget_images_path %>
+    <%= link_to t("admin.budgets.index.new_link"), new_admin_budget_path %>
+  </div>
 <% end %>
 
 <%= render Admin::Budgets::HelpComponent.new("budgets") %>
