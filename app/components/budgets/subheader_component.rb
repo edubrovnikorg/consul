@@ -5,4 +5,5 @@ class Budgets::SubheaderComponent < ApplicationComponent
   def initialize(budget)
     @budget = budget
   end
+
 end

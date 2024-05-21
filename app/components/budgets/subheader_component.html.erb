@@ -9,7 +9,7 @@
       <% end %>
     <% end %>
 
-    <% if can?(:read_results, budget) %>
+    <% if can?(:read_results, budget) && budget.current_phase.name == "Finalizirani budžet" %>
       <div class="text-right">
         <%= link_to t("budgets.show.see_results"),
                     budget_results_path(budget, heading_id: budget.headings.first),
