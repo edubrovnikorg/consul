@@ -10,7 +10,6 @@ class Admin::BudgetImagesController < Admin::BaseController
 
   # GET /admin/budgets/images/new
   def new
-    @budget_image = BudgetImage.new
   end
 
   # GET /admin/budgets/images/1

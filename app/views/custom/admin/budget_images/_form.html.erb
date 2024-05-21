@@ -2,13 +2,14 @@
 
    <div class="row">
     <div class="small-12 column">
-      <% if @budget_image.image.present? %>
-        <%= image_tag @budget_image.image.attachment.url(:large),
-                class: image_class(@budget_image.image),
-                alt: @budget_image.image.title.unicode_normalize,
-                title: @budget_image.image.title.unicode_normalize %>
-      <% end %>
+        <%# <%= image_tag budget_image.image.attachment.url(:large),
+                class: image_class(budget_image.image),
+                alt: budget_image.image.title.unicode_normalize,
+                title: budget_image.image.title.unicode_normalize %>
     </div>
+    <div class="images small-12 column">
+        <%= render "images/nested_image", imageable: @budget_image, f: f %>
+      </div>
   </div>
 
   <div class="row">
