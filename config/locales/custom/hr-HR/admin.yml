@@ -129,6 +129,7 @@ hr:
         type: Vrsta
         no_activity: Ne postoje aktivnosti moderatora.
     budgets:
+      next_phase: Faza je uspješno izmijenjena.
       index:
         title: Participativno budžetiranje
         new_link: Stvori novi budžet

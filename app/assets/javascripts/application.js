@@ -172,6 +172,7 @@ var initialize_modules = function() {
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
   App.BudgetInvestmentImages.initialize();
+  App.BudgetPhases.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {

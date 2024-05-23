@@ -40,14 +40,14 @@ class Admin::BudgetsController < Admin::BaseController
     end
     @budget.save
 
-    redirect_to admin_budget_budget_investments_path(budget_id: @budget.id)
+    redirect_to admin_budgets_path, notice: t("admin.budgets.next_phase")
   end
 
   def publish
     @budget.phase = :reviewing
     @budget.save
     @budget.publish!
-    redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.publish.notice")
+    redirect_to admin_budgets_path, notice: t("admin.budgets.publish.notice")
   end
 
   def calculate_winners
