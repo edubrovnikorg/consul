@@ -27,7 +27,7 @@
 <div class="image-wrapper">
   <div class="image-controls">
     <%= select_tag 'js-investment-change-image',
-                    options_for_select(@images_array),
+                    options_for_select(@images_array, @investment.image_id ),
                     prompt: "Odaberite sliku..." %>
     </select>
     <button id="save_image" class="button" data-budget-id="<%= @budget.id %>" data-investment-id="<%= @investment.id %>">Postavi novu sliku</button>
