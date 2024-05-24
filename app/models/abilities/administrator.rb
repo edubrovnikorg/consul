@@ -67,7 +67,7 @@ module Abilities
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:create, :hide, :admin_update, :toggle_selection, :delete_all], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
-      cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
+      cannot [:toggle_selection, :valuate, :comment_valuation],
         Budget::Investment, budget: { phase: "finished" }
 
       can :create, Budget::ValuatorAssignment
