@@ -261,17 +261,17 @@ class Budget
       return permission_problem(user) if permission_problem?(user)
       return :different_heading_assigned if valid_heading?(user)
       if investment && district_id
-        return district_problem(user, investment, district_id) if district_problem?(user, investment, district_id)
+        return district_problem(user, district_id) if district_problem?(user, district_id)
       end
 
       return :no_selecting_allowed unless budget.selecting?
     end
 
-    def district_problem?(user, investment, district_id)
-      district_problem(user,investment, district_id).present?
+    def district_problem?(user, district_id)
+      district_problem(user, district_id).present?
     end
 
-    def district_problem(user, investment, district_id)
+    def district_problem(user, district_id)
       return :no_district if user.address == 'f'
       user_address = user.address.dup
       user_number = user_address.delete("^0-9")
@@ -282,11 +282,10 @@ class Budget
         user_address = user_address.gsub!(/[[:space:]]\d+[a-z]*/, "")
       end
 
-      city_district_count = District.where(category: 0).count
-      city_valid = validate_city(user.city, user_address, district_id)
+      # city_district_count = District.where(category: 0).count
 
-      return :wrong_district unless city_valid
-      return validate_streets(user.address, user_number, district_id)
+      return :wrong_district unless validate_city(user.city, user_address, district_id)
+      return validate_streets(user_address, user_number, district_id)
     end
 
     def validate_city(city, address, district_id)
@@ -315,6 +314,7 @@ class Budget
 
       streets = DistrictStreet.where(district_id: district_id)
       streets.each do |street|
+        result = nil
         puts "street #{street.name}"
         puts "last_result #{result}"
         street_name = street.name.downcase
@@ -326,10 +326,12 @@ class Budget
 
         if street.district_street_filters.size > 0
           street.district_street_filters.each do |street_filter|
-            # byebug if street.name == "Dr. Ante Šercera"
-
+            # filter has a range - from and to values
+            # create array with one value skipped over, because it
+            # represents house numbers
             filter = (street_filter.from..street_filter.to).step(2).to_a
             result = nil
+            # it's inclusive, e.g. includes all numbers in range
             break if filter.include?(address_number.to_i)
             result = :wrong_district
           end

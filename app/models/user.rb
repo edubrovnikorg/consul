@@ -204,42 +204,19 @@ class User < ApplicationRecord
   end
 
   def self.is_local?(city)
-    [
-      "bosanka",
-      "brsečine",
-      "dubravica",
-      "dubrovnik",
-      "donje obuljeno",
-      "čajkovica",
-      "čajkovići",
-      "gornje obuljeno",
-      "gromača",
-      "kliševo",
-      "knežica",
-      "komolac",
-      "koločep",
-      "ljubač",
-      "lopud",
-      "lozica",
-      "mokošica",
-      "mravinjac",
-      "mrčevo",
-      "nova mokošica",
-      "orašac",
-      "osojnik",
-      "petrovo selo",
-      "prijevor",
-      "pobrežje",
-      "rožat",
-      "riđica",
-      "suđurađ",
-      "sustjepan",
-      "šipanska luka",
-      "šumet",
-      "trsteno",
-      "zaton",
-      "zaton veliki"
-    ].include? city.downcase
+    return true if city.downcase == 'dubrovnik'
+
+    # Check district
+    District.all.each do |district|
+      return true if district.name.downcase == city.downcase
+      district_zones = ::DistrictZone.where(district_id: district.id);
+      district_zones.each do |zone|
+        return true if zone.name.downcase.include?(city.downcase) || city.downcase.include?(zone.name.downcase)
+      end
+    end
+
+    # Not validated
+    return false
   end
 
   # Get the existing user by email if the provider gives us a verified email.
