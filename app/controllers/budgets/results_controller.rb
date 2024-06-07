@@ -8,7 +8,7 @@ module Budgets
     helper InvestmentsVoteHelper
 
     def show
-      authorize! :read_results, @budget
+      # authorize! :read_results, @budget
       @investments = Budget::Result.new(@budget, @heading).investments
       @headings = @budget.headings
       @total_votes = 0
