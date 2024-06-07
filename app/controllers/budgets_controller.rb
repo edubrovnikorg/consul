@@ -14,7 +14,7 @@ class BudgetsController < ApplicationController
   end
 
   def index
-    @finished_budgets = @budgets.finished.order(created_at: :desc)
+    @finished_budgets = @budgets.finished_list(@budget.id).order(created_at: :desc)
   end
 
   private
