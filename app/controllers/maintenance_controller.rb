@@ -6,7 +6,8 @@ class MaintenanceController < ApplicationController
  end
 
  def login
-  if Setting["maintenance.password"] == params[:password]
+  pass = Digest::SHA2.hexdigest params[:password]
+  if Setting["maintenance.password"] == pass
     cookies[:maintenance] = {
       value: true,
       expires: 1.day.from_now

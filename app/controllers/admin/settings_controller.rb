@@ -23,7 +23,7 @@ class Admin::SettingsController < Admin::BaseController
   def update_maintenance
     ActiveRecord::Base.connection.reset_pk_sequence!('settings')
     Setting["maintenance.enabled"] = params[:maintenance]
-    Setting["maintenance.password"] = params[:maintenance_password]
+    Setting["maintenance.password"] = Digest::SHA2.hexdigest params[:maintenance_password]
     redirect_to admin_settings_path, notice: t("admin.settings.index.maintenance.update")
   end
 
