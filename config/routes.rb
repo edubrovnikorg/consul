@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   root "budgets#index"
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
+  get "maintenance#index", controller: "maintenance", action: "index", as: "maintenance"
+  post "maintenance#login", controller: "maintenance", action: "login", as: "maintenance_login"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]

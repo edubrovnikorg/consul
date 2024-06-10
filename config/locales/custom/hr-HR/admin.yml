@@ -1390,6 +1390,12 @@ hr:
         sdg:
           title: Konfiguracija ciljeva održivog razvoja
           how_to_enable: 'Kako bi omogućili konfiguraciju prvo omogućite opciju "Ciljevi održivog razvoja" na kartici "Značajke".'
+        maintenance:
+          title: "Održavanje sustava"
+          submit: "Uključi održavanje sustava"
+          disable: "Isključi održavanje sustava"
+          update: "Opcija održavanja sustava uspješno je izmijenjena."
+          admin: "Prijava"
       remote_census_general_name: Opće informacije
       remote_census_request_name: Zatraži podatke
       remote_census_response_name: Podaci o odazivu

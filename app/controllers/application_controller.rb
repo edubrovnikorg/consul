@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
+  before_action :check_maintenance_mode
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -21,6 +22,14 @@ class ApplicationController < ActionController::Base
   layout :set_layout
   respond_to :html
   helper_method :current_budget
+
+  protected
+
+  def check_maintenance_mode
+    if !cookies[:maintenance] && controller_name != "maintenance" && Setting["maintenance.enabled"] == "true"
+      redirect_to maintenance_path
+    end
+  end
 
   private
 

@@ -1,0 +1,24 @@
+<% if @maintenance_settings[0].value == "true" %>
+
+  <%= form_tag admin_update_maintenance_path, method: :put do %>
+    <div class="small-12 medium-6 large-4 margin-top">
+      <%= hidden_field_tag :maintenance, false %>
+      <%= hidden_field_tag :maintenance_password, "" %>
+      <%= submit_tag t("admin.settings.index.maintenance.disable"),
+                      class: "button hollow expanded" %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <%= form_tag admin_update_maintenance_path, method: :put do %>
+    <div class="small-12 medium-6 large-4 margin-top">
+      <%= hidden_field_tag :maintenance, true %>
+      <%= label_tag :maintenance, "Postavite lozinku:" %>
+      <%= password_field_tag :maintenance_password, Setting["maintenance.password"] %>
+      <%= submit_tag t("admin.settings.index.maintenance.submit"),
+                    class: "button hollow expanded" %>
+    </div>
+  <% end %>
+
+<% end %>

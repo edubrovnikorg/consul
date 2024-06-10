@@ -105,6 +105,7 @@ namespace :admin do
 
   resources :settings, only: [:index, :update]
   put :update_map, to: "settings#update_map"
+  put :update_maintenance, to: "settings#update_maintenance"
   put :update_content_types, to: "settings#update_content_types"
 
   resources :moderators, only: [:index, :create, :destroy] do

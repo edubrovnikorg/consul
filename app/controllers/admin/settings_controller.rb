@@ -11,12 +11,20 @@ class Admin::SettingsController < Admin::BaseController
     @remote_census_response_settings = all_settings["remote_census.response"]
     @uploads_settings = all_settings["uploads"]
     @sdg_settings = all_settings["sdg"]
+    @maintenance_settings = all_settings["maintenance"]
   end
 
   def update
     @setting = Setting.find(params[:id])
     @setting.update!(settings_params)
     redirect_to request_referer, notice: t("admin.settings.flash.updated")
+  end
+
+  def update_maintenance
+    ActiveRecord::Base.connection.reset_pk_sequence!('settings')
+    Setting["maintenance.enabled"] = params[:maintenance]
+    Setting["maintenance.password"] = params[:maintenance_password]
+    redirect_to admin_settings_path, notice: t("admin.settings.index.maintenance.update")
   end
 
   def update_map

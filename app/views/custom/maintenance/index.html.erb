@@ -1,0 +1,8 @@
+<div class="maintenance">
+  <h2>Održavanje sustava u tijeku!</h2>
+  <%= form_tag maintenance_login_path do |f| %>
+    <%= label_tag :password, "Lozinka"%>
+    <%= text_field_tag :password, "", placeholder: "Upišite lozinku..." %>
+    <%= submit_tag t("admin.settings.index.maintenance.admin") %>
+  <% end %>
+</div>
