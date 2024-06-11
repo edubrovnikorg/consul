@@ -80,6 +80,7 @@
                      investment_ids: @investment_ids,
                      investment_votes: @investment_votes,
                      ballot: @ballot,
+                     image: @images.select{|s| s.id == investment.image_id}[0],
                      district_id: @heading.district_id,
                      votes_percent: votes_to_percent(investment.votes_for.size, @total_votes) %>
         <% end %>

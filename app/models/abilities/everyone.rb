@@ -30,6 +30,7 @@ module Abilities
 
       can [:read, :help], ::SDG::Goal
       can :read, ::SDG::Phase
+      can [:read, :show], BudgetImage
     end
   end
 end

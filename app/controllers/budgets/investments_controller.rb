@@ -46,7 +46,6 @@ module Budgets
       @voted = false;
       @category = '';
       @total_votes = 0;
-      @images = [];
 
       @investments.each do |investment|
         district = Budget::Heading.where(id: investment.heading_id).first.district_id
@@ -56,8 +55,9 @@ module Budgets
         if current_user.voted_for? investment
           @voted = true;
         end
-        @images[investment.id] = BudgetImage.find_by(id: investment.image_id)
       end
+      ids = @investments.map(&:image_id)
+      @images = BudgetImage.where(id: ids);
 
       @investment_ids = @investments.pluck(:id)
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
