@@ -4,7 +4,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   prepend_before_action :allow_params_authentication!, only: :auth
 
   def show
-    byebug
     @user = get_nias_user(:session)
     unless user_signed_in? || !user_in_session(@user)
       if @user.nias_session.user_type == "non_local"
@@ -23,7 +22,6 @@ class Users::SamlSessionsController < Devise::RegistrationsController
   end
 
   def auth
-    byebug
     user = get_nias_user(:login)
     head 422 unless user
 
