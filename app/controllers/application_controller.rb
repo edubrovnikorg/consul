@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def check_maintenance_mode
-    if !cookies[:maintenance] && controller_name != "maintenance" && Setting["maintenance.enabled"] == "true"
+    if !cookies[:maintenance] && ["maintenance", "saml_sessions"].include?(controller_name) && Setting["maintenance.enabled"] == "true"
       redirect_to maintenance_path
     end
   end
