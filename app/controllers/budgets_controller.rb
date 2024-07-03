@@ -14,7 +14,11 @@ class BudgetsController < ApplicationController
   end
 
   def index
-    @finished_budgets = @budgets.finished_list(@budget.id).order(created_at: :desc)
+    if @budget
+      @finished_budgets = @budgets.finished_list(@budget.id).order(created_at: :desc)
+    else
+      @finished_budgets = []
+    end
   end
 
   private

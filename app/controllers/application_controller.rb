@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
     return if ["maintenance", "saml_sessions"].include?(controller_name)
     return if cookies[:maintenance]
     return if Setting["maintenance.enabled"] == "false"
+    return if Setting["maintenance.enabled"] == nil
     redirect_to maintenance_path
   end
 

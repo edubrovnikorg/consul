@@ -27,7 +27,11 @@ class Admin::Budgets::ResultsController < Admin::BaseController
           @sorted_investments.push(investment)
         end
       end
+      logger.debug "BEFORE >>>>>"
+      logger.debug @sorted_investments.select { |i| i.votes_for.size }
       @sorted_investments = @sorted_investments.sort { |i| i.votes_for.size }.reverse
+      logger.debug "AFTER >>>>>"
+      logger.debug @sorted_investments.select { |i| i.votes_for.size }
       unless winner.nil?
         @sorted_investments.unshift(winner)
       end
